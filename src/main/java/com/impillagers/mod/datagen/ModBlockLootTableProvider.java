@@ -26,6 +26,7 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
     @Override
     protected void generate() {
         dropSelf(ModBlocks.PURPLE_HEART_PLANKS.get());
+        dropSelf(ModBlocks.PURPLE_HEART_LOG.get());
 
     }
 

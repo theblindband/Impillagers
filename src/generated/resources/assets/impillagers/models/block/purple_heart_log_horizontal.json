@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "impillagers:block/purple_heart_log_top",
+    "side": "impillagers:block/purple_heart_log"
+  }
+}

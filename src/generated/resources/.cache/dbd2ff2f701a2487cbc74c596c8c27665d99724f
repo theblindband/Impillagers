@@ -1,4 +1,7 @@
-// 1.21.1	2024-10-02T16:49:42.3665733	Block States: impillagers
+// 1.21.1	2024-10-02T22:13:01.6019091	Block States: impillagers
+b848dbb29bd3a5d263a54fbd9d5a24a048df87f5 assets/impillagers/blockstates/purple_heart_log.json
 9a07e181b7848a918a855df377444168529afac4 assets/impillagers/blockstates/purple_heart_planks.json
+e7a5f6a8e226a4d543b2c4d02132052545b495ec assets/impillagers/models/block/purple_heart_log.json
+3578f62d6ea0f80412b8a02ecc3fb871ac28c5e4 assets/impillagers/models/block/purple_heart_log_horizontal.json
 5c0069df1be2d19c4aae7e096dc5cfefa7491610 assets/impillagers/models/block/purple_heart_planks.json
 68a8405dbabf3c3678b912c4cacf506d1e25627f assets/impillagers/models/item/purple_heart_planks.json
