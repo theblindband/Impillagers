@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "bottom": "impillagers:block/purple_heart_planks",
+    "side": "impillagers:block/purple_heart_planks",
+    "top": "impillagers:block/purple_heart_planks"
+  }
+}

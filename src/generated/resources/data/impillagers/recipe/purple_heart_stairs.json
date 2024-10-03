@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "wooden_stairs",
+  "key": {
+    "B": {
+      "item": "impillagers:purple_heart_planks"
+    }
+  },
+  "pattern": [
+    "B  ",
+    "BB ",
+    "BBB"
+  ],
+  "result": {
+    "count": 4,
+    "id": "impillagers:purple_heart_stairs"
+  }
+}

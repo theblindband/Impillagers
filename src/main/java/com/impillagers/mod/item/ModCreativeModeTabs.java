@@ -16,11 +16,19 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TAB =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, Impillagers.MOD_ID);
 
+    //Creates the creative item tab
     public static final Supplier<CreativeModeTab> IMPILLAGERS_TAB = CREATIVE_MODE_TAB.register("impillagers_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.PURPLE_HEART_PLANKS))
                     .title(Component.translatable("creativetab.impillagers"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        //The below order is the order they will appear in the creative menu
+                        output.accept(ModBlocks.PURPLE_HEART_LOG);
+                        output.accept(ModBlocks.PURPLE_HEART_WOOD);
+                        output.accept(ModBlocks.STRIPPED_PURPLE_HEART_LOG);
+                        output.accept(ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
                         output.accept(ModBlocks.PURPLE_HEART_PLANKS);
+                        output.accept(ModBlocks.PURPLE_HEART_STAIRS);
+                        output.accept(ModBlocks.PURPLE_HEART_SLAB);
 
                         output.accept(ModItems.IMP_POTTERY_SHERD);
 

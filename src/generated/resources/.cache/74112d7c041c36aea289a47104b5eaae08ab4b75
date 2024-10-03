@@ -1,3 +1,7 @@
-// 1.21.1	2024-10-02T17:21:17.2537013	Tags for minecraft:block mod id impillagers
-77caf60ddd466c6e974408ec1c66f3d196464c6e data/minecraft/tags/block/mineable/axe.json
+// 1.21.1	2024-10-03T13:50:10.8701592	Tags for minecraft:block mod id impillagers
+847a7b7478169cfca8f1742644c5cdb6b1e59d0b data/impillagers/tags/block/purple_heart_logs.json
+a082defd6d7a78d55897afe0664feda236df3440 data/minecraft/tags/block/logs_that_burn.json
+ec9eb94cd64315b7be7fa8e1f9cdb1edd0eb06c6 data/minecraft/tags/block/mineable/axe.json
 77caf60ddd466c6e974408ec1c66f3d196464c6e data/minecraft/tags/block/planks.json
+230a9a94d128dd64345cba66c8baf3daf9e90b21 data/minecraft/tags/block/wooden_slabs.json
+c2f4fdc3e9dd54f94ec0809fd7cb6cdb5467d482 data/minecraft/tags/block/wooden_stairs.json

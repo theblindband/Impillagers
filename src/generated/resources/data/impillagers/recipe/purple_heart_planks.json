@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "planks",
+  "ingredients": [
+    {
+      "item": "impillagers:purple_heart_log"
+    }
+  ],
+  "result": {
+    "count": 4,
+    "id": "impillagers:purple_heart_planks"
+  }
+}

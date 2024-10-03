@@ -1,7 +1,13 @@
 {
   "creativetab.impillagers": "Impillagers",
 
+  "block.impillagers.purple_heart_log": "Purple Heart Log",
+  "block.impillagers.purple_heart_wood": "Purple Heart Wood",
+  "block.impillagers.stripped_purple_heart_log": "Stripped Purple Heart Log",
+  "block.impillagers.stripped_purple_heart_wood": "Stripped Purple Heart Wood",
   "block.impillagers.purple_heart_planks": "Purple Heart Planks",
+  "block.impillagers.purple_heart_stairs": "Purple Heart Stairs",
+  "block.impillagers.purple_heart_slab": "Purple Heart Slab",
 
   "item.impillagers.imp_pottery_sherd": "Imp Pottery Sherd"
 }

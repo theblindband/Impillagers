@@ -1,1 +1,7 @@
-// 1.21.1	2024-10-02T16:49:42.3655739	Recipes
+// 1.21.1	2024-10-03T14:04:13.3687224	Recipes
+a3316df7e7b303dbba5d055610f167b2dd84763b data/impillagers/advancement/recipes/misc/purple_heart_planks.json
+4b809519249aff6ea0207bd398b08438e0573b2a data/impillagers/advancement/recipes/misc/purple_heart_slab.json
+d593bb5ebc1019b296639ca87e210c406404fafc data/impillagers/advancement/recipes/misc/purple_heart_stairs.json
+45b8dc602a68a1c556049c5fa3a3939b7fbafe17 data/impillagers/recipe/purple_heart_planks.json
+463193cdf4604f9191bb93423ceb9c2a9579a3be data/impillagers/recipe/purple_heart_slab.json
+93ea25ffabeb97f0749b42b59e344267778d5119 data/impillagers/recipe/purple_heart_stairs.json

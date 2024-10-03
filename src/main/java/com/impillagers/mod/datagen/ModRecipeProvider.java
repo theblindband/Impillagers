@@ -1,5 +1,7 @@
 package com.impillagers.mod.datagen;
 
+import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
@@ -15,15 +17,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(RecipeOutput recipeOutput) {
+        //Generates the item recipes
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModBlocks.PURPLE_HEART_PLANKS.get(), 4)
+                .group("planks")
+                .requires(ModBlocks.PURPLE_HEART_LOG)
+                .unlockedBy("has_purple_heart_logs", has(ModTags.Items.PURPLE_HEART_LOGS)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PURPLE_HEART_STAIRS.get(), 4)
+                .group("wooden_stairs")
+                .pattern("B  ")
+                .pattern("BB ")
+                .pattern("BBB")
+                .define('B', ModBlocks.PURPLE_HEART_PLANKS.get())
+                .unlockedBy("has_purple_heart_planks", has(ModBlocks.PURPLE_HEART_PLANKS)).save(recipeOutput);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.PURPLE_HEART_SLAB.get(), 6)
+                .group("wooden_slab")
+                .pattern("BBB")
+                .define('B', ModBlocks.PURPLE_HEART_PLANKS.get())
+                .unlockedBy("has_purple_heart_planks", has(ModBlocks.PURPLE_HEART_PLANKS)).save(recipeOutput);
+        //Left some examples here for other recipes
         /*List<ItemLike> BISMUTH_SMELTABLES = List.of(ModItems.RAW_BISMUTH,
                 ModBlocks.BISMUTH_ORE, ModBlocks.BISMUTH_DEEPSLATE_ORE);
-
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.BISMUTH_BLOCK.get())
-                .pattern("BBB")
-                .pattern("BBB")
-                .pattern("BBB")
-                .define('B', ModItems.BISMUTH.get())
-                .unlockedBy("has_bismuth", has(ModItems.BISMUTH)).save(recipeOutput);
 
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.BISMUTH.get(), 9)
                 .requires(ModBlocks.BISMUTH_BLOCK)

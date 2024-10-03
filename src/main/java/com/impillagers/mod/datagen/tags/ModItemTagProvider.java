@@ -1,11 +1,13 @@
-package com.impillagers.mod.datagen;
+package com.impillagers.mod.datagen.tags;
 
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
+import com.impillagers.mod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -22,8 +24,24 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+        //Generates the item tags
+        tag(ModTags.Items.PURPLE_HEART_LOGS)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_LOG.get()))
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_WOOD.get()))
+                .add(Item.byBlock(ModBlocks.STRIPPED_PURPLE_HEART_LOG.get()))
+                .add(Item.byBlock(ModBlocks.STRIPPED_PURPLE_HEART_WOOD.get()));
+
+        tag(ItemTags.LOGS_THAT_BURN)
+                .addTag(ModTags.Items.PURPLE_HEART_LOGS);
+
         tag(ItemTags.PLANKS)
                 .add(Item.byBlock(ModBlocks.PURPLE_HEART_PLANKS.get()));
+
+        tag(ItemTags.WOODEN_STAIRS)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_STAIRS.get()));
+
+        tag(ItemTags.WOODEN_SLABS)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_SLAB.get()));
 
         tag(ItemTags.DECORATED_POT_SHERDS)
                 .add(ModItems.IMP_POTTERY_SHERD.get());

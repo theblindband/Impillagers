@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "impillagers:block/purple_heart_log",
+    "side": "impillagers:block/purple_heart_log"
+  }
+}

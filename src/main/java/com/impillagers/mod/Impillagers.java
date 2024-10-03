@@ -1,5 +1,7 @@
 package com.impillagers.mod;
 
+import com.google.common.base.Suppliers;
+import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -20,6 +22,9 @@ import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
+import java.util.Map;
+import java.util.function.Supplier;
+
 // The value here should match an entry in the META-INF/neoforge.mods.toml file
 @Mod(Impillagers.MOD_ID)
 public class Impillagers {
@@ -39,8 +44,10 @@ public class Impillagers {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+        //Registers
+        //Creative Mode Tabs
         ModCreativeModeTabs.register(modEventBus);
-
+        //Blocks and Items
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 

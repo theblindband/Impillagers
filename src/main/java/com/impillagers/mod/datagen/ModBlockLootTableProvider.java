@@ -25,9 +25,14 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.PURPLE_HEART_PLANKS.get());
+        //Block Drops
         dropSelf(ModBlocks.PURPLE_HEART_LOG.get());
-
+        dropSelf(ModBlocks.PURPLE_HEART_WOOD.get());
+        dropSelf(ModBlocks.STRIPPED_PURPLE_HEART_LOG.get());
+        dropSelf(ModBlocks.STRIPPED_PURPLE_HEART_WOOD.get());
+        dropSelf(ModBlocks.PURPLE_HEART_PLANKS.get());
+        dropSelf(ModBlocks.PURPLE_HEART_STAIRS.get());
+        dropSelf(ModBlocks.PURPLE_HEART_SLAB.get());
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {
@@ -37,7 +42,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         .apply(SetItemCountFunction.setCount(UniformGenerator.between(minDrops, maxDrops)))
                         .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE)))));
     }
-
     @Override
     protected Iterable<Block> getKnownBlocks() {
         return ModBlocks.BLOCKS.getEntries().stream().map(Holder::value)::iterator;
