@@ -8,6 +8,13 @@
   "block.impillagers.purple_heart_planks": "Purple Heart Planks",
   "block.impillagers.purple_heart_stairs": "Purple Heart Stairs",
   "block.impillagers.purple_heart_slab": "Purple Heart Slab",
+  "block.impillagers.purple_heart_fence": "Purple Heart Fence",
+  "block.impillagers.purple_heart_fence_gate": "Purple Heart Fence Gate",
+  "block.impillagers.purple_heart_door": "Purple Heart Door",
+  "block.impillagers.purple_heart_trapdoor": "Purple Heart Trapdoor",
+  "block.impillagers.purple_heart_pressure_plate": "Purple Heart Pressure Plate",
+  "block.impillagers.purple_heart_button": "Purple Heart Button",
+  "block.impillagers.purple_heart_leaves": "Purple Heart Leaves",
 
   "item.impillagers.imp_pottery_sherd": "Imp Pottery Sherd"
 }

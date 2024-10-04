@@ -33,6 +33,17 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         dropSelf(ModBlocks.PURPLE_HEART_PLANKS.get());
         dropSelf(ModBlocks.PURPLE_HEART_STAIRS.get());
         dropSelf(ModBlocks.PURPLE_HEART_SLAB.get());
+        dropSelf(ModBlocks.PURPLE_HEART_FENCE.get());
+        dropSelf(ModBlocks.PURPLE_HEART_FENCE_GATE.get());
+        add(ModBlocks.PURPLE_HEART_DOOR.get(),
+                block -> createDoorTable(ModBlocks.PURPLE_HEART_DOOR.get()));
+        dropSelf(ModBlocks.PURPLE_HEART_TRAPDOOR.get());
+        dropSelf(ModBlocks.PURPLE_HEART_PRESSURE_PLATE.get());
+        dropSelf(ModBlocks.PURPLE_HEART_BUTTON.get());
+        //Leaves will drop self until sapling is added
+        dropSelf(ModBlocks.PURPLE_HEART_LEAVES.get());
+        //add(ModBlocks.PURPLE_HEART_LEAVES.get(),
+        //        block -> createLeavesDrops(ModBlocks.PURPLE_HEART_LEAVES.get(), ModBlocks.PURPLE_HEART_SAPLING.get(), 5));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

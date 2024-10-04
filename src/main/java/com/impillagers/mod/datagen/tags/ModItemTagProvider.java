@@ -43,6 +43,27 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.WOODEN_SLABS)
                 .add(Item.byBlock(ModBlocks.PURPLE_HEART_SLAB.get()));
 
+        tag(ItemTags.WOODEN_FENCES)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_FENCE.get()));
+
+        tag(ItemTags.FENCE_GATES)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_FENCE_GATE.get()));
+
+        tag(ItemTags.WOODEN_DOORS)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_DOOR.get()));
+
+        tag(ItemTags.TRAPDOORS)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_TRAPDOOR.get()));
+
+        tag(ItemTags.WOODEN_PRESSURE_PLATES)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_PRESSURE_PLATE.get()));
+
+        tag(ItemTags.WOODEN_BUTTONS)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_BUTTON.get()));
+
+        tag(ItemTags.LEAVES)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_LEAVES.get()));
+
         tag(ItemTags.DECORATED_POT_SHERDS)
                 .add(ModItems.IMP_POTTERY_SHERD.get());
     }

@@ -47,5 +47,26 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.WOODEN_SLABS)
                 .add(ModBlocks.PURPLE_HEART_SLAB.get());
 
+        tag(BlockTags.WOODEN_FENCES)
+                .add(ModBlocks.PURPLE_HEART_FENCE.get());
+
+        tag(BlockTags.FENCE_GATES)
+                .add(ModBlocks.PURPLE_HEART_FENCE_GATE.get());
+
+        tag(BlockTags.WOODEN_DOORS)
+                .add(ModBlocks.PURPLE_HEART_DOOR.get());
+
+        tag(BlockTags.TRAPDOORS)
+                .add(ModBlocks.PURPLE_HEART_TRAPDOOR.get());
+
+        tag(BlockTags.WOODEN_PRESSURE_PLATES)
+                .add(ModBlocks.PURPLE_HEART_PRESSURE_PLATE.get());
+
+        tag(BlockTags.WOODEN_BUTTONS)
+                .add(ModBlocks.PURPLE_HEART_BUTTON.get());
+
+        tag(BlockTags.LEAVES)
+                .add(ModBlocks.PURPLE_HEART_LEAVES.get());
+
     }
 }

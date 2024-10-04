@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "group": "wooden_pressure_plate",
+  "key": {
+    "B": {
+      "item": "impillagers:purple_heart_planks"
+    }
+  },
+  "pattern": [
+    "BB"
+  ],
+  "result": {
+    "count": 2,
+    "id": "impillagers:purple_heart_pressure_plate"
+  }
+}

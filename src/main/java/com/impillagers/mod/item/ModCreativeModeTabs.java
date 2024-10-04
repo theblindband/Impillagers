@@ -29,6 +29,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PURPLE_HEART_PLANKS);
                         output.accept(ModBlocks.PURPLE_HEART_STAIRS);
                         output.accept(ModBlocks.PURPLE_HEART_SLAB);
+                        output.accept(ModBlocks.PURPLE_HEART_FENCE);
+                        output.accept(ModBlocks.PURPLE_HEART_FENCE_GATE);
+                        output.accept(ModBlocks.PURPLE_HEART_DOOR);
+                        output.accept(ModBlocks.PURPLE_HEART_TRAPDOOR);
+                        output.accept(ModBlocks.PURPLE_HEART_PRESSURE_PLATE);
+                        output.accept(ModBlocks.PURPLE_HEART_BUTTON);
+                        output.accept(ModBlocks.PURPLE_HEART_LEAVES);
 
                         output.accept(ModItems.IMP_POTTERY_SHERD);
 
