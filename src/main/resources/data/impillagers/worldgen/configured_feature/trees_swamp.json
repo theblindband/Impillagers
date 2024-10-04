@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:random_selector",
+  "config": {
+    "default": "impillagers:purple_heart",
+    "features": [
+      {
+        "chance": 0.5,
+        "feature": "minecraft:jungle_bush"
+      }
+    ]
+  }
+}

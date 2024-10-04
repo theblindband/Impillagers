@@ -36,6 +36,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PURPLE_HEART_PRESSURE_PLATE);
                         output.accept(ModBlocks.PURPLE_HEART_BUTTON);
                         output.accept(ModBlocks.PURPLE_HEART_LEAVES);
+                        output.accept(ModBlocks.PURPLE_HEART_SAPLING);
 
                         output.accept(ModItems.IMP_POTTERY_SHERD);
 

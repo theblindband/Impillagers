@@ -1,6 +1,7 @@
 package com.impillagers.mod;
 
 import com.google.common.base.Suppliers;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;
 
@@ -55,6 +56,10 @@ public class Impillagers {
         modEventBus.addListener(this::addCreative);
         // Register our mod's ModConfigSpec so that FML can create and load the config file for us
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
+    }
+
+    public static ResourceLocation id(String string) {
+        return ResourceLocation.fromNamespaceAndPath(MOD_ID, string);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

@@ -3,22 +3,28 @@ package com.impillagers.mod.block;
 
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.Impillagers;
+import com.impillagers.mod.util.ModWoodTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.grower.TreeGrower;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
+import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
+import java.util.Optional;
 import java.util.Properties;
 import java.util.function.Supplier;
 
@@ -60,23 +66,23 @@ public class ModBlocks {
                     BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()
             ));
     public static final DeferredBlock<FenceGateBlock> PURPLE_HEART_FENCE_GATE = registerBlock("purple_heart_fence_gate",
-            () -> new FenceGateBlock(WoodType.OAK,
+            () -> new FenceGateBlock(ModWoodTypes.PURPLE_HEART_WOOD,
                     BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()
             ));
     public static final DeferredBlock<DoorBlock> PURPLE_HEART_DOOR = registerBlock("purple_heart_door",
-            () -> new DoorBlock(BlockSetType.OAK,
+            () -> new DoorBlock(ModWoodTypes.PURPLE_HEART_SET,
                     BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().noOcclusion()
             ));
     public static final DeferredBlock<TrapDoorBlock> PURPLE_HEART_TRAPDOOR = registerBlock("purple_heart_trapdoor",
-            () -> new TrapDoorBlock(BlockSetType.OAK,
+            () -> new TrapDoorBlock(ModWoodTypes.PURPLE_HEART_SET,
                     BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava().noOcclusion()
             ));
     public static final DeferredBlock<PressurePlateBlock> PURPLE_HEART_PRESSURE_PLATE = registerBlock("purple_heart_pressure_plate",
-            () -> new PressurePlateBlock(BlockSetType.OAK,
+            () -> new PressurePlateBlock(ModWoodTypes.PURPLE_HEART_SET,
                     BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()
             ));
     public static final DeferredBlock<ButtonBlock> PURPLE_HEART_BUTTON = registerBlock("purple_heart_button",
-            () -> new ButtonBlock(BlockSetType.OAK,30,
+            () -> new ButtonBlock(ModWoodTypes.PURPLE_HEART_SET,30,
                     BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()
             ));
     public static final DeferredBlock<LeavesBlock> PURPLE_HEART_LEAVES = registerBlock("purple_heart_leaves",
@@ -93,6 +99,30 @@ public class ModBlocks {
                             .ignitedByLava()
                             .pushReaction(PushReaction.DESTROY)
                             .isRedstoneConductor(ModBlocks::never)
+            ));
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> PURPLE_HEART = create("purple_heart");
+    public static ResourceKey<ConfiguredFeature<?, ?>> create(String name) {
+        return ResourceKey.create(Registries.CONFIGURED_FEATURE, Impillagers.id(name));
+    }
+
+    public static final DeferredBlock<SaplingBlock> PURPLE_HEART_SAPLING = registerBlock("purple_heart_sapling",
+            () -> new SaplingBlock(
+                    new TreeGrower("purple_heart", 0.2f,
+                            Optional.empty(), Optional.empty(), Optional.of(PURPLE_HEART),
+                            Optional.empty(), Optional.empty(), Optional.empty()),
+                    BlockBehaviour.Properties.of()
+                            .mapColor(MapColor.PLANT)
+                            .noCollission()
+                            .randomTicks()
+                            .instabreak()
+                            .sound(SoundType.GRASS)
+                            .noOcclusion()
+                            .pushReaction(PushReaction.DESTROY)
+            ));
+    public static final DeferredBlock<FlowerPotBlock> POTTED_PURPLE_HEART_SAPLING = registerBlock("potted_purple_heart_sapling",
+            () -> new FlowerPotBlock(PURPLE_HEART_SAPLING.get(),
+                    BlockBehaviour.Properties.of().instabreak().noOcclusion().pushReaction(PushReaction.DESTROY)
             ));
     /*
     Sapling

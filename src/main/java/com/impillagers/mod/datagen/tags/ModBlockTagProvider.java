@@ -68,5 +68,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.LEAVES)
                 .add(ModBlocks.PURPLE_HEART_LEAVES.get());
 
+        tag(BlockTags.SAPLINGS)
+                .add(ModBlocks.PURPLE_HEART_SAPLING.get());
+        tag(BlockTags.FLOWER_POTS)
+                .add(ModBlocks.POTTED_PURPLE_HEART_SAPLING.get());
+
     }
 }

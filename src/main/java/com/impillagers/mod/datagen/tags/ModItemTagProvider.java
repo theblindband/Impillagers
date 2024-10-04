@@ -64,6 +64,9 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.LEAVES)
                 .add(Item.byBlock(ModBlocks.PURPLE_HEART_LEAVES.get()));
 
+        tag(ItemTags.SAPLINGS)
+                .add(Item.byBlock(ModBlocks.PURPLE_HEART_SAPLING.get()));
+
         tag(ItemTags.DECORATED_POT_SHERDS)
                 .add(ModItems.IMP_POTTERY_SHERD.get());
     }
