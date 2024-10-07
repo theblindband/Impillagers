@@ -1,6 +1,6 @@
 package com.impillagers.mod.block;
 
-
+import com.impillagers.mod.block.custom.SinkingMudBlock;
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.util.ModWoodTypes;
@@ -33,6 +33,12 @@ public class ModBlocks {
             DeferredRegister.createBlocks(Impillagers.MOD_ID);
 
     //Purple Heart Wood Set
+    public static final DeferredBlock<SinkingMudBlock> SINKING_MUD = registerBlock("sinking_mud",
+            () -> new SinkingMudBlock(
+                    BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_BLACK).instrument(NoteBlockInstrument.HARP).strength(0.5F).sound(SoundType.MUD).dynamicShape().isRedstoneConductor(ModBlocks::never)
+            ));
+
+
     public static final DeferredBlock<RotatedPillarBlock> PURPLE_HEART_LOG = registerBlock("purple_heart_log",
             () -> new RotatedPillarBlock(
                     BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sound(SoundType.WOOD).ignitedByLava()

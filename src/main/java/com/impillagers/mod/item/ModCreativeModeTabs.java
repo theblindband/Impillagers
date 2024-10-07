@@ -22,6 +22,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.impillagers"))
                     .displayItems((itemDisplayParameters, output) -> {
                         //The below order is the order they will appear in the creative menu
+
                         output.accept(ModBlocks.PURPLE_HEART_LOG);
                         output.accept(ModBlocks.PURPLE_HEART_WOOD);
                         output.accept(ModBlocks.STRIPPED_PURPLE_HEART_LOG);
@@ -37,6 +38,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PURPLE_HEART_BUTTON);
                         output.accept(ModBlocks.PURPLE_HEART_LEAVES);
                         output.accept(ModBlocks.PURPLE_HEART_SAPLING);
+
+                        output.accept(ModBlocks.SINKING_MUD);
 
                         output.accept(ModItems.IMP_POTTERY_SHERD);
 

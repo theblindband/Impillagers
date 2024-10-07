@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-04T23:33:37.003644	Loot Tables
+// 1.21.1	2024-10-07T23:00:50.5078731	Loot Tables
 31ec73a6afad9d8be31edc231d863317b1284601 data/impillagers/loot_table/blocks/potted_purple_heart_sapling.json
 1e33f6c7a75f4c2cbd3488a5aa612c7506f72012 data/impillagers/loot_table/blocks/purple_heart_button.json
 28764f8fee500d43fd658050fd78f0cab902dbc2 data/impillagers/loot_table/blocks/purple_heart_door.json
@@ -13,5 +13,6 @@ f4fb5563983bd49f6de49e0c489b72cf7c201c5e data/impillagers/loot_table/blocks/purp
 3f0c8b8674315bb2e2d41d620dc83c996d67ed8d data/impillagers/loot_table/blocks/purple_heart_stairs.json
 e2726581a36cd79f3b713bce4e05bf52108a5153 data/impillagers/loot_table/blocks/purple_heart_trapdoor.json
 5077d0f8719e70306c202b298d59a6c432c126d1 data/impillagers/loot_table/blocks/purple_heart_wood.json
+2150effaf47868ae6e96788a4112486ef8ecaa0e data/impillagers/loot_table/blocks/sinking_mud.json
 5e7c8d5127813b60edda6731e37b2f894cf6d1fb data/impillagers/loot_table/blocks/stripped_purple_heart_log.json
 441c91d0b5ae5d44cfbd6a82ad3b80019ef706fe data/impillagers/loot_table/blocks/stripped_purple_heart_wood.json

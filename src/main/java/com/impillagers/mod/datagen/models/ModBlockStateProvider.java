@@ -27,6 +27,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
         woodSet(ModBlocks.PURPLE_HEART_LOG, ModBlocks.PURPLE_HEART_WOOD, ModBlocks.PURPLE_HEART_PLANKS, ModBlocks.STRIPPED_PURPLE_HEART_LOG, ModBlocks.STRIPPED_PURPLE_HEART_WOOD, ModBlocks.PURPLE_HEART_STAIRS, ModBlocks.PURPLE_HEART_SLAB, ModBlocks.PURPLE_HEART_FENCE, ModBlocks.PURPLE_HEART_FENCE_GATE,
                         ModBlocks.PURPLE_HEART_DOOR, true, ModBlocks.PURPLE_HEART_TRAPDOOR, true, ModBlocks.PURPLE_HEART_PRESSURE_PLATE, ModBlocks.PURPLE_HEART_BUTTON);
         simpleBlock(ModBlocks.PURPLE_HEART_LEAVES.get());
+        simpleBlock(ModBlocks.SINKING_MUD.get());
     }
 
     //Method for generating the wood set

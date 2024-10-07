@@ -35,8 +35,10 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicBlock(ModBlocks.PURPLE_HEART_PRESSURE_PLATE.asItem());
         buttonItem(ModBlocks.PURPLE_HEART_BUTTON, ModBlocks.PURPLE_HEART_PLANKS);
         basicBlock(ModBlocks.PURPLE_HEART_LEAVES.asItem());
+        basicBlock(ModBlocks.SINKING_MUD.asItem());
 
         basicItem(ModItems.IMP_POTTERY_SHERD.get());
+        basicItem(ModItems.FROG_MASK.get());
     }
 
     private void basicBlock(Item item) {

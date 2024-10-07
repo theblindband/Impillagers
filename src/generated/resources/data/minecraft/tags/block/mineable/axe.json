@@ -6,6 +6,12 @@
     "impillagers:stripped_purple_heart_wood",
     "impillagers:purple_heart_planks",
     "impillagers:purple_heart_stairs",
-    "impillagers:purple_heart_slab"
+    "impillagers:purple_heart_slab",
+    "impillagers:purple_heart_fence",
+    "impillagers:purple_heart_fence_gate",
+    "impillagers:purple_heart_door",
+    "impillagers:purple_heart_trapdoor",
+    "impillagers:purple_heart_pressure_plate",
+    "impillagers:purple_heart_button"
   ]
 }

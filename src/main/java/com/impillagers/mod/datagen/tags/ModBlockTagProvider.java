@@ -36,7 +36,19 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STRIPPED_PURPLE_HEART_WOOD.get())
                 .add(ModBlocks.PURPLE_HEART_PLANKS.get())
                 .add(ModBlocks.PURPLE_HEART_STAIRS.get())
-                .add(ModBlocks.PURPLE_HEART_SLAB.get());
+                .add(ModBlocks.PURPLE_HEART_SLAB.get())
+                .add(ModBlocks.PURPLE_HEART_FENCE.get())
+                .add(ModBlocks.PURPLE_HEART_FENCE_GATE.get())
+                .add(ModBlocks.PURPLE_HEART_DOOR.get())
+                .add(ModBlocks.PURPLE_HEART_TRAPDOOR.get())
+                .add(ModBlocks.PURPLE_HEART_PRESSURE_PLATE.get())
+                .add(ModBlocks.PURPLE_HEART_BUTTON.get());
+
+        tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ModBlocks.SINKING_MUD.get());
+
+        tag(BlockTags.MINEABLE_WITH_HOE)
+                .add(ModBlocks.PURPLE_HEART_LEAVES.get());
 
         tag(BlockTags.PLANKS)
                 .add(ModBlocks.PURPLE_HEART_PLANKS.get());
