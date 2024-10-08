@@ -1,6 +1,7 @@
-// 1.21.1	2024-10-04T21:44:06.6758116	Tags for minecraft:item mod id impillagers
+// 1.21.1	2024-10-08T22:31:11.1737747	Tags for minecraft:item mod id impillagers
 847a7b7478169cfca8f1742644c5cdb6b1e59d0b data/impillagers/tags/item/purple_heart_logs.json
 2d9ab3198bc17b885eb0414c5c101d3640889e6d data/minecraft/tags/item/decorated_pot_sherds.json
+a8d8a2d5e44018f0aee591b03602ce3744066650 data/minecraft/tags/item/dirt.json
 2854d8d8aa3f81dfa317d37fbdb92599517f4c28 data/minecraft/tags/item/fence_gates.json
 cd366c0d75842c710ce5ac801ae17db28546bdb6 data/minecraft/tags/item/leaves.json
 a082defd6d7a78d55897afe0664feda236df3440 data/minecraft/tags/item/logs_that_burn.json

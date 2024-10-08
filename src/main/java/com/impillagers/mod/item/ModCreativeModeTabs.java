@@ -7,6 +7,7 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -42,6 +43,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.SINKING_MUD);
 
                         output.accept(ModItems.IMP_POTTERY_SHERD);
+                        output.accept(ModItems.FROG_MASK);
+
+                        output.accept(Items.PAINTING);
 
                     }).build());
 

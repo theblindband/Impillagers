@@ -69,5 +69,8 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.DECORATED_POT_SHERDS)
                 .add(ModItems.IMP_POTTERY_SHERD.get());
+
+        tag(ItemTags.DIRT)
+                .add(Item.byBlock(ModBlocks.SINKING_MUD.get()));
     }
 }

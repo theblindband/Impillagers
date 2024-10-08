@@ -85,5 +85,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.FLOWER_POTS)
                 .add(ModBlocks.POTTED_PURPLE_HEART_SAPLING.get());
 
+        tag(BlockTags.DIRT)
+                .add(ModBlocks.SINKING_MUD.get());
+        tag(BlockTags.FROGS_SPAWNABLE_ON)
+                .add(ModBlocks.SINKING_MUD.get());
+        tag(BlockTags.MANGROVE_LOGS_CAN_GROW_THROUGH)
+                .add(ModBlocks.SINKING_MUD.get());
+        tag(BlockTags.MANGROVE_ROOTS_CAN_GROW_THROUGH)
+                .add(ModBlocks.SINKING_MUD.get());
+
     }
 }

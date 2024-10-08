@@ -30,8 +30,7 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground"
     ],
     [
       "minecraft:amethyst_geode"
@@ -72,18 +71,18 @@
       "minecraft:ore_copper",
       "minecraft:underwater_magma",
       "minecraft:disk_clay",
-      "impillagers:disk_mud"
+      "impillagers:disk_mud",
+      "impillagers:disk_sinking_mud"
     ],
     [],
     [
-      "minecraft:spring_water",
-      "minecraft:spring_lava"
+      "minecraft:spring_water"
     ],
     [
       "minecraft:glow_lichen",
       "impillagers:trees_swamp",
       "impillagers:flower_swamp",
-      "minecraft:patch_grass_jungle",
+      "impillagers:patch_grass_swamp",
       "minecraft:patch_large_fern",
       "minecraft:patch_waterlily",
       "minecraft:brown_mushroom_swamp",
@@ -164,12 +163,6 @@
         "weight": 5
       },
       {
-        "type": "minecraft:skeleton",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 70
-      },
-      {
         "type": "minecraft:creeper",
         "maxCount": 4,
         "minCount": 4,
@@ -203,7 +196,7 @@
         "type": "minecraft:bogged",
         "maxCount": 4,
         "minCount": 4,
-        "weight": 30
+        "weight": 70
       }
     ],
     "underground_water_creature": [
