@@ -1,10 +1,13 @@
 package com.impillagers.mod.datagen;
 
+import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
 import net.neoforged.neoforge.common.conditions.IConditionBuilder;
 
@@ -78,7 +81,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.REDSTONE, ModBlocks.PURPLE_HEART_BUTTON.get(), 1)
                 .group("wooden_button")
                 .requires(ModBlocks.PURPLE_HEART_PLANKS)
-                .unlockedBy("has_bismuth_block", has(ModBlocks.PURPLE_HEART_PLANKS)).save(recipeOutput);
+                .unlockedBy("has_purple_heart_planks", has(ModBlocks.PURPLE_HEART_PLANKS)).save(recipeOutput);
+
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, Items.PURPLE_DYE, 1)
+                .requires(ModBlocks.BELLADONNA)
+                .unlockedBy("has_belladonna", has(ModBlocks.BELLADONNA)).save(recipeOutput);
+
+        trimSmithing(recipeOutput, ModItems.PAINTED_SMITHING_TEMPLATE.get(), ResourceLocation.fromNamespaceAndPath(Impillagers.MOD_ID, "painted"));
 
         //Left some examples here for other recipes
         /*List<ItemLike> BISMUTH_SMELTABLES = List.of(ModItems.RAW_BISMUTH,

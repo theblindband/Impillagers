@@ -94,5 +94,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MANGROVE_ROOTS_CAN_GROW_THROUGH)
                 .add(ModBlocks.SINKING_MUD.get());
 
+        tag(BlockTags.SMALL_FLOWERS)
+                .add(ModBlocks.BELLADONNA.get());
+
     }
 }

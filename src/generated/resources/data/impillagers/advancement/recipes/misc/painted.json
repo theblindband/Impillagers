@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_purple_heart_planks": {
+    "has_smithing_trim_template": {
       "conditions": {
         "items": [
           {
-            "items": "impillagers:purple_heart_planks"
+            "items": "impillagers:painted_smithing_template"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "impillagers:purple_heart_button"
+        "recipe": "impillagers:painted"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_purple_heart_planks"
+      "has_smithing_trim_template"
     ]
   ],
   "rewards": {
     "recipes": [
-      "impillagers:purple_heart_button"
+      "impillagers:painted"
     ]
   }
 }

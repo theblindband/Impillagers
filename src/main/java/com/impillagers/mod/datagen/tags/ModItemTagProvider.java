@@ -72,5 +72,11 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         tag(ItemTags.DIRT)
                 .add(Item.byBlock(ModBlocks.SINKING_MUD.get()));
+
+        tag(ItemTags.SMALL_FLOWERS)
+                .add(Item.byBlock(ModBlocks.BELLADONNA.get()));
+
+        this.tag(ItemTags.TRIM_TEMPLATES)
+                .add(ModItems.PAINTED_SMITHING_TEMPLATE.get());
     }
 }

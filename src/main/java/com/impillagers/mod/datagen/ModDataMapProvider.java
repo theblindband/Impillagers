@@ -1,9 +1,11 @@
 package com.impillagers.mod.datagen;
 
+import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.DataMapProvider;
+import net.neoforged.neoforge.registries.datamaps.builtin.Compostable;
 import net.neoforged.neoforge.registries.datamaps.builtin.FurnaceFuel;
 import net.neoforged.neoforge.registries.datamaps.builtin.NeoForgeDataMaps;
 
@@ -21,7 +23,7 @@ public class ModDataMapProvider extends DataMapProvider {
             //        COMPOSTABLES, FURNACE_FUELS, MONSTER_ROOM_MOBS, OXIDIZABLES,
             //        PARROT_IMITATIONS, RAID_HERO_GIFTS, VIBRATION_FREQUENCIES, WAXABLES
         //Below is an example for furnace fuels
-        //this.builder(NeoForgeDataMaps.FURNACE_FUELS)
-        //        .add(ModItems.IMP_POTTERY_SHERD.getId(), new FurnaceFuel(2400), false);
+        this.builder(NeoForgeDataMaps.COMPOSTABLES)
+                .add(ModBlocks.BELLADONNA.getId(), new Compostable(0.5f), false);
     }
 }

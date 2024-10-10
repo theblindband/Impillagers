@@ -17,6 +17,8 @@
   "block.impillagers.purple_heart_leaves": "Purple Heart Leaves",
   "block.impillagers.purple_heart_sapling": "Purple Heart Sapling",
 
+  "block.impillagers.belladonna": "Belladonna",
+
   "block.impillagers.sinking_mud": "Sinking Mud",
 
   "item.impillagers.imp_pottery_sherd": "Imp Pottery Sherd",
@@ -24,5 +26,8 @@
   "item.impillagers.frog_mask": "Frog Mask",
 
   "painting.impillagers.offer.title": "Offer",
-  "painting.impillagers.offer.author": "TheBlindBandit6"
+  "painting.impillagers.offer.author": "TheBlindBandit6",
+
+  "trim_pattern.impillagers.painted": "Painted Armor Trim",
+  "item.impillagers.painted_smithing_template": "Painted Smithing Template"
 }

@@ -4,10 +4,15 @@ import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.decoration.PaintingVariant;
+import net.minecraft.world.entity.decoration.PaintingVariants;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -23,7 +28,6 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.impillagers"))
                     .displayItems((itemDisplayParameters, output) -> {
                         //The below order is the order they will appear in the creative menu
-
                         output.accept(ModBlocks.PURPLE_HEART_LOG);
                         output.accept(ModBlocks.PURPLE_HEART_WOOD);
                         output.accept(ModBlocks.STRIPPED_PURPLE_HEART_LOG);
@@ -40,12 +44,13 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.PURPLE_HEART_LEAVES);
                         output.accept(ModBlocks.PURPLE_HEART_SAPLING);
 
+                        output.accept(ModBlocks.BELLADONNA);
+
                         output.accept(ModBlocks.SINKING_MUD);
 
-                        output.accept(ModItems.IMP_POTTERY_SHERD);
                         output.accept(ModItems.FROG_MASK);
-
-                        output.accept(Items.PAINTING);
+                        output.accept(ModItems.IMP_POTTERY_SHERD);
+                        output.accept(ModItems.PAINTED_SMITHING_TEMPLATE);
 
                     }).build());
 

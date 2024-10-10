@@ -46,6 +46,9 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.POTTED_PURPLE_HEART_SAPLING.get(),
                 block -> createPotFlowerItemTable(ModBlocks.PURPLE_HEART_SAPLING.get()));
         dropSelf(ModBlocks.SINKING_MUD.get());
+        dropSelf(ModBlocks.BELLADONNA.get());
+        add(ModBlocks.POTTED_BELLADONNA.get(),
+                block -> createPotFlowerItemTable(ModBlocks.BELLADONNA.get()));
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

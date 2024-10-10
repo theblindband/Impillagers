@@ -1,0 +1,8 @@
+{
+  "asset_id": "impillagers:painted",
+  "decal": false,
+  "description": {
+    "translate": "trim_pattern.impillagers.painted"
+  },
+  "template_item": "impillagers:painted_smithing_template"
+}

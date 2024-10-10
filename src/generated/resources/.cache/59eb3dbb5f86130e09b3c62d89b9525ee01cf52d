@@ -1,4 +1,6 @@
-// 1.21.1	2024-10-07T23:00:50.5078731	Loot Tables
+// 1.21.1	2024-10-10T21:45:49.1007058	Loot Tables
+dec6bac17de08d009375dfe04bb002a65d92f5fe data/impillagers/loot_table/blocks/belladonna.json
+93f366e2a81afb2510036894b4e4b07e9826b6fc data/impillagers/loot_table/blocks/potted_belladonna.json
 31ec73a6afad9d8be31edc231d863317b1284601 data/impillagers/loot_table/blocks/potted_purple_heart_sapling.json
 1e33f6c7a75f4c2cbd3488a5aa612c7506f72012 data/impillagers/loot_table/blocks/purple_heart_button.json
 28764f8fee500d43fd658050fd78f0cab902dbc2 data/impillagers/loot_table/blocks/purple_heart_door.json

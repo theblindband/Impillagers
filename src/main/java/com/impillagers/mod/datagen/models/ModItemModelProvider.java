@@ -39,6 +39,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.IMP_POTTERY_SHERD.get());
         basicItem(ModItems.FROG_MASK.get());
+        basicItem(ModItems.PAINTED_SMITHING_TEMPLATE.get());
     }
 
     private void basicBlock(Item item) {

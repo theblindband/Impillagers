@@ -1,4 +1,4 @@
-// 1.21.1	2024-10-08T22:31:11.1737747	Tags for minecraft:item mod id impillagers
+// 1.21.1	2024-10-10T22:13:18.1100076	Tags for minecraft:item mod id impillagers
 847a7b7478169cfca8f1742644c5cdb6b1e59d0b data/impillagers/tags/item/purple_heart_logs.json
 2d9ab3198bc17b885eb0414c5c101d3640889e6d data/minecraft/tags/item/decorated_pot_sherds.json
 a8d8a2d5e44018f0aee591b03602ce3744066650 data/minecraft/tags/item/dirt.json
@@ -7,7 +7,9 @@ cd366c0d75842c710ce5ac801ae17db28546bdb6 data/minecraft/tags/item/leaves.json
 a082defd6d7a78d55897afe0664feda236df3440 data/minecraft/tags/item/logs_that_burn.json
 77caf60ddd466c6e974408ec1c66f3d196464c6e data/minecraft/tags/item/planks.json
 3a7a030d9808e9d46e62abb2e0c177bcbdbe690c data/minecraft/tags/item/saplings.json
+d12699fddb57be6e4e61c025a1432204654fd9c4 data/minecraft/tags/item/small_flowers.json
 c98d0bf95ecc63525333fd3edfa91bba13956e7a data/minecraft/tags/item/trapdoors.json
+b42136bdf4b15e315810f69538ce8c13c4103014 data/minecraft/tags/item/trim_templates.json
 ce0f24ffbe1b1317ac0b6d0ba7ea9ac6728b2255 data/minecraft/tags/item/wooden_buttons.json
 827e1e9cb6c44e698094c03add045f209181fcbb data/minecraft/tags/item/wooden_doors.json
 ab2a508060acf576d6446047a9aecfea76b91acc data/minecraft/tags/item/wooden_fences.json
