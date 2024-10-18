@@ -1,6 +1,9 @@
 package com.impillagers.mod;
 
 import com.google.common.base.Suppliers;
+import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.renderer.ImpillagerRenderer;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import org.slf4j.Logger;
@@ -51,6 +54,8 @@ public class Impillagers {
         //Blocks and Items
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        //Entities
+        ModEntities.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -79,9 +84,12 @@ public class Impillagers {
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @EventBusSubscriber(modid = MOD_ID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents {
+    public static class ClientModEvents
+    {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+
+            EntityRenderers.register(ModEntities.IMPILLAGER.get(), ImpillagerRenderer::new);
 
         }
     }
