@@ -2,6 +2,7 @@ package com.impillagers.mod;
 
 import com.google.common.base.Suppliers;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.renderer.CarnivourusPlantRenderer;
 import com.impillagers.mod.entity.renderer.ImpillagerRenderer;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.resources.ResourceLocation;
@@ -90,6 +91,7 @@ public class Impillagers {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
             EntityRenderers.register(ModEntities.IMPILLAGER.get(), ImpillagerRenderer::new);
+            EntityRenderers.register(ModEntities.CARNIVOURUS_PLANT.get(), CarnivourusPlantRenderer::new);
 
         }
     }

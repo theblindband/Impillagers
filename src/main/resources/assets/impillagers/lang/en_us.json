@@ -28,8 +28,12 @@
   "painting.impillagers.offer.title": "Offer",
   "painting.impillagers.offer.author": "TheBlindBandit6",
 
-  "trim_pattern.impillagers.painted": "Painted Armor Trim",
+  "trim_pattern.impillagers.painted": "(WIP)Painted Armor Trim",
   "item.impillagers.painted_smithing_template": "Painted Smithing Template",
 
-  "item.impillagers.impillager_spawn_egg": "Impillager Spawn Egg"
+  "item.impillagers.impillager_spawn_egg": "(WIP)Impillager Spawn Egg",
+  "entity.impillagers.impillager": "Impillager",
+
+  "item.impillagers.carnivourus_plant_spawn_egg": "(WIP)Carnivourus Plant Spawn Egg",
+  "entity.minecraft.carnivourus_plant": "Carnivourus Plant"
 }

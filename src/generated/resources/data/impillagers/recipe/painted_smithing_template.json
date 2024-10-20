@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "impillagers:sinking_mud"
+    },
+    "I": {
+      "item": "minecraft:diamond"
+    },
+    "M": {
+      "item": "impillagers:painted_smithing_template"
+    }
+  },
+  "pattern": [
+    "#I#",
+    "#M#",
+    "###"
+  ],
+  "result": {
+    "count": 2,
+    "id": "impillagers:painted_smithing_template"
+  }
+}

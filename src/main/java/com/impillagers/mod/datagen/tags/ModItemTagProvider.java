@@ -76,7 +76,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.SMALL_FLOWERS)
                 .add(Item.byBlock(ModBlocks.BELLADONNA.get()));
 
-        this.tag(ItemTags.TRIM_TEMPLATES)
+        tag(ItemTags.TRIM_TEMPLATES)
                 .add(ModItems.PAINTED_SMITHING_TEMPLATE.get());
     }
 }

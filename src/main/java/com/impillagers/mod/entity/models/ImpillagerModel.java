@@ -9,7 +9,7 @@ public class ImpillagerModel extends GeoModel<ImpillagerEntity> {
     //This model is using placeholders while waiting for the model files
     @Override
     public ResourceLocation getModelResource(ImpillagerEntity animatable) {
-        //return ResourceLocation.fromNamespaceAndPath(Impillagers.MOD_ID,"geo/models/entity/impillager/impillager.geo.json");
+        //return ResourceLocation.fromNamespaceAndPath(Impillagers.MOD_ID,"geo/entity/impillager/impillager.geo.json");
         return ResourceLocation.fromNamespaceAndPath(Impillagers.MOD_ID,"geo/item/armor/frog_mask.geo.json");
     }
 

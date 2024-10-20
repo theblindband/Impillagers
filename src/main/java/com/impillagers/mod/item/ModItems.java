@@ -26,9 +26,11 @@ public class ModItems {
     public static final DeferredItem<FrogMaskItem> FROG_MASK = ITEMS.register("frog_mask",
             () -> new FrogMaskItem(ModArmorMaterials.FROG_MASK_MATERIAL, ArmorItem.Type.HELMET,
                     new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(19))));
-    public static final Supplier<DeferredSpawnEggItem> IMPILLAGER_SPAWN_EGG = ITEMS.register("impillager_spawn_egg",
-            () -> new DeferredSpawnEggItem(ModEntities.IMPILLAGER, 10236982, 13545366, new Item.Properties()));
 
+    public static final Supplier<DeferredSpawnEggItem> IMPILLAGER_SPAWN_EGG = ITEMS.register("impillager_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.IMPILLAGER, 11013646, 12623485, new Item.Properties()));
+    public static final Supplier<DeferredSpawnEggItem> CARNIVOURUS_PLANT_SPAWN_EGG = ITEMS.register("carnivourus_plant_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.CARNIVOURUS_PLANT, 3231003, 15690005, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

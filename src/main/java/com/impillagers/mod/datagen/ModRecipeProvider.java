@@ -89,6 +89,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         trimSmithing(recipeOutput, ModItems.PAINTED_SMITHING_TEMPLATE.get(), ResourceLocation.fromNamespaceAndPath(Impillagers.MOD_ID, "painted"));
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModItems.PAINTED_SMITHING_TEMPLATE.get(), 2)
+                .pattern("#I#")
+                .pattern("#M#")
+                .pattern("###")
+                .define('I', Items.DIAMOND)
+                .define('M', ModItems.PAINTED_SMITHING_TEMPLATE.get())
+                .define('#', ModBlocks.SINKING_MUD.get())
+                .unlockedBy("has_painted_smithing_template", has(ModItems.PAINTED_SMITHING_TEMPLATE)).save(recipeOutput);
+
         //Left some examples here for other recipes
         /*List<ItemLike> BISMUTH_SMELTABLES = List.of(ModItems.RAW_BISMUTH,
                 ModBlocks.BISMUTH_ORE, ModBlocks.BISMUTH_DEEPSLATE_ORE);

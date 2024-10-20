@@ -15,6 +15,7 @@ public class ModEntityClientEvents {
     public static void registerAttributes(EntityAttributeCreationEvent event) {
 
         event.put(ModEntities.IMPILLAGER.get(), ImpillagerEntity.createAttributes().build());
+        event.put(ModEntities.CARNIVOURUS_PLANT.get(), ImpillagerEntity.createAttributes().build());
 
     }
 

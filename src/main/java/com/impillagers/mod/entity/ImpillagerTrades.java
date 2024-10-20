@@ -32,29 +32,29 @@ public class ImpillagerTrades {
                     1,
                     new VillagerTrades.ItemListing[]{
                             //Items for Emeralds
-                            new ImpillagerTrades.ItemsForEmeralds(Items.SLIME_BALL, 2, 2, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(Items.QUARTZ, 5, 2, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(Blocks.CRIMSON_FUNGUS, 10, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(Blocks.WARPED_FUNGUS, 10, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(ModBlocks.SINKING_MUD.toStack(), 1, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(ModBlocks.BELLADONNA.toStack(), 1, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(ModBlocks.PURPLE_HEART_SAPLING.toStack(), 1, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(Blocks.BROWN_MUSHROOM, 1, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(Blocks.RED_MUSHROOM, 1, 1, 999, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(Items.SLIME_BALL, 2, 2, 10, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(Items.QUARTZ, 5, 2, 15, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(Blocks.CRIMSON_FUNGUS, 10, 1, 1, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(Blocks.WARPED_FUNGUS, 10, 1, 1, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(ModBlocks.SINKING_MUD.toStack(), 1, 32, 999, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(ModBlocks.BELLADONNA.toStack(), 1, 16, 999, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(ModBlocks.PURPLE_HEART_SAPLING.toStack(), 1, 16, 999, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(Blocks.BROWN_MUSHROOM, 1, 1, 8, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(Blocks.RED_MUSHROOM, 1, 1, 8, 1),
                             //Emeralds for Items
-                            new ImpillagerTrades.EmeraldForItems(Blocks.PUMPKIN, 6, 999, 1),
-                            new ImpillagerTrades.EmeraldForItems(Items.GOLD_INGOT, 4, 999, 1, 1),
-                            new ImpillagerTrades.EmeraldForItems(Items.BEETROOT, 3, 999, 1, 1),
-                            new ImpillagerTrades.EmeraldForItems(Items.STRING, 1, 999, 1, 1),
-                            new ImpillagerTrades.EmeraldForItems(Items.STRING, 1, 999, 1, 1)
+                            new ImpillagerTrades.EmeraldForItems(Blocks.PUMPKIN, 6, 4, 1),
+                            new ImpillagerTrades.EmeraldForItems(Items.GOLD_INGOT, 4, 4, 1, 1),
+                            new ImpillagerTrades.EmeraldForItems(Items.BEETROOT, 3, 4, 1, 1),
+                            new ImpillagerTrades.EmeraldForItems(Items.STRING, 1, 4, 1, 1),
+                            new ImpillagerTrades.EmeraldForItems(Items.STRING, 1, 4, 1, 1)
                     },
                     2,
                     new VillagerTrades.ItemListing[]{
                             //Rare Trades
-                            new ImpillagerTrades.ItemsForEmeralds(Blocks.WARPED_NYLIUM, 32, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(Blocks.CRIMSON_NYLIUM, 32, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(Blocks.WITHER_SKELETON_SKULL, 64, 1, 999, 1),
-                            new ImpillagerTrades.ItemsForEmeralds(ModItems.PAINTED_SMITHING_TEMPLATE.toStack(), 8, 1, 999, 1)
+                            new ImpillagerTrades.ItemsForEmeralds(Blocks.WARPED_NYLIUM, 32, 1, 5, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(Blocks.CRIMSON_NYLIUM, 32, 1, 5, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(Blocks.WITHER_SKELETON_SKULL, 64, 1, 2, 1),
+                            new ImpillagerTrades.ItemsForEmeralds(ModItems.PAINTED_SMITHING_TEMPLATE.toStack(), 8, 1, 4, 1)
                     }
             )
     );

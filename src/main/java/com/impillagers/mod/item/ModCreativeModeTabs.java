@@ -51,7 +51,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.FROG_MASK);
                         output.accept(ModItems.IMP_POTTERY_SHERD);
                         output.accept(ModItems.PAINTED_SMITHING_TEMPLATE);
+
                         output.accept((ItemLike) ModItems.IMPILLAGER_SPAWN_EGG);
+                        output.accept((ItemLike) ModItems.CARNIVOURUS_PLANT_SPAWN_EGG);
 
                     }).build());
 
