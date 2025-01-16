@@ -1,5 +1,8 @@
 package com.impillagers.mod;
 
+import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.item.ModItemGroups;
+import com.impillagers.mod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
 
 import org.slf4j.Logger;
@@ -15,9 +18,10 @@ public class Impillagers implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
-		// This code runs as soon as Minecraft is in a mod-load-ready state.
-		// However, some things (like resources) may still be uninitialized.
-		// Proceed with mild caution.
+		ModItemGroups.registerItemGroups();
+
+		ModItems.registerModItems();
+		ModBlocks.registerModBlocks();
 
 		LOGGER.info("Hello Fabric world!");
 	}
