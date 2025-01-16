@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_pink_garnet_block": {
+    "has_logs": {
       "conditions": {
         "items": [
           {
-            "items": "impillagers:pink_garnet_block"
+            "items": "#impillagers:purple_heart_logs"
           }
         ]
       },
@@ -13,7 +13,7 @@
     },
     "has_the_recipe": {
       "conditions": {
-        "recipe": "minecraft:pink_garnet"
+        "recipe": "impillagers:purple_heart_planks"
       },
       "trigger": "minecraft:recipe_unlocked"
     }
@@ -21,12 +21,12 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_pink_garnet_block"
+      "has_logs"
     ]
   ],
   "rewards": {
     "recipes": [
-      "minecraft:pink_garnet"
+      "impillagers:purple_heart_planks"
     ]
   }
 }

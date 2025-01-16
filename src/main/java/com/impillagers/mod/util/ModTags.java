@@ -9,6 +9,7 @@ import net.minecraft.util.Identifier;
 
 public class ModTags {
     public static class Blocks {
+        public static final TagKey<Block> PURPLE_HEART_LOGS = createTag("purple_heart_logs");
 
         private static TagKey<Block> createTag(String name) {
             return TagKey.of(RegistryKeys.BLOCK, Identifier.of(Impillagers.MOD_ID, name));
@@ -16,7 +17,7 @@ public class ModTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
+        public static final TagKey<Item> PURPLE_HEART_LOGS = createTag("purple_heart_logs");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Impillagers.MOD_ID, name));

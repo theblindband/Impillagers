@@ -2,6 +2,7 @@ package com.impillagers.mod.datagen;
 
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
+import com.impillagers.mod.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.data.server.recipe.RecipeExporter;
@@ -18,7 +19,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
     @Override
     public void generate(RecipeExporter exporter) {
-        offerReversibleCompactingRecipes(exporter, RecipeCategory.BUILDING_BLOCKS, ModItems.PINK_GARNET, RecipeCategory.DECORATIONS, ModBlocks.PINK_GARNET_BLOCK);
+
+        offerPlanksRecipe(exporter, ModBlocks.PURPLE_HEART_PLANKS.asItem(), ModTags.Items.PURPLE_HEART_LOGS, 4);
 
     }
 }

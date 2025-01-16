@@ -25,9 +25,14 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.PINK_GARNET_BLOCK);
+        addDrop(ModBlocks.PURPLE_HEART_PLANKS);
+        addDrop(ModBlocks.PURPLE_HEART_LOG);
+        addDrop(ModBlocks.PURPLE_HEART_WOOD);
+        addDrop(ModBlocks.STRIPPED_PURPLE_HEART_LOG);
+        addDrop(ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
     }
 
+    //Loot Table Builders
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
         return this.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop, ((LeafEntry.Builder<?>)

@@ -13,12 +13,17 @@ import net.minecraft.util.Identifier;
 public class ModItemGroups {
     public static final ItemGroup PINK_GARNET_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Impillagers.MOD_ID, "pink_garnet_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.PINK_GARNET))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.IMP_POTTERY_SHERD))
                     .displayName(Text.translatable("itemgroup.impillagers"))
                     .entries((displayContext, entries) -> {
 
-                        entries.add(ModItems.PINK_GARNET);
-                        entries.add(ModBlocks.PINK_GARNET_BLOCK);
+                        entries.add(ModItems.IMP_POTTERY_SHERD);
+
+                        entries.add(ModBlocks.PURPLE_HEART_PLANKS);
+                        entries.add(ModBlocks.PURPLE_HEART_LOG);
+                        entries.add(ModBlocks.PURPLE_HEART_WOOD);
+                        entries.add(ModBlocks.STRIPPED_PURPLE_HEART_LOG);
+                        entries.add(ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
 
                     }).build());
 
