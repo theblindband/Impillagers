@@ -3,15 +3,14 @@
 	"id": "impillagers",
 	"version": "${version}",
 	"name": "Impillagers",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "A swamp overhaul mod that adds new generation features, new items to find and a new structure to locate.",
 	"authors": [
-		"Me!"
+		"TheBlindBandit6"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://github.com/theblindband/Impillagers/tree/Fabric-1.21.1"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/impillagers/icon.png",
 	"environment": "*",
 	"entrypoints": {

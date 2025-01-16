@@ -16,14 +16,31 @@ public class ModItemGroups {
             FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.IMP_POTTERY_SHERD))
                     .displayName(Text.translatable("itemgroup.impillagers"))
                     .entries((displayContext, entries) -> {
-
+                        //Items
                         entries.add(ModItems.IMP_POTTERY_SHERD);
-
-                        entries.add(ModBlocks.PURPLE_HEART_PLANKS);
+                        //Purple Heart Woodset
+                        //Logs
                         entries.add(ModBlocks.PURPLE_HEART_LOG);
                         entries.add(ModBlocks.PURPLE_HEART_WOOD);
                         entries.add(ModBlocks.STRIPPED_PURPLE_HEART_LOG);
                         entries.add(ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
+                        //Planks
+                        entries.add(ModBlocks.PURPLE_HEART_PLANKS);
+                        //Plank Variants
+                        entries.add(ModBlocks.PURPLE_HEART_STAIRS);
+                        entries.add(ModBlocks.PURPLE_HEART_SLAB);
+                        entries.add(ModBlocks.PURPLE_HEART_FENCE);
+                        entries.add(ModBlocks.PURPLE_HEART_FENCE_GATE);
+                        //Redstone Items
+                        entries.add(ModBlocks.PURPLE_HEART_DOOR);
+                        entries.add(ModBlocks.PURPLE_HEART_TRAPDOOR);
+                        entries.add(ModBlocks.PURPLE_HEART_PRESSURE_PLATE);
+                        entries.add(ModBlocks.PURPLE_HEART_BUTTON);
+                        //Leaves and Sapling
+                        entries.add(ModBlocks.PURPLE_HEART_LEAVES);
+
+                        //Other Blocks
+                        entries.add(ModBlocks.SINKING_MUD);
 
                     }).build());
 

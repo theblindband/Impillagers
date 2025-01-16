@@ -25,11 +25,24 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
     @Override
     public void generate() {
-        addDrop(ModBlocks.PURPLE_HEART_PLANKS);
         addDrop(ModBlocks.PURPLE_HEART_LOG);
         addDrop(ModBlocks.PURPLE_HEART_WOOD);
         addDrop(ModBlocks.STRIPPED_PURPLE_HEART_LOG);
         addDrop(ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
+
+        addDrop(ModBlocks.PURPLE_HEART_PLANKS);
+
+        addDrop(ModBlocks.PURPLE_HEART_STAIRS);
+        addDrop(ModBlocks.PURPLE_HEART_SLAB);
+        addDrop(ModBlocks.PURPLE_HEART_FENCE);
+        addDrop(ModBlocks.PURPLE_HEART_FENCE_GATE);
+
+        addDrop(ModBlocks.PURPLE_HEART_DOOR, doorDrops(ModBlocks.PURPLE_HEART_DOOR));
+        addDrop(ModBlocks.PURPLE_HEART_TRAPDOOR);
+        addDrop(ModBlocks.PURPLE_HEART_PRESSURE_PLATE);
+        addDrop(ModBlocks.PURPLE_HEART_BUTTON);
+
+        addDrop(ModBlocks.SINKING_MUD);
     }
 
     //Loot Table Builders

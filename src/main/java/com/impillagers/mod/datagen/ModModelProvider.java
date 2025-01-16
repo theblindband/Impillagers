@@ -16,10 +16,24 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_HEART_PLANKS);
-
         blockStateModelGenerator.registerLog(ModBlocks.PURPLE_HEART_LOG).log(ModBlocks.PURPLE_HEART_LOG).wood(ModBlocks.PURPLE_HEART_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_PURPLE_HEART_LOG).log(ModBlocks.STRIPPED_PURPLE_HEART_LOG).wood(ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
+
+        BlockStateModelGenerator.BlockTexturePool purple_heart_planks_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PURPLE_HEART_PLANKS);
+
+        purple_heart_planks_pool.stairs(ModBlocks.PURPLE_HEART_STAIRS);
+        purple_heart_planks_pool.slab(ModBlocks.PURPLE_HEART_SLAB);
+        purple_heart_planks_pool.fence(ModBlocks.PURPLE_HEART_FENCE);
+        purple_heart_planks_pool.fenceGate(ModBlocks.PURPLE_HEART_FENCE_GATE);
+
+        blockStateModelGenerator.registerDoor(ModBlocks.PURPLE_HEART_DOOR);
+        blockStateModelGenerator.registerTrapdoor(ModBlocks.PURPLE_HEART_TRAPDOOR);
+        purple_heart_planks_pool.pressurePlate(ModBlocks.PURPLE_HEART_PRESSURE_PLATE);
+        purple_heart_planks_pool.button(ModBlocks.PURPLE_HEART_BUTTON);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_HEART_LEAVES);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
     }
 
     @Override
