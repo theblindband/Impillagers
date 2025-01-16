@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/button",
+  "textures": {
+    "texture": "impillagers:block/purple_heart_planks"
+  }
+}

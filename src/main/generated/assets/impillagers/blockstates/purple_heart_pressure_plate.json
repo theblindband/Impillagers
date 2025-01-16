@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "impillagers:block/purple_heart_pressure_plate"
+    },
+    "powered=true": {
+      "model": "impillagers:block/purple_heart_pressure_plate_down"
+    }
+  }
+}

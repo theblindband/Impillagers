@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "impillagers:block/purple_heart_slab"
+    },
+    "type=double": {
+      "model": "impillagers:block/purple_heart_planks"
+    },
+    "type=top": {
+      "model": "impillagers:block/purple_heart_slab_top"
+    }
+  }
+}

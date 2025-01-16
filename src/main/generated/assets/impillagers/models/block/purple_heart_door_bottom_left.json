@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "impillagers:block/purple_heart_door_bottom",
+    "top": "impillagers:block/purple_heart_door_top"
+  }
+}
