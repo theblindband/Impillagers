@@ -1,0 +1,39 @@
+{
+  "itemgroup.impillagers": "Impillagers",
+
+  "block.impillagers.purple_heart_log": "Purple Heart Log",
+  "block.impillagers.purple_heart_wood": "Purple Heart Wood",
+  "block.impillagers.stripped_purple_heart_log": "Stripped Purple Heart Log",
+  "block.impillagers.stripped_purple_heart_wood": "Stripped Purple Heart Wood",
+  "block.impillagers.purple_heart_planks": "Purple Heart Planks",
+  "block.impillagers.purple_heart_stairs": "Purple Heart Stairs",
+  "block.impillagers.purple_heart_slab": "Purple Heart Slab",
+  "block.impillagers.purple_heart_fence": "Purple Heart Fence",
+  "block.impillagers.purple_heart_fence_gate": "Purple Heart Fence Gate",
+  "block.impillagers.purple_heart_door": "Purple Heart Door",
+  "block.impillagers.purple_heart_trapdoor": "Purple Heart Trapdoor",
+  "block.impillagers.purple_heart_pressure_plate": "Purple Heart Pressure Plate",
+  "block.impillagers.purple_heart_button": "Purple Heart Button",
+  "block.impillagers.purple_heart_leaves": "Purple Heart Leaves",
+  "block.impillagers.purple_heart_sapling": "Purple Heart Sapling",
+
+  "block.impillagers.belladonna": "Belladonna",
+
+  "block.impillagers.sinking_mud": "Sinking Mud",
+
+  "item.impillagers.imp_pottery_sherd": "Imp Pottery Sherd",
+
+  "item.impillagers.frog_mask": "Frog Mask",
+
+  "painting.impillagers.offer.title": "Offer",
+  "painting.impillagers.offer.author": "TheBlindBandit6",
+
+  "trim_pattern.impillagers.painted": "(WIP)Painted Armor Trim",
+  "item.impillagers.painted_smithing_template": "Painted Smithing Template",
+
+  "item.impillagers.impillager_spawn_egg": "(WIP)Impillager Spawn Egg",
+  "entity.impillagers.impillager": "Impillager",
+
+  "item.impillagers.carnivourus_plant_spawn_egg": "(WIP)Carnivourus Plant Spawn Egg",
+  "entity.minecraft.carnivourus_plant": "Carnivourus Plant"
+}

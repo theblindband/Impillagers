@@ -18,6 +18,9 @@
 		"main": [
 			"com.impillagers.mod.Impillagers"
 		],
+		"client": [
+			"com.impillagers.mod.ImpillagersClient"
+		],
 		"fabric-datagen": [
 			"com.impillagers.mod.ImpillagersDataGenerator"
 		]
