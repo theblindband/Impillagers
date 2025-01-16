@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/fence_inventory",
-  "textures": {
-    "texture": "impillagers:block/purple_heart_planks"
-  }
-}

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/button_pressed",
-  "textures": {
-    "texture": "impillagers:block/purple_heart_planks"
-  }
-}
