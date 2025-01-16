@@ -1,7 +1,9 @@
 package com.impillagers.mod.block;
 
 import com.impillagers.mod.Impillagers;
+import com.impillagers.mod.block.custom.ModSaplingBlock;
 import com.impillagers.mod.block.custom.SinkingMudBlock;
+import com.impillagers.mod.world.tree.ModSaplingGenerators;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
@@ -47,6 +49,8 @@ public class ModBlocks {
     //Leaves and Saplings
     public static final Block PURPLE_HEART_LEAVES = registerBlock("purple_heart_leaves",
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+    public static final Block PURPLE_HEART_SAPLING = registerBlock("purple_heart_sapling",
+            new SaplingBlock(ModSaplingGenerators.PURPLE_HEART, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
 
     //Sinking Mud
     public static final Block SINKING_MUD = registerBlock("sinking_mud",

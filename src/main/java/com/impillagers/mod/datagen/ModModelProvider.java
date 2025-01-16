@@ -7,7 +7,6 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Models;
-import net.minecraft.util.Identifier;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -32,6 +31,7 @@ public class ModModelProvider extends FabricModelProvider {
         purple_heart_planks_pool.button(ModBlocks.PURPLE_HEART_BUTTON);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_HEART_LEAVES);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.PURPLE_HEART_SAPLING, BlockStateModelGenerator.TintType.TINTED);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
     }
@@ -39,5 +39,7 @@ public class ModModelProvider extends FabricModelProvider {
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.IMP_POTTERY_SHERD, Models.GENERATED);
+        itemModelGenerator.register(ModItems.FROG_MASK, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PAINTED_SMITHING_TEMPLATE, Models.GENERATED);
     }
 }

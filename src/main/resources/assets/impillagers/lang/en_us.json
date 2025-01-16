@@ -26,14 +26,14 @@
   "item.impillagers.frog_mask": "Frog Mask",
 
   "painting.impillagers.offer.title": "Offer",
-  "painting.impillagers.offer.author": "TheBlindBandit6",
+  "painting.impillagers.offer.author": "smiileyf4ce",
 
-  "trim_pattern.impillagers.painted": "(WIP)Painted Armor Trim",
-  "item.impillagers.painted_smithing_template": "Painted Smithing Template",
+  "trim_pattern.impillagers.painted": "Painted Armor Trim",
+  "item.impillagers.painted_armor_trim_smithing_template": "Painted Armor Trim Smithing Template",
 
-  "item.impillagers.impillager_spawn_egg": "(WIP)Impillager Spawn Egg",
+  "item.impillagers.impillager_spawn_egg": "Impillager Spawn Egg",
   "entity.impillagers.impillager": "Impillager",
 
-  "item.impillagers.carnivourus_plant_spawn_egg": "(WIP)Carnivourus Plant Spawn Egg",
+  "item.impillagers.carnivourus_plant_spawn_egg": "Carnivourus Plant Spawn Egg",
   "entity.minecraft.carnivourus_plant": "Carnivourus Plant"
 }

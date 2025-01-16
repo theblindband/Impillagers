@@ -1,0 +1,18 @@
+{
+	"structures": [
+		{
+			"structure": "impillagers:swamp_ruin_1",
+			"weight": 1
+		},
+		{
+			"structure": "impillagers:swamp_ruin_2",
+			"weight": 1
+		}
+	],
+	"placement": {
+		"spacing": 32,
+		"separation": 8,
+		"salt": 123,
+		"type": "minecraft:random_spread"
+	}
+}

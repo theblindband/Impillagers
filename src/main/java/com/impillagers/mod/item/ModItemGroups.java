@@ -3,21 +3,23 @@ package com.impillagers.mod.item;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.entity.decoration.painting.PaintingVariant;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.PaintingVariantTags;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
 public class ModItemGroups {
     public static final ItemGroup PINK_GARNET_ITEMS_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Impillagers.MOD_ID, "pink_garnet_items"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.IMP_POTTERY_SHERD))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.FROG_MASK))
                     .displayName(Text.translatable("itemgroup.impillagers"))
                     .entries((displayContext, entries) -> {
-                        //Items
-                        entries.add(ModItems.IMP_POTTERY_SHERD);
                         //Purple Heart Woodset
                         //Logs
                         entries.add(ModBlocks.PURPLE_HEART_LOG);
@@ -38,9 +40,17 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PURPLE_HEART_BUTTON);
                         //Leaves and Sapling
                         entries.add(ModBlocks.PURPLE_HEART_LEAVES);
+                        entries.add(ModBlocks.PURPLE_HEART_SAPLING);
 
                         //Other Blocks
                         entries.add(ModBlocks.SINKING_MUD);
+
+                        //Items
+                        entries.add(ModItems.IMP_POTTERY_SHERD);
+                        entries.add(ModItems.FROG_MASK);
+                        entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
+
+                        entries.add(Items.PAINTING);
 
                     }).build());
 

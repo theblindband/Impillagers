@@ -48,6 +48,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.LEAVES)
                 .add(ModBlocks.PURPLE_HEART_LEAVES);
+        getOrCreateTagBuilder(BlockTags.SAPLINGS)
+                .add(ModBlocks.PURPLE_HEART_SAPLING);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.SINKING_MUD);
