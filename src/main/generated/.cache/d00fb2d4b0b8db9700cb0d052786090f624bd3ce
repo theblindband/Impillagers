@@ -1,9 +1,9 @@
-// 1.21.1	2025-01-16T14:23:32.8263395	Impillagers/Model Definitions
+// 1.21.1	2025-01-16T14:30:05.17362	Impillagers/Model Definitions
 9a07e181b7848a918a855df377444168529afac4 assets\impillagers\blockstates\purple_heart_planks.json
 5c0069df1be2d19c4aae7e096dc5cfefa7491610 assets\impillagers\models\block\purple_heart_planks.json
 6c4ef3df38b972ee16f94d510934220cb6534f2d assets\impillagers\models\block\stripped_purple_heart_wood.json
-b6237fa2f5265f5dc49a19ae01d4a5a969234ac2 assets\impillagers\blockstates\stripped_purple_heart_wood.json
 68a8405dbabf3c3678b912c4cacf506d1e25627f assets\impillagers\models\item\purple_heart_planks.json
+b6237fa2f5265f5dc49a19ae01d4a5a969234ac2 assets\impillagers\blockstates\stripped_purple_heart_wood.json
 962d00e82cfdc1046af7bc5786ac03139e85eae0 assets\impillagers\models\block\stripped_purple_heart_log.json
 06112e24c1e1d3532f34daf5dcf23309a40755a2 assets\impillagers\blockstates\stripped_purple_heart_log.json
 3578f62d6ea0f80412b8a02ecc3fb871ac28c5e4 assets\impillagers\models\block\purple_heart_log_horizontal.json

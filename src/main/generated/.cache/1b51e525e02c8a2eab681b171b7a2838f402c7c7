@@ -1,6 +1,6 @@
-// 1.21.1	2025-01-16T14:23:32.8263395	Impillagers/Block Loot Tables
+// 1.21.1	2025-01-16T14:30:05.1726199	Impillagers/Block Loot Tables
 df094d09b5c7cfa6a8f66b12306c18b77be50da2 data\impillagers\loot_table\blocks\stripped_purple_heart_log.json
 06ab2704c11f4eea120c762ae4d3fe0682f3d6fd data\impillagers\loot_table\blocks\stripped_purple_heart_wood.json
-5a28bab0b0ccaa6b1bec6b1feee381d26badd875 data\impillagers\loot_table\blocks\purple_heart_log.json
 6889061a5a99ff744ee7f2f96c18fd460065576b data\impillagers\loot_table\blocks\purple_heart_planks.json
+5a28bab0b0ccaa6b1bec6b1feee381d26badd875 data\impillagers\loot_table\blocks\purple_heart_log.json
 4e2e514fa2dd8bb0dabaa76948472a51dbba1f8e data\impillagers\loot_table\blocks\purple_heart_wood.json
