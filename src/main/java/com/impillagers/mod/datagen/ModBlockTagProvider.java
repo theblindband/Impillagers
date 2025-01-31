@@ -51,6 +51,15 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.SAPLINGS)
                 .add(ModBlocks.PURPLE_HEART_SAPLING);
 
+        getOrCreateTagBuilder(BlockTags.STANDING_SIGNS)
+                .add(ModBlocks.PURPLE_HEART_SIGN);
+        getOrCreateTagBuilder(BlockTags.WALL_SIGNS)
+                .add(ModBlocks.PURPLE_HEART_WALL_SIGN);
+        getOrCreateTagBuilder(BlockTags.CEILING_HANGING_SIGNS)
+                .add(ModBlocks.PURPLE_HEART_HANGING_SIGN);
+        getOrCreateTagBuilder(BlockTags.WALL_HANGING_SIGNS)
+                .add(ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN);
+
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.SINKING_MUD);
     }

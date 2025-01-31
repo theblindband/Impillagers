@@ -1,7 +1,10 @@
 package com.impillagers.mod.item;
 
 import com.impillagers.mod.Impillagers;
+import com.impillagers.mod.block.ModBlocks;
+import net.minecraft.item.HangingSignItem;
 import net.minecraft.item.Item;
+import net.minecraft.item.SignItem;
 import net.minecraft.item.SmithingTemplateItem;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -11,6 +14,13 @@ import net.minecraft.util.Identifier;
 public class ModItems {
     public static final Item IMP_POTTERY_SHERD = registerItem("imp_pottery_sherd", new Item(new Item.Settings()));
     public static final Item FROG_MASK = registerItem("frog_mask", new Item(new Item.Settings()));
+
+    public static final Item PURPLE_HEART_SIGN = registerItem("purple_heart_sign",
+            new SignItem(new Item.Settings().maxCount(16),
+                    ModBlocks.PURPLE_HEART_SIGN,ModBlocks.PURPLE_HEART_WALL_SIGN));
+    public static final Item PURPLE_HEART_HANGING_SIGN = registerItem("purple_heart_hanging_sign",
+            new HangingSignItem(ModBlocks.PURPLE_HEART_HANGING_SIGN,ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN,
+                    new Item.Settings().maxCount(16)));
 
     public static final Item PAINTED_SMITHING_TEMPLATE = registerItem("painted_armor_trim_smithing_template",
             SmithingTemplateItem.of(Identifier.of(Impillagers.MOD_ID, "painted"), FeatureFlags.VANILLA));

@@ -3,7 +3,9 @@
 	"package": "com.impillagers.mod.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"ExampleMixin",
+		"SignTypeAccessor",
+		"BlockEntityTypeMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

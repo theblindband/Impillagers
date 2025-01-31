@@ -1,10 +1,10 @@
 package com.impillagers.mod.block;
 
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.block.custom.ModSaplingBlock;
 import com.impillagers.mod.block.custom.SinkingMudBlock;
+import com.impillagers.mod.block.entity.ModSignTypes;
+import com.impillagers.mod.block.init.ModBlockSetType;
 import com.impillagers.mod.world.tree.ModSaplingGenerators;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.item.BlockItem;
@@ -51,7 +51,17 @@ public class ModBlocks {
             new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
     public static final Block PURPLE_HEART_SAPLING = registerBlock("purple_heart_sapling",
             new SaplingBlock(ModSaplingGenerators.PURPLE_HEART, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
-
+    public static final Block POTTED_PURPLE_HEART_SAPLING = registerBlockWithoutItem("potted_purple_heart_sapling",
+            new FlowerPotBlock(ModBlocks.PURPLE_HEART_SAPLING, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    //Signs
+    public static final Block PURPLE_HEART_SIGN  = registerBlockWithoutItem("purple_heart_sign", new SignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
+            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
+    public static final Block PURPLE_HEART_WALL_SIGN  = registerBlockWithoutItem("purple_heart_wall_sign", new WallSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
+            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
+    public static final Block PURPLE_HEART_HANGING_SIGN  = registerBlockWithoutItem("purple_heart_hanging_sign", new HangingSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
+            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
+    public static final Block PURPLE_HEART_WALL_HANGING_SIGN  = registerBlockWithoutItem("purple_heart_wall_hanging_sign", new WallHangingSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
+            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
     //Sinking Mud
     public static final Block SINKING_MUD = registerBlock("sinking_mud",
             new SinkingMudBlock(AbstractBlock.Settings.create().mapColor(MapColor.BLACK).strength(0.25F).sounds(BlockSoundGroup.MUD).dynamicBounds()
@@ -68,6 +78,10 @@ public class ModBlocks {
     private static void registerBlockItem(String name, Block block) {
         Registry.register(Registries.ITEM, Identifier.of(Impillagers.MOD_ID, name),
                 new BlockItem(block, new Item.Settings()));
+    }
+
+    private static Block registerBlockWithoutItem(String name, Block block) {
+        return Registry.register(Registries.BLOCK, Identifier.of(Impillagers.MOD_ID, name), block);
     }
 
     public static void registerModBlocks() {

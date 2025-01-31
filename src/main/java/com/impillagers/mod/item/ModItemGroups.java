@@ -41,6 +41,9 @@ public class ModItemGroups {
                         //Leaves and Sapling
                         entries.add(ModBlocks.PURPLE_HEART_LEAVES);
                         entries.add(ModBlocks.PURPLE_HEART_SAPLING);
+                        //Signs and Boats
+                        entries.add(ModItems.PURPLE_HEART_SIGN);
+                        entries.add(ModItems.PURPLE_HEART_HANGING_SIGN);
 
                         //Other Blocks
                         entries.add(ModBlocks.SINKING_MUD);

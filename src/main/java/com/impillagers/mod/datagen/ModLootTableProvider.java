@@ -1,6 +1,7 @@
 package com.impillagers.mod.datagen;
 
 import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
@@ -43,6 +44,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PURPLE_HEART_BUTTON);
 
         addDrop(ModBlocks.PURPLE_HEART_SAPLING);
+        addDrop(ModBlocks.PURPLE_HEART_SIGN, ModItems.PURPLE_HEART_SIGN);
+        addDrop(ModBlocks.PURPLE_HEART_WALL_SIGN, ModItems.PURPLE_HEART_SIGN);
+        addDrop(ModBlocks.PURPLE_HEART_HANGING_SIGN, ModItems.PURPLE_HEART_HANGING_SIGN);
+        addDrop(ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN, ModItems.PURPLE_HEART_HANGING_SIGN);
 
         addDrop(ModBlocks.SINKING_MUD);
     }

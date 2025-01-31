@@ -33,6 +33,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_HEART_LEAVES);
         blockStateModelGenerator.registerTintableCross(ModBlocks.PURPLE_HEART_SAPLING, BlockStateModelGenerator.TintType.TINTED);
 
+        blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_PURPLE_HEART_LOG, ModBlocks.PURPLE_HEART_HANGING_SIGN, ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN);
+
+
+
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
     }
 
@@ -41,5 +45,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.IMP_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(ModItems.FROG_MASK, Models.GENERATED);
         itemModelGenerator.register(ModItems.PAINTED_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PURPLE_HEART_SIGN, Models.GENERATED);
     }
 }

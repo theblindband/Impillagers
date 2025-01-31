@@ -38,6 +38,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerPressurePlateRecipe(exporter, ModBlocks.PURPLE_HEART_PRESSURE_PLATE, ModBlocks.PURPLE_HEART_PLANKS);
         offerShapelessRecipe(exporter, ModBlocks.PURPLE_HEART_BUTTON, ModBlocks.PURPLE_HEART_PLANKS, "purple_heart_button", 1);
 
+        offerSignRecipe(exporter, ModItems.PURPLE_HEART_SIGN, ModBlocks.PURPLE_HEART_PLANKS);
+        offerHangingSignRecipe(exporter, ModItems.PURPLE_HEART_HANGING_SIGN, ModBlocks.STRIPPED_PURPLE_HEART_LOG);
+
         offerSmithingTrimRecipe(exporter, ModItems.PAINTED_SMITHING_TEMPLATE, Identifier.of(Impillagers.MOD_ID, "painted"));
     }
 
@@ -58,5 +61,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
     }
     public static void offerTrapdoorRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
         createTrapdoorRecipe(output, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
+    }
+    public static void offerSignRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
+        createSignRecipe(output, Ingredient.ofItems(input)).criterion(hasItem(input), conditionsFromItem(input)).offerTo(exporter);
     }
 }
