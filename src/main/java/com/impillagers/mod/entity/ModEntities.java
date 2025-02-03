@@ -16,6 +16,6 @@ public class ModEntities {
                     .dimensions(0.625f, 1.2f).build());
 
     public static void registerModEntities(){
-        Impillagers.LOGGER.info("Registering Mod Entities for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering Mod Entities for " + Impillagers.MOD_ID);
     }
 }

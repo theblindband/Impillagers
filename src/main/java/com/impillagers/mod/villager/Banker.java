@@ -37,6 +37,6 @@ public class Banker {
     }
 
     public static void registerVillager() {
-        Impillagers.LOGGER.info("Registering Banker Villager for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering Banker Villager for " + Impillagers.MOD_ID);
     }
 }

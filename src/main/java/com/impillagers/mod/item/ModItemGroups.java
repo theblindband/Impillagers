@@ -45,19 +45,22 @@ public class ModItemGroups {
                         entries.add(ModItems.PURPLE_HEART_SIGN);
                         entries.add(ModItems.PURPLE_HEART_HANGING_SIGN);
 
-                        //Other Blocks
                         entries.add(ModBlocks.SINKING_MUD);
 
-                        //Items
-                        entries.add(ModItems.IMP_POTTERY_SHERD);
                         entries.add(ModItems.FROG_MASK);
-                        entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
 
-                        entries.add(Items.PAINTING);
+                        //Imp Stuff
+                        entries.add(ModItems.GOLD_COIN);
+                        entries.add(ModItems.FAKE_GOLD_COIN);
+                        entries.add(ModItems.IMP_POTTERY_SHERD);
+                        entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
+                        entries.add(ModBlocks.DUNG_BLOCK);
+                        entries.add(ModItems.DUNG_BALL);
+                        entries.add(ModItems.IMPILLAGER_SPAWN_EGG);
 
                     }).build());
 
     public static void registerItemGroups() {
-        Impillagers.LOGGER.info("Registering Item Groups for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering Item Groups for " + Impillagers.MOD_ID);
     }
 }

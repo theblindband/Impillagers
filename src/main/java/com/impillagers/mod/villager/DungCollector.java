@@ -37,6 +37,6 @@ public class DungCollector {
     }
 
     public static void registerVillager() {
-        Impillagers.LOGGER.info("Registering Dung Collector Villager for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering Dung Collector Villager for " + Impillagers.MOD_ID);
     }
 }

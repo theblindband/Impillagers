@@ -91,6 +91,6 @@ public class ModBlocks {
     }
 
     public static void registerModBlocks() {
-        Impillagers.LOGGER.info("Registering Mod Blocks for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering Mod Blocks for " + Impillagers.MOD_ID);
     }
 }

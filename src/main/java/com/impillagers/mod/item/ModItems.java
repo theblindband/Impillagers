@@ -34,7 +34,7 @@ public class ModItems {
     }
 
     public static void registerModItems() {
-        Impillagers.LOGGER.info("Registering Mod Items for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering Mod Items for " + Impillagers.MOD_ID);
 
     }
 }
