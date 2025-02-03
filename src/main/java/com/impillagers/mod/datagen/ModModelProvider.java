@@ -39,9 +39,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_PURPLE_HEART_LOG, ModBlocks.PURPLE_HEART_HANGING_SIGN, ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN);
 
-
-
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BELLADONNA, ModBlocks.POTTED_BELLADONNA, BlockStateModelGenerator.TintType.TINTED);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DUNG_BLOCK);
     }

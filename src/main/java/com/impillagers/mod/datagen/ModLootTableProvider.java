@@ -50,6 +50,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN, ModItems.PURPLE_HEART_HANGING_SIGN);
 
         addDrop(ModBlocks.SINKING_MUD);
+        addDrop(ModBlocks.BELLADONNA);
+        addPottedPlantDrops(ModBlocks.POTTED_BELLADONNA);
 
         addDrop(ModBlocks.DUNG_BLOCK, multipleOreDrops(ModBlocks.DUNG_BLOCK, ModItems.DUNG_BALL, 1, 4));
     }

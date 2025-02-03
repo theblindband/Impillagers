@@ -13,6 +13,12 @@
                   "Name": "minecraft:blue_orchid"
                 },
                 "weight": 5
+              },
+              {
+                "data": {
+                  "Name": "impillagers:belladonna"
+                },
+                "weight": 5
               }
             ]
           }

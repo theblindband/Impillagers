@@ -46,6 +46,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PURPLE_HEART_HANGING_SIGN);
 
                         entries.add(ModBlocks.SINKING_MUD);
+                        entries.add(ModBlocks.BELLADONNA);
 
                         entries.add(ModItems.FROG_MASK);
 
