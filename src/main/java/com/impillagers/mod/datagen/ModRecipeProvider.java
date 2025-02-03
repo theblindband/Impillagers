@@ -42,6 +42,9 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerHangingSignRecipe(exporter, ModItems.PURPLE_HEART_HANGING_SIGN, ModBlocks.STRIPPED_PURPLE_HEART_LOG);
 
         offerSmithingTrimRecipe(exporter, ModItems.PAINTED_SMITHING_TEMPLATE, Identifier.of(Impillagers.MOD_ID, "painted"));
+
+        offer2x2CompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BLOCK, ModItems.DUNG_BALL);
+
     }
 
     public static void offerStairsRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {

@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "impillagers:dung_collector_poi",
+      "required": false
+    },
+    {
+      "id": "impillagers:banker_poi",
+      "required": false
+    }
+  ]
+}

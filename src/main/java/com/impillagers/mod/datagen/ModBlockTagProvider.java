@@ -61,6 +61,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN);
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
-                .add(ModBlocks.SINKING_MUD);
+                .add(ModBlocks.SINKING_MUD)
+                .add(ModBlocks.DUNG_BLOCK);
     }
 }

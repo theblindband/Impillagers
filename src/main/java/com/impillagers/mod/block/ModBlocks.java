@@ -70,6 +70,12 @@ public class ModBlocks {
                     .suffocates(Blocks::never)
                     .blockVision(Blocks::never)));
 
+    public static final Block DUNG_BLOCK = registerBlock("dung_block",
+            new Block(AbstractBlock.Settings.create()
+                    .strength(1f)
+                    .requiresTool()
+                    .sounds(BlockSoundGroup.MUD)));
+
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Impillagers.MOD_ID, name), block);
