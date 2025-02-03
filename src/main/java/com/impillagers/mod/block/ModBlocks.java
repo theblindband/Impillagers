@@ -1,12 +1,15 @@
 package com.impillagers.mod.block;
 
 import com.impillagers.mod.Impillagers;
+import com.impillagers.mod.block.custom.BelladonnaBlock;
 import com.impillagers.mod.block.custom.SinkingMudBlock;
 import com.impillagers.mod.block.entity.ModSignTypes;
 import com.impillagers.mod.block.init.ModBlockSetType;
 import com.impillagers.mod.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.component.type.SuspiciousStewEffectsComponent;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -75,6 +78,11 @@ public class ModBlocks {
                     .strength(1f)
                     .requiresTool()
                     .sounds(BlockSoundGroup.MUD)));
+
+    public static final Block BELLADONNA = registerBlock("belladonna",
+            new BelladonnaBlock(SuspiciousStewEffectsComponent.DEFAULT, AbstractBlock.Settings.copy(Blocks.POPPY)));
+    public static final Block POTTED_BELLADONNA = registerBlockWithoutItem("potted_belladonna",
+            new FlowerPotBlock(ModBlocks.BELLADONNA, AbstractBlock.Settings.copy(Blocks.POPPY)));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
