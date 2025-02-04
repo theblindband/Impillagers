@@ -33,20 +33,26 @@ public class Impillagers implements ModInitializer {
 		LOGGER.info("Initializing imp mischief.");
 
 		ModItemGroups.registerItemGroups();
-
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModParticleTypes.registerModParticles();
 		ModEffects.registerModEffects();
-
 		ModWorldGeneration.generateModWorldGen();
 
+		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.25f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_LEAVES, 0.25f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.BELLADONNA, 0.25f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.FIREFLY_BUSH, 0.25f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.DUNG_BLOCK, 0.25f);
+		CompostingChanceRegistry.INSTANCE.add(ModItems.DUNG_BALL, 0.25f);
 
+		//Strippable Blocks
 		StrippableBlockRegistry.register(ModBlocks.PURPLE_HEART_LOG, ModBlocks.STRIPPED_PURPLE_HEART_LOG);
 		StrippableBlockRegistry.register(ModBlocks.PURPLE_HEART_WOOD, ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
 
+		//Flammable Blocks
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_LOG, 5, 5);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_WOOD, 5, 5);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.STRIPPED_PURPLE_HEART_LOG, 5, 5);
@@ -54,15 +60,14 @@ public class Impillagers implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_PLANKS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_LEAVES, 30, 60);
 
-
+		//Villagers
 		DungCollector.registerVillager();
 		Banker.registerVillager();
 
+		//Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());
 
-
 		//Trades
-
 		TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 1, factories -> {
 			factories.add((entity, random) -> new TradeOffer(
 					new TradedItem(Items.EMERALD, 3),

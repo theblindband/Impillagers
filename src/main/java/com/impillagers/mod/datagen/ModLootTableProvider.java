@@ -52,6 +52,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.SINKING_MUD);
         addDrop(ModBlocks.BELLADONNA);
         addPottedPlantDrops(ModBlocks.POTTED_BELLADONNA);
+        addDrop(ModBlocks.FIREFLY_BUSH);
 
         addDrop(ModBlocks.DUNG_BLOCK, multipleOreDrops(ModBlocks.DUNG_BLOCK, ModItems.DUNG_BALL, 1, 4));
     }

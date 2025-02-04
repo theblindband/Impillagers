@@ -47,6 +47,7 @@ public class ModItemGroups {
 
                         entries.add(ModBlocks.SINKING_MUD);
                         entries.add(ModBlocks.BELLADONNA);
+                        entries.add(ModBlocks.FIREFLY_BUSH);
 
                         entries.add(ModItems.FROG_MASK);
 
