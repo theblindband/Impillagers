@@ -1,6 +1,7 @@
 package com.impillagers.mod;
 
 import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.ImpillagerEntity;
 import com.impillagers.mod.item.ModItemGroups;
@@ -35,6 +36,7 @@ public class Impillagers implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
+		ModEffects.registerModEffects();
 
 		ModWorldGeneration.generateModWorldGen();
 

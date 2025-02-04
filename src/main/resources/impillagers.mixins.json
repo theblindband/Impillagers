@@ -5,7 +5,8 @@
 	"mixins": [
 		"ExampleMixin",
 		"SignTypeAccessor",
-		"BlockEntityTypeMixin"
+		"BlockEntityTypeMixin",
+		"SmellyEffectMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

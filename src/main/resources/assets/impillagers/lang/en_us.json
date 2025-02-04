@@ -61,5 +61,7 @@
   "entity.impillagers.impillager.dung_collector": "Dung Collector",
   "entity.minecraft.villager.dung_collector": "Villager Dung Collector",
   "entity.impillagers.impillager.banker": "Banker",
-  "entity.minecraft.villager.banker": "Villager Banker"
+  "entity.minecraft.villager.banker": "Villager Banker",
+
+  "effect.impillagers.smelly": "Smelly"
 }
