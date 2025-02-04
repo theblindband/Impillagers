@@ -2,6 +2,7 @@ package com.impillagers.mod.block;
 
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.custom.BelladonnaBlock;
+import com.impillagers.mod.block.custom.FireflyBushBlock;
 import com.impillagers.mod.block.custom.SinkingMudBlock;
 import com.impillagers.mod.block.entity.ModSignTypes;
 import com.impillagers.mod.block.init.ModBlockSetType;
@@ -16,6 +17,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
 import net.minecraft.util.Identifier;
+
+import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;
 
 public class ModBlocks {
 
@@ -55,7 +58,7 @@ public class ModBlocks {
     public static final Block PURPLE_HEART_SAPLING = registerBlock("purple_heart_sapling",
             new SaplingBlock(ModSaplingGenerators.PURPLE_HEART, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
     public static final Block POTTED_PURPLE_HEART_SAPLING = registerBlockWithoutItem("potted_purple_heart_sapling",
-            new FlowerPotBlock(ModBlocks.PURPLE_HEART_SAPLING, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+            new FlowerPotBlock(ModBlocks.PURPLE_HEART_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_OAK_SAPLING)));
     //Signs
     public static final Block PURPLE_HEART_SIGN  = registerBlockWithoutItem("purple_heart_sign", new SignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
             .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
@@ -82,7 +85,10 @@ public class ModBlocks {
     public static final Block BELLADONNA = registerBlock("belladonna",
             new BelladonnaBlock(SuspiciousStewEffectsComponent.DEFAULT, AbstractBlock.Settings.copy(Blocks.POPPY)));
     public static final Block POTTED_BELLADONNA = registerBlockWithoutItem("potted_belladonna",
-            new FlowerPotBlock(ModBlocks.BELLADONNA, AbstractBlock.Settings.copy(Blocks.POPPY)));
+            new FlowerPotBlock(ModBlocks.BELLADONNA, AbstractBlock.Settings.copy(Blocks.POTTED_POPPY)));
+
+    public static final Block FIREFLY_BUSH = registerBlock("firefly_bush",
+            new FireflyBushBlock(AbstractBlock.Settings.copy(Blocks.POPPY).luminance(createLightLevelFromLitBlockState(6))));
 
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

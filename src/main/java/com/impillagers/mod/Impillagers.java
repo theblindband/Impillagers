@@ -6,6 +6,7 @@ import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.ImpillagerEntity;
 import com.impillagers.mod.item.ModItemGroups;
 import com.impillagers.mod.item.ModItems;
+import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.villager.Banker;
 import com.impillagers.mod.villager.DungCollector;
 import com.impillagers.mod.world.gen.ModWorldGeneration;
@@ -36,6 +37,7 @@ public class Impillagers implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
+		ModParticleTypes.registerModParticles();
 		ModEffects.registerModEffects();
 
 		ModWorldGeneration.generateModWorldGen();

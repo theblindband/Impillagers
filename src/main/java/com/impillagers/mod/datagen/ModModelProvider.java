@@ -35,12 +35,13 @@ public class ModModelProvider extends FabricModelProvider {
         purple_heart_planks_pool.button(ModBlocks.PURPLE_HEART_BUTTON);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.PURPLE_HEART_LEAVES);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.PURPLE_HEART_SAPLING, BlockStateModelGenerator.TintType.TINTED);
+        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.PURPLE_HEART_SAPLING, ModBlocks.POTTED_PURPLE_HEART_SAPLING, BlockStateModelGenerator.TintType.TINTED);
 
         blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_PURPLE_HEART_LOG, ModBlocks.PURPLE_HEART_HANGING_SIGN, ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BELLADONNA, ModBlocks.POTTED_BELLADONNA, BlockStateModelGenerator.TintType.TINTED);
+        blockStateModelGenerator.registerTintableCross(ModBlocks.FIREFLY_BUSH, BlockStateModelGenerator.TintType.TINTED);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DUNG_BLOCK);
     }
