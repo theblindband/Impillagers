@@ -1,5 +1,6 @@
 package com.impillagers.mod.item.custom;
 
+import com.impillagers.mod.entity.projectile.thrown.DungBallEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.item.Item;
@@ -31,10 +32,10 @@ public class DungBallItem extends SnowballItem {
                 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F)
         );
         if (!world.isClient) {
-            SnowballEntity snowballEntity = new SnowballEntity(world, user);
-            snowballEntity.setItem(itemStack);
-            snowballEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
-            world.spawnEntity(snowballEntity);
+            DungBallEntity dungBallEntity = new DungBallEntity(world, user);
+            dungBallEntity.setItem(itemStack);
+            dungBallEntity.setVelocity(user, user.getPitch(), user.getYaw(), 0.0F, 1.5F, 1.0F);
+            world.spawnEntity(dungBallEntity);
         }
 
         user.incrementStat(Stats.USED.getOrCreateStat(this));
