@@ -1,7 +1,7 @@
 {
   "type": "minecraft:disk",
   "config": {
-    "half_height": 1,
+    "half_height": 0,
     "radius": {
       "type": "minecraft:uniform",
       "max_inclusive": 8,
@@ -11,7 +11,10 @@
       "fallback": {
         "type": "minecraft:simple_state_provider",
         "state": {
-          "Name": "impillagers:sinking_mud"
+          "Name": "impillagers:sinking_mud",
+          "Properties": {
+            "waterlogged": "true"
+          }
         }
       },
       "rules": []
@@ -23,6 +26,17 @@
         "minecraft:grass_block",
         "minecraft:mud"
       ]
+    },
+    "placement": {
+      "type": "minecraft:height_range",
+      "config": {
+        "min_inclusive": {
+          "absolute": 0
+        },
+        "max_inclusive": {
+          "absolute": 62
+        }
+      }
     }
   }
 }
