@@ -1,11 +1,9 @@
 package com.impillagers.mod.entity.projectile.thrown;
 
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.entity.mob.BlazeEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.util.hit.EntityHitResult;
