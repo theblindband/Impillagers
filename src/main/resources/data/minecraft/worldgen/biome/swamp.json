@@ -74,13 +74,15 @@
       "impillagers:disk_mud",
       "impillagers:disk_sinking_mud"
     ],
-    [],
+    [
+      "minecraft:ore_infested"
+    ],
     [
       "minecraft:spring_water"
     ],
     [
       "minecraft:glow_lichen",
-      "impillagers:firefly_bush",
+      "impillagers:patch_firefly_bush",
       "impillagers:flower_swamp",
       "impillagers:patch_grass_swamp",
       "impillagers:purple_heart_placed",
@@ -113,28 +115,10 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:sheep",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 6
-      },
-      {
         "type": "minecraft:pig",
         "maxCount": 4,
         "minCount": 4,
         "weight": 5
-      },
-      {
-        "type": "minecraft:chicken",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 5
-      },
-      {
-        "type": "minecraft:cow",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 4
       },
       {
         "type": "minecraft:frog",

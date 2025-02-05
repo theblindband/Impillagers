@@ -1,11 +1,7 @@
 {
 	"structures": [
 		{
-			"structure": "impillagers:swamp_ruin_1",
-			"weight": 1
-		},
-		{
-			"structure": "impillagers:swamp_ruin_2",
+			"structure": "impillagers:swamp_ruin",
 			"weight": 1
 		}
 	],

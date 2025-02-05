@@ -55,6 +55,7 @@ public class ModItemGroups {
                         entries.add(ModItems.GOLD_COIN);
                         entries.add(ModItems.FAKE_GOLD_COIN);
                         entries.add(ModItems.IMP_POTTERY_SHERD);
+                        entries.add(ModItems.COVER_POTTERY_SHERD);
                         entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
                         entries.add(ModBlocks.DUNG_BLOCK);
                         entries.add(ModItems.DUNG_BALL);

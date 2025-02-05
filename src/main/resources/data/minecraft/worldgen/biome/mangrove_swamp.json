@@ -82,7 +82,7 @@
     ],
     [
       "minecraft:glow_lichen",
-      "impillagers:firefly_bush",
+      "impillagers:patch_firefly_bush",
       "minecraft:trees_mangrove",
       "minecraft:patch_grass_normal",
       "minecraft:patch_dead_bush",
@@ -132,12 +132,6 @@
         "maxCount": 1,
         "minCount": 1,
         "weight": 5
-      },
-      {
-        "type": "minecraft:skeleton",
-        "maxCount": 4,
-        "minCount": 4,
-        "weight": 70
       },
       {
         "type": "minecraft:creeper",

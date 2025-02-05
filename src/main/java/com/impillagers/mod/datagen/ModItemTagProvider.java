@@ -22,7 +22,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
         getOrCreateTagBuilder(ItemTags.DECORATED_POT_SHERDS)
-                .add(ModItems.IMP_POTTERY_SHERD);
+                .add(ModItems.IMP_POTTERY_SHERD)
+                .add(ModItems.COVER_POTTERY_SHERD);
 
         getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
                 .add(ModItems.PAINTED_SMITHING_TEMPLATE);
