@@ -43,7 +43,7 @@ public class ImpillagerTaskListProvider {
                 Pair.of(1, FindEntityTask.create(EntityType.PILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 2)),
                 Pair.of(1, FindEntityTask.create(EntityType.ZOMBIE, 20, MemoryModuleType.ATTACK_TARGET, speed, 2)),
                 Pair.of(1, RangedApproachTask.create(1.0F)),
-                Pair.of(1, MeleeAttackTask.create(20)),
+                Pair.of(1, new ThrowDungTask()),
                 Pair.of(1, ForgetAttackTargetTask.create()),
                 Pair.of(1, new MoveToTargetTask()),
                 Pair.of(2, WorkStationCompetitionTask.create()),
