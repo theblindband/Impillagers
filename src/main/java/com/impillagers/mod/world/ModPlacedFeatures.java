@@ -13,6 +13,7 @@ import net.minecraft.world.gen.placementmodifier.*;
 import java.util.List;
 
 public class ModPlacedFeatures {
+
     public static final RegistryKey<PlacedFeature> PURPLE_HEART_PLACED_KEY = registerKey("purple_heart_placed");
 
     public static void bootstrap(Registerable<PlacedFeature> context) {

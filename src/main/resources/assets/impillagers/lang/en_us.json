@@ -18,32 +18,24 @@
   "block.impillagers.purple_heart_sapling": "Purple Heart Sapling",
   "block.impillagers.purple_heart_sign": "Purple Heart Sign",
   "block.impillagers.purple_heart_hanging_sign": "Purple Heart Hanging Sign",
-
   "block.impillagers.belladonna": "Belladonna",
   "block.impillagers.firefly_bush": "Firefly Bush",
-
   "block.impillagers.sinking_mud": "Sinking Mud",
-
   "block.impillagers.dung_block": "Dung Block",
 
   "item.impillagers.imp_pottery_sherd": "Imp Pottery Sherd",
   "item.impillagers.cover_pottery_sherd": "Cover Pottery Sherd",
-
   "item.impillagers.frog_mask": "Frog Mask",
-
   "item.impillagers.dung_ball": "Piece of Dung",
   "item.impillagers.impillager_spawn_egg": "Impillager Spawn Egg",
   "item.impillagers.gold_coin": "Gold Coin",
   "item.impillagers.fake_gold_coin": "Gold Coin",
+  "item.impillagers.painted_armor_trim_smithing_template": "Painted Armor Trim Smithing Template",
 
   "painting.impillagers.offer.title": "Offer",
   "painting.impillagers.offer.author": "smiileyf4ce",
 
   "trim_pattern.impillagers.painted": "Painted Armor Trim",
-  "item.impillagers.painted_armor_trim_smithing_template": "Painted Armor Trim Smithing Template",
-
-  "item.impillagers.carnivourus_plant_spawn_egg": "Carnivourus Plant Spawn Egg",
-  "entity.minecraft.carnivourus_plant": "Carnivourus Plant",
 
   "entity.impillagers.impillager": "Impillager",
   "entity.impillagers.impillager.armorer": "Impillager Armorer",

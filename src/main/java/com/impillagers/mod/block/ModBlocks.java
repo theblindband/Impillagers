@@ -22,74 +22,39 @@ import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;
 
 public class ModBlocks {
 
-    //Purple Heart Wood Set
-    //Logs
-    public static final Block PURPLE_HEART_LOG  = registerBlock("purple_heart_log", new PillarBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block PURPLE_HEART_WOOD  = registerBlock("purple_heart_wood", new PillarBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block STRIPPED_PURPLE_HEART_LOG  = registerBlock("stripped_purple_heart_log", new PillarBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block STRIPPED_PURPLE_HEART_WOOD  = registerBlock("stripped_purple_heart_wood", new PillarBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    //Planks and Variants
-    public static final Block PURPLE_HEART_PLANKS  = registerBlock("purple_heart_planks", new Block(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block PURPLE_HEART_STAIRS  = registerBlock("purple_heart_stairs", new StairsBlock(ModBlocks.PURPLE_HEART_PLANKS.getDefaultState(), AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block PURPLE_HEART_SLAB  = registerBlock("purple_heart_slab", new SlabBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block PURPLE_HEART_FENCE  = registerBlock("purple_heart_fence", new FenceBlock(AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block PURPLE_HEART_FENCE_GATE  = registerBlock("purple_heart_fence_gate", new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    //Redstone
-    public static final Block PURPLE_HEART_DOOR  = registerBlock("purple_heart_door", new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block PURPLE_HEART_TRAPDOOR  = registerBlock("purple_heart_trapdoor", new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block PURPLE_HEART_PRESSURE_PLATE  = registerBlock("purple_heart_pressure_plate", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    public static final Block PURPLE_HEART_BUTTON  = registerBlock("purple_heart_button", new ButtonBlock(BlockSetType.OAK, 30, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    //Leaves and Saplings
-    public static final Block PURPLE_HEART_LEAVES = registerBlock("purple_heart_leaves",
-            new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
-    public static final Block PURPLE_HEART_SAPLING = registerBlock("purple_heart_sapling",
-            new SaplingBlock(ModSaplingGenerators.PURPLE_HEART, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
-    public static final Block POTTED_PURPLE_HEART_SAPLING = registerBlockWithoutItem("potted_purple_heart_sapling",
-            new FlowerPotBlock(ModBlocks.PURPLE_HEART_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_OAK_SAPLING)));
-    //Signs
-    public static final Block PURPLE_HEART_SIGN  = registerBlockWithoutItem("purple_heart_sign", new SignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
-    public static final Block PURPLE_HEART_WALL_SIGN  = registerBlockWithoutItem("purple_heart_wall_sign", new WallSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
-    public static final Block PURPLE_HEART_HANGING_SIGN  = registerBlockWithoutItem("purple_heart_hanging_sign", new HangingSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
-    public static final Block PURPLE_HEART_WALL_HANGING_SIGN  = registerBlockWithoutItem("purple_heart_wall_hanging_sign", new WallHangingSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create()
-            .mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
-    //Sinking Mud
-    public static final Block SINKING_MUD = registerBlock("sinking_mud",
-            new SinkingMudBlock(AbstractBlock.Settings.create().mapColor(MapColor.BLACK).strength(0.25F).sounds(BlockSoundGroup.MUD).dynamicBounds()
-                    .allowsSpawning(Blocks::never)
-                    .solidBlock(Blocks::never)
-                    .suffocates(Blocks::never)
-                    .blockVision(Blocks::never)));
+    //Purple Heart Blocks
+    public static final Block PURPLE_HEART_LOG  = registerBlock("purple_heart_log", new PillarBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_WOOD  = registerBlock("purple_heart_wood", new PillarBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block STRIPPED_PURPLE_HEART_LOG  = registerBlock("stripped_purple_heart_log", new PillarBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block STRIPPED_PURPLE_HEART_WOOD  = registerBlock("stripped_purple_heart_wood", new PillarBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_PLANKS  = registerBlock("purple_heart_planks", new Block(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_STAIRS  = registerBlock("purple_heart_stairs", new StairsBlock(ModBlocks.PURPLE_HEART_PLANKS.getDefaultState(), AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_SLAB  = registerBlock("purple_heart_slab", new SlabBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_FENCE  = registerBlock("purple_heart_fence", new FenceBlock(AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_FENCE_GATE  = registerBlock("purple_heart_fence_gate", new FenceGateBlock(WoodType.OAK, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_DOOR  = registerBlock("purple_heart_door", new DoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_TRAPDOOR  = registerBlock("purple_heart_trapdoor", new TrapdoorBlock(BlockSetType.OAK, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_PRESSURE_PLATE  = registerBlock("purple_heart_pressure_plate", new PressurePlateBlock(BlockSetType.OAK, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_BUTTON  = registerBlock("purple_heart_button", new ButtonBlock(BlockSetType.OAK, 30, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
+    public static final Block PURPLE_HEART_LEAVES = registerBlock("purple_heart_leaves", new LeavesBlock(AbstractBlock.Settings.copy(Blocks.OAK_LEAVES)));
+    public static final Block PURPLE_HEART_SAPLING = registerBlock("purple_heart_sapling", new SaplingBlock(ModSaplingGenerators.PURPLE_HEART, AbstractBlock.Settings.copy(Blocks.OAK_SAPLING)));
+    public static final Block POTTED_PURPLE_HEART_SAPLING = registerBlockWithoutItem("potted_purple_heart_sapling", new FlowerPotBlock(ModBlocks.PURPLE_HEART_SAPLING, AbstractBlock.Settings.copy(Blocks.POTTED_OAK_SAPLING)));
+    public static final Block PURPLE_HEART_SIGN  = registerBlockWithoutItem("purple_heart_sign", new SignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
+    public static final Block PURPLE_HEART_WALL_SIGN  = registerBlockWithoutItem("purple_heart_wall_sign", new WallSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
+    public static final Block PURPLE_HEART_HANGING_SIGN  = registerBlockWithoutItem("purple_heart_hanging_sign", new HangingSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD).noCollision()));
+    public static final Block PURPLE_HEART_WALL_HANGING_SIGN  = registerBlockWithoutItem("purple_heart_wall_hanging_sign", new WallHangingSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
 
-    public static final Block DUNG_BLOCK = registerBlock("dung_block",
-            new Block(AbstractBlock.Settings.create()
-                    .strength(1f)
-                    .requiresTool()
-                    .sounds(BlockSoundGroup.MUD)));
+    //Natural Blocks
+    public static final Block SINKING_MUD = registerBlock("sinking_mud", new SinkingMudBlock(AbstractBlock.Settings.create().mapColor(MapColor.BLACK).strength(0.25F).sounds(BlockSoundGroup.MUD).dynamicBounds().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)));
+    public static final Block BELLADONNA = registerBlock("belladonna", new BelladonnaBlock(SuspiciousStewEffectsComponent.DEFAULT, AbstractBlock.Settings.copy(Blocks.POPPY)));
+    public static final Block POTTED_BELLADONNA = registerBlockWithoutItem("potted_belladonna", new FlowerPotBlock(ModBlocks.BELLADONNA, AbstractBlock.Settings.copy(Blocks.POTTED_POPPY)));
+    public static final Block FIREFLY_BUSH = registerBlock("firefly_bush", new FireflyBushBlock(AbstractBlock.Settings.copy(Blocks.POPPY).luminance(createLightLevelFromLitBlockState(6))));
 
-    public static final Block BELLADONNA = registerBlock("belladonna",
-            new BelladonnaBlock(SuspiciousStewEffectsComponent.DEFAULT, AbstractBlock.Settings.copy(Blocks.POPPY)));
-    public static final Block POTTED_BELLADONNA = registerBlockWithoutItem("potted_belladonna",
-            new FlowerPotBlock(ModBlocks.BELLADONNA, AbstractBlock.Settings.copy(Blocks.POTTED_POPPY)));
+    //Imp Blocks
+    public static final Block DUNG_BLOCK = registerBlock("dung_block", new Block(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(BlockSoundGroup.MUD)));
 
-    public static final Block FIREFLY_BUSH = registerBlock("firefly_bush",
-            new FireflyBushBlock(AbstractBlock.Settings.copy(Blocks.POPPY).luminance(createLightLevelFromLitBlockState(6))));
 
+    //Register Methods
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);
         return Registry.register(Registries.BLOCK, Identifier.of(Impillagers.MOD_ID, name), block);

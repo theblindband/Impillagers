@@ -13,6 +13,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 
 public class ModTrimPatterns {
+
     public static final RegistryKey<ArmorTrimPattern> PAINTED = RegistryKey.of(RegistryKeys.TRIM_PATTERN,
             Identifier.of(Impillagers.MOD_ID, "painted"));
 

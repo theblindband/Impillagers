@@ -3,33 +3,39 @@ package com.impillagers.mod.world;
 import com.google.common.collect.ImmutableList;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
+import net.minecraft.block.BlockState;
 import net.minecraft.registry.Registerable;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.collection.DataPool;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.intprovider.ConstantIntProvider;
 import net.minecraft.util.math.intprovider.IntProvider;
 import net.minecraft.util.math.intprovider.UniformIntProvider;
 import net.minecraft.util.math.intprovider.WeightedListIntProvider;
+import net.minecraft.util.math.random.Random;
+import net.minecraft.world.TestableWorld;
 import net.minecraft.world.gen.feature.*;
 import net.minecraft.world.gen.feature.size.TwoLayersFeatureSize;
-import net.minecraft.world.gen.foliage.CherryFoliagePlacer;
+import net.minecraft.world.gen.foliage.*;
 import net.minecraft.world.gen.stateprovider.BlockStateProvider;
 import net.minecraft.world.gen.treedecorator.LeavesVineTreeDecorator;
 import net.minecraft.world.gen.treedecorator.TrunkVineTreeDecorator;
-import net.minecraft.world.gen.trunk.CherryTrunkPlacer;
+import net.minecraft.world.gen.trunk.*;
+
+import java.util.List;
+import java.util.function.BiConsumer;
 
 public class ModConfiguredFeatures {
 
     public static final RegistryKey<ConfiguredFeature<?, ?>> PURPLE_HEART_KEY = registerKey("purple_heart");
 
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
-
         register(context, PURPLE_HEART_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PURPLE_HEART_LOG),
                 new CherryTrunkPlacer(
-                        7,
+                        6,
                         1,
                         2,
                         new WeightedListIntProvider(
@@ -41,12 +47,15 @@ public class ModConfiguredFeatures {
                 ),
 
                 BlockStateProvider.of(ModBlocks.PURPLE_HEART_LEAVES),
-                new CherryFoliagePlacer(ConstantIntProvider.create(5), ConstantIntProvider.create(1), ConstantIntProvider.create(4),
-                        0.25F, 0.25F, 0.8F, 0.2F),
+                new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(1), ConstantIntProvider.create(4),
+                        0.25F, 0.25F, 1F, 0.8F),
 
                 new TwoLayersFeatureSize(1, 0, 2))
 
-                .decorators(ImmutableList.of(new LeavesVineTreeDecorator(0.125F), new TrunkVineTreeDecorator()))
+                .decorators(ImmutableList.of(
+                        new LeavesVineTreeDecorator(0.125F),
+                        new TrunkVineTreeDecorator()
+                ))
 
                 .build());
     }
