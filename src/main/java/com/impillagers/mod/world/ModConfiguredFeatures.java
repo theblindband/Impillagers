@@ -34,6 +34,30 @@ public class ModConfiguredFeatures {
     public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
         register(context, PURPLE_HEART_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
                 BlockStateProvider.of(ModBlocks.PURPLE_HEART_LOG),
+                new LargeOakTrunkPlacer(
+                        7, //Height of Main Trunk
+                        1, //Minimum height of leaves
+                        5  //??
+                ),
+
+
+                BlockStateProvider.of(ModBlocks.PURPLE_HEART_LEAVES),
+                new CherryFoliagePlacer(ConstantIntProvider.create(4), ConstantIntProvider.create(1), ConstantIntProvider.create(4),
+                        0.05F, 0.25F, 0.6F, 1.0F),
+
+                new TwoLayersFeatureSize(1, 0, 2))
+
+                .decorators(ImmutableList.of(
+                        new LeavesVineTreeDecorator(0.125F),
+                        new TrunkVineTreeDecorator()
+                ))
+
+                .build());
+    }
+
+    /*public static void bootstrap(Registerable<ConfiguredFeature<?, ?>> context) {
+        register(context, PURPLE_HEART_KEY, Feature.TREE, new TreeFeatureConfig.Builder(
+                BlockStateProvider.of(ModBlocks.PURPLE_HEART_LOG),
                 new CherryTrunkPlacer(
                         6,
                         1,
@@ -58,7 +82,7 @@ public class ModConfiguredFeatures {
                 ))
 
                 .build());
-    }
+    }*/
 
     public static RegistryKey<ConfiguredFeature<?, ?>> registerKey(String name) {
         return RegistryKey.of(RegistryKeys.CONFIGURED_FEATURE, Identifier.of(Impillagers.MOD_ID, name));
