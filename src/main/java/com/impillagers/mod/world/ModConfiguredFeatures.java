@@ -36,7 +36,7 @@ public class ModConfiguredFeatures {
                 BlockStateProvider.of(ModBlocks.PURPLE_HEART_LOG),
                 new LargeOakTrunkPlacer(
                         7, //Height of Main Trunk
-                        1, //Minimum height of leaves
+                        3, //Minimum height of leaves
                         5  //??
                 ),
 
