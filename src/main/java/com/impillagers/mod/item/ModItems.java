@@ -16,7 +16,8 @@ public class ModItems {
     public static final Item PURPLE_HEART_HANGING_SIGN = registerItem("purple_heart_hanging_sign", new HangingSignItem(ModBlocks.PURPLE_HEART_HANGING_SIGN,ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
 
     //Ruin Loot
-    public static final Item FROG_MASK = registerItem("frog_mask", new Item(new Item.Settings()));
+    public static final Item FROG_MASK = registerItem("frog_mask", new
+            ArmorItem(ModArmorMaterials.FROG_MASK_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()));
     public static final Item IMP_POTTERY_SHERD = registerItem("imp_pottery_sherd", new Item(new Item.Settings()));
     public static final Item COVER_POTTERY_SHERD = registerItem("cover_pottery_sherd", new Item(new Item.Settings()));
 
