@@ -16,6 +16,7 @@ import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
 import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;
@@ -52,7 +53,6 @@ public class ModBlocks {
 
     //Imp Blocks
     public static final Block DUNG_BLOCK = registerBlock("dung_block", new Block(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(BlockSoundGroup.MUD)));
-
 
     //Register Methods
     private static Block registerBlock(String name, Block block) {

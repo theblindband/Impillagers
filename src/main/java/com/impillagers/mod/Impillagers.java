@@ -13,10 +13,13 @@ import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
+import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.potion.Potions;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
 import org.slf4j.Logger;
@@ -74,6 +77,11 @@ public class Impillagers implements ModInitializer {
 			factories.add((entity, random) -> new TradeOffer(
 					new TradedItem(Items.EMERALD, 3),
 					new ItemStack(ModItems.DUNG_BALL, 8), 7, 2, 0.04f));
+		});
+
+		//Potion Recipes
+		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
+			builder.registerPotionRecipe(Potions.AWKWARD, Item.fromBlock(ModBlocks.BELLADONNA), Potions.STRONG_POISON);
 		});
 	}
 }
