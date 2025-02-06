@@ -1,7 +1,6 @@
 package com.impillagers.mod.effect;
 
 import com.impillagers.mod.Impillagers;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.registry.Registries;

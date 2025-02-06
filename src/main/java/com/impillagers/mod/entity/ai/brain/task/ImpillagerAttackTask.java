@@ -47,7 +47,7 @@ public class ImpillagerAttackTask {
                                             double e = livingEntity.getBodyY(livingEntity.hasVehicle() ? 0.8 : 0.3) - entity.getBodyY(0.5);
                                             double f = livingEntity.getZ() - entity.getZ();
                                             World serverWorld = entity.getWorld();
-                                            DungBallEntity  dungBallEntity = new DungBallEntity(serverWorld, entity);
+                                            DungBallEntity  dungBallEntity = new DungBallEntity(entity, world);
                                             entity.playSound(SoundEvents.ENTITY_BREEZE_SHOOT, 1.5F, 1.0F);
                                             dungBallEntity.setVelocity(d, e, f, 0.7F, (float)(5 - serverWorld.getDifficulty().getId() * 4));
                                             serverWorld.spawnEntity(dungBallEntity);

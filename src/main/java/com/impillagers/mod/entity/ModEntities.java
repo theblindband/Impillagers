@@ -16,6 +16,12 @@ public class ModEntities {
             EntityType.Builder.create(ImpillagerEntity::new, SpawnGroup.MISC)
                     .dimensions(0.625f, 1.2f).build());
 
+    public static final EntityType<DungBallEntity> DUNG_BALL = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Impillagers.MOD_ID, "dung_ball"),
+            EntityType.Builder.<DungBallEntity>create(DungBallEntity::new, SpawnGroup.MISC)
+                    .dimensions(0.25f, 0.25f).build());
+
+
     public static void registerModEntities(){
         //Impillagers.LOGGER.info("Registering Mod Entities for " + Impillagers.MOD_ID);
     }

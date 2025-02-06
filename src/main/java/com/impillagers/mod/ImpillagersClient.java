@@ -12,6 +12,7 @@ import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 
 public class ImpillagersClient implements ClientModInitializer {
     @Override
@@ -26,7 +27,9 @@ public class ImpillagersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FIREFLY_BUSH, RenderLayer.getCutout());
 
         EntityModelLayerRegistry.registerModelLayer(ImpillagerModel.IMPILLAGER, ImpillagerModel::getTexturedModelData);
+
         EntityRendererRegistry.register(ModEntities.IMPILLAGER, ImpillagerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.DUNG_BALL, FlyingItemEntityRenderer::new);
 
         ParticleFactoryRegistry.getInstance().register(ModParticleTypes.FIREFLY,((spriteProvider) -> {
             return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
