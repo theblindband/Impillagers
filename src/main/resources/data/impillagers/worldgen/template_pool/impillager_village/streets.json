@@ -9,7 +9,29 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 10
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/streets/straight_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "terrain_matching"
+      },
+      "weight": 4
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/streets/straight_3",
+        "processors": {
+          "processors": []
+        },
+        "projection": "terrain_matching"
+      },
+      "weight": 4
     },
     {
       "element": {
@@ -20,7 +42,18 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 5
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/streets/corner_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "terrain_matching"
+      },
+      "weight": 3
     },
     {
       "element": {
@@ -31,7 +64,29 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 2
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/streets/crossroads_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "terrain_matching"
+      },
+      "weight": 3
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/streets/crossroads_3",
+        "processors": {
+          "processors": []
+        },
+        "projection": "terrain_matching"
+      },
+      "weight": 3
     }
   ],
   "fallback": "impillagers:impillager_village/terminators"

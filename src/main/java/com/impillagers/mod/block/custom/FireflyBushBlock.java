@@ -5,8 +5,10 @@ import com.impillagers.mod.sounds.ModSoundEvents;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.SlabType;
+import net.minecraft.item.ItemStack;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -19,9 +21,10 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+import net.minecraft.world.WorldView;
 import net.minecraft.world.timer.TimerCallback;
 
-public class FireflyBushBlock extends PlantBlock {
+public class FireflyBushBlock extends PlantBlock implements Fertilizable {
     public static final MapCodec<DeadBushBlock> CODEC = createCodec(DeadBushBlock::new);
     protected static final float field_31080 = 6.0F;
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
@@ -76,6 +79,21 @@ public class FireflyBushBlock extends PlantBlock {
             BlockState newState = currentState.with(Properties.LIT, false);
             world.setBlockState(pos, newState);
         }
+    }
+
+    @Override
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
+        return true;
+    }
+
+    @Override
+    public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {
+        return true;
+    }
+
+    @Override
+    public void grow(ServerWorld world, Random random, BlockPos pos, BlockState state) {
+        dropStack(world, pos, new ItemStack(this));
     }
 
     @Override

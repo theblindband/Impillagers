@@ -3,35 +3,49 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/impillagers/unemployed",
+        "location": "impillagers:impillager_village/decor/lamp_1",
         "processors": {
           "processors": []
         },
         "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/decor/stone_pillar_1",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 20
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/decor/stone_pillar_2",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 20
+    },
+    {
+      "element": {
+        "element_type": "minecraft:feature_pool_element",
+        "feature": "minecraft:pile_pumpkin",
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
+        "element_type": "minecraft:empty_pool_element"
       },
       "weight": 10
-    },
-    {
-      "element": {
-        "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/impillagers/baby",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/impillagers/nitwit",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 1
     }
   ],
   "fallback": "minecraft:empty"
