@@ -4,6 +4,7 @@ import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.item.custom.DungBallItem;
+import com.impillagers.mod.item.custom.FrogMaskItem;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -17,7 +18,7 @@ public class ModItems {
 
     //Ruin Loot
     public static final Item FROG_MASK = registerItem("frog_mask", new
-            ArmorItem(ModArmorMaterials.FROG_MASK_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()));
+            FrogMaskItem(ModArmorMaterials.FROG_MASK_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings()));
     public static final Item IMP_POTTERY_SHERD = registerItem("imp_pottery_sherd", new Item(new Item.Settings()));
     public static final Item COVER_POTTERY_SHERD = registerItem("cover_pottery_sherd", new Item(new Item.Settings()));
 

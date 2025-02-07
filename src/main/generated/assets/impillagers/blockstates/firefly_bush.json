@@ -1,10 +1,7 @@
 {
   "variants": {
-    "lit=false": {
+    "": {
       "model": "impillagers:block/firefly_bush"
-    },
-    "lit=true": {
-      "model": "impillagers:block/firefly_bush_lit"
     }
   }
 }

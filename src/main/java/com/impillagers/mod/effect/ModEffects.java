@@ -13,6 +13,8 @@ public class ModEffects {
 
     public static final RegistryEntry<StatusEffect> SMELLY = registerStatusEffect("smelly",
             new SmellyEffect(StatusEffectCategory.NEUTRAL, 0x36ebab));
+    public static final RegistryEntry<StatusEffect> CALL_OF_THE_IMPS = registerStatusEffect("call_of_the_imps",
+            new SmellyEffect(StatusEffectCategory.NEUTRAL, 0x36ebab));
 
     private  static RegistryEntry<StatusEffect> registerStatusEffect(String name, StatusEffect statusEffect) {
         return Registry.registerReference(Registries.STATUS_EFFECT, Identifier.of(Impillagers.MOD_ID, name), statusEffect);
