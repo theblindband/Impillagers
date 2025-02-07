@@ -64,6 +64,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.SINKING_MUD)
                 .add(ModBlocks.DUNG_BLOCK);
 
+        getOrCreateTagBuilder(BlockTags.DIRT)
+                .add(ModBlocks.SINKING_MUD);
+
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
                 .add(ModBlocks.BELLADONNA);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS)

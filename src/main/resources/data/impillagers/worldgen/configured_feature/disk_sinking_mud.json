@@ -30,9 +30,6 @@
     "placement": {
       "type": "minecraft:height_range",
       "config": {
-        "min_inclusive": {
-          "absolute": 0
-        },
         "max_inclusive": {
           "absolute": 62
         }
