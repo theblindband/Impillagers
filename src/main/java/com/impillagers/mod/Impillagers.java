@@ -7,6 +7,7 @@ import com.impillagers.mod.entity.custom.ImpillagerEntity;
 import com.impillagers.mod.item.ModItemGroups;
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.particle.ModParticleTypes;
+import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.villager.Banker;
 import com.impillagers.mod.villager.DungCollector;
 import net.fabricmc.api.ModInitializer;
@@ -33,12 +34,13 @@ public class Impillagers implements ModInitializer {
 	public void onInitialize() {
 		LOGGER.info("Initializing imp mischief.");
 
-		ModItemGroups.registerItemGroups();
+		ModItemGroups.registerModItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModParticleTypes.registerModParticles();
 		ModEffects.registerModEffects();
+		ModSoundEvents.registerModSounds();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);

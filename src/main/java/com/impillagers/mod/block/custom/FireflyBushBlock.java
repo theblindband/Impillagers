@@ -1,11 +1,14 @@
 package com.impillagers.mod.block.custom;
 
 import com.impillagers.mod.particle.ModParticleTypes;
+import com.impillagers.mod.sounds.ModSoundEvents;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.SlabType;
 import net.minecraft.particle.ParticleTypes;
 import net.minecraft.registry.tag.BlockTags;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
@@ -16,6 +19,7 @@ import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.LightType;
 import net.minecraft.world.World;
+import net.minecraft.world.timer.TimerCallback;
 
 public class FireflyBushBlock extends PlantBlock {
     public static final MapCodec<DeadBushBlock> CODEC = createCodec(DeadBushBlock::new);
@@ -56,6 +60,7 @@ public class FireflyBushBlock extends PlantBlock {
                 mutable.set(i + MathHelper.nextInt(random, -10, 10), j + random.nextInt(10), k + MathHelper.nextInt(random, -10, 10));
                 BlockState blockState = world.getBlockState(mutable);
                 if (!blockState.isFullCube(world, mutable)) {
+                    world.playSound(pos.getX(), pos.getY(), pos.getZ(), ModSoundEvents.FIREFLY_BUSH, SoundCategory.AMBIENT, 1.0F, 1.0F, false);
                     world.addParticle(
                             ModParticleTypes.FIREFLY,
                             (double) mutable.getX() + random.nextDouble(),
