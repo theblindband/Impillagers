@@ -38,4 +38,12 @@ public class ModTags {
             return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(Impillagers.MOD_ID, name));
         }
     }
+
+    public static class StructureKeys {
+        public static final TagKey<Structure> IMPILLAGER_VILLAGE = createTag("impillager_village");
+
+        private static TagKey<Structure> createTag(String name) {
+            return TagKey.of(RegistryKeys.STRUCTURE, Identifier.of(Impillagers.MOD_ID, name));
+        }
+    }
 }

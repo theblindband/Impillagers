@@ -10,12 +10,16 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 import java.util.List;
 import java.util.Map;
 
 public class FrogMaskItem extends ArmorItem {
+
+    BlockPos villageLocation = null;
+
     private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
                     .put(ModArmorMaterials.FROG_MASK_MATERIAL,
@@ -45,6 +49,8 @@ public class FrogMaskItem extends ArmorItem {
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffects);
+
+
             }
         }
     }
