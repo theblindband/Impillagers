@@ -93,8 +93,8 @@ public class FrogMaskItem extends ArmorItem {
 
         if (villageLocation != null) {
             if (!villageLocation.equals(stack.get(ModDataComponentTypes.COORDINATES))) {
+                Impillagers.LOGGER.info("Impillagers - Frog Mask - Updating nearest Impillager Village coordinates to: " + villageLocation + " from " + stack.get((ModDataComponentTypes.COORDINATES)));
                 stack.set(ModDataComponentTypes.COORDINATES, villageLocation);
-                Impillagers.LOGGER.info("Impillagers - Frog Mask - Updating nearest Impillager Village coordinates to: " + stack.get((ModDataComponentTypes.COORDINATES)));
             }
         }
     }
