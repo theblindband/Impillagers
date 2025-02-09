@@ -1,8 +1,11 @@
 package com.impillagers.mod.item.custom;
 
 import com.google.common.collect.ImmutableMap;
+import com.impillagers.mod.Impillagers;
+import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.item.ModArmorMaterials;
+import com.impillagers.mod.util.ModTags;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -10,6 +13,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -18,7 +22,6 @@ import java.util.Map;
 
 public class FrogMaskItem extends ArmorItem {
 
-    BlockPos villageLocation = null;
 
     private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
@@ -49,8 +52,6 @@ public class FrogMaskItem extends ArmorItem {
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
                 addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffects);
-
-
             }
         }
     }
@@ -76,9 +77,25 @@ public class FrogMaskItem extends ArmorItem {
         for (ItemStack armorStack : player.getInventory().armor) {
             if (armorStack.getItem() instanceof FrogMaskItem) {
                 ArmorItem helmet = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
-                return helmet.getMaterial() == material;
+                if (helmet.getMaterial() == material)
+                {
+                    updateVillageCoordinates(armorStack, player);
+                    return true;
+                }
             }
         }
         return false;
+    }
+
+    private void updateVillageCoordinates(ItemStack stack, PlayerEntity player) {
+        ServerWorld serverWorld = (ServerWorld) player.getWorld();
+        BlockPos villageLocation = serverWorld.locateStructure(ModTags.StructureKeys.IMPILLAGER_VILLAGE, BlockPos.ofFloored(player.getPos()), 20000, false);
+
+        if (villageLocation != null) {
+            if (!villageLocation.equals(stack.get(ModDataComponentTypes.COORDINATES))) {
+                stack.set(ModDataComponentTypes.COORDINATES, villageLocation);
+                Impillagers.LOGGER.info("Impillagers - Frog Mask - Updating nearest Impillager Village coordinates to: " + stack.get((ModDataComponentTypes.COORDINATES)));
+            }
+        }
     }
 }

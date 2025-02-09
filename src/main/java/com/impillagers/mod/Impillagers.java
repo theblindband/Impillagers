@@ -1,6 +1,7 @@
 package com.impillagers.mod;
 
 import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.ImpillagerEntity;
@@ -41,6 +42,7 @@ public class Impillagers implements ModInitializer {
 		ModParticleTypes.registerModParticles();
 		ModEffects.registerModEffects();
 		ModSoundEvents.registerModSounds();
+		ModDataComponentTypes.registerDataComponentTypes();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
