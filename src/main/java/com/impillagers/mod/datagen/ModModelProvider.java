@@ -4,6 +4,7 @@ import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.data.client.BlockStateModelGenerator;
 import net.minecraft.data.client.ItemModelGenerator;
 import net.minecraft.data.client.Model;
@@ -41,9 +42,15 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BELLADONNA, ModBlocks.POTTED_BELLADONNA, BlockStateModelGenerator.TintType.TINTED);
-        blockStateModelGenerator.registerTintableCross(ModBlocks.FIREFLY_BUSH, BlockStateModelGenerator.TintType.TINTED);
+        //blockStateModelGenerator.registerTintableCross(ModBlocks.FIREFLY_BUSH, BlockStateModelGenerator.TintType.TINTED);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DUNG_BLOCK);
+
+        BlockStateModelGenerator.BlockTexturePool packed_mud_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PACKED_MUD);
+
+        packed_mud_pool.stairs(ModBlocks.PACKED_MUD_STAIRS);
+        packed_mud_pool.slab(ModBlocks.PACKED_MUD_SLAB);
+        packed_mud_pool.wall(ModBlocks.PACKED_MUD_WALL);
     }
 
     @Override

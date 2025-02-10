@@ -53,6 +53,11 @@ public class ModItemGroups {
                         entries.add(ModBlocks.DUNG_BLOCK);
                         entries.add(ModItems.DUNG_BALL);
 
+                        //Vanilla Block Expansions
+                        entries.add(ModBlocks.PACKED_MUD_STAIRS);
+                        entries.add(ModBlocks.PACKED_MUD_SLAB);
+                        entries.add(ModBlocks.PACKED_MUD_WALL);
+
                     }).build());
 
     public static void registerModItemGroups() {

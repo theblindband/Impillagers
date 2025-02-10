@@ -37,6 +37,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.FENCE_GATES)
                 .add(ModBlocks.PURPLE_HEART_FENCE_GATE);
 
+        getOrCreateTagBuilder(BlockTags.STAIRS)
+                .add(ModBlocks.PACKED_MUD_STAIRS);
+        getOrCreateTagBuilder(BlockTags.SLABS)
+                .add(ModBlocks.PACKED_MUD_SLAB);
+        getOrCreateTagBuilder(BlockTags.WALLS)
+                .add(ModBlocks.PACKED_MUD_WALL);
+
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
                 .add(ModBlocks.PURPLE_HEART_DOOR);
         getOrCreateTagBuilder(BlockTags.WOODEN_TRAPDOORS)

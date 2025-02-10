@@ -55,6 +55,10 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.FIREFLY_BUSH);
 
         addDrop(ModBlocks.DUNG_BLOCK, multipleOreDrops(ModBlocks.DUNG_BLOCK, ModItems.DUNG_BALL, 1, 4));
+
+        addDrop(ModBlocks.PACKED_MUD_STAIRS);
+        addDrop(ModBlocks.PACKED_MUD_SLAB);
+        addDrop(ModBlocks.PACKED_MUD_WALL);
     }
 
     //Loot Table Builders
