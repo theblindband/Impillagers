@@ -15,6 +15,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -80,6 +81,9 @@ public class FrogMaskItem extends ArmorItem {
                 if (helmet.getMaterial() == material)
                 {
                     updateVillageCoordinates(armorStack, player);
+                    if (isLookingAtVIllage(armorStack, player)) {
+                        Impillagers.LOGGER.info("Impillagers - Frog Mask - Player is looking at Village");
+                    }
                     return true;
                 }
             }
@@ -97,5 +101,18 @@ public class FrogMaskItem extends ArmorItem {
                 stack.set(ModDataComponentTypes.COORDINATES, villageLocation);
             }
         }
+    }
+
+    private boolean isLookingAtVIllage(ItemStack stack, PlayerEntity player) {
+        BlockPos village = stack.get((ModDataComponentTypes.COORDINATES));
+        if (village != null) {
+            Vec3d viewDirection = new Vec3d(player.getRotationVec(1.0F).x, 0, player.getRotationVec(1.0F).z).normalize();
+            Vec3d villageDirection = new Vec3d(village.getX() - player.getX(), 0, village.getZ() - player.getZ()).normalize();
+            double dotProduct = viewDirection.dotProduct(villageDirection);
+            double angle = Math.acos(dotProduct);
+            angle = Math.toDegrees(angle);
+            return angle < 15.0;
+        }
+        return false;
     }
 }
