@@ -27,7 +27,7 @@ public class FrogMaskItem extends ArmorItem {
     private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
                     .put(ModArmorMaterials.FROG_MASK_MATERIAL,
-                            List.of(new StatusEffectInstance(ModEffects.CALL_OF_THE_IMPS, 100, 0, false, false))).build();
+                            List.of(new StatusEffectInstance(ModEffects.CALL_OF_THE_IMPS, 40, 0, false, false))).build();
 
     public FrogMaskItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
         super(material, type, settings);
@@ -83,8 +83,8 @@ public class FrogMaskItem extends ArmorItem {
                     updateVillageCoordinates(armorStack, player);
                     if (isLookingAtVIllage(armorStack, player)) {
                         Impillagers.LOGGER.info("Impillagers - Frog Mask - Player is looking at Village");
+                        return true;
                     }
-                    return true;
                 }
             }
         }
