@@ -22,6 +22,9 @@
   "block.impillagers.firefly_bush": "Firefly Bush",
   "block.impillagers.sinking_mud": "Sinking Mud",
   "block.impillagers.dung_block": "Dung Block",
+  "block.impillagers.packed_mud_stairs": "Packed Mud Stairs",
+  "block.impillagers.packed_mud_slab": "Packed Mud Slab",
+  "block.impillagers.packed_mud_wall": "Packed Mud Wall",
 
   "item.impillagers.imp_pottery_sherd": "Imp Pottery Sherd",
   "item.impillagers.cover_pottery_sherd": "Cover Pottery Sherd",
