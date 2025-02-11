@@ -6,6 +6,9 @@ import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.item.ModArmorMaterials;
 import com.impillagers.mod.util.ModTags;
+import com.impillagers.mod.util.OpacityAccessor;
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.gui.hud.InGameHud;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -22,7 +25,6 @@ import java.util.List;
 import java.util.Map;
 
 public class FrogMaskItem extends ArmorItem {
-
 
     private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
@@ -81,8 +83,10 @@ public class FrogMaskItem extends ArmorItem {
                 if (helmet.getMaterial() == material)
                 {
                     updateVillageCoordinates(armorStack, player);
-                    if (isLookingAtVIllage(armorStack, player)) {
-                        Impillagers.LOGGER.info("Impillagers - Frog Mask - Player is looking at Village");
+                    float threshold = 45.0f;
+                    double angle = isLookingAtVillage(armorStack, player, threshold);
+                    if ( angle >= 0) {
+                        //Impillagers.LOGGER.info("Impillagers - Frog Mask - Player is looking at Village");
                         return true;
                     }
                 }
@@ -103,7 +107,7 @@ public class FrogMaskItem extends ArmorItem {
         }
     }
 
-    private boolean isLookingAtVIllage(ItemStack stack, PlayerEntity player) {
+    private double isLookingAtVillage(ItemStack stack, PlayerEntity player, float threshold) {
         BlockPos village = stack.get((ModDataComponentTypes.COORDINATES));
         if (village != null) {
             Vec3d viewDirection = new Vec3d(player.getRotationVec(1.0F).x, 0, player.getRotationVec(1.0F).z).normalize();
@@ -111,8 +115,20 @@ public class FrogMaskItem extends ArmorItem {
             double dotProduct = viewDirection.dotProduct(villageDirection);
             double angle = Math.acos(dotProduct);
             angle = Math.toDegrees(angle);
-            return angle < 15.0;
+            InGameHud inGameHud = MinecraftClient.getInstance().inGameHud;
+            if (inGameHud instanceof OpacityAccessor) {((OpacityAccessor) inGameHud).impillagers$setOverlayOpacity(calculateOpacity(angle, threshold));}
+            if (angle < threshold) {return angle;}
         }
-        return false;
+        return -1;
     }
+
+    public float calculateOpacity(double angle, double threshold) {
+        if (angle >= threshold) {
+            return 0f;
+        } else {
+            double ratio = angle / threshold;
+            return (float)(1 - Math.pow(ratio, 2));
+        }
+    }
+
 }

@@ -1,14 +1,18 @@
 {
-	"required": true,
-	"package": "com.impillagers.mod.mixin",
-	"compatibilityLevel": "JAVA_21",
-	"mixins": [
-		"ExampleMixin",
-		"SignTypeAccessor",
-		"BlockEntityTypeMixin",
-		"SmellyEffectMixin"
-	],
-	"injectors": {
-		"defaultRequire": 1
-	}
+  "required": true,
+  "package": "com.impillagers.mod.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "BlockEntityTypeMixin",
+    "ExampleMixin",
+    "SignTypeAccessor",
+    "SmellyEffectMixin",
+    "CallOfTheImpsOverlayMixin",
+    "InGameHudAccessor"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "client": [
+  ]
 }
