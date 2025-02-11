@@ -78,5 +78,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.BELLADONNA);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
                 .add(ModBlocks.POTTED_BELLADONNA);
+
+        getOrCreateTagBuilder(BlockTags.TALL_FLOWERS)
+                .add(ModBlocks.SWAMP_REED);
     }
 }

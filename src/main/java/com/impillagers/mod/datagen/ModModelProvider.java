@@ -43,6 +43,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BELLADONNA, ModBlocks.POTTED_BELLADONNA, BlockStateModelGenerator.TintType.TINTED);
         //blockStateModelGenerator.registerTintableCross(ModBlocks.FIREFLY_BUSH, BlockStateModelGenerator.TintType.TINTED);
+        blockStateModelGenerator.registerDoubleBlock(ModBlocks.SWAMP_REED, BlockStateModelGenerator.TintType.TINTED);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DUNG_BLOCK);
 

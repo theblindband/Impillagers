@@ -39,6 +39,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.SINKING_MUD);
                         entries.add(ModBlocks.BELLADONNA);
                         entries.add(ModBlocks.FIREFLY_BUSH);
+                        entries.add(ModBlocks.SWAMP_REED);
 
                         //Ruin Loot
                         entries.add(ModItems.FROG_MASK);
@@ -47,11 +48,13 @@ public class ModItemGroups {
 
                         //Imp Stuff
                         entries.add(ModItems.IMPILLAGER_SPAWN_EGG);
+                        entries.add(ModBlocks.DUNG_BLOCK);
+                        entries.add(ModItems.DUNG_BALL);
+
+                        //Imp Trade Stuff
                         entries.add(ModItems.GOLD_COIN);
                         entries.add(ModItems.FAKE_GOLD_COIN);
                         entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
-                        entries.add(ModBlocks.DUNG_BLOCK);
-                        entries.add(ModItems.DUNG_BALL);
 
                         //Vanilla Block Expansions
                         entries.add(ModBlocks.PACKED_MUD_STAIRS);

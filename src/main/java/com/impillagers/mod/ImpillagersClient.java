@@ -25,6 +25,7 @@ public class ImpillagersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BELLADONNA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BELLADONNA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FIREFLY_BUSH, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SWAMP_REED, RenderLayer.getCutout());
 
         EntityModelLayerRegistry.registerModelLayer(ImpillagerModel.IMPILLAGER, ImpillagerModel::getTexturedModelData);
 

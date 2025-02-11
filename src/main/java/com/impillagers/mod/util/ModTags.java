@@ -24,6 +24,7 @@ public class ModTags {
     public static class Items {
 
         public static final TagKey<Item> PURPLE_HEART_LOGS = createTag("purple_heart_logs");
+        public static final TagKey<Item> FROG_POISONOUS_FOOD = createTag("frog_poisonous_food");
 
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Impillagers.MOD_ID, name));
