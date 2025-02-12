@@ -70,5 +70,11 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ItemTags.SMALL_FLOWERS)
                 .add(ModBlocks.BELLADONNA.asItem());
+
+        getOrCreateTagBuilder(ItemTags.TALL_FLOWERS)
+                .add(ModBlocks.SWAMP_REED.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.FROG_POISONOUS_FOOD)
+                .add(ModBlocks.FIREFLY_BUSH.asItem());
     }
 }

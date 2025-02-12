@@ -3,6 +3,7 @@ package com.impillagers.mod.block;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.custom.BelladonnaBlock;
 import com.impillagers.mod.block.custom.FireflyBushBlock;
+import com.impillagers.mod.block.custom.ReedBlock;
 import com.impillagers.mod.block.custom.SinkingMudBlock;
 import com.impillagers.mod.block.entity.ModSignTypes;
 import com.impillagers.mod.block.init.ModBlockSetType;
@@ -46,10 +47,11 @@ public class ModBlocks {
     public static final Block PURPLE_HEART_WALL_HANGING_SIGN  = registerBlockWithoutItem("purple_heart_wall_hanging_sign", new WallHangingSignBlock(ModSignTypes.PURPLE_HEART, AbstractBlock.Settings.create().mapColor(MapColor.PURPLE).instrument(NoteBlockInstrument.BASS).strength(2.0F).sounds(BlockSoundGroup.WOOD)));
 
     //Natural Blocks
-    public static final Block SINKING_MUD = registerBlock("sinking_mud", new SinkingMudBlock(AbstractBlock.Settings.create().mapColor(MapColor.BLACK).strength(0.25F).sounds(BlockSoundGroup.MUD).dynamicBounds().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::never)));
+    public static final Block SINKING_MUD = registerBlock("sinking_mud", new SinkingMudBlock(AbstractBlock.Settings.create().mapColor(MapColor.BLACK).strength(0.25F).sounds(BlockSoundGroup.MUD).dynamicBounds().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::always)));
     public static final Block BELLADONNA = registerBlock("belladonna", new BelladonnaBlock(SuspiciousStewEffectsComponent.DEFAULT, AbstractBlock.Settings.copy(Blocks.POPPY)));
     public static final Block POTTED_BELLADONNA = registerBlockWithoutItem("potted_belladonna", new FlowerPotBlock(ModBlocks.BELLADONNA, AbstractBlock.Settings.copy(Blocks.POTTED_POPPY)));
     public static final Block FIREFLY_BUSH = registerBlock("firefly_bush", new FireflyBushBlock(AbstractBlock.Settings.copy(Blocks.POPPY).luminance(createLightLevelFromLitBlockState(6))));
+    public static final Block SWAMP_REED = registerBlock("swamp_reed", new ReedBlock(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH)));
 
     //Imp Blocks
     public static final Block DUNG_BLOCK = registerBlock("dung_block", new Block(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(BlockSoundGroup.MUD)));

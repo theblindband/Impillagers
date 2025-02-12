@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "impillagers:block/swamp_reed_top"
+  }
+}

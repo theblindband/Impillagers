@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "impillagers:block/swamp_reed_bottom"
+    },
+    "half=upper": {
+      "model": "impillagers:block/swamp_reed_top"
+    }
+  }
+}
