@@ -40,6 +40,9 @@ public class ModItemGroups {
                         entries.add(ModBlocks.BELLADONNA);
                         entries.add(ModBlocks.FIREFLY_BUSH);
 
+                        entries.add(ModItems.FIREFLY_JAR);
+                        entries.add(ModItems.EMPTY_JAR);
+
                         //Ruin Loot
                         entries.add(ModItems.FROG_MASK);
                         entries.add(ModItems.IMP_POTTERY_SHERD);
