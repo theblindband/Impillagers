@@ -28,7 +28,6 @@ import net.minecraft.world.WorldView;
 
 public class FireflyBushBlock extends PlantBlock implements Fertilizable {
     public static final MapCodec<DeadBushBlock> CODEC = createCodec(DeadBushBlock::new);
-    //protected static final float field_31080 = 6.0F;
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
     public static final BooleanProperty LIT = Properties.LIT;
     public static final BooleanProperty USED = BooleanProperty.of("used");
@@ -89,7 +88,7 @@ public class FireflyBushBlock extends PlantBlock implements Fertilizable {
         } else {
             if (timeToRelight > 0) {
                 timeToRelight = timeToRelight - 1;
-            } else { used = false;}
+            } else { world.setBlockState(pos, state.with(USED, false));}
         }
     }
 
