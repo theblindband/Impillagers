@@ -60,16 +60,18 @@ public class FireflyBushBlock extends PlantBlock implements Fertilizable {
         BlockPos.Mutable mutable = new BlockPos.Mutable();
         BlockState currentState = world.getBlockState(pos);
         boolean used = state.get(USED);
+        //Might be a better idea to use the lit state instead
 
+        //If lit is true then emits particles
         if (!used) {
             if (world.getLightLevel(LightType.BLOCK, pos) < 7 && world.getTimeOfDay() >= 13000 && world.getTimeOfDay() <= 23000) {
                 BlockState newState = currentState.with(Properties.LIT, true);
                 world.setBlockState(pos, newState);
+                world.playSound(pos.getX(), pos.getY(), pos.getZ(), ModSoundEvents.FIREFLY_BUSH, SoundCategory.AMBIENT, 1.0F, 1.0F, false);
                 for (int l = 0; l < 1; l++) {
                     mutable.set(i + MathHelper.nextInt(random, -10, 10), j + random.nextInt(10), k + MathHelper.nextInt(random, -10, 10));
                     BlockState blockState = world.getBlockState(mutable);
                     if (!blockState.isFullCube(world, mutable)) {
-                        world.playSound(pos.getX(), pos.getY(), pos.getZ(), ModSoundEvents.FIREFLY_BUSH, SoundCategory.AMBIENT, 1.0F, 1.0F, false);
                         world.addParticle(
                                 ModParticleTypes.FIREFLY,
                                 (double) mutable.getX() + random.nextDouble(),
@@ -85,6 +87,8 @@ public class FireflyBushBlock extends PlantBlock implements Fertilizable {
                 BlockState newState = currentState.with(Properties.LIT, false);
                 world.setBlockState(pos, newState);
             }
+        //If lit is false then check timer for relight
+            //If timer is 0 then lit is true
         } else {
             if (timeToRelight > 0) {
                 timeToRelight = timeToRelight - 1;
@@ -116,6 +120,7 @@ public class FireflyBushBlock extends PlantBlock implements Fertilizable {
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
             {
                 if (!world.isClient()) {
+                    //If lit is true then you can use jar on the bush and set timer to XXXX
                     boolean used = state.get(USED);
                     if (!used) {
                         ItemStack heldItem = player.getStackInHand(hand);

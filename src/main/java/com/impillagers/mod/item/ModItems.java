@@ -28,7 +28,7 @@ public class ModItems {
     public static final Item GOLD_COIN = registerItem("gold_coin", new Item(new Item.Settings()));
     public static final Item FAKE_GOLD_COIN = registerItem("fake_gold_coin", new Item(new Item.Settings()));
     public static final Item EMPTY_JAR = registerItem("empty_jar", new Item(new Item.Settings().maxCount(16)));
-    public static final Item FIREFLY_JAR = registerItem("firefly_jar", new BlockItem(ModBlocks.FIREFLY_JAR, new Item.Settings().maxCount(1)));
+    public static final Item FIREFLY_JAR = registerItem("firefly_jar", new BlockItem(ModBlocks.FIREFLY_JAR, new Item.Settings().maxCount(16)));
     public static final Item PAINTED_SMITHING_TEMPLATE = registerItem("painted_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of(Impillagers.MOD_ID, "painted"), FeatureFlags.VANILLA));
     public static final Item DUNG_BALL = registerItem("dung_ball", new DungBallItem(new Item.Settings()));
 
