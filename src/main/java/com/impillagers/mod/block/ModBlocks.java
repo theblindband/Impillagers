@@ -1,10 +1,7 @@
 package com.impillagers.mod.block;
 
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.block.custom.BelladonnaBlock;
-import com.impillagers.mod.block.custom.FireflyBushBlock;
-import com.impillagers.mod.block.custom.ReedBlock;
-import com.impillagers.mod.block.custom.SinkingMudBlock;
+import com.impillagers.mod.block.custom.*;
 import com.impillagers.mod.block.entity.ModSignTypes;
 import com.impillagers.mod.block.init.ModBlockSetType;
 import com.impillagers.mod.world.tree.ModSaplingGenerators;
@@ -59,6 +56,8 @@ public class ModBlocks {
     public static final Block PACKED_MUD_STAIRS = registerBlock("packed_mud_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
     public static final Block PACKED_MUD_SLAB = registerBlock("packed_mud_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
     public static final Block PACKED_MUD_WALL = registerBlock("packed_mud_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
+
+    public static final Block FIREFLY_JAR = registerBlockWithoutItem("firefly_jar", new FireflyJarBlock(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(BlockSoundGroup.GLASS)));
     //Register Methods
     private static Block registerBlock(String name, Block block) {
         registerBlockItem(name, block);

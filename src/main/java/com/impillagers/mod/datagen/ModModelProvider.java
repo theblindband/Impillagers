@@ -49,6 +49,8 @@ public class ModModelProvider extends FabricModelProvider {
 
         BlockStateModelGenerator.BlockTexturePool packed_mud_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PACKED_MUD);
 
+        blockStateModelGenerator.registerLantern(ModBlocks.FIREFLY_JAR);
+
         packed_mud_pool.stairs(ModBlocks.PACKED_MUD_STAIRS);
         packed_mud_pool.slab(ModBlocks.PACKED_MUD_SLAB);
         packed_mud_pool.wall(ModBlocks.PACKED_MUD_WALL);
