@@ -4,11 +4,12 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlockEntityTypeMixin",
-    "ExampleMixin",
-    "SignTypeAccessor",
-    "SmellyEffectMixin",
     "CallOfTheImpsOverlayMixin",
-    "InGameHudAccessor"
+    "ExampleMixin",
+    "InGameHudAccessor",
+    "PointOfInterestTaskMixin",
+    "SignTypeAccessor",
+    "SmellyEffectMixin"
   ],
   "injectors": {
     "defaultRequire": 1
