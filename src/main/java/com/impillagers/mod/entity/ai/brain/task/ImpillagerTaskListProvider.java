@@ -51,7 +51,7 @@ public class ImpillagerTaskListProvider {
                 Pair.of(5, WalkToNearestVisibleWantedItemTask.create(speed, false, 4)),
                 Pair.of(
                         6,
-                        FindPointOfInterestTask.create(profession.acquirableWorkstation(), MemoryModuleType.JOB_SITE, MemoryModuleType.POTENTIAL_JOB_SITE, true, Optional.empty())
+                        ImpillagerFindPointOfInterestTask.create(profession.acquirableWorkstation(), MemoryModuleType.JOB_SITE, MemoryModuleType.POTENTIAL_JOB_SITE, true, Optional.empty())
                 ),
                 Pair.of(7, new WalkTowardJobSiteTask(speed)),
                 Pair.of(8, TakeJobSiteTask.create(speed)),
