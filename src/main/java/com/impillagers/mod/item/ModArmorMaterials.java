@@ -22,7 +22,7 @@ public class ModArmorMaterials {
             () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
                 map.put(ArmorItem.Type.HELMET, 0);
             }), 0, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, () -> Ingredient.EMPTY,
-                    List.of(), 0,0));
+                    List.of(new ArmorMaterial.Layer(Identifier.of(Impillagers.MOD_ID, "frog_mask"))), 0,0));
 
     public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material) {
         return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.of(Impillagers.MOD_ID, name), material.get());
