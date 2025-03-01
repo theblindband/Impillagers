@@ -21,22 +21,22 @@ import java.util.Map;
 public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<ImpillagerEntity,ImpillagerModel<ImpillagerEntity>> {
 
     private static final Map<VillagerProfession, Identifier> PROFESSION_TEXTURES = ImmutableMap.ofEntries(
-            Map.entry(VillagerProfession.ARMORER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_armorer.png")),
-            Map.entry(VillagerProfession.BUTCHER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_butcher.png")),
-            Map.entry(VillagerProfession.CARTOGRAPHER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_cartographer.png")),
-            Map.entry(VillagerProfession.CLERIC, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_cleric.png")),
-            Map.entry(VillagerProfession.FARMER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_farmer.png")),
-            Map.entry(VillagerProfession.FISHERMAN, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_fisherman.png")),
-            Map.entry(VillagerProfession.FLETCHER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_fletcher.png")),
-            Map.entry(VillagerProfession.LEATHERWORKER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_leatherworker.png")),
-            Map.entry(VillagerProfession.LIBRARIAN, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_librarian.png")),
-            Map.entry(VillagerProfession.MASON, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_mason.png")),
-            Map.entry(VillagerProfession.SHEPHERD, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_shepherd.png")),
-            Map.entry(VillagerProfession.TOOLSMITH, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_toolsmith.png")),
-            Map.entry(VillagerProfession.WEAPONSMITH, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_weaponsmith.png")),
-            Map.entry(VillagerProfession.NITWIT, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_nitwit.png")),
-            Map.entry(DungCollector.DUNG_COLLECTOR, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_dung_collector.png")),
-            Map.entry(Banker.BANKER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager_banker.png"))
+            Map.entry(VillagerProfession.ARMORER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_armorer.png")),
+            Map.entry(VillagerProfession.BUTCHER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_butcher.png")),
+            Map.entry(VillagerProfession.CARTOGRAPHER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_cartographer.png")),
+            Map.entry(VillagerProfession.CLERIC, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_cleric.png")),
+            Map.entry(VillagerProfession.FARMER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_farmer.png")),
+            Map.entry(VillagerProfession.FISHERMAN, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_fisherman.png")),
+            Map.entry(VillagerProfession.FLETCHER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_fletcher.png")),
+            Map.entry(VillagerProfession.LEATHERWORKER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_leatherworker.png")),
+            Map.entry(VillagerProfession.LIBRARIAN, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_librarian.png")),
+            Map.entry(VillagerProfession.MASON, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_mason.png")),
+            Map.entry(VillagerProfession.SHEPHERD, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_shepherd.png")),
+            Map.entry(VillagerProfession.TOOLSMITH, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_toolsmith.png")),
+            Map.entry(VillagerProfession.WEAPONSMITH, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_weaponsmith.png")),
+            Map.entry(VillagerProfession.NITWIT, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_nitwit.png")),
+            Map.entry(DungCollector.DUNG_COLLECTOR, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_dung_collector.png")),
+            Map.entry(Banker.BANKER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/impillager_banker.png"))
     );
 
     public ImpillagerProfessionFeatureRenderer(FeatureRendererContext<ImpillagerEntity, ImpillagerModel<ImpillagerEntity>> featureRendererContext) {

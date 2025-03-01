@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "hanging=false,lit=true": {
+      "model": "impillagers:block/firefly_bottle"
+    },
+    "hanging=true,lit=true": {
+      "model": "impillagers:block/firefly_bottle_hanging"
+    },
+    "hanging=false,lit=false": {
+      "model": "impillagers:block/firefly_bottle_open"
+    },
+    "hanging=true,lit=false": {
+      "model": "impillagers:block/firefly_bottle_hanging_open"
+    }
+  }
+}

@@ -38,11 +38,10 @@ public class ModItemGroups {
                         //Natural Items
                         entries.add(ModBlocks.SINKING_MUD);
                         entries.add(ModBlocks.BELLADONNA);
-                        entries.add(ModBlocks.FIREFLY_BUSH);
                         entries.add(ModBlocks.SWAMP_REED);
 
-                        entries.add(ModItems.FIREFLY_JAR);
-                        entries.add(ModItems.EMPTY_JAR);
+                        entries.add(ModBlocks.FIREFLY_BUSH);
+                        entries.add(ModItems.FIREFLY_BOTTLE);
 
                         //Ruin Loot
                         entries.add(ModItems.FROG_MASK);

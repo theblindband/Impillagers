@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "impillagers:item/empty_jar"
+    "layer0": "impillagers:item/firefly_bottle"
   }
 }

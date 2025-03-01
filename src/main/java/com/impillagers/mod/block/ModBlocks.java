@@ -57,7 +57,7 @@ public class ModBlocks {
     public static final Block PACKED_MUD_SLAB = registerBlock("packed_mud_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
     public static final Block PACKED_MUD_WALL = registerBlock("packed_mud_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
 
-    public static final Block FIREFLY_JAR = registerBlockWithoutItem("firefly_jar", new FireflyJarBlock(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromLitBlockState(15))));
+    public static final Block FIREFLY_BOTTLE = registerBlockWithoutItem("firefly_bottle", new FireflyBottleBlock(AbstractBlock.Settings.create().strength(0.3F).sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromLitBlockState(15))));
 
     //Register Methods
     private static Block registerBlock(String name, Block block) {

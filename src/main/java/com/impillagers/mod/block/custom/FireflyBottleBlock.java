@@ -21,12 +21,12 @@ import net.minecraft.world.LightType;
 import net.minecraft.world.World;
 import net.minecraft.world.event.GameEvent;
 
-public class FireflyJarBlock extends LanternBlock {
+public class FireflyBottleBlock extends LanternBlock {
     public static final BooleanProperty LIT = Properties.LIT;
     public static final BooleanProperty HANGING = Properties.HANGING;
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    public FireflyJarBlock(Settings settings) {
+    public FireflyBottleBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(LIT, Boolean.TRUE).with(HANGING, Boolean.valueOf(false)).with(WATERLOGGED, Boolean.valueOf(false)));
     }

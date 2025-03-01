@@ -8,6 +8,7 @@ import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
@@ -125,8 +126,8 @@ public class FireflyBushBlock extends PlantBlock implements Fertilizable {
                     if (!used) {
                         ItemStack heldItem = player.getStackInHand(hand);
 
-                        Item myItem = ModItems.EMPTY_JAR;
-                        Item newItem = ModItems.FIREFLY_JAR;
+                        Item myItem = Items.GLASS_BOTTLE;
+                        Item newItem = ModItems.FIREFLY_BOTTLE;
 
                         if (heldItem.getItem() == myItem) {
                             heldItem.decrement(1);

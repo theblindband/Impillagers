@@ -49,7 +49,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         BlockStateModelGenerator.BlockTexturePool packed_mud_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PACKED_MUD);
 
-        blockStateModelGenerator.registerLantern(ModBlocks.FIREFLY_JAR);
+        //blockStateModelGenerator.registerLantern(ModBlocks.FIREFLY_BOTTLE);
 
         packed_mud_pool.stairs(ModBlocks.PACKED_MUD_STAIRS);
         packed_mud_pool.slab(ModBlocks.PACKED_MUD_SLAB);
@@ -68,7 +68,5 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.DUNG_BALL, Models.GENERATED);
         itemModelGenerator.register(ModItems.GOLD_COIN, Models.GENERATED);
         itemModelGenerator.register(ModItems.FAKE_GOLD_COIN, Models.GENERATED);
-        itemModelGenerator.register(ModItems.EMPTY_JAR, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FIREFLY_JAR, Models.GENERATED);
     }
 }
