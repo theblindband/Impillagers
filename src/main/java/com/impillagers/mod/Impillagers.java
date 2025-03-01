@@ -11,6 +11,7 @@ import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.villager.Banker;
 import com.impillagers.mod.villager.DungCollector;
+import com.impillagers.mod.villager.ModTrades;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
@@ -43,6 +44,7 @@ public class Impillagers implements ModInitializer {
 		ModEffects.registerModEffects();
 		ModSoundEvents.registerModSounds();
 		ModDataComponentTypes.registerDataComponentTypes();
+		ModTrades.registerModTrades();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
@@ -75,13 +77,6 @@ public class Impillagers implements ModInitializer {
 
 		//Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());
-
-		//Trades
-		TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 1, factories -> {
-			factories.add((entity, random) -> new TradeOffer(
-					new TradedItem(Items.EMERALD, 3),
-					new ItemStack(ModItems.DUNG_BALL, 8), 7, 2, 0.04f));
-		});
 
 		//Potion Recipes
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
