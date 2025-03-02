@@ -5,10 +5,9 @@ import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.item.ModArmorMaterials;
+import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.util.ModTags;
-import com.impillagers.mod.util.OpacityAccessor;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.gui.hud.InGameHud;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -16,6 +15,7 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -86,7 +86,6 @@ public class FrogMaskItem extends ArmorItem {
                     float threshold = 45.0f;
                     double angle = isLookingAtVillage(armorStack, player, threshold);
                     if ( angle >= 0) {
-                        //Impillagers.LOGGER.info("Impillagers - Frog Mask - Player is looking at Village");
                         return true;
                     }
                 }
@@ -101,7 +100,6 @@ public class FrogMaskItem extends ArmorItem {
 
         if (villageLocation != null) {
             if (!villageLocation.equals(stack.get(ModDataComponentTypes.COORDINATES))) {
-                Impillagers.LOGGER.info("Impillagers - Frog Mask - Updating nearest Impillager Village coordinates to: " + villageLocation + " from " + stack.get((ModDataComponentTypes.COORDINATES)));
                 stack.set(ModDataComponentTypes.COORDINATES, villageLocation);
             }
         }
@@ -115,9 +113,14 @@ public class FrogMaskItem extends ArmorItem {
             double dotProduct = viewDirection.dotProduct(villageDirection);
             double angle = Math.acos(dotProduct);
             angle = Math.toDegrees(angle);
-            InGameHud inGameHud = MinecraftClient.getInstance().inGameHud;
-            if (inGameHud instanceof OpacityAccessor) {((OpacityAccessor) inGameHud).impillagers$setOverlayOpacity(calculateOpacity(angle, threshold));}
-            if (angle < threshold) {return angle;}
+            float opacity = calculateOpacity(angle, threshold);
+
+            if (!player.getEntityWorld().isClient()) {
+                    ServerPlayNetworking.send((ServerPlayerEntity) player, new HudOverlayOpacityPayload(opacity));
+                }
+            if (angle < threshold) {
+                return angle;
+            }
         }
         return -1;
     }

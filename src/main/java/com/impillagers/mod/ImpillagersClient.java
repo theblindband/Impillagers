@@ -4,10 +4,13 @@ import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.client.ImpillagerModel;
 import com.impillagers.mod.entity.client.ImpillagerRenderer;
+import com.impillagers.mod.entity.client.ModHud;
 import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.particle.custom.FireflyParticle;
+import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
+import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -17,6 +20,9 @@ import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 public class ImpillagersClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
+
+        ModHud.initializeModHud();
+
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_HEART_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_HEART_TRAPDOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_HEART_LEAVES, RenderLayer.getCutout());
@@ -38,5 +44,12 @@ public class ImpillagersClient implements ClientModInitializer {
                 return new FireflyParticle(world, x, y, z, spriteProvider);
             };
         }));
+
+        ClientPlayNetworking.registerGlobalReceiver(HudOverlayOpacityPayload.ID, (payload, context) -> {
+            context.client().execute(() -> {
+                ModHud.renderCallOfTheImpsOverlay (payload.opacity());
+            });
+        });
     }
+
 }

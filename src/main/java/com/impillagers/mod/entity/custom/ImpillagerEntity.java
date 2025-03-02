@@ -112,11 +112,6 @@ public class ImpillagerEntity extends VillagerEntity {
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
-        if (!getWorld().isClient) {
-            System.out.println("[Server] ImpillagerEntity: Texture is " + this.dataTracker.get(CUSTOM_TEXTURE));
-        } else {
-            System.out.println("[Client] ImpillagerEntity: Texture is " + this.dataTracker.get(CUSTOM_TEXTURE));
-        }
     }
 
     //-------------------------------------Animation-------------------------------------

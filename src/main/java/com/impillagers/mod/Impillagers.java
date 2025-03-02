@@ -9,10 +9,12 @@ import com.impillagers.mod.item.ModItemGroups;
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.sounds.ModSoundEvents;
+import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.villager.Banker;
 import com.impillagers.mod.villager.DungCollector;
 import com.impillagers.mod.villager.ModTrades;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
@@ -82,5 +84,8 @@ public class Impillagers implements ModInitializer {
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
 			builder.registerPotionRecipe(Potions.AWKWARD, Item.fromBlock(ModBlocks.BELLADONNA), Potions.STRONG_POISON);
 		});
+
+		//Packet Payloads
+		PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);
 	}
 }
