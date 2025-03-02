@@ -17,30 +17,79 @@ import net.minecraft.entity.ai.brain.task.VillagerTaskListProvider;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.data.DataTracker;
+import net.minecraft.entity.data.TrackedData;
+import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.packet.s2c.play.EntitySpawnS2CPacket;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Map;
+
 public class ImpillagerEntity extends VillagerEntity {
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
+    private static final TrackedData<String> CUSTOM_TEXTURE = DataTracker.registerData(ImpillagerEntity.class, TrackedDataHandlerRegistry.STRING);
 
     public ImpillagerEntity(EntityType<? extends VillagerEntity> entityType, World world) {
         super(entityType, world);
         this.experiencePoints = 3;
+        if (!world.isClient) {
+            this.dataTracker.set(CUSTOM_TEXTURE, ImpillagerTextures.selectRandomTexture().toString());
+        }
     }
+
+    @Override
+    protected void initDataTracker(DataTracker.Builder builder) {
+        super.initDataTracker(builder);
+        builder.add(CUSTOM_TEXTURE, "");
+    }
+
+    @Override
+    public void onTrackedDataSet(TrackedData<?> data) {
+        super.onTrackedDataSet(data);
+        if (data == CUSTOM_TEXTURE && this.dataTracker.get(CUSTOM_TEXTURE).isEmpty()) {
+            this.dataTracker.set(CUSTOM_TEXTURE, ImpillagerTextures.selectRandomTexture().toString());
+        }
+    }
+
+    public Identifier getCustomTexture() {
+        String texturePath = this.dataTracker.get(CUSTOM_TEXTURE);
+        return texturePath.isEmpty() ? Identifier.tryParse("fallback_texture") : Identifier.tryParse(texturePath);
+    }
+
+    @Override
+    public void writeCustomDataToNbt(NbtCompound nbt) {
+        super.writeCustomDataToNbt(nbt);
+        String texture = this.dataTracker.get(CUSTOM_TEXTURE);
+        if (texture != null && !texture.isEmpty()) {
+            nbt.putString("CustomTexture", texture);
+        }
+    }
+
+    @Override
+    public void readCustomDataFromNbt(NbtCompound nbt) {
+        super.readCustomDataFromNbt(nbt);
+        if (nbt.contains("CustomTexture")) {
+            this.dataTracker.set(CUSTOM_TEXTURE, nbt.getString("CustomTexture"));
+        }
+    }
+
 
     //-------------------------------------Attributes-------------------------------------
 
@@ -62,6 +111,11 @@ public class ImpillagerEntity extends VillagerEntity {
         }
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
+        }
+        if (!getWorld().isClient) {
+            System.out.println("[Server] ImpillagerEntity: Texture is " + this.dataTracker.get(CUSTOM_TEXTURE));
+        } else {
+            System.out.println("[Client] ImpillagerEntity: Texture is " + this.dataTracker.get(CUSTOM_TEXTURE));
         }
     }
 
