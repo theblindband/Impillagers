@@ -8,9 +8,12 @@ import java.util.Random;
 
 public class ImpillagerTextures {
     public static final Map<Identifier, Integer> TEXTURE_WEIGHTS = Map.of(
-            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager.png"), 50,
-            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager2.png"), 30,
-            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/impillager3.png"), 20
+            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/grey_impillager.png"), 30,
+            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/black_impillager.png"), 30,
+            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/brown_impillager.png"), 30,
+            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/blue_impillager.png"), 20,
+            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/green_impillager.png"), 20,
+            Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/red_impillager.png"), 1
     );
 
     public static Identifier selectRandomTexture() {

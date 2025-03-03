@@ -29,39 +29,34 @@ public class ImpillagerModel<T extends ImpillagerEntity> extends SinglePartEntit
     public static TexturedModelData getTexturedModelData() {
         ModelData modelData = new ModelData();
         ModelPartData modelPartData = modelData.getRoot();
-
         ModelPartData impillager = modelPartData.addChild("impillager", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 24.0F, 0.0F));
 
         ModelPartData head = impillager.addChild("head", ModelPartBuilder.create().uv(0, 0).cuboid(-4.0F, -5.0F, -3.0F, 8.0F, 5.0F, 6.0F, new Dilation(0.0F))
+                .uv(28, 0).cuboid(-4.0F, -5.0F, -3.0F, 8.0F, 5.0F, 6.0F, new Dilation(0.1F))
+                .uv(29, 16).cuboid(-1.0F, -3.0F, -4.0F, 2.0F, 4.0F, 1.0F, new Dilation(0.0F))
                 .uv(0, 11).cuboid(-7.0F, -11.0F, 0.0F, 14.0F, 11.0F, 0.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -13.0F, 0.0F));
 
-        ModelPartData nose = head.addChild("nose", ModelPartBuilder.create().uv(0, 34).cuboid(3.0F, -6.0F, -3.0F, 2.0F, 4.0F, 1.0F, new Dilation(0.0F)), ModelTransform.pivot(-4.0F, 3.0F, -1.0F));
+        ModelPartData arms = impillager.addChild("arms", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+
+        ModelPartData leftArm = arms.addChild("leftArm", ModelPartBuilder.create().uv(0, 42).cuboid(0.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F))
+                .uv(8, 42).cuboid(0.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.1F)), ModelTransform.pivot(3.0F, -12.0F, 0.0F));
+
+        ModelPartData rightArm = arms.addChild("rightArm", ModelPartBuilder.create().uv(0, 34).cuboid(-2.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F))
+                .uv(8, 34).cuboid(-2.0F, 0.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.1F)), ModelTransform.pivot(-3.0F, -12.0F, 0.0F));
+
+        ModelPartData body = impillager.addChild("body", ModelPartBuilder.create().uv(0, 22).cuboid(-3.0F, -4.0F, -2.0F, 6.0F, 8.0F, 4.0F, new Dilation(0.0F))
+                .uv(20, 22).cuboid(-3.0F, -4.0F, -2.0F, 6.0F, 8.0F, 4.0F, new Dilation(0.1F)), ModelTransform.pivot(0.0F, -9.0F, 0.0F));
 
         ModelPartData legs = impillager.addChild("legs", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
 
-        ModelPartData rightLeg = legs.addChild("rightLeg", ModelPartBuilder.create().uv(20, 26).cuboid(-2.0F, -5.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
+        ModelPartData rightLeg = legs.addChild("rightLeg", ModelPartBuilder.create().uv(16, 35).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.0F))
+                .uv(24, 35).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.1F)), ModelTransform.pivot(-1.0F, -5.0F, 0.0F));
 
-        ModelPartData leftLeg = legs.addChild("leftLeg", ModelPartBuilder.create().uv(28, 0).cuboid(1.0F, -5.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.0F)), ModelTransform.pivot(-1.0F, 0.0F, 0.0F));
-
-        ModelPartData body = impillager.addChild("body", ModelPartBuilder.create().uv(6, 34).cuboid(-3.0F, -8.0F, -2.0F, 6.0F, 8.0F, 4.0F, new Dilation(0.25F))
-                .uv(0, 22).cuboid(-3.0F, -8.0F, -2.0F, 6.0F, 8.0F, 4.0F, new Dilation(0.0F)), ModelTransform.pivot(0.0F, -5.0F, 0.0F));
-
-        ModelPartData arms = impillager.addChild("arms", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, -14.0F, 0.0F));
-
-        ModelPartData leftArm = arms.addChild("leftArm", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
-
-        ModelPartData leftArm_r1 = leftArm.addChild("leftArm_r1", ModelPartBuilder.create().uv(28, 10).cuboid(7.0F, -2.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-4.0F, 4.0F, -1.0F, -0.7854F, 0.0F, 0.0F));
-
-        ModelPartData rightArm = arms.addChild("rightArm", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
-
-        ModelPartData rightArm_r1 = rightArm.addChild("rightArm_r1", ModelPartBuilder.create().uv(28, 26).cuboid(-1.0F, -2.0F, -1.0F, 2.0F, 6.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-4.0F, 4.0F, -1.0F, -0.7854F, 0.0F, 0.0F));
-
-        ModelPartData front = arms.addChild("front", ModelPartBuilder.create(), ModelTransform.pivot(0.0F, 0.0F, 0.0F));
-
-        ModelPartData front_r1 = front.addChild("front_r1", ModelPartBuilder.create().uv(20, 22).cuboid(1.0F, 2.0F, -1.0F, 6.0F, 2.0F, 2.0F, new Dilation(0.0F)), ModelTransform.of(-4.0F, 4.0F, -1.0F, -0.7854F, 0.0F, 0.0F));
-
+        ModelPartData leftLeg = legs.addChild("leftLeg", ModelPartBuilder.create().uv(16, 43).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.0F))
+                .uv(24, 43).cuboid(-1.0F, 0.0F, -1.0F, 2.0F, 5.0F, 2.0F, new Dilation(0.1F)), ModelTransform.pivot(1.0F, -5.0F, 0.0F));
         return TexturedModelData.of(modelData, 64, 64);
     }
+
 
     @Override
     public void setAngles(ImpillagerEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
