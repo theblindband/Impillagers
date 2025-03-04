@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:infinity",
+    "minecraft:mending",
+    "impillagers:fuse"
+  ]
+}

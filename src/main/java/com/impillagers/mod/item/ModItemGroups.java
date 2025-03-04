@@ -5,6 +5,7 @@ import com.impillagers.mod.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
@@ -57,6 +58,8 @@ public class ModItemGroups {
                         entries.add(ModItems.GOLD_COIN);
                         entries.add(ModItems.FAKE_GOLD_COIN);
                         entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
+                        entries.add(ModItems.TOTEM_OF_UNDYEING);
+                        entries.add(Items.ENCHANTED_BOOK);
 
                         //Vanilla Block Expansions
                         entries.add(ModBlocks.PACKED_MUD_STAIRS);

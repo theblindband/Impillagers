@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:feather_falling",
+    "impillagers:lead_falling"
+  ]
+}

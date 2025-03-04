@@ -1,0 +1,117 @@
+{
+  "anvil_cost": 8,
+  "description": {
+    "translate": "enchantment.impillagers.kaboom"
+  },
+  "effects": {
+    "minecraft:hit_block": [
+      {
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+             "type": "minecraft:explode",
+              "block_interaction": "mob",
+             "damage_type": "explosion",
+             "large_particle": {
+                "type": "minecraft:explosion"
+              },
+              "radius": {
+                "type": "minecraft:linear",
+                "base": 2.0,
+                "per_level_above_first": 2.0
+              },
+              "small_particle": {
+               "type": "minecraft:ash"
+              },
+              "sound": "minecraft:entity.generic.explode"
+            },
+            {
+              "type": "minecraft:play_sound",
+              "pitch": 1.0,
+              "sound": "minecraft:entity.tnt.primed",
+              "volume": 5.0
+            },
+            {
+              "type": "minecraft:run_function",
+              "function": "impillagers:kill_arrow"
+            }
+          ]
+        },
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "this",
+              "predicate": {
+                "type": "minecraft:arrow"
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "minecraft:post_attack": [
+      {
+        "affected": "victim",
+        "effect": {
+          "type": "minecraft:all_of",
+          "effects": [
+            {
+              "type": "minecraft:explode",
+              "block_interaction": "mob",
+              "damage_type": "explosion",
+              "large_particle": {
+                "type": "minecraft:explosion"
+              },
+              "radius": {
+                "type": "minecraft:linear",
+                "base": 2.0,
+                "per_level_above_first": 2.0
+              },
+              "small_particle": {
+                "type": "minecraft:ash"
+              },
+              "sound": "minecraft:entity.generic.explode"
+            },
+            {
+              "type": "minecraft:play_sound",
+              "pitch": 1.0,
+              "sound": "minecraft:entity.tnt.primed",
+              "volume": 5.0
+            }
+          ]
+        },
+        "enchanted": "attacker",
+        "requirements": {
+          "condition": "minecraft:all_of",
+          "terms": [
+            {
+              "condition": "minecraft:entity_properties",
+              "entity": "direct_attacker",
+              "predicate": {
+                "type": "minecraft:arrow"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "exclusive_set": "#minecraft:exclusive_set/bow",
+  "max_cost": {
+    "base": 75,
+    "per_level_above_first": 25
+  },
+  "max_level": 3,
+  "min_cost": {
+    "base": 25,
+    "per_level_above_first": 25
+  },
+  "slots": [
+    "mainhand"
+  ],
+  "supported_items": "#minecraft:enchantable/bow",
+  "weight": 2
+}

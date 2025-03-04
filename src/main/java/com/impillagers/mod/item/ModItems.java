@@ -31,6 +31,9 @@ public class ModItems {
     public static final Item PAINTED_SMITHING_TEMPLATE = registerItem("painted_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of(Impillagers.MOD_ID, "painted"), FeatureFlags.VANILLA));
     public static final Item DUNG_BALL = registerItem("dung_ball", new DungBallItem(new Item.Settings()));
 
+                                                                                                                        //This bit should make the item stay in crafting, not working for some reason
+    public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new Item(new Item.Settings().recipeRemainder(ModItems.TOTEM_OF_UNDYEING)));
+
     //Register Methods
     private static Item registerItem(String name, Item item) {
         return Registry.register(Registries.ITEM, Identifier.of(Impillagers.MOD_ID, name), item);
