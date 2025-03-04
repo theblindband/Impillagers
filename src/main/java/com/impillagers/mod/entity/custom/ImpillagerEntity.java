@@ -118,7 +118,7 @@ public class ImpillagerEntity extends VillagerEntity {
 
     private void setupAnimationStates(){
         if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 40;
+            this.idleAnimationTimeout = 160;
             this.idleAnimationState.start(this.age);
         } else {
             --this.idleAnimationTimeout;

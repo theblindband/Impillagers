@@ -1,9 +1,28 @@
 package com.impillagers.mod.entity.client;
 
 import net.minecraft.client.render.entity.animation.Animation;
+import net.minecraft.client.render.entity.animation.AnimationHelper;
+import net.minecraft.client.render.entity.animation.Keyframe;
+import net.minecraft.client.render.entity.animation.Transformation;
 
 public class ImpillagerAnimations {
 
-    public static final Animation IDLE = Animation.Builder.create(0.0F).looping().build();
+    public static final Animation IDLE = Animation.Builder.create(8.0F).looping()
+            .addBoneAnimation("leftArm", new Transformation(Transformation.Targets.ROTATE,
+                    new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, -2.5F), Transformation.Interpolations.CUBIC),
+                    new Keyframe(2.0F, AnimationHelper.createRotationalVector(4.5545F, -0.5139F, -3.6096F), Transformation.Interpolations.CUBIC),
+                    new Keyframe(4.0F, AnimationHelper.createRotationalVector(-2.5548F, -0.7577F, -4.9549F), Transformation.Interpolations.CUBIC),
+                    new Keyframe(6.0F, AnimationHelper.createRotationalVector(-5.0F, 0.0F, -2.5F), Transformation.Interpolations.CUBIC),
+                    new Keyframe(8.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, -2.5F), Transformation.Interpolations.CUBIC)
+            ))
+            .addBoneAnimation("rightArm", new Transformation(Transformation.Targets.ROTATE,
+                    new Keyframe(0.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 2.5F), Transformation.Interpolations.CUBIC),
+                    new Keyframe(2.0F, AnimationHelper.createRotationalVector(-5.0F, 0.0F, 2.5F), Transformation.Interpolations.CUBIC),
+                    new Keyframe(4.0F, AnimationHelper.createRotationalVector(-2.5548F, 0.7577F, 4.9549F), Transformation.Interpolations.CUBIC),
+                    new Keyframe(6.0F, AnimationHelper.createRotationalVector(4.5545F, 0.5139F, 3.6096F), Transformation.Interpolations.CUBIC),
+                    new Keyframe(8.0F, AnimationHelper.createRotationalVector(0.0F, 0.0F, 2.5F), Transformation.Interpolations.CUBIC)
+            ))
+            .build();
+
     public static final Animation WALKING = Animation.Builder.create(0.0F).looping().build();
 }
