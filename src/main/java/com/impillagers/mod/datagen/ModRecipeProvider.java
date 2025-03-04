@@ -9,6 +9,7 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.server.recipe.RecipeExporter;
 import net.minecraft.data.server.recipe.ShapedRecipeJsonBuilder;
+import net.minecraft.data.server.recipe.ShapelessRecipeJsonBuilder;
 import net.minecraft.item.ItemConvertible;
 import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
@@ -58,6 +59,30 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_MUD_WALL, Blocks.PACKED_MUD, 1);
 
         offerShapelessRecipe(exporter, Items.BROWN_DYE, ModBlocks.SWAMP_REED, "brown_dye", 2);
+
+        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.WHITE_TERRACOTTA, "undyeing_terracotta");
+        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.BLACK_TERRACOTTA, "undyeing_terracotta");
+
+        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.WHITE_STAINED_GLASS, "undyeing_stained_glass");
+        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.BLACK_STAINED_GLASS, "undyeing_stained_glass");
+
+        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.WHITE_STAINED_GLASS_PANE, "undyeing_stained_glass_pane");
+        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.BLACK_STAINED_GLASS_PANE, "undyeing_stained_glass_pane");
+
+        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, "undyeing_shulker_box");
+        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.BLACK_SHULKER_BOX, "undyeing_shulker_box");
+
+        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.WHITE_CANDLE, "undyeing_candle");
+        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.BLACK_CANDLE, "undyeing_candle");
+    }
+
+    public static void offerUndyeingRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, String group) {
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output)
+                .input(ModItems.TOTEM_OF_UNDYEING)
+                .input(input)
+                .criterion("has_totem_of_undyeing", conditionsFromItem(ModItems.TOTEM_OF_UNDYEING))
+                .group(group)
+                .offerTo(exporter, convertBetween(output, input));
     }
 
     public static void offerStairsRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input) {
