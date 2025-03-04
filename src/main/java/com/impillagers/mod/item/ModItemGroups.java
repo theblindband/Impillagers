@@ -50,6 +50,7 @@ public class ModItemGroups {
 
                         //Imp Stuff
                         entries.add(ModItems.IMPILLAGER_SPAWN_EGG);
+                        entries.add(ModItems.ZOMBIE_IMPILLAGER_SPAWN_EGG);
                         entries.add(ModBlocks.DUNG_BLOCK);
                         entries.add(ModItems.DUNG_BALL);
 

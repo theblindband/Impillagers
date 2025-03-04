@@ -25,6 +25,7 @@ public class ModItems {
 
     //Imp Stuff
     public static final Item IMPILLAGER_SPAWN_EGG = registerItem("impillager_spawn_egg", new SpawnEggItem(ModEntities.IMPILLAGER, 0x995F40, 0xDB635F, new Item.Settings()));
+    public static final Item ZOMBIE_IMPILLAGER_SPAWN_EGG = registerItem("zombie_impillager_spawn_egg", new SpawnEggItem(ModEntities.ZOMBIE_IMPILLAGER, 0x829940, 0xAEDB5F, new Item.Settings()));
     public static final Item GOLD_COIN = registerItem("gold_coin", new Item(new Item.Settings()));
     public static final Item FAKE_GOLD_COIN = registerItem("fake_gold_coin", new Item(new Item.Settings()));
     public static final Item FIREFLY_BOTTLE = registerItem("firefly_bottle", new BlockItem(ModBlocks.FIREFLY_BOTTLE, new Item.Settings().maxCount(16)));

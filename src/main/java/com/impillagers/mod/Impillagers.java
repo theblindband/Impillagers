@@ -5,6 +5,7 @@ import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.ZombieImpillagerEntity;
 import com.impillagers.mod.item.ModItemGroups;
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.particle.ModParticleTypes;
@@ -79,6 +80,7 @@ public class Impillagers implements ModInitializer {
 
 		//Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.ZOMBIE_IMPILLAGER, ZombieImpillagerEntity.createZombieImpillagerAttributes());
 
 		//Potion Recipes
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {

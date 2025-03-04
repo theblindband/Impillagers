@@ -9,7 +9,9 @@
     "InGameHudAccessor",
     "PointOfInterestTaskMixin",
     "SignTypeAccessor",
-    "SmellyEffectMixin"
+    "SmellyEffectMixin",
+    "ZombieEntityMixin",
+    "ZombieVillagerEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

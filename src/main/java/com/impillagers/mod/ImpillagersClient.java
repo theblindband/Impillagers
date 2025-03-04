@@ -2,9 +2,7 @@ package com.impillagers.mod;
 
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.entity.ModEntities;
-import com.impillagers.mod.entity.client.ImpillagerModel;
-import com.impillagers.mod.entity.client.ImpillagerRenderer;
-import com.impillagers.mod.entity.client.ModHud;
+import com.impillagers.mod.entity.client.*;
 import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.particle.custom.FireflyParticle;
 import com.impillagers.mod.util.HudOverlayOpacityPayload;
@@ -35,8 +33,10 @@ public class ImpillagersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FIREFLY_BOTTLE, RenderLayer.getCutout());
 
         EntityModelLayerRegistry.registerModelLayer(ImpillagerModel.IMPILLAGER, ImpillagerModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(ZombieImpillagerModel.ZOMBIE_IMPILLAGER, ZombieImpillagerModel::getTexturedModelData);
 
         EntityRendererRegistry.register(ModEntities.IMPILLAGER, ImpillagerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.ZOMBIE_IMPILLAGER, ZombieImpillagerRenderer::new);
         EntityRendererRegistry.register(ModEntities.DUNG_BALL, FlyingItemEntityRenderer::new);
 
         ParticleFactoryRegistry.getInstance().register(ModParticleTypes.FIREFLY,((spriteProvider) -> {
