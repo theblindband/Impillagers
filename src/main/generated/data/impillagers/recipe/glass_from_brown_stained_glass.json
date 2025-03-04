@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "undyeing_glass",
+  "ingredients": [
+    {
+      "item": "impillagers:totem_of_undyeing"
+    },
+    {
+      "item": "minecraft:brown_stained_glass"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:glass"
+  }
+}

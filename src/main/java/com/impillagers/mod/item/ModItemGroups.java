@@ -60,7 +60,6 @@ public class ModItemGroups {
                         entries.add(ModItems.FAKE_GOLD_COIN);
                         entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
                         entries.add(ModItems.TOTEM_OF_UNDYEING);
-                        entries.add(Items.ENCHANTED_BOOK);
 
                         //Vanilla Block Expansions
                         entries.add(ModBlocks.PACKED_MUD_STAIRS);

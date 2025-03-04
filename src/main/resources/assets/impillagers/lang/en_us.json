@@ -26,6 +26,7 @@
   "block.impillagers.packed_mud_slab": "Packed Mud Slab",
   "block.impillagers.packed_mud_wall": "Packed Mud Wall",
   "block.impillagers.swamp_reed": "Swamp Reeds",
+  "block.impillagers.firefly_bottle": "Firefly Bottle",
 
   "item.impillagers.imp_pottery_sherd": "Imp Pottery Sherd",
   "item.impillagers.cover_pottery_sherd": "Cover Pottery Sherd",
@@ -36,7 +37,7 @@
   "item.impillagers.gold_coin": "Gold Coin",
   "item.impillagers.fake_gold_coin": "Gold Coin",
   "item.impillagers.painted_armor_trim_smithing_template": "Painted Armor Trim Smithing Template",
-  "block.impillagers.firefly_bottle": "Firefly Bottle",
+  "item.impillagers.totem_of_undyeing": "Totem of Undyeing",
 
   "painting.impillagers.offer.title": "Offer",
   "painting.impillagers.offer.author": "smiileyf4ce",

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "undyeing_shulker_box",
+  "ingredients": [
+    {
+      "item": "impillagers:totem_of_undyeing"
+    },
+    {
+      "item": "minecraft:lime_shulker_box"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "minecraft:shulker_box"
+  }
+}

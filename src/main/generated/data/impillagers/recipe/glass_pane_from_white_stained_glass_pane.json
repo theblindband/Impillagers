@@ -1,7 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "category": "building",
-  "group": "undyeing_stained_glass_pane",
+  "group": "undyeing_glass_pane",
   "ingredients": [
     {
       "item": "impillagers:totem_of_undyeing"
