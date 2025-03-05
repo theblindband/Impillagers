@@ -2,6 +2,7 @@ package com.impillagers.mod.item.custom;
 
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -31,9 +32,17 @@ public class CreeperOilItem extends Item {
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
 
+        if(user instanceof PlayerEntity player){
+            ItemUsage.consumeHeldItem(world, player, user.getActiveHand());
+
+            world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 2.0f, World.ExplosionSourceType.TNT);
+            user.damage(world.getDamageSources().explosion(user,user), 40);
+        }
+
         if (stack.isEmpty()) {
             return new ItemStack(Items.GLASS_BOTTLE);
         } else {
+
             if (user instanceof PlayerEntity playerEntity && !playerEntity.isInCreativeMode()) {
                 ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
                 if (!playerEntity.getInventory().insertStack(itemStack)) {
@@ -44,8 +53,6 @@ public class CreeperOilItem extends Item {
             return stack;
         }
 
-        //Vec3d vec3d = user.getPos();
-        //world.createExplosion(null, world.getDamageSources().badRespawnPoint(vec3d), null, vec3d, 5.0F, true, World.ExplosionSourceType.BLOCK);
     }
 
     @Override
@@ -70,6 +77,7 @@ public class CreeperOilItem extends Item {
 
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+
         return ItemUsage.consumeHeldItem(world, user, hand);
     }
 }
