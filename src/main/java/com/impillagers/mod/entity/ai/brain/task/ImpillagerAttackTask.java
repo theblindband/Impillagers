@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 import java.util.Optional;
 
 public class ImpillagerAttackTask {
-    public static SingleTickTask<MobEntity> create(int meleeCooldown, int throwCooldown) {
+    public static SingleTickTask<MobEntity> create(int meleeCooldown, int throwCooldown, float pitchAdjustment) {
         return TaskTriggerer.task(
                 context -> context.group(
                                 context.queryMemoryOptional(MemoryModuleType.LOOK_TARGET),
@@ -38,22 +38,24 @@ public class ImpillagerAttackTask {
                                         lookTarget.remember(new EntityLookTarget(livingEntity, true));
                                         entity.swingHand(Hand.MAIN_HAND);
                                         entity.tryAttack(livingEntity);
-                                        attackCoolingDown.remember(true, (long)meleeCooldown);
+                                        attackCoolingDown.remember(true, (long) meleeCooldown);
                                         return true;
                                     } else if (!entity.isInAttackRange(livingEntity) && isTargetWithinThrowRange(entity, livingEntity) && context.<LivingTargetCache>getValue(visibleMobs).contains(livingEntity)) {
                                         lookTarget.remember(new EntityLookTarget(livingEntity, true));
                                         if (isFacingTarget(entity, livingEntity)) {
                                             double d = livingEntity.getX() - entity.getX();
-                                            double e = livingEntity.getBodyY(livingEntity.hasVehicle() ? 0.8 : 0.3) - entity.getBodyY(0.5);
+                                            double e = (livingEntity.getBodyY(livingEntity.hasVehicle() ? 0.8 : 0.3) - entity.getBodyY(0.5)) + pitchAdjustment;
                                             double f = livingEntity.getZ() - entity.getZ();
                                             World serverWorld = entity.getWorld();
-                                            DungBallEntity  dungBallEntity = new DungBallEntity(entity, world);
+                                            DungBallEntity dungBallEntity = new DungBallEntity(entity, world);
                                             entity.playSound(SoundEvents.ENTITY_BREEZE_SHOOT, 1.5F, 1.0F);
-                                            dungBallEntity.setVelocity(d, e, f, 0.7F, (float)(5 - serverWorld.getDifficulty().getId() * 4));
+                                            dungBallEntity.setVelocity(d, e, f, 0.75F, (float) (5 - serverWorld.getDifficulty().getId() * 4));
                                             serverWorld.spawnEntity(dungBallEntity);
-                                            attackCoolingDown.remember(true, (long)throwCooldown);
+                                            attackCoolingDown.remember(true, (long) throwCooldown);
                                             return true;
-                                        } else {return false;}
+                                        } else {
+                                            return false;
+                                        }
                                     } else {
                                         return false;
                                     }
@@ -74,4 +76,3 @@ public class ImpillagerAttackTask {
         return d > 4.0 && d < 256.0;
     }
 }
-
