@@ -52,13 +52,14 @@ public class ModItemGroups {
                         //Imp Stuff
                         entries.add(ModItems.IMPILLAGER_SPAWN_EGG);
                         entries.add(ModItems.ZOMBIE_IMPILLAGER_SPAWN_EGG);
-                        entries.add(ModBlocks.DUNG_BLOCK);
-                        entries.add(ModItems.DUNG_BALL);
 
                         //Imp Trade Stuff
                         entries.add(ModItems.GOLD_COIN);
                         entries.add(ModItems.FAKE_GOLD_COIN);
+                        entries.add(ModBlocks.DUNG_BLOCK);
+                        entries.add(ModItems.DUNG_BALL);
                         entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
+                        entries.add(ModItems.SPIDER_PIEYE);
                         entries.add(ModItems.TOTEM_OF_UNDYEING);
 
                         //Vanilla Block Expansions

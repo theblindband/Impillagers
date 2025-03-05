@@ -3,8 +3,10 @@ package com.impillagers.mod.item;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.item.custom.CreeperOilItem;
 import com.impillagers.mod.item.custom.DungBallItem;
 import com.impillagers.mod.item.custom.FrogMaskItem;
+import net.minecraft.component.type.FoodComponents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -25,14 +27,18 @@ public class ModItems {
 
     //Imp Stuff
     public static final Item IMPILLAGER_SPAWN_EGG = registerItem("impillager_spawn_egg", new SpawnEggItem(ModEntities.IMPILLAGER, 0x995F40, 0xDB635F, new Item.Settings()));
-    public static final Item ZOMBIE_IMPILLAGER_SPAWN_EGG = registerItem("zombie_impillager_spawn_egg", new SpawnEggItem(ModEntities.ZOMBIE_IMPILLAGER, 0x995F40, 0xAEDB5F, new Item.Settings()));
+    public static final Item ZOMBIE_IMPILLAGER_SPAWN_EGG = registerItem("zombie_impillager_spawn_egg", new SpawnEggItem(ModEntities.ZOMBIE_IMPILLAGER, 0x995F40, 7969893, new Item.Settings()));
     public static final Item GOLD_COIN = registerItem("gold_coin", new Item(new Item.Settings()));
     public static final Item FAKE_GOLD_COIN = registerItem("fake_gold_coin", new Item(new Item.Settings()));
     public static final Item FIREFLY_BOTTLE = registerItem("firefly_bottle", new BlockItem(ModBlocks.FIREFLY_BOTTLE, new Item.Settings().maxCount(16)));
     public static final Item PAINTED_SMITHING_TEMPLATE = registerItem("painted_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of(Impillagers.MOD_ID, "painted"), FeatureFlags.VANILLA));
     public static final Item DUNG_BALL = registerItem("dung_ball", new DungBallItem(new Item.Settings()));
+    public static final Item SPIDER_PIEYE = registerItem("spider_pieye", new Item(new Item.Settings().food(ModFoodComponents.SPIDER_PIEYE)));
 
-                                                                                                                        //This bit should make the item stay in crafting, not working for some reason
+    public static final Item CREEPER_OIL = registerItem("creeper_oil", new CreeperOilItem(new Item.Settings()));
+
+
+                                                                                                                                                        //This bit should make the item stay in crafting, not working for some reason
     public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new Item(new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON).recipeRemainder(ModItems.TOTEM_OF_UNDYEING)));
 
     //Register Methods
