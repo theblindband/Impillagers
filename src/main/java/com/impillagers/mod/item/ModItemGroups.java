@@ -61,6 +61,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
                         entries.add(ModItems.SPIDER_PIEYE);
                         entries.add(ModItems.TOTEM_OF_UNDYEING);
+                        entries.add(ModItems.CREEPER_OIL);
 
                         //Vanilla Block Expansions
                         entries.add(ModBlocks.PACKED_MUD_STAIRS);

@@ -26,6 +26,12 @@ public class ModTags {
         public static final TagKey<Item> PURPLE_HEART_LOGS = createTag("purple_heart_logs");
         public static final TagKey<Item> FROG_POISONOUS_FOOD = createTag("frog_poisonous_food");
 
+        public static final TagKey<Item> DYED_TERRACOTTA = createTag("dyed_terracotta");
+        public static final TagKey<Item> STAINED_GLASS = createTag("stained_glass");
+        public static final TagKey<Item> STAINED_GLASS_PANE = createTag("stained_glass_pane");
+        public static final TagKey<Item> DYED_CANDLE = createTag("dyed_candle");
+        public static final TagKey<Item> CONCRETE_POWDER = createTag("concrete_powder");
+
         private static TagKey<Item> createTag(String name) {
             return TagKey.of(RegistryKeys.ITEM, Identifier.of(Impillagers.MOD_ID, name));
         }

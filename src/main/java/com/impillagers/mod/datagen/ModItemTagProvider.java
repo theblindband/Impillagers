@@ -5,6 +5,7 @@ import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
+import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryWrapper;
@@ -76,5 +77,96 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
         getOrCreateTagBuilder(ModTags.Items.FROG_POISONOUS_FOOD)
                 .add(ModBlocks.FIREFLY_BUSH.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.DYED_TERRACOTTA)
+                .add(Blocks.WHITE_TERRACOTTA.asItem())
+                .add(Blocks.LIGHT_GRAY_TERRACOTTA.asItem())
+                .add(Blocks.GRAY_TERRACOTTA.asItem())
+                .add(Blocks.BLACK_TERRACOTTA.asItem())
+                .add(Blocks.BROWN_TERRACOTTA.asItem())
+                .add(Blocks.RED_TERRACOTTA.asItem())
+                .add(Blocks.ORANGE_TERRACOTTA.asItem())
+                .add(Blocks.YELLOW_TERRACOTTA.asItem())
+                .add(Blocks.LIME_TERRACOTTA.asItem())
+                .add(Blocks.GREEN_TERRACOTTA.asItem())
+                .add(Blocks.CYAN_TERRACOTTA.asItem())
+                .add(Blocks.LIGHT_BLUE_TERRACOTTA.asItem())
+                .add(Blocks.BLUE_TERRACOTTA.asItem())
+                .add(Blocks.PURPLE_TERRACOTTA.asItem())
+                .add(Blocks.MAGENTA_TERRACOTTA.asItem())
+                .add(Blocks.PINK_TERRACOTTA.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.STAINED_GLASS)
+                .add(Blocks.WHITE_STAINED_GLASS.asItem())
+                .add(Blocks.LIGHT_GRAY_STAINED_GLASS.asItem())
+                .add(Blocks.GRAY_STAINED_GLASS.asItem())
+                .add(Blocks.BLACK_STAINED_GLASS.asItem())
+                .add(Blocks.BROWN_STAINED_GLASS.asItem())
+                .add(Blocks.RED_STAINED_GLASS.asItem())
+                .add(Blocks.ORANGE_STAINED_GLASS.asItem())
+                .add(Blocks.YELLOW_STAINED_GLASS.asItem())
+                .add(Blocks.LIME_STAINED_GLASS.asItem())
+                .add(Blocks.GREEN_STAINED_GLASS.asItem())
+                .add(Blocks.CYAN_STAINED_GLASS.asItem())
+                .add(Blocks.LIGHT_BLUE_STAINED_GLASS.asItem())
+                .add(Blocks.BLUE_STAINED_GLASS.asItem())
+                .add(Blocks.PURPLE_STAINED_GLASS.asItem())
+                .add(Blocks.MAGENTA_STAINED_GLASS.asItem())
+                .add(Blocks.PINK_STAINED_GLASS.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.STAINED_GLASS_PANE)
+                .add(Blocks.WHITE_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.LIGHT_GRAY_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.GRAY_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.BLACK_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.BROWN_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.RED_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.ORANGE_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.YELLOW_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.LIME_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.GREEN_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.CYAN_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.LIGHT_BLUE_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.BLUE_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.PURPLE_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.MAGENTA_STAINED_GLASS_PANE.asItem())
+                .add(Blocks.PINK_STAINED_GLASS_PANE.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.DYED_CANDLE)
+                .add(Blocks.WHITE_CANDLE.asItem())
+                .add(Blocks.LIGHT_GRAY_CANDLE.asItem())
+                .add(Blocks.GRAY_CANDLE.asItem())
+                .add(Blocks.BLACK_CANDLE.asItem())
+                .add(Blocks.BROWN_CANDLE.asItem())
+                .add(Blocks.RED_CANDLE.asItem())
+                .add(Blocks.ORANGE_CANDLE.asItem())
+                .add(Blocks.YELLOW_CANDLE.asItem())
+                .add(Blocks.LIME_CANDLE.asItem())
+                .add(Blocks.GREEN_CANDLE.asItem())
+                .add(Blocks.CYAN_CANDLE.asItem())
+                .add(Blocks.LIGHT_BLUE_CANDLE.asItem())
+                .add(Blocks.BLUE_CANDLE.asItem())
+                .add(Blocks.PURPLE_CANDLE.asItem())
+                .add(Blocks.MAGENTA_CANDLE.asItem())
+                .add(Blocks.PINK_CANDLE.asItem());
+
+        getOrCreateTagBuilder(ModTags.Items.CONCRETE_POWDER)
+                .add(Blocks.WHITE_CONCRETE_POWDER.asItem())
+                .add(Blocks.LIGHT_GRAY_CONCRETE_POWDER.asItem())
+                .add(Blocks.GRAY_CONCRETE_POWDER.asItem())
+                .add(Blocks.BLACK_CONCRETE_POWDER.asItem())
+                .add(Blocks.BROWN_CONCRETE_POWDER.asItem())
+                .add(Blocks.RED_CONCRETE_POWDER.asItem())
+                .add(Blocks.ORANGE_CONCRETE_POWDER.asItem())
+                .add(Blocks.YELLOW_CONCRETE_POWDER.asItem())
+                .add(Blocks.LIME_CONCRETE_POWDER.asItem())
+                .add(Blocks.GREEN_CONCRETE_POWDER.asItem())
+                .add(Blocks.CYAN_CONCRETE_POWDER.asItem())
+                .add(Blocks.LIGHT_BLUE_CONCRETE_POWDER.asItem())
+                .add(Blocks.BLUE_CONCRETE_POWDER.asItem())
+                .add(Blocks.PURPLE_CONCRETE_POWDER.asItem())
+                .add(Blocks.MAGENTA_CONCRETE_POWDER.asItem())
+                .add(Blocks.PINK_CONCRETE_POWDER.asItem());
+
     }
 }

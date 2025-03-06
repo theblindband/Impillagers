@@ -1,5 +1,6 @@
 package com.impillagers.mod.item.custom;
 
+import com.impillagers.mod.item.ModItems;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;

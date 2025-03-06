@@ -39,7 +39,7 @@ public class ModItems {
 
 
                                                                                                                                                         //This bit should make the item stay in crafting, not working for some reason
-    public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new Item(new Item.Settings().maxCount(1).rarity(Rarity.UNCOMMON).recipeRemainder(ModItems.TOTEM_OF_UNDYEING)));
+    public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new Item(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON).recipeRemainder(ModItems.TOTEM_OF_UNDYEING)));
 
     //Register Methods
     private static Item registerItem(String name, Item item) {

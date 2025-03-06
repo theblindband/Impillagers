@@ -61,93 +61,85 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerShapelessRecipe(exporter, Items.BROWN_DYE, ModBlocks.SWAMP_REED, "brown_dye", 2);
 
         //Undyeing Recipes
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.WHITE_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.LIGHT_GRAY_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.GRAY_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.BLACK_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.BROWN_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.RED_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.ORANGE_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.YELLOW_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.LIME_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.GREEN_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.CYAN_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.LIGHT_BLUE_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.BLUE_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.PURPLE_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.MAGENTA_TERRACOTTA, "undyeing_terracotta");
-        offerUndyeingRecipe(exporter, Blocks.TERRACOTTA, Blocks.PINK_TERRACOTTA, "undyeing_terracotta");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.LIGHT_GRAY_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.GRAY_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.BLACK_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.BROWN_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.RED_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.ORANGE_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.YELLOW_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.LIME_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.GREEN_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.CYAN_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.LIGHT_BLUE_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.BLUE_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.PURPLE_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.MAGENTA_SHULKER_BOX, "undyeing_shulker_box");
+        offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.PINK_SHULKER_BOX, "undyeing_shulker_box");
 
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.WHITE_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.LIGHT_GRAY_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.GRAY_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.BLACK_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.BROWN_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.RED_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.ORANGE_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.YELLOW_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.LIME_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.GREEN_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.CYAN_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.LIGHT_BLUE_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.BLUE_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.PURPLE_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.MAGENTA_STAINED_GLASS, "undyeing_glass");
-        offerUndyeingRecipe(exporter, Blocks.GLASS, Blocks.PINK_STAINED_GLASS, "undyeing_glass");
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Blocks.TERRACOTTA, 8)
+                .input('T', ModItems.TOTEM_OF_UNDYEING)
+                .input('#', ModTags.Items.DYED_TERRACOTTA)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .criterion("has_totem_of_undyeing", conditionsFromItem(ModItems.TOTEM_OF_UNDYEING))
+                .group("undyeing")
+                .offerTo(exporter, "totem_of_undyeing_terracotta");
 
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.WHITE_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.LIGHT_GRAY_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.GRAY_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.BLACK_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.BROWN_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.RED_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.ORANGE_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.YELLOW_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.LIME_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.GREEN_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.CYAN_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.LIGHT_BLUE_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.BLUE_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.PURPLE_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.MAGENTA_STAINED_GLASS_PANE, "undyeing_glass_pane");
-        offerUndyeingRecipe(exporter, Blocks.GLASS_PANE, Blocks.PINK_STAINED_GLASS_PANE, "undyeing_glass_pane");
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS, 8)
+                .input('T', ModItems.TOTEM_OF_UNDYEING)
+                .input('#', ModTags.Items.STAINED_GLASS)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .criterion("has_totem_of_undyeing", conditionsFromItem(ModItems.TOTEM_OF_UNDYEING))
+                .group("undyeing")
+                .offerTo(exporter, "totem_of_undyeing_glass");
 
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.LIGHT_GRAY_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.GRAY_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.BLACK_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.BROWN_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.RED_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.ORANGE_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.YELLOW_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.LIME_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.GREEN_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.CYAN_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.LIGHT_BLUE_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.BLUE_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.PURPLE_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.MAGENTA_SHULKER_BOX, "undyeing_shulker_box");
-        offerUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.PINK_SHULKER_BOX, "undyeing_shulker_box");
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Blocks.GLASS_PANE, 8)
+                .input('T', ModItems.TOTEM_OF_UNDYEING)
+                .input('#', ModTags.Items.STAINED_GLASS_PANE)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .criterion("has_totem_of_undyeing", conditionsFromItem(ModItems.TOTEM_OF_UNDYEING))
+                .group("undyeing")
+                .offerTo(exporter, "totem_of_undyeing_glass_pane");
 
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.WHITE_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.LIGHT_GRAY_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.GRAY_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.BLACK_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.BROWN_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.RED_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.ORANGE_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.YELLOW_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.LIME_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.GREEN_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.CYAN_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.LIGHT_BLUE_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.BLUE_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.PURPLE_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.MAGENTA_CANDLE, "undyeing_candle");
-        offerUndyeingRecipe(exporter, Blocks.CANDLE, Blocks.PINK_CANDLE, "undyeing_candle");
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Blocks.CANDLE, 8)
+                .input('T', ModItems.TOTEM_OF_UNDYEING)
+                .input('#', ModTags.Items.DYED_CANDLE)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .criterion("has_totem_of_undyeing", conditionsFromItem(ModItems.TOTEM_OF_UNDYEING))
+                .group("undyeing")
+                .offerTo(exporter, "totem_of_undyeing_candle");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Blocks.SAND, 8)
+                .input('T', ModItems.TOTEM_OF_UNDYEING)
+                .input('#', ModTags.Items.CONCRETE_POWDER)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .criterion("has_totem_of_undyeing", conditionsFromItem(ModItems.TOTEM_OF_UNDYEING))
+                .group("undyeing")
+                .offerTo(exporter, "totem_of_undyeing_sand");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, Blocks.GRAVEL, 8)
+                .input('T', ModItems.TOTEM_OF_UNDYEING)
+                .input('#', ModTags.Items.CONCRETE_POWDER)
+                .pattern("###")
+                .pattern("#T#")
+                .pattern("###")
+                .criterion("has_totem_of_undyeing", conditionsFromItem(ModItems.TOTEM_OF_UNDYEING))
+                .group("undyeing")
+                .offerTo(exporter, "totem_of_undyeing_gravel");
     }
 
-    public static void offerUndyeingRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, String group) {
+    public static void offerSingleItemUndyeingRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, String group) {
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, output)
                 .input(ModItems.TOTEM_OF_UNDYEING)
                 .input(input)
