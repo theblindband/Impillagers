@@ -8,6 +8,10 @@
     {
       "id": "impillagers:banker_poi",
       "required": false
+    },
+    {
+      "id": "impillagers:musician_poi",
+      "required": false
     }
   ]
 }

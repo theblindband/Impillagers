@@ -51,9 +51,11 @@
 
   "entity.impillagers.impillager.dung_collector": "Impillager Dung Collector",
   "entity.impillagers.impillager.banker": "Impillager Banker",
+  "entity.impillagers.impillager.musician": "Impillager Musician",
 
   "entity.minecraft.villager.dung_collector": "Villager Dung Collector",
   "entity.minecraft.villager.banker": "Villager Banker",
+  "entity.minecraft.villager.musician": "Villager Musician",
 
   "effect.impillagers.smelly": "Smelly",
   "effect.impillagers.call_of_the_imps": "Call of the Imps",

@@ -14,6 +14,7 @@ import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.villager.Banker;
 import com.impillagers.mod.villager.DungCollector;
 import com.impillagers.mod.villager.ModTrades;
+import com.impillagers.mod.villager.Musician;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -77,6 +78,7 @@ public class Impillagers implements ModInitializer {
 		//Villagers
 		DungCollector.registerVillager();
 		Banker.registerVillager();
+		Musician.registerVillager();
 
 		//Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());

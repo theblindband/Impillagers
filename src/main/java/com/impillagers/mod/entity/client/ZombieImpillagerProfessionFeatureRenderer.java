@@ -7,6 +7,7 @@ import com.impillagers.mod.entity.custom.ImpillagerEntity;
 import com.impillagers.mod.entity.custom.ZombieImpillagerEntity;
 import com.impillagers.mod.villager.Banker;
 import com.impillagers.mod.villager.DungCollector;
+import com.impillagers.mod.villager.Musician;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -26,7 +27,8 @@ public class ZombieImpillagerProfessionFeatureRenderer extends FeatureRenderer<Z
             Map.entry(VillagerProfession.NONE, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/unemployed.png")),
             Map.entry(VillagerProfession.NITWIT, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/nitwit.png")),
             Map.entry(DungCollector.DUNG_COLLECTOR, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/dung_collector.png")),
-            Map.entry(Banker.BANKER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/banker.png"))
+            Map.entry(Banker.BANKER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/banker.png")),
+            Map.entry(Musician.MUSICIAN, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/musician.png"))
     );
 
     public ZombieImpillagerProfessionFeatureRenderer(FeatureRendererContext<ZombieImpillagerEntity, ZombieImpillagerModel<ZombieImpillagerEntity>> featureRendererContext) {
