@@ -7,6 +7,7 @@ import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.ai.brain.task.ImpillagerTaskListProvider;
 import com.impillagers.mod.entity.mob.Impillager;
 import com.impillagers.mod.item.ModItems;
+import com.impillagers.mod.sounds.ModSoundEvents;
 import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.entity.*;
@@ -36,6 +37,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
+import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
@@ -240,19 +242,42 @@ public class ImpillagerEntity extends VillagerEntity {
         if (this.isSleeping()) {
             return null;
         } else {
-            return this.hasCustomer() ? SoundEvents.ENTITY_VILLAGER_TRADE : SoundEvents.ENTITY_VILLAGER_AMBIENT;
+            boolean playerNearby = this.getWorld().getClosestPlayer(this, 5) != null;
+            return playerNearby ? ModSoundEvents.IMPILLAGER_PURSUE : ModSoundEvents.IMPILLAGER_AMBIENT;
         }
     }
 
     @Override
     protected SoundEvent getHurtSound(DamageSource source) {
-        return SoundEvents.ENTITY_VILLAGER_HURT;
+        return ModSoundEvents.IMPILLAGER_DAMAGE;
     }
 
     @Override
     protected SoundEvent getDeathSound() {
-        return SoundEvents.ENTITY_VILLAGER_DEATH;
+        return ModSoundEvents.IMPILLAGER_DEATH;
     }
+
+    public static SoundEvent getRangedAttackSound() {
+        return ModSoundEvents.IMPILLAGER_ATTACK_RANGED;
+    }
+    protected SoundEvent getMeleeAttackSound() {
+        return ModSoundEvents.IMPILLAGER_ATTACK_MELEE;
+    }
+
+    @Override
+    public SoundEvent getYesSound() {
+        return ModSoundEvents.IMPILLAGER_YES;
+    }
+
+    @Override
+    protected SoundEvent getTradingSound(boolean sold) {
+        return sold ? ModSoundEvents.IMPILLAGER_YES : ModSoundEvents.IMPILLAGER_NO;
+    }
+    @Override
+    public void playCelebrateSound() {
+        this.playSound(ModSoundEvents.IMPILLAGER_CELEBRATE);
+    }
+
 
     //Create Child
 
@@ -311,7 +336,7 @@ public class ImpillagerEntity extends VillagerEntity {
     private void sayNo() {
         this.setHeadRollingTimeLeft(20);
         if (!this.getWorld().isClient()) {
-            this.playSound(SoundEvents.ENTITY_VILLAGER_NO);
+            this.playSound(ModSoundEvents.IMPILLAGER_NO);
         }
     }
 
@@ -350,7 +375,7 @@ public class ImpillagerEntity extends VillagerEntity {
             return false;
         } else {
             this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_ATTACK_SOUND);
-            this.playSound(SoundEvents.ENTITY_HOGLIN_ATTACK);
+            this.playSound(getMeleeAttackSound());
             return Impillager.tryAttack(this, (LivingEntity)target);
         }
     }

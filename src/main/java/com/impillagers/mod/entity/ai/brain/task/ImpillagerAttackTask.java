@@ -2,7 +2,10 @@ package com.impillagers.mod.entity.ai.brain.task;
 
 import com.google.common.annotations.VisibleForTesting;
 import com.google.common.collect.ImmutableMap;
+import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.custom.ImpillagerEntity;
 import com.impillagers.mod.entity.projectile.thrown.DungBallEntity;
+import com.impillagers.mod.sounds.ModSoundEvents;
 import net.minecraft.command.argument.EntityAnchorArgumentType;
 import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.LivingEntity;
@@ -48,7 +51,7 @@ public class ImpillagerAttackTask {
                                             double f = livingEntity.getZ() - entity.getZ();
                                             World serverWorld = entity.getWorld();
                                             DungBallEntity dungBallEntity = new DungBallEntity(entity, world);
-                                            entity.playSound(SoundEvents.ENTITY_BREEZE_SHOOT, 1.5F, 1.0F);
+                                            entity.playSound((ImpillagerEntity.getRangedAttackSound()) , 1.5F, 1.0F);
                                             dungBallEntity.setVelocity(d, e, f, 0.75F, (float) (5 - serverWorld.getDifficulty().getId() * 4));
                                             serverWorld.spawnEntity(dungBallEntity);
                                             attackCoolingDown.remember(true, (long) throwCooldown);

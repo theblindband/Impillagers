@@ -53,7 +53,7 @@ public class ImpillagerTaskListProvider {
                 Pair.of(2, ForgetAttackTargetTask.create()),
                 Pair.of(2, new MoveToTargetTask()),
                 Pair.of(2, WorkStationCompetitionTask.create()),
-                Pair.of(3, new FollowCustomerTask(speed)),
+                Pair.of(2, new FollowCustomerTask(speed)),
                 Pair.of(5, WalkToNearestVisibleWantedItemTask.create(speed, false, 4)),
                 Pair.of(
                         6,

@@ -11,6 +11,18 @@ public class ModSoundEvents {
     //Firefly Bush Ambient Sounds
     public static final SoundEvent FIREFLY_BUSH = registerSoundEvent("block.firefly_bush");
 
+    public static final SoundEvent IMPILLAGER_DAMAGE = registerSoundEvent("entity.impillager.damage");
+    public static final SoundEvent IMPILLAGER_DEATH = registerSoundEvent("entity.impillager.death");
+    public static final SoundEvent IMPILLAGER_NO = registerSoundEvent("entity.impillager.no");
+    public static final SoundEvent IMPILLAGER_YES = registerSoundEvent("entity.impillager.yes");
+    public static final SoundEvent IMPILLAGER_AMBIENT = registerSoundEvent("entity.impillager.ambient");
+    public static final SoundEvent IMPILLAGER_PURSUE = registerSoundEvent("entity.impillager.pursue");
+    public static final SoundEvent IMPILLAGER_CELEBRATE = registerSoundEvent("entity.impillager.celebrate");
+    public static final SoundEvent IMPILLAGER_ATTACK_MELEE = registerSoundEvent("entity.impillager.attack.melee");
+    public static final SoundEvent IMPILLAGER_ATTACK_RANGED = registerSoundEvent("entity.impillager.attack.ranged");
+
+
+
     private static SoundEvent registerSoundEvent(String name) {
         Identifier id = Identifier.of(Impillagers.MOD_ID, name);
         return Registry.register(Registries.SOUND_EVENT, id, SoundEvent.of(id));
