@@ -1,4 +1,4 @@
-package com.impillagers.mod.villager;
+package com.impillagers.mod.villager.professions;
 
 import com.google.common.collect.ImmutableSet;
 import com.impillagers.mod.Impillagers;
@@ -14,12 +14,12 @@ import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.poi.PointOfInterestType;
 
-public class Musician {
+public class Banker {
 
-    public static final RegistryKey<PointOfInterestType> MUSICIAN_POI_KEY = registerPoiKey("musician_poi");
-    public static final PointOfInterestType MUSICIAN_POI = registerPOI("musician_poi", Blocks.JUKEBOX);
+    public static final RegistryKey<PointOfInterestType> BANKER_POI_KEY = registerPoiKey("banker_poi");
+    public static final PointOfInterestType BANKER_POI = registerPOI("banker_poi", Blocks.GOLD_BLOCK);
 
-    public static final VillagerProfession MUSICIAN = registerProfession("musician", MUSICIAN_POI_KEY);
+    public static final VillagerProfession BANKER = registerProfession("banker", BANKER_POI_KEY);
 
     private static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> type) {
         return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(Impillagers.MOD_ID, name),

@@ -39,6 +39,7 @@
   "item.impillagers.painted_armor_trim_smithing_template": "Painted Armor Trim Smithing Template",
   "item.impillagers.spider_pieye": "Spider Pieye",
   "item.impillagers.totem_of_undyeing": "Totem of Undyeing",
+  "item.impillagers.creeper_oil": "Creeper Oil",
 
   "painting.impillagers.offer.title": "Offer",
   "painting.impillagers.offer.author": "smiileyf4ce",
@@ -49,13 +50,9 @@
   "entity.impillagers.zombie_impillager": "Zombie Impillager",
   "entity.impillagers.impillager.nitwit": "Impillager Nitwit",
 
-  "entity.impillagers.impillager.dung_collector": "Impillager Dung Collector",
-  "entity.impillagers.impillager.banker": "Impillager Banker",
-  "entity.impillagers.impillager.musician": "Impillager Musician",
-
-  "entity.minecraft.villager.dung_collector": "Villager Dung Collector",
-  "entity.minecraft.villager.banker": "Villager Banker",
-  "entity.minecraft.villager.musician": "Villager Musician",
+  "entity.impillagers.impillager.dung_collector": "Dung Collector",
+  "entity.impillagers.impillager.banker": "Banker",
+  "entity.impillagers.impillager.musician": "Musician",
 
   "effect.impillagers.smelly": "Smelly",
   "effect.impillagers.call_of_the_imps": "Call of the Imps",

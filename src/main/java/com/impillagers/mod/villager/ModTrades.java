@@ -1,6 +1,10 @@
 package com.impillagers.mod.villager;
 
+import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
+import com.impillagers.mod.villager.professions.Banker;
+import com.impillagers.mod.villager.professions.DungCollector;
+import com.impillagers.mod.villager.professions.Musician;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
@@ -56,9 +60,69 @@ public class ModTrades {
                     new TradedItem(Items.GOLD_BLOCK, 1),
                     new ItemStack(ModItems.FAKE_GOLD_COIN, 8), 16, 2, 0.04f));
         });
-        //Level 3 - Gold Armor Trades
-        //Level 4 - ???
-        //Level 5 - ???
+        //Level 3 - Gold Trades
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_HELMET, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_CHESTPLATE, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_LEGGINGS, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_BOOTS, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_AXE, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_HOE, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_PICKAXE, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_SHOVEL, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_SWORD, 1), 16, 2, 0.04f));
+        });
+        //Level 4 - Rare Gold Items
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 4, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 48),
+                    new ItemStack(Blocks.BELL, 1), 16, 2, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 4, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 32),
+                    new ItemStack(Items.GOLDEN_APPLE, 1), 16, 2, 0.04f));
+        });
+        //Level 5 - Fake Coins to Real Coins
+        TradeOfferHelper.registerVillagerOffers(Banker.BANKER, 5, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.FAKE_GOLD_COIN, 16),
+                    new ItemStack(ModItems.GOLD_COIN, 1), 16, 2, 0.04f));
+        });
 
         //Musician
         //Level 1 - Dungeon Discs
@@ -164,10 +228,90 @@ public class ModTrades {
 
         //Dung Collector
         //Level 1 - Dirt Type Blocks
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 1, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.DIRT, 16),
+                    new ItemStack(ModItems.GOLD_COIN, 1), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 1, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.COARSE_DIRT, 16),
+                    new ItemStack(ModItems.GOLD_COIN, 2), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 1, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.ROOTED_DIRT, 16),
+                    new ItemStack(ModItems.GOLD_COIN, 3), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 1, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.DIRT, 16),
+                    new ItemStack(ModItems.FAKE_GOLD_COIN, 1), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 1, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.COARSE_DIRT, 16),
+                    new ItemStack(ModItems.FAKE_GOLD_COIN, 2), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 1, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.ROOTED_DIRT, 16),
+                    new ItemStack(ModItems.FAKE_GOLD_COIN, 3), 16, 6, 0.04f));
+        });
         //Level 2 - Other Natural Shovel Blocks
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 2, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.SAND, 32),
+                    new ItemStack(ModItems.GOLD_COIN, 1), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 2, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.GRAVEL,  16),
+                    new ItemStack(ModItems.GOLD_COIN, 1), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 2, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Items.CLAY_BALL, 32),
+                    new ItemStack(ModItems.GOLD_COIN, 1), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 2, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.SAND, 32),
+                    new ItemStack(ModItems.FAKE_GOLD_COIN, 1), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 2, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Blocks.GRAVEL,  16),
+                    new ItemStack(ModItems.FAKE_GOLD_COIN, 1), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 2, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(Items.CLAY_BALL, 32),
+                    new ItemStack(ModItems.FAKE_GOLD_COIN, 1), 16, 6, 0.04f));
+        });
         //Level 3 - Mud
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 8),
+                    new ItemStack(Blocks.MUD, 8), 16, 6, 0.04f));
+        });
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 3, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 8),
+                    new ItemStack(ModBlocks.SINKING_MUD, 4), 16, 6, 0.04f));
+        });
         //Level 4 - Dung Balls
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 4, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 8),
+                    new ItemStack(ModItems.DUNG_BALL, 6), 16, 6, 0.04f));
+        });
         //Level 5 - Dung Blocks
+        TradeOfferHelper.registerVillagerOffers(DungCollector.DUNG_COLLECTOR, 5, factories -> {
+            factories.add((entity, random) -> new TradeOffer(
+                    new TradedItem(ModItems.GOLD_COIN, 16),
+                    new ItemStack(ModBlocks.DUNG_BLOCK, 8), 16, 6, 0.04f));
+        });
 
         //Explosives Expert
         //Level 1 - Gunpowder and Sand

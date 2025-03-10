@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-06T12:17:21.9795978	Impillagers/Model Definitions
+// 1.21.1	2025-03-10T21:10:02.7490289	Impillagers/Model Definitions
 391ae767baa894a97f1090021ab0540ea74c677d assets\impillagers\models\item\spider_pieye.json
 1be2471844fd6895c9222d219ca17b5a8a5077c7 assets\impillagers\models\item\dung_ball.json
 dffd1b7765a9572a3f693eb17324a5bafc326f3e assets\impillagers\models\item\fake_gold_coin.json
@@ -18,8 +18,8 @@ bce4c42a614bcd6711570707e76baad3c59d9b15 assets\impillagers\models\block\purple_
 ad042eafa1fe9a85e1626cd9e2b277f83b3ad3fe assets\impillagers\blockstates\purple_heart_slab.json
 ed6c41306211ec454f51c89f07444da53c946def assets\impillagers\blockstates\purple_heart_fence_gate.json
 63ec6c618a3a23eab4cab9c52d7d3250de9b516e assets\impillagers\models\item\zombie_impillager_spawn_egg.json
-5bef0a98018f214e568c2be4af4b75a4e6e6ba05 assets\impillagers\blockstates\dung_block.json
 06112e24c1e1d3532f34daf5dcf23309a40755a2 assets\impillagers\blockstates\stripped_purple_heart_log.json
+5bef0a98018f214e568c2be4af4b75a4e6e6ba05 assets\impillagers\blockstates\dung_block.json
 2c0de7211124b92f662420852b23ee127c639e06 assets\impillagers\models\block\purple_heart_trapdoor_top.json
 e7a5f6a8e226a4d543b2c4d02132052545b495ec assets\impillagers\models\block\purple_heart_log.json
 b61aa893e452a0289752bc8e771de6de09dd057f assets\impillagers\blockstates\potted_purple_heart_sapling.json
@@ -62,6 +62,7 @@ eee2d163d366680a27a603919caec671c709755a assets\impillagers\models\item\purple_h
 572c1459849296585975d3e1ec3eeea2e37ea149 assets\impillagers\blockstates\belladonna.json
 d767cbebd604be774c7f1deae9745883004bfa50 assets\impillagers\models\item\purple_heart_sign.json
 08028738a06ed35d6a6f1a85935dbf9917797544 assets\impillagers\models\block\purple_heart_stairs_outer.json
+3d45a8d0903b4d7f13efd3f7df713e6ed5eb0592 assets\impillagers\models\item\creeper_oil.json
 fb18574de3f52f6a7c700825ae8bd34e6d0ac22d assets\impillagers\models\item\totem_of_undyeing.json
 49c072139295f6ea150eb12409b9046abbb62fc0 assets\impillagers\models\block\swamp_reed_top.json
 01ecd7541bd0e2f512931f28fcae60dd46e5d78f assets\impillagers\models\block\purple_heart_sapling.json

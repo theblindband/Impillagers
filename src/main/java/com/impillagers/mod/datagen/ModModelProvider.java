@@ -71,5 +71,6 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.FAKE_GOLD_COIN, Models.GENERATED);
         itemModelGenerator.register(ModItems.SPIDER_PIEYE, Models.GENERATED);
         itemModelGenerator.register(ModItems.TOTEM_OF_UNDYEING, Models.GENERATED);
+        itemModelGenerator.register(ModItems.CREEPER_OIL, Models.GENERATED);
     }
 }

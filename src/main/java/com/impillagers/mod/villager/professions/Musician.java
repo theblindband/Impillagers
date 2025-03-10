@@ -1,10 +1,10 @@
-package com.impillagers.mod.villager;
+package com.impillagers.mod.villager.professions;
 
 import com.google.common.collect.ImmutableSet;
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.block.ModBlocks;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
@@ -14,17 +14,17 @@ import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.poi.PointOfInterestType;
 
-public class DungCollector {
+public class Musician {
 
-    public static final RegistryKey<PointOfInterestType> DUNG_COLLECTOR_POI_KEY = registerPoiKey("dung_collector_poi");
-    public static final PointOfInterestType DUNG_COLLECTOR_POI = registerPOI("dung_collector_poi", ModBlocks.DUNG_BLOCK);
+    public static final RegistryKey<PointOfInterestType> MUSICIAN_POI_KEY = registerPoiKey("musician_poi");
+    public static final PointOfInterestType MUSICIAN_POI = registerPOI("musician_poi", Blocks.JUKEBOX);
 
-    public static final VillagerProfession DUNG_COLLECTOR = registerProfession("dung_collector", DUNG_COLLECTOR_POI_KEY);
+    public static final VillagerProfession MUSICIAN = registerProfession("musician", MUSICIAN_POI_KEY);
 
     private static VillagerProfession registerProfession(String name, RegistryKey<PointOfInterestType> type) {
         return Registry.register(Registries.VILLAGER_PROFESSION, Identifier.of(Impillagers.MOD_ID, name),
                 new VillagerProfession(name, entry -> entry.matchesKey(type), entry -> entry.matchesKey(type),
-                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.BLOCK_MUD_HIT));
+                        ImmutableSet.of(), ImmutableSet.of(), SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN));
     }
 
     private static PointOfInterestType registerPOI(String name, Block block) {
@@ -37,6 +37,6 @@ public class DungCollector {
     }
 
     public static void registerVillager() {
-        //Impillagers.LOGGER.info("Registering Dung Collector Villager for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering Banker Villager for " + Impillagers.MOD_ID);
     }
 }
