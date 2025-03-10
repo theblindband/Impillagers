@@ -21,6 +21,9 @@ import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.VillagerEntity;
@@ -101,6 +104,11 @@ public class ImpillagerEntity extends VillagerEntity {
                 .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.75)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 1)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 48.0);
+    }
+
+    @Override
+    public boolean canHaveStatusEffect(StatusEffectInstance effect) {
+        return effect.equals(StatusEffects.POISON) ? false : super.canHaveStatusEffect(effect);
     }
 
     //-------------------------------------Tick-------------------------------------
@@ -369,6 +377,7 @@ public class ImpillagerEntity extends VillagerEntity {
             return bl;
         }
     }
+
     @Override
     public boolean tryAttack(Entity target) {
         if (!(target instanceof LivingEntity)) {
