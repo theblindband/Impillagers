@@ -5,6 +5,7 @@
     "minecraft:bogged",
     "minecraft:witch",
     "minecraft:pig",
-    "impillagers:impillager"
+    "impillagers:impillager",
+    "impillagers:zombie_impillager"
   ]
 }

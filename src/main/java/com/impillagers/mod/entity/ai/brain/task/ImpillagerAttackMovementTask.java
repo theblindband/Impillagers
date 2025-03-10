@@ -56,14 +56,6 @@ public class ImpillagerAttackMovementTask {
                                         return true;
                                     }
 
-                                    // Debugging logs
-                                    System.out.println("LivingEntity position: " + livingEntity.getPos());
-                                    System.out.println("Impillager position: " + entity.getPos());
-                                    System.out.println("Calculated target position: " + targetPosition);
-                                    System.out.println("Minimum distance: " + minDistance);
-                                    System.out.println("Maximum distance: " + maxDistance);
-                                    System.out.println("Tolerance: " + tolerance);
-
                                     lookTarget.remember(new EntityLookTarget(livingEntity, true));
                                     walkTarget.remember(new WalkTarget(targetPosition, speed.apply(entity), 0));
 
