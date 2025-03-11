@@ -54,6 +54,10 @@ public abstract class ZombieEntityMixin extends HostileEntity {
                     zombieImpillagerEntity.setGossipData(impillagerEntity.getGossip().serialize(NbtOps.INSTANCE));
                     zombieImpillagerEntity.setOfferData(impillagerEntity.getOffers().copy());
                     zombieImpillagerEntity.setXp(impillagerEntity.getExperience());
+
+                    // Transfer texture key using set method
+                    zombieImpillagerEntity.setTextureKey(impillagerEntity.getDataTracker().get(ImpillagerEntity.TEXTURE_KEY));
+
                     if (!this.isSilent()) {
                         world.syncWorldEvent(null, WorldEvents.ZOMBIE_INFECTS_VILLAGER, this.getBlockPos(), 0);
                     }
@@ -62,6 +66,8 @@ public abstract class ZombieEntityMixin extends HostileEntity {
                 }
             }
         }
+
+
 
         // Handle standard villager to zombie villager conversion
         else if ((world.getDifficulty() == Difficulty.NORMAL || world.getDifficulty() == Difficulty.HARD) && other instanceof VillagerEntity villagerEntity) {

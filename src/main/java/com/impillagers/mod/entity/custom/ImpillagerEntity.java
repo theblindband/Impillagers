@@ -49,49 +49,53 @@ import java.util.Map;
 public class ImpillagerEntity extends VillagerEntity {
     public final AnimationState idleAnimationState = new AnimationState();
     private int idleAnimationTimeout = 0;
-    private static final TrackedData<String> CUSTOM_TEXTURE = DataTracker.registerData(ImpillagerEntity.class, TrackedDataHandlerRegistry.STRING);
+    public static final TrackedData<String> TEXTURE_KEY = DataTracker.registerData(ImpillagerEntity.class, TrackedDataHandlerRegistry.STRING);
 
     public ImpillagerEntity(EntityType<? extends VillagerEntity> entityType, World world) {
         super(entityType, world);
         this.experiencePoints = 3;
         if (!world.isClient) {
-            this.dataTracker.set(CUSTOM_TEXTURE, ImpillagerTextures.selectRandomTexture().toString());
+            this.dataTracker.set(TEXTURE_KEY, ImpillagerTextures.selectRandomTextureKey());
         }
     }
 
     @Override
     protected void initDataTracker(DataTracker.Builder builder) {
         super.initDataTracker(builder);
-        builder.add(CUSTOM_TEXTURE, "");
+        builder.add(TEXTURE_KEY, "");
     }
 
     @Override
     public void onTrackedDataSet(TrackedData<?> data) {
         super.onTrackedDataSet(data);
-        if (data == CUSTOM_TEXTURE && this.dataTracker.get(CUSTOM_TEXTURE).isEmpty()) {
-            this.dataTracker.set(CUSTOM_TEXTURE, ImpillagerTextures.selectRandomTexture().toString());
+        if (data == TEXTURE_KEY && this.dataTracker.get(TEXTURE_KEY).isEmpty()) {
+            this.dataTracker.set(TEXTURE_KEY, ImpillagerTextures.selectRandomTextureKey());
         }
     }
 
     public Identifier getCustomTexture() {
-        String texturePath = this.dataTracker.get(CUSTOM_TEXTURE);
-        return texturePath.isEmpty() ? Identifier.tryParse("fallback_texture") : Identifier.tryParse(texturePath);
+        String textureKey = this.dataTracker.get(TEXTURE_KEY);
+        return ImpillagerTextures.getTextureByKey(textureKey).orElse(Identifier.tryParse("fallback_texture"));
+    }
+
+    public void setTextureKey(String textureKey) {
+        this.dataTracker.set(TEXTURE_KEY, textureKey);
     }
 
     @Override
     public void writeCustomDataToNbt(NbtCompound nbt) {
         super.writeCustomDataToNbt(nbt);
-        String texture = this.dataTracker.get(CUSTOM_TEXTURE);
-        if (texture != null && !texture.isEmpty()) {
-            nbt.putString("CustomTexture", texture);
+        String textureKey = this.dataTracker.get(TEXTURE_KEY);
+        if (textureKey != null && !textureKey.isEmpty()) {
+            nbt.putString("TextureKey", textureKey);
         }
     }
 
     @Override
     public void readCustomDataFromNbt(NbtCompound nbt) {
         super.readCustomDataFromNbt(nbt);
-        if (nbt.contains("CustomTexture")) {
-            this.dataTracker.set(CUSTOM_TEXTURE, nbt.getString("CustomTexture"));
+        if (nbt.contains("TextureKey")) {
+            this.dataTracker.set(TEXTURE_KEY, nbt.getString("TextureKey"));
         }
     }
 
