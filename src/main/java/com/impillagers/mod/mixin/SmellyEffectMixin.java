@@ -27,9 +27,8 @@ public abstract class SmellyEffectMixin {
 			for (TradeOffer tradeOffer : ((VillagerEntity) (Object) this).getOffers()) {
 				double d = 0.3 + 0.0625;
 				int k = (int) Math.floor(d * tradeOffer.getOriginalFirstBuyItem().getCount());
-				tradeOffer.increaseSpecialPrice(+Math.max(k, 1));
+				tradeOffer.increaseSpecialPrice(+Math.max(k, 5));
 			}
-			LOGGER.info("Using SmellyEffectMixin");
 		}
 	}
 }

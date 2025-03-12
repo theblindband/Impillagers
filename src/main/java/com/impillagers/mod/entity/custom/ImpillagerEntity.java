@@ -3,6 +3,7 @@ package com.impillagers.mod.entity.custom;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
+import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.ai.brain.task.ImpillagerTaskListProvider;
 import com.impillagers.mod.entity.mob.Impillager;
@@ -363,6 +364,26 @@ public class ImpillagerEntity extends VillagerEntity {
         if (i != 0) {
             for (TradeOffer tradeOffer : this.getOffers()) {
                 tradeOffer.increaseSpecialPrice(-MathHelper.floor((float) i * tradeOffer.getPriceMultiplier()));
+            }
+        }
+        if (player.hasStatusEffect(ModEffects.SMELLY)) {
+            StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY);
+            assert statusEffectInstance != null;
+
+            for (TradeOffer tradeOffer : ((VillagerEntity) (Object) this).getOffers()) {
+                double d = 0.3 + 0.0625;
+                int k = (int) Math.floor(d * tradeOffer.getOriginalFirstBuyItem().getCount());
+                tradeOffer.increaseSpecialPrice(-Math.max(k, 2));
+            }
+        }
+        if (player.hasStatusEffect(StatusEffects.HERO_OF_THE_VILLAGE)) {
+            StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY);
+            assert statusEffectInstance != null;
+
+            for (TradeOffer tradeOffer : ((VillagerEntity) (Object) this).getOffers()) {
+                double d = 0.3 + 0.0625;
+                int k = (int) Math.floor(d * tradeOffer.getOriginalFirstBuyItem().getCount());
+                tradeOffer.increaseSpecialPrice(+Math.max(k, 5));
             }
         }
     }
