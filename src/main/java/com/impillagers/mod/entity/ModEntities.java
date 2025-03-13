@@ -1,8 +1,8 @@
 package com.impillagers.mod.entity;
 
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.entity.custom.ImpillagerEntity;
-import com.impillagers.mod.entity.custom.ZombieImpillagerEntity;
+import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
 import com.impillagers.mod.entity.projectile.thrown.DungBallEntity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;

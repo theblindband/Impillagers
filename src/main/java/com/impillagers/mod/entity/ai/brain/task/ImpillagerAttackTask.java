@@ -1,28 +1,16 @@
 package com.impillagers.mod.entity.ai.brain.task;
 
 import com.google.common.annotations.VisibleForTesting;
-import com.google.common.collect.ImmutableMap;
-import com.impillagers.mod.entity.ModEntities;
-import com.impillagers.mod.entity.custom.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.entity.projectile.thrown.DungBallEntity;
-import com.impillagers.mod.sounds.ModSoundEvents;
-import net.minecraft.command.argument.EntityAnchorArgumentType;
-import net.minecraft.entity.EntityPose;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.*;
-import net.minecraft.entity.ai.brain.task.MultiTickTask;
 import net.minecraft.entity.ai.brain.task.SingleTickTask;
 import net.minecraft.entity.ai.brain.task.TaskTriggerer;
 import net.minecraft.entity.mob.MobEntity;
-import net.minecraft.entity.passive.VillagerEntity;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
-import net.minecraft.util.Unit;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
-
-import java.util.Optional;
 
 public class ImpillagerAttackTask {
     public static SingleTickTask<MobEntity> create(int meleeCooldown, int throwCooldown, float pitchAdjustment) {

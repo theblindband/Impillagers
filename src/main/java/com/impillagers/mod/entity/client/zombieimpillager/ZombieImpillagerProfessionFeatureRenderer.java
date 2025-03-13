@@ -1,9 +1,9 @@
-package com.impillagers.mod.entity.client;
+package com.impillagers.mod.entity.client.zombieimpillager;
 
 
 import com.google.common.collect.ImmutableMap;
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.entity.custom.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
 import com.impillagers.mod.villager.professions.Banker;
 import com.impillagers.mod.villager.professions.DungCollector;
 import com.impillagers.mod.villager.professions.Musician;
@@ -19,7 +19,7 @@ import net.minecraft.village.VillagerProfession;
 import java.util.Map;
 
 @Environment(EnvType.CLIENT)
-public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<ImpillagerEntity,ImpillagerModel<ImpillagerEntity>> {
+public class ZombieImpillagerProfessionFeatureRenderer extends FeatureRenderer<ZombieImpillagerEntity,ZombieImpillagerModel<ZombieImpillagerEntity>> {
 
     private static final Map<VillagerProfession, Identifier> PROFESSION_TEXTURES = ImmutableMap.ofEntries(
 
@@ -30,7 +30,7 @@ public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<Impilla
             Map.entry(Musician.MUSICIAN, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/musician.png"))
     );
 
-    public ImpillagerProfessionFeatureRenderer(FeatureRendererContext<ImpillagerEntity, ImpillagerModel<ImpillagerEntity>> featureRendererContext) {
+    public ZombieImpillagerProfessionFeatureRenderer(FeatureRendererContext<ZombieImpillagerEntity, ZombieImpillagerModel<ZombieImpillagerEntity>> featureRendererContext) {
         super(featureRendererContext);
     }
 
@@ -39,7 +39,7 @@ public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<Impilla
             MatrixStack matrixStack,
             VertexConsumerProvider vertexConsumerProvider,
             int light,
-            ImpillagerEntity impillagerEntity,
+            ZombieImpillagerEntity zombieImpillagerEntity,
             float limbAngle,
             float limbDistance,
             float tickDelta,
@@ -48,10 +48,12 @@ public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<Impilla
             float headPitch
     ) {
 
-        VillagerProfession impillagerProfession = impillagerEntity.getVillagerData().getProfession();
+        VillagerProfession impillagerProfession = zombieImpillagerEntity.getVillagerData().getProfession();
 
             Identifier identifier = (Identifier) PROFESSION_TEXTURES.get(impillagerProfession);
-            renderModel(this.getContextModel(), identifier, matrixStack, vertexConsumerProvider, light, impillagerEntity, -1);
+            if (identifier != null) {
+                renderModel(this.getContextModel(), identifier, matrixStack, vertexConsumerProvider, light, zombieImpillagerEntity, -1);
+            }
     }
 }
 

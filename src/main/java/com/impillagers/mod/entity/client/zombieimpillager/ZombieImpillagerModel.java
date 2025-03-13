@@ -1,14 +1,12 @@
-package com.impillagers.mod.entity.client;
+package com.impillagers.mod.entity.client.zombieimpillager;
 
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.entity.custom.ImpillagerEntity;
-import com.impillagers.mod.entity.custom.ZombieImpillagerEntity;
+import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 

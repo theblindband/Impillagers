@@ -1,4 +1,4 @@
-package com.impillagers.mod.entity.custom;
+package com.impillagers.mod.entity.custom.impillager;
 
 import com.impillagers.mod.Impillagers;
 import net.minecraft.util.Identifier;

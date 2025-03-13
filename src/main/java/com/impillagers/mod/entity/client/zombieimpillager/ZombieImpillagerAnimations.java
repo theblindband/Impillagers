@@ -1,4 +1,4 @@
-package com.impillagers.mod.entity.client;
+package com.impillagers.mod.entity.client.zombieimpillager;
 
 import net.minecraft.client.render.entity.animation.Animation;
 import net.minecraft.client.render.entity.animation.AnimationHelper;

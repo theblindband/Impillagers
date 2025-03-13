@@ -1,7 +1,7 @@
-package com.impillagers.mod.entity.client;
+package com.impillagers.mod.entity.client.impillager;
 
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.entity.custom.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import net.minecraft.client.model.*;
 import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;

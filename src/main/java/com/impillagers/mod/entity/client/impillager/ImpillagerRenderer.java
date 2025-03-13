@@ -1,6 +1,6 @@
-package com.impillagers.mod.entity.client;
+package com.impillagers.mod.entity.client.impillager;
 
-import com.impillagers.mod.entity.custom.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.EntityRendererFactory;

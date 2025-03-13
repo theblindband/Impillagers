@@ -5,7 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.impillagers.mod.entity.ModEntities;
-import com.impillagers.mod.entity.custom.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;

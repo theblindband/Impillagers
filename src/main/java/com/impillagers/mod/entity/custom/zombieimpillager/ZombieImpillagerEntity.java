@@ -1,7 +1,9 @@
-package com.impillagers.mod.entity.custom;
+package com.impillagers.mod.entity.custom.zombieimpillager;
 
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.impillager.ImpillagerTextures;
 import com.impillagers.mod.entity.mob.ZombieImpillagerEntityInterface;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.BedBlock;
@@ -19,7 +21,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.StackReference;
 import net.minecraft.nbt.NbtCompound;
