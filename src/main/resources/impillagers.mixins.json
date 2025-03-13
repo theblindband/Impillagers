@@ -4,9 +4,6 @@
   "compatibilityLevel": "JAVA_21",
   "mixins": [
     "BlockEntityTypeMixin",
-    "CallOfTheImpsOverlayMixin",
-    "ExampleMixin",
-    "InGameHudAccessor",
     "MobEntityAccessor",
     "PointOfInterestTaskMixin",
     "SignTypeAccessor",
@@ -18,5 +15,7 @@
     "defaultRequire": 1
   },
   "client": [
+    "CallOfTheImpsOverlayMixin",
+    "InGameHudAccessor"
   ]
 }
