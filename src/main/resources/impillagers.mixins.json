@@ -7,6 +7,7 @@
     "CallOfTheImpsOverlayMixin",
     "ExampleMixin",
     "InGameHudAccessor",
+    "MobEntityAccessor",
     "PointOfInterestTaskMixin",
     "SignTypeAccessor",
     "SmellyEffectMixin",

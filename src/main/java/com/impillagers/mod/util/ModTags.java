@@ -5,8 +5,6 @@ import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.Item;
 import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.tag.EntityTypeTags;
-import net.minecraft.registry.tag.StructureTags;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.gen.structure.Structure;
@@ -40,6 +38,7 @@ public class ModTags {
     public static class EntityTypes {
 
         public static final TagKey<EntityType<?>> SINKING_MUD_WALKABLE_MOBS = createTag("sinking_mud_walkable_mobs");
+        public static final TagKey<EntityType<?>> IGNORE_SMELLY = createTag("ignore_smelly");
 
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(Impillagers.MOD_ID, name));
