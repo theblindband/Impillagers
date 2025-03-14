@@ -24,7 +24,6 @@ import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
 import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
-import net.minecraft.item.Item;
 import net.minecraft.potion.Potions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -85,7 +84,7 @@ public class Impillagers implements ModInitializer {
 
 		//Potion Recipes
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {
-			builder.registerPotionRecipe(Potions.AWKWARD, Item.fromBlock(ModBlocks.BELLADONNA), Potions.STRONG_POISON);
+			builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.BELLADONNA.asItem(), Potions.STRONG_POISON);
 		});
 
 		//Packet Payloads
