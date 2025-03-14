@@ -16,6 +16,6 @@ public class ModParticleTypes {
     }
 
     public static void registerModParticles() {
-        Impillagers.LOGGER.info("Registering Mod Particles for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering Mod Particles for " + Impillagers.MOD_ID);
     }
 }
