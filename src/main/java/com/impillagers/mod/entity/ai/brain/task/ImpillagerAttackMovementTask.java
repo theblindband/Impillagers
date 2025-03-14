@@ -27,6 +27,7 @@ public class ImpillagerAttackMovementTask {
                                 context.queryMemoryOptional(MemoryModuleType.LOOK_TARGET),
                                 context.queryMemoryValue(MemoryModuleType.ATTACK_TARGET),
                                 context.queryMemoryOptional(MemoryModuleType.VISIBLE_MOBS)
+
                         )
                         .apply(
                                 context,
@@ -43,14 +44,10 @@ public class ImpillagerAttackMovementTask {
                                         // Pull back if within minDistance minus tolerance
                                         targetPosition = entity.getPos().subtract(relativeDirection.multiply(minDistance));
 
-                                        // Debugging logs
-                                        System.out.println("Action: Moving away to maintain minimum distance with tolerance");
                                     } else if (currentDistance >= (maxDistance + tolerance) * (maxDistance + tolerance)) {
                                         // Move closer if further than maxDistance plus tolerance
                                         targetPosition = entity.getPos().add(relativeDirection.multiply(maxDistance));
 
-                                        // Debugging logs
-                                        System.out.println("Action: Moving closer to maintain maximum distance with tolerance");
                                     } else {
                                         // Within distance range with tolerance, no need to move
                                         return true;

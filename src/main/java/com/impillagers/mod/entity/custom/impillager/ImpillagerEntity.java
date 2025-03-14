@@ -13,6 +13,7 @@ import com.mojang.datafixers.util.Pair;
 import com.mojang.serialization.Dynamic;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.brain.*;
+import net.minecraft.entity.ai.brain.sensor.GolemLastSeenSensor;
 import net.minecraft.entity.ai.brain.sensor.Sensor;
 import net.minecraft.entity.ai.brain.sensor.SensorType;
 import net.minecraft.entity.ai.brain.task.VillagerTaskListProvider;
@@ -35,11 +36,14 @@ import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.Box;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class ImpillagerEntity extends VillagerEntity {
     public final AnimationState idleAnimationState = new AnimationState();
@@ -405,6 +409,24 @@ public class ImpillagerEntity extends VillagerEntity {
             this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_ATTACK_SOUND);
             this.playSound(getMeleeAttackSound());
             return Impillager.tryAttack(this, (LivingEntity)target);
+        }
+    }
+
+
+    @Override
+    public void summonGolem(ServerWorld world, long time, int requiredCount) {
+        if (this.canSummonGolem(time)) {
+            Box box = this.getBoundingBox().expand(10.0, 10.0, 10.0);
+            List<VillagerEntity> list = world.getNonSpectatingEntities(VillagerEntity.class, box);
+            List<VillagerEntity> list2 = (List<VillagerEntity>)list.stream().filter(villager -> villager.canSummonGolem(time)).limit(5L).toList();
+            if (list2.size() >= requiredCount) {
+                if (LargeEntitySpawnHelper.trySpawnAt(
+                                ModEntities.DUNG_GOLEM, SpawnReason.MOB_SUMMONED, world, this.getBlockPos(), 10, 8, 6, LargeEntitySpawnHelper.Requirements.WARDEN
+                        )
+                        .isPresent()) {
+                    list.forEach(GolemLastSeenSensor::rememberIronGolem);
+                }
+            }
         }
     }
 }
