@@ -6,6 +6,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
+import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -15,6 +16,7 @@ import net.minecraft.entity.ai.brain.Brain;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.ai.brain.sensor.Sensor;
 import net.minecraft.entity.ai.brain.task.*;
+import net.minecraft.entity.mob.*;
 import net.minecraft.entity.passive.PassiveEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.util.TimeHelper;
@@ -39,15 +41,15 @@ public class ImpillagerTaskListProvider {
                 Pair.of(0, StartRaidTask.create()),
                 Pair.of(0, ForgetCompletedPointOfInterestTask.create(profession.heldWorkstation(), MemoryModuleType.JOB_SITE)),
                 Pair.of(0, ForgetCompletedPointOfInterestTask.create(profession.acquirableWorkstation(), MemoryModuleType.POTENTIAL_JOB_SITE)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.VILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE_VILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.WITCH, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIFIED_PIGLIN, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN_BRUTE, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
-                Pair.of(1, FindNewEnemyTask.create(ModEntities.ZOMBIE_IMPILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.VILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, VillagerEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.PILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, PillagerEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, ZombieEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE_VILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, ZombieEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.WITCH, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, WitchEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIFIED_PIGLIN, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, ZombifiedPiglinEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, PiglinEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN_BRUTE, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, PiglinBruteEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(ModEntities.ZOMBIE_IMPILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, ZombieImpillagerEntity.class)),
                 Pair.of(1, ImpillagerAttackTask.create(5, 40, 2F)),
                 Pair.of(1, ImpillagerAttackMovementTask.create(0.75F, 6, 10, 1.5F)),
                 Pair.of(2, ForgetAttackTargetTask.create()),

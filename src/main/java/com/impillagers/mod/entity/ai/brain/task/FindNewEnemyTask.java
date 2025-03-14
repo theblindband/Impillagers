@@ -2,10 +2,8 @@ package com.impillagers.mod.entity.ai.brain.task;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.brain.EntityLookTarget;
 import net.minecraft.entity.ai.brain.LivingTargetCache;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
-import net.minecraft.entity.ai.brain.WalkTarget;
 import net.minecraft.entity.ai.brain.task.Task;
 import net.minecraft.entity.ai.brain.task.TaskTriggerer;
 
@@ -13,10 +11,16 @@ import java.util.Optional;
 import java.util.function.Predicate;
 
 public class FindNewEnemyTask {
+
     public static <T extends LivingEntity> Task<LivingEntity> create(
-            EntityType<? extends T> type, int maxDistance, MemoryModuleType<T> targetModule, float speed, int completionRange
+            EntityType<? extends T> type,
+            int maxDistance,
+            MemoryModuleType<? super T> targetModule,
+            float speed,
+            int completionRange,
+            Class<T> targetClass
     ) {
-        return create(type, maxDistance, entity -> true, entity -> true, targetModule, speed, completionRange);
+        return create(type, maxDistance, e -> true, t -> true, targetModule, speed, completionRange, targetClass);
     }
 
     public static <E extends LivingEntity, T extends LivingEntity> Task<E> create(
@@ -24,31 +28,35 @@ public class FindNewEnemyTask {
             int maxDistance,
             Predicate<E> entityPredicate,
             Predicate<T> targetPredicate,
-            MemoryModuleType<T> targetModule,
+            MemoryModuleType<? super T> targetModule,
             float speed,
-            int completionRange
+            int completionRange,
+            Class<T> targetClass
     ) {
         int i = maxDistance * maxDistance;
-        Predicate<LivingEntity> predicate = entity -> type.equals(entity.getType()) && targetPredicate.test((T) entity);
+
+        Predicate<LivingEntity> predicate = entity ->
+                type.equals(entity.getType()) && targetPredicate.test(targetClass.cast(entity));
+
         return TaskTriggerer.task(
                 context -> context.group(
-                                context.queryMemoryOptional(targetModule),
-                                context.queryMemoryOptional(MemoryModuleType.LOOK_TARGET),
-                                context.queryMemoryAbsent(MemoryModuleType.ATTACK_TARGET),
-                                context.queryMemoryValue(MemoryModuleType.VISIBLE_MOBS)
-                        )
-                        .apply(context, (targetValue, lookTarget, attackTarget, visibleMobs) -> (world, entity, time) -> {
-                            LivingTargetCache livingTargetCache = context.getValue(visibleMobs);
-                            if (entityPredicate.test(entity) && livingTargetCache.anyMatch(predicate)) {
-                                Optional<LivingEntity> optional = livingTargetCache.findFirst(target -> target.squaredDistanceTo(entity) <= (double)i && predicate.test(target));
-                                optional.ifPresent(target -> {
-                                    targetValue.remember((T) target);
-                                });
-                                return true;
-                            } else {
-                                return false;
-                            }
-                        })
+                        context.queryMemoryOptional(targetModule),
+                        context.queryMemoryOptional(MemoryModuleType.LOOK_TARGET),
+                        context.queryMemoryAbsent(MemoryModuleType.ATTACK_TARGET),
+                        context.queryMemoryValue(MemoryModuleType.VISIBLE_MOBS)
+                ).apply(context, (targetValue, lookTarget, attackTarget, visibleMobs) -> (world, entity, time) -> {
+                    LivingTargetCache livingTargetCache = context.getValue(visibleMobs);
+                    if (entityPredicate.test(entity) && livingTargetCache.anyMatch(predicate)) {
+                        Optional<LivingEntity> optional = livingTargetCache.findFirst(target ->
+                                target.squaredDistanceTo(entity) <= (double) i && predicate.test(target));
+                        optional.ifPresent(target -> {
+                            targetValue.remember(targetClass.cast(target));
+                        });
+                        return true;
+                    } else {
+                        return false;
+                    }
+                })
         );
     }
 }
