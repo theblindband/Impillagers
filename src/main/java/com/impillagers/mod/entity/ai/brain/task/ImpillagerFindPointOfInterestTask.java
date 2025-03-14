@@ -3,11 +3,9 @@ package com.impillagers.mod.entity.ai.brain.task;
 
 import com.impillagers.mod.Impillagers;
 import com.mojang.datafixers.util.Pair;
-import it.unimi.dsi.fastutil.longs.Long2ObjectFunction;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -33,87 +31,73 @@ import org.jetbrains.annotations.Nullable;
 public class ImpillagerFindPointOfInterestTask {
 	public static final int POI_SORTING_RADIUS = 48;
 
-	public static Task<PathAwareEntity> create(
-		Predicate<RegistryEntry<PointOfInterestType>> poiPredicate, MemoryModuleType<GlobalPos> poiPosModule, boolean onlyRunIfChild, Optional<Byte> entityStatus
-	) {
-		return create(poiPredicate, poiPosModule, poiPosModule, onlyRunIfChild, entityStatus);
+	public static Task<PathAwareEntity> create(Predicate<RegistryEntry<PointOfInterestType>> poiPredicate, MemoryModuleType<GlobalPos> poiPosModule, boolean onlyRunIfChild) {
+		return create(poiPredicate, poiPosModule, poiPosModule, onlyRunIfChild);
 	}
 
-	public static Task<PathAwareEntity> create(
-		Predicate<RegistryEntry<PointOfInterestType>> poiPredicate,
-		MemoryModuleType<GlobalPos> poiPosModule,
-		MemoryModuleType<GlobalPos> potentialPoiPosModule,
-		boolean onlyRunIfChild,
-		Optional<Byte> entityStatus
-	) {
+	public static Task<PathAwareEntity> create(Predicate<RegistryEntry<PointOfInterestType>> poiPredicate, MemoryModuleType<GlobalPos> poiPosModule, MemoryModuleType<GlobalPos> potentialPoiPosModule, boolean onlyRunIfChild) {
+
 		int i = 5;
 		int j = 20;
 		MutableLong mutableLong = new MutableLong(0L);
-		Long2ObjectMap<ImpillagerFindPointOfInterestTask.RetryMarker> long2ObjectMap = new Long2ObjectOpenHashMap<>();
+		Long2ObjectMap<RetryMarker> long2ObjectMap = new Long2ObjectOpenHashMap<>();
+
 		SingleTickTask<PathAwareEntity> singleTickTask = TaskTriggerer.task(
-			taskContext -> taskContext.group(taskContext.queryMemoryAbsent(potentialPoiPosModule))
-					.apply(
-						taskContext,
-						queryResult -> (world, entity, time) -> {
-								if (onlyRunIfChild && entity.isBaby()) {
-									return false;
-								} else if (mutableLong.getValue() == 0L) {
-									mutableLong.setValue(world.getTime() + (long)world.random.nextInt(20));
-									return false;
-								} else if (world.getTime() < mutableLong.getValue()) {
-									return false;
-								} else {
-									mutableLong.setValue(time + 20L + (long)world.getRandom().nextInt(20));
-									PointOfInterestStorage pointOfInterestStorage = world.getPointOfInterestStorage();
-									long2ObjectMap.long2ObjectEntrySet().removeIf(entry -> !((ImpillagerFindPointOfInterestTask.RetryMarker)entry.getValue()).isAttempting(time));
-									Predicate<BlockPos> predicate2 = pos -> {
-										ImpillagerFindPointOfInterestTask.RetryMarker retryMarker = long2ObjectMap.get(pos.asLong());
-										if (retryMarker == null) {
-											return true;
-										} else if (!retryMarker.shouldRetry(time)) {
-											return false;
-										} else {
-											retryMarker.setAttemptTime(time);
-											return true;
-										}
-									};
-									Predicate<RegistryEntry<PointOfInterestType>> filteredPoiPredicate = poiPredicate.and(entry -> {
-										Identifier poiId = Registries.POINT_OF_INTEREST_TYPE.getId(entry.value());
-										return poiId != null && (Impillagers.MOD_ID.equals(poiId.getNamespace()));
-									});
+				taskContext -> taskContext.group(taskContext.queryMemoryAbsent(potentialPoiPosModule))
+						.apply(taskContext, queryResult -> (world, entity, time) -> {
+							if (onlyRunIfChild && entity.isBaby()) {
+								return false;
+							} else if (mutableLong.getValue() == 0L) {
+								mutableLong.setValue(world.getTime() + world.random.nextInt(20));
+								return false;
+							} else if (world.getTime() < mutableLong.getValue()) {
+								return false;
+							} else {
+								mutableLong.setValue(time + 20L + world.getRandom().nextInt(20));
+								PointOfInterestStorage pointOfInterestStorage = world.getPointOfInterestStorage();
+								long2ObjectMap.long2ObjectEntrySet().removeIf(entry -> !entry.getValue().isAttempting(time));
 
-									Set<Pair<RegistryEntry<PointOfInterestType>, BlockPos>> set = (Set<Pair<RegistryEntry<PointOfInterestType>, BlockPos>>)pointOfInterestStorage.getSortedTypesAndPositions(
-											filteredPoiPredicate, predicate2, entity.getBlockPos(), 48, PointOfInterestStorage.OccupationStatus.HAS_SPACE
-										)
-										.limit(5L)
-										.collect(Collectors.toSet());
-									Path path = findPathToPoi(entity, set);
-									if (path != null && path.reachesTarget()) {
-										BlockPos blockPos = path.getTarget();
-										pointOfInterestStorage.getType(blockPos).ifPresent(poiType -> {
-											pointOfInterestStorage.getPosition(poiPredicate, (registryEntry, blockPos2) -> blockPos2.equals(blockPos), blockPos, 1);
-											queryResult.remember(GlobalPos.create(world.getRegistryKey(), blockPos));
-											entityStatus.ifPresent(status -> world.sendEntityStatus(entity, status));
-											long2ObjectMap.clear();
-											DebugInfoSender.sendPointOfInterest(world, blockPos);
-										});
+								Predicate<BlockPos> predicate2 = pos -> {
+									RetryMarker retryMarker = long2ObjectMap.get(pos.asLong());
+									if (retryMarker == null) {
+										return true;
+									} else if (!retryMarker.shouldRetry(time)) {
+										return false;
 									} else {
-										for (Pair<RegistryEntry<PointOfInterestType>, BlockPos> pair : set) {
-											long2ObjectMap.computeIfAbsent(
-												pair.getSecond().asLong(),
-												(Long2ObjectFunction<? extends ImpillagerFindPointOfInterestTask.RetryMarker>)(m -> new ImpillagerFindPointOfInterestTask.RetryMarker(world.random, time))
-											);
-										}
+										retryMarker.setAttemptTime(time);
+										return true;
 									}
+								};
 
-									return true;
+								Predicate<RegistryEntry<PointOfInterestType>> filteredPoiPredicate = poiPredicate.and(entry -> {
+									Identifier poiId = Registries.POINT_OF_INTEREST_TYPE.getId(entry.value());
+									return poiId != null && Impillagers.MOD_ID.equals(poiId.getNamespace());
+								});
+
+								Set<Pair<RegistryEntry<PointOfInterestType>, BlockPos>> set = pointOfInterestStorage.getSortedTypesAndPositions(filteredPoiPredicate, predicate2, entity.getBlockPos(), POI_SORTING_RADIUS, PointOfInterestStorage.OccupationStatus.HAS_SPACE).limit(5L).collect(Collectors.toSet());
+
+								Path path = findPathToPoi(entity, set);
+								if (path != null && path.reachesTarget()) {
+									BlockPos blockPos = path.getTarget();
+									pointOfInterestStorage.getType(blockPos).ifPresent(poiType -> {
+										pointOfInterestStorage.getPosition(poiPredicate, (registryEntry, blockPos2) -> blockPos2.equals(blockPos), blockPos, 1);
+										queryResult.remember(GlobalPos.create(world.getRegistryKey(), blockPos));
+										long2ObjectMap.clear();
+										DebugInfoSender.sendPointOfInterest(world, blockPos);
+									});
+								} else {
+									for (Pair<RegistryEntry<PointOfInterestType>, BlockPos> pair : set) {
+										long2ObjectMap.computeIfAbsent(pair.getSecond().asLong(), m -> new RetryMarker(world.random, time));
+									}
 								}
+								return true;
 							}
-					)
+						})
 		);
+
 		return potentialPoiPosModule == poiPosModule
-			? singleTickTask
-			: TaskTriggerer.task(context -> context.group(context.queryMemoryAbsent(poiPosModule)).apply(context, poiPos -> singleTickTask));
+				? singleTickTask
+				: TaskTriggerer.task(context -> context.group(context.queryMemoryAbsent(poiPosModule)).apply(context, poiPos -> singleTickTask));
 	}
 
 	@Nullable
@@ -121,7 +105,7 @@ public class ImpillagerFindPointOfInterestTask {
 		if (pois.isEmpty()) {
 			return null;
 		} else {
-			Set<BlockPos> set = new HashSet();
+			Set<BlockPos> set = new HashSet<>();
 			int i = 1;
 
 			for (Pair<RegistryEntry<PointOfInterestType>, BlockPos> pair : pois) {
@@ -134,8 +118,6 @@ public class ImpillagerFindPointOfInterestTask {
 	}
 
 	static class RetryMarker {
-		private static final int MIN_DELAY = 40;
-		private static final int MAX_EXTRA_DELAY = 80;
 		private static final int ATTEMPT_DURATION = 400;
 		private final Random random;
 		private long previousAttemptAt;
@@ -151,11 +133,11 @@ public class ImpillagerFindPointOfInterestTask {
 			this.previousAttemptAt = time;
 			int i = this.currentDelay + this.random.nextInt(40) + 40;
 			this.currentDelay = Math.min(i, 400);
-			this.nextScheduledAttemptAt = time + (long)this.currentDelay;
+			this.nextScheduledAttemptAt = time + this.currentDelay;
 		}
 
 		public boolean isAttempting(long time) {
-			return time - this.previousAttemptAt < 400L;
+			return time - this.previousAttemptAt < ATTEMPT_DURATION;
 		}
 
 		public boolean shouldRetry(long time) {
@@ -163,13 +145,7 @@ public class ImpillagerFindPointOfInterestTask {
 		}
 
 		public String toString() {
-			return "RetryMarker{, previousAttemptAt="
-				+ this.previousAttemptAt
-				+ ", nextScheduledAttemptAt="
-				+ this.nextScheduledAttemptAt
-				+ ", currentDelay="
-				+ this.currentDelay
-				+ "}";
+			return "RetryMarker{" + "previousAttemptAt=" + this.previousAttemptAt + ", nextScheduledAttemptAt=" + this.nextScheduledAttemptAt + ", currentDelay=" + this.currentDelay + "}";
 		}
 	}
 }

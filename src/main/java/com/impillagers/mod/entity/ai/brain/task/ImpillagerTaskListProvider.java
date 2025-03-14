@@ -57,17 +57,11 @@ public class ImpillagerTaskListProvider {
                 Pair.of(2, WorkStationCompetitionTask.create()),
                 Pair.of(2, new FollowCustomerTask(speed)),
                 Pair.of(5, WalkToNearestVisibleWantedItemTask.create(speed, false, 4)),
-                Pair.of(
-                        6,
-                        ImpillagerFindPointOfInterestTask.create(profession.acquirableWorkstation(), MemoryModuleType.JOB_SITE, MemoryModuleType.POTENTIAL_JOB_SITE, true, Optional.empty())
-                ),
+                Pair.of(6, ImpillagerFindPointOfInterestTask.create(profession.acquirableWorkstation(), MemoryModuleType.JOB_SITE, MemoryModuleType.POTENTIAL_JOB_SITE, true)),
                 Pair.of(7, new WalkTowardJobSiteTask(speed)),
                 Pair.of(8, TakeJobSiteTask.create(speed)),
                 Pair.of(10, FindPointOfInterestTask.create(poiType -> poiType.matchesKey(PointOfInterestTypes.HOME), MemoryModuleType.HOME, false, Optional.of((byte)14))),
-                Pair.of(
-                        10,
-                        FindPointOfInterestTask.create(poiType -> poiType.matchesKey(PointOfInterestTypes.MEETING), MemoryModuleType.MEETING_POINT, true, Optional.of((byte)14))
-                ),
+                Pair.of(10, FindPointOfInterestTask.create(poiType -> poiType.matchesKey(PointOfInterestTypes.MEETING), MemoryModuleType.MEETING_POINT, true, Optional.of((byte)14))),
                 Pair.of(10, GoToWorkTask.create()),
                 Pair.of(10, LoseJobOnSiteLossTask.create())
         );
@@ -83,9 +77,7 @@ public class ImpillagerTaskListProvider {
                         new RandomTask<>(
                                 ImmutableList.of(
                                         Pair.of(FindEntityTask.create(ModEntities.IMPILLAGER, 8, MemoryModuleType.INTERACTION_TARGET, speed, 2), 2),
-                                        Pair.of(
-                                                FindEntityTask.create(ModEntities.IMPILLAGER, 8, PassiveEntity::isReadyToBreed, PassiveEntity::isReadyToBreed, MemoryModuleType.BREED_TARGET, speed, 2), 1
-                                        ),
+                                        Pair.of(FindEntityTask.create(ModEntities.IMPILLAGER, 8, PassiveEntity::isReadyToBreed, PassiveEntity::isReadyToBreed, MemoryModuleType.BREED_TARGET, speed, 2), 1),
                                         Pair.of(FindEntityTask.create(EntityType.CAT, 8, MemoryModuleType.INTERACTION_TARGET, speed, 2), 1),
                                         Pair.of(FindWalkTargetTask.create(speed), 1),
                                         Pair.of(GoTowardsLookTargetTask.create(speed, 2), 1),
