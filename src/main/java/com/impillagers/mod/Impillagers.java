@@ -4,6 +4,7 @@ import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.custom.dung_golem.DungGolemEntity;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
 import com.impillagers.mod.event.ModEvents;
@@ -80,6 +81,7 @@ public class Impillagers implements ModInitializer {
 		//Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.ZOMBIE_IMPILLAGER, ZombieImpillagerEntity.createZombieImpillagerAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.DUNG_GOLEM, DungGolemEntity.createDungGolemAttributes());
 
 		//Potion Recipes
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> {

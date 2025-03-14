@@ -3,6 +3,8 @@ package com.impillagers.mod;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.client.*;
+import com.impillagers.mod.entity.client.dung_golem.DungGolemModel;
+import com.impillagers.mod.entity.client.dung_golem.DungGolemRenderer;
 import com.impillagers.mod.entity.client.impillager.ImpillagerModel;
 import com.impillagers.mod.entity.client.impillager.ImpillagerRenderer;
 import com.impillagers.mod.entity.client.zombieimpillager.ZombieImpillagerModel;
@@ -38,9 +40,11 @@ public class ImpillagersClient implements ClientModInitializer {
 
         EntityModelLayerRegistry.registerModelLayer(ImpillagerModel.IMPILLAGER, ImpillagerModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ZombieImpillagerModel.ZOMBIE_IMPILLAGER, ZombieImpillagerModel::getTexturedModelData);
+        EntityModelLayerRegistry.registerModelLayer(DungGolemModel.DUNG_GOLEM, DungGolemModel::getTexturedModelData);
 
         EntityRendererRegistry.register(ModEntities.IMPILLAGER, ImpillagerRenderer::new);
         EntityRendererRegistry.register(ModEntities.ZOMBIE_IMPILLAGER, ZombieImpillagerRenderer::new);
+        EntityRendererRegistry.register(ModEntities.DUNG_GOLEM, DungGolemRenderer::new);
         EntityRendererRegistry.register(ModEntities.DUNG_BALL, FlyingItemEntityRenderer::new);
 
         ParticleFactoryRegistry.getInstance().register(ModParticleTypes.FIREFLY,((spriteProvider) -> {

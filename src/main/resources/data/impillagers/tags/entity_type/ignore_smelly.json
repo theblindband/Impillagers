@@ -2,6 +2,7 @@
   "values": [
     "minecraft:ender_dragon",
     "minecraft:wither",
-    "impillagers:impillager"
+    "impillagers:impillager",
+    "impillagers:dung_golem"
   ]
 }

@@ -6,6 +6,7 @@
     "minecraft:witch",
     "minecraft:pig",
     "impillagers:impillager",
-    "impillagers:zombie_impillager"
+    "impillagers:zombie_impillager",
+    "impillagers:dung_golem"
   ]
 }

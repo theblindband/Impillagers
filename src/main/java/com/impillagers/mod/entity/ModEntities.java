@@ -1,6 +1,7 @@
 package com.impillagers.mod.entity;
 
 import com.impillagers.mod.Impillagers;
+import com.impillagers.mod.entity.custom.dung_golem.DungGolemEntity;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
 import com.impillagers.mod.entity.projectile.thrown.DungBallEntity;
@@ -20,6 +21,11 @@ public class ModEntities {
     public static final EntityType<ZombieImpillagerEntity> ZOMBIE_IMPILLAGER = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Impillagers.MOD_ID, "zombie_impillager"),
             EntityType.Builder.create(ZombieImpillagerEntity::new, SpawnGroup.MONSTER)
+                    .dimensions(0.625f, 0.9f).build());
+
+    public static final EntityType<DungGolemEntity> DUNG_GOLEM = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Impillagers.MOD_ID, "dung_golem"),
+            EntityType.Builder.create(DungGolemEntity::new, SpawnGroup.MISC)
                     .dimensions(0.625f, 0.9f).build());
 
     public static final EntityType<DungBallEntity> DUNG_BALL = Registry.register(Registries.ENTITY_TYPE,

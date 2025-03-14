@@ -34,6 +34,7 @@
   "item.impillagers.dung_ball": "Piece of Dung",
   "item.impillagers.impillager_spawn_egg": "Impillager Spawn Egg",
   "item.impillagers.zombie_impillager_spawn_egg": "Zombie Impillager Spawn Egg",
+  "item.impillagers.dung_golem_spawn_egg": "Dung Golem Spawn Egg",
   "item.impillagers.gold_coin": "Gold Coin",
   "item.impillagers.fake_gold_coin": "Gold Coin",
   "item.impillagers.painted_armor_trim_smithing_template": "Painted Armor Trim Smithing Template",
@@ -49,6 +50,7 @@
   "entity.impillagers.impillager": "Impillager",
   "entity.impillagers.zombie_impillager": "Zombie Impillager",
   "entity.impillagers.impillager.nitwit": "Impillager Nitwit",
+  "entity.impillagers.dung_golem": "Dung Golem",
 
   "entity.impillagers.impillager.dung_collector": "Dung Collector",
   "entity.impillagers.impillager.banker": "Banker",

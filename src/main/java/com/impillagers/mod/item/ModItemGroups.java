@@ -53,6 +53,9 @@ public class ModItemGroups {
                         entries.add(ModItems.IMPILLAGER_SPAWN_EGG);
                         entries.add(ModItems.ZOMBIE_IMPILLAGER_SPAWN_EGG);
 
+                        //Dung Golems
+                        entries.add(ModItems.DUNG_GOLEM_SPAWN_EGG);
+
                         //Imp Trade Stuff
                         entries.add(ModItems.GOLD_COIN);
                         entries.add(ModItems.FAKE_GOLD_COIN);
