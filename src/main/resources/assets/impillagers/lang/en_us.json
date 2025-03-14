@@ -62,5 +62,13 @@
   "enchantment.impillagers.fuse": "Fuse",
   "enchantment.impillagers.kaboom": "Kaboom!",
   "enchantment.impillagers.lead_falling": "Lead Falling",
-  "enchantment.impillagers.frogs_legs": "Frog's Legs"
+  "enchantment.impillagers.frogs_legs": "Frog's Legs",
+
+  "tag.item.impillagers.stained_glass_pane": "Stained Glass Pane",
+  "tag.item.impillagers.stained_glass": "Stained Glass",
+  "tag.item.impillagers.concrete_powder": "Concrete Powder",
+  "tag.item.impillagers.dyed_terracotta": "Dyed Terracotta",
+  "tag.item.impillagers.dyed_candle": "Dyed Candle",
+  "tag.item.impillagers.purple_heart_logs": "Purple Heart Logs",
+  "tag.item.impillagers.frog_poisonous_food": "Frog Poisonous Food"
 }
