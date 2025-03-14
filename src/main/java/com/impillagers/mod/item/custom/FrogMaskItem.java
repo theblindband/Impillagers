@@ -41,6 +41,8 @@ public class FrogMaskItem extends ArmorItem {
             if(entity instanceof PlayerEntity player) {
                 if(hasHelmetOn(player)) {
                     evaluateArmorEffects(player);
+                } else {
+                        ServerPlayNetworking.send((ServerPlayerEntity) player, new HudOverlayOpacityPayload(0F));
                 }
             }
         }
