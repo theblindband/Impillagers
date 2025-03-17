@@ -4,25 +4,16 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.particle.*;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.particle.SimpleParticleType;
 
 @Environment(EnvType.CLIENT)
 public class FireflyParticle extends SpriteBillboardParticle {
-	private static final float field_43372 = 0.0025F;
-	private static final int field_43373 = 300;
-	private static final int field_43366 = 300;
-	private static final float field_43367 = 0.25F;
-	private static final float field_43368 = 2.0F;
-	private float field_43369;
-	private final float field_43370;
-	private final float field_43371;
 
-	public FireflyParticle(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider) {
+    public FireflyParticle(ClientWorld world, double x, double y, double z, SpriteProvider spriteProvider) {
 		super(world, x, y, z);
 		this.setSprite(spriteProvider.getSprite(this.random.nextInt(12), 12));
-		this.field_43369 = (float)Math.toRadians(this.random.nextBoolean() ? -30.0D : 30.0D);
-		this.field_43370 = this.random.nextFloat();
-		this.field_43371 = (float)Math.toRadians(this.random.nextBoolean() ? -5.0D : 5.0D);
+        float field_43369 = (float) Math.toRadians(this.random.nextBoolean() ? -30.0D : 30.0D);
+        float field_43370 = this.random.nextFloat();
+        float field_43371 = (float) Math.toRadians(this.random.nextBoolean() ? -5.0D : 5.0D);
 		this.maxAge = 300;
 		this.gravityStrength = 0F;
 		//float f = this.random.nextBoolean() ? 0.05F : 0.075F;
@@ -63,7 +54,7 @@ public class FireflyParticle extends SpriteBillboardParticle {
 			this.velocityZ += (this.random.nextDouble() - 0.5) * 0.1;
 
 			// Apply gravity to velocityY
-			this.velocityY -= (double)this.gravityStrength;
+			this.velocityY -= this.gravityStrength;
 
 			// Move the particle based on its velocity
 			this.move(this.velocityX, this.velocityY, this.velocityZ);
@@ -75,9 +66,9 @@ public class FireflyParticle extends SpriteBillboardParticle {
 
 			// Apply velocity damping if the particle is not dead
 			if (!this.dead) {
-				this.velocityX *= (double)this.velocityMultiplier;
-				this.velocityY *= (double)this.velocityMultiplier;
-				this.velocityZ *= (double)this.velocityMultiplier;
+				this.velocityX *= this.velocityMultiplier;
+				this.velocityY *= this.velocityMultiplier;
+				this.velocityZ *= this.velocityMultiplier;
 			}
 		}
 	}

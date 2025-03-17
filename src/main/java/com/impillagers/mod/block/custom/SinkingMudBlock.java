@@ -43,13 +43,8 @@ public class SinkingMudBlock extends Block implements Waterloggable{
 
     public SinkingMudBlock(AbstractBlock.Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, Boolean.valueOf(false)));
+        this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, Boolean.FALSE));
     }
-
-    //@Override
-    //protected VoxelShape getCullingShape(BlockState state, BlockView world, BlockPos pos) {
-    //    return VoxelShapes.empty();
-    //}
 
     @Override
     protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
@@ -105,7 +100,7 @@ public class SinkingMudBlock extends Block implements Waterloggable{
         if (entity.getType().isIn(ModTags.EntityTypes.SINKING_MUD_WALKABLE_MOBS)) {
             return true;
         } else {
-            return entity instanceof LivingEntity ? ((LivingEntity) entity).getEquippedStack(EquipmentSlot.FEET).isOf(Items.LEATHER_BOOTS) : false;
+            return entity instanceof LivingEntity && ((LivingEntity) entity).getEquippedStack(EquipmentSlot.FEET).isOf(Items.LEATHER_BOOTS);
         }
     }
 

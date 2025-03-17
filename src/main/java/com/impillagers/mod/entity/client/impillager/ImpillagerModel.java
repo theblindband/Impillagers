@@ -7,7 +7,6 @@ import net.minecraft.client.render.VertexConsumer;
 import net.minecraft.client.render.entity.model.EntityModelLayer;
 import net.minecraft.client.render.entity.model.SinglePartEntityModel;
 import net.minecraft.client.util.math.MatrixStack;
-import net.minecraft.entity.passive.MerchantEntity;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 
@@ -18,13 +17,12 @@ public class ImpillagerModel<T extends ImpillagerEntity> extends SinglePartEntit
     //private final ModelPart root;
     private final ModelPart impillager;
     private final ModelPart head;
-    private final ModelPart body;
 
 
     public ImpillagerModel(ModelPart root) {
         this.impillager = root.getChild("impillager");
-        this.body = this.impillager.getChild("body");
-        this.head = this.body.getChild("head");
+        ModelPart body = this.impillager.getChild("body");
+        this.head = body.getChild("head");
     }
 
     public static TexturedModelData getTexturedModelData() {
@@ -64,8 +62,7 @@ public class ImpillagerModel<T extends ImpillagerEntity> extends SinglePartEntit
         this.getPart().traverse().forEach(ModelPart::resetTransform);
         this.setHeadAngles(netHeadYaw, headPitch);
 
-        boolean bl = false;
-            bl = ((MerchantEntity)entity).getHeadRollingTimeLeft() > 0;
+        boolean bl = entity.getHeadRollingTimeLeft() > 0;
 
         this.head.yaw = netHeadYaw * (float) (Math.PI / 180.0);
         this.head.pitch = headPitch * (float) (Math.PI / 180.0);

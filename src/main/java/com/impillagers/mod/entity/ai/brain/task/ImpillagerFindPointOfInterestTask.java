@@ -31,14 +31,8 @@ import org.jetbrains.annotations.Nullable;
 public class ImpillagerFindPointOfInterestTask {
 	public static final int POI_SORTING_RADIUS = 48;
 
-	public static Task<PathAwareEntity> create(Predicate<RegistryEntry<PointOfInterestType>> poiPredicate, MemoryModuleType<GlobalPos> poiPosModule, boolean onlyRunIfChild) {
-		return create(poiPredicate, poiPosModule, poiPosModule, onlyRunIfChild);
-	}
-
 	public static Task<PathAwareEntity> create(Predicate<RegistryEntry<PointOfInterestType>> poiPredicate, MemoryModuleType<GlobalPos> poiPosModule, MemoryModuleType<GlobalPos> potentialPoiPosModule, boolean onlyRunIfChild) {
 
-		int i = 5;
-		int j = 20;
 		MutableLong mutableLong = new MutableLong(0L);
 		Long2ObjectMap<RetryMarker> long2ObjectMap = new Long2ObjectOpenHashMap<>();
 

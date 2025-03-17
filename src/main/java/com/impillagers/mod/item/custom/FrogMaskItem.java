@@ -1,7 +1,6 @@
 package com.impillagers.mod.item.custom;
 
 import com.google.common.collect.ImmutableMap;
-import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.item.ModArmorMaterials;

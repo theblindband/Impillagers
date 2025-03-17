@@ -111,7 +111,7 @@ public class ImpillagerEntity extends VillagerEntity {
 
     @Override
     public boolean canHaveStatusEffect(StatusEffectInstance effect) {
-        return effect.equals(StatusEffects.POISON) ? false : super.canHaveStatusEffect(effect);
+        return !effect.equals(StatusEffects.POISON) && super.canHaveStatusEffect(effect);
     }
 
     //-------------------------------------Tick-------------------------------------
@@ -189,7 +189,7 @@ public class ImpillagerEntity extends VillagerEntity {
 
     @Override
     public Brain<VillagerEntity> getBrain() {
-        return (Brain<VillagerEntity>)super.getBrain();
+        return super.getBrain();
     }
 
     @Override
@@ -368,7 +368,7 @@ public class ImpillagerEntity extends VillagerEntity {
             StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY);
             assert statusEffectInstance != null;
 
-            for (TradeOffer tradeOffer : ((VillagerEntity) (Object) this).getOffers()) {
+            for (TradeOffer tradeOffer : this.getOffers()) {
                 double d = 0.3 + 0.0625;
                 int k = (int) Math.floor(d * tradeOffer.getOriginalFirstBuyItem().getCount());
                 tradeOffer.increaseSpecialPrice(-Math.max(k, 2));
@@ -378,7 +378,7 @@ public class ImpillagerEntity extends VillagerEntity {
             StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY);
             assert statusEffectInstance != null;
 
-            for (TradeOffer tradeOffer : ((VillagerEntity) (Object) this).getOffers()) {
+            for (TradeOffer tradeOffer : this.getOffers()) {
                 double d = 0.3 + 0.0625;
                 int k = (int) Math.floor(d * tradeOffer.getOriginalFirstBuyItem().getCount());
                 tradeOffer.increaseSpecialPrice(+Math.max(k, 5));
@@ -418,7 +418,7 @@ public class ImpillagerEntity extends VillagerEntity {
         if (this.canSummonGolem(time)) {
             Box box = this.getBoundingBox().expand(10.0, 10.0, 10.0);
             List<VillagerEntity> list = world.getNonSpectatingEntities(VillagerEntity.class, box);
-            List<VillagerEntity> list2 = (List<VillagerEntity>)list.stream().filter(villager -> villager.canSummonGolem(time)).limit(5L).toList();
+            List<VillagerEntity> list2 = list.stream().filter(villager -> villager.canSummonGolem(time)).limit(5L).toList();
             if (list2.size() >= requiredCount) {
                 if (LargeEntitySpawnHelper.trySpawnAt(
                                 ModEntities.DUNG_GOLEM, SpawnReason.MOB_SUMMONED, world, this.getBlockPos(), 10, 8, 6, LargeEntitySpawnHelper.Requirements.WARDEN

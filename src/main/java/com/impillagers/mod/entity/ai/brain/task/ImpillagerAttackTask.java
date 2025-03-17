@@ -25,13 +25,13 @@ public class ImpillagerAttackTask {
                                 context,
                                 (lookTarget, attackTarget, attackCoolingDown, visibleMobs) -> (world, entity, time) -> {
                                     LivingEntity livingEntity = context.getValue(attackTarget);
-                                    if (entity.isInAttackRange(livingEntity) && context.<LivingTargetCache>getValue(visibleMobs).contains(livingEntity)) {
+                                    if (entity.isInAttackRange(livingEntity) && context.getValue(visibleMobs).contains(livingEntity)) {
                                         lookTarget.remember(new EntityLookTarget(livingEntity, true));
                                         entity.swingHand(Hand.MAIN_HAND);
                                         entity.tryAttack(livingEntity);
-                                        attackCoolingDown.remember(true, (long) meleeCooldown);
+                                        attackCoolingDown.remember(true, meleeCooldown);
                                         return true;
-                                    } else if (!entity.isInAttackRange(livingEntity) && isTargetWithinThrowRange(entity, livingEntity) && context.<LivingTargetCache>getValue(visibleMobs).contains(livingEntity)) {
+                                    } else if (!entity.isInAttackRange(livingEntity) && isTargetWithinThrowRange(entity, livingEntity) && context.getValue(visibleMobs).contains(livingEntity)) {
                                         lookTarget.remember(new EntityLookTarget(livingEntity, true));
                                         if (isFacingTarget(entity, livingEntity)) {
                                             double d = livingEntity.getX() - entity.getX();
@@ -42,7 +42,7 @@ public class ImpillagerAttackTask {
                                             entity.playSound((ImpillagerEntity.getRangedAttackSound()) , 1.5F, 1.0F);
                                             dungBallEntity.setVelocity(d, e, f, 0.75F, (float) (5 - serverWorld.getDifficulty().getId() * 4));
                                             serverWorld.spawnEntity(dungBallEntity);
-                                            attackCoolingDown.remember(true, (long) throwCooldown);
+                                            attackCoolingDown.remember(true, throwCooldown);
                                             return true;
                                         } else {
                                             return false;

@@ -50,7 +50,7 @@ public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<Impilla
 
         VillagerProfession impillagerProfession = impillagerEntity.getVillagerData().getProfession();
 
-            Identifier identifier = (Identifier) PROFESSION_TEXTURES.get(impillagerProfession);
+            Identifier identifier = PROFESSION_TEXTURES.get(impillagerProfession);
             renderModel(this.getContextModel(), identifier, matrixStack, vertexConsumerProvider, light, impillagerEntity, -1);
     }
 }

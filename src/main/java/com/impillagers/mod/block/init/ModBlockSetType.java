@@ -9,7 +9,7 @@ import net.minecraft.sound.SoundEvents;
 import java.util.Set;
 import java.util.stream.Stream;
 public record ModBlockSetType(String name, BlockSoundGroup soundType, SoundEvent doorClose, SoundEvent doorOpen, SoundEvent trapdoorClose, SoundEvent trapdoorOpen, SoundEvent pressurePlateClickOff, SoundEvent pressurePlateClickOn, SoundEvent buttonClickOff, SoundEvent buttonClickOn) {
-    private static final Set<net.minecraft.block.BlockSetType> VALUES = new ObjectArraySet<net.minecraft.block.BlockSetType>();
+    private static final Set<net.minecraft.block.BlockSetType> VALUES = new ObjectArraySet<>();
     public static final BlockSetType PURPLE_HEART = register(new BlockSetType("purple_heart"));
 
 

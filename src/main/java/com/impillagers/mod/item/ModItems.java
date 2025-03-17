@@ -6,7 +6,6 @@ import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.item.custom.CreeperOilItem;
 import com.impillagers.mod.item.custom.DungBallItem;
 import com.impillagers.mod.item.custom.FrogMaskItem;
-import net.minecraft.component.type.FoodComponents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;

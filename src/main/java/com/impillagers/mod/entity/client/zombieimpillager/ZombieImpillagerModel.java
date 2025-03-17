@@ -17,13 +17,12 @@ public class ZombieImpillagerModel<T extends ZombieImpillagerEntity> extends Sin
     //private final ModelPart root;
     private final ModelPart zombie_impillager;
     private final ModelPart head;
-    private final ModelPart body;
 
 
     public ZombieImpillagerModel(ModelPart root) {
         this.zombie_impillager = root.getChild("zombie_impillager");
-        this.body = this.zombie_impillager.getChild("body");
-        this.head = this.body.getChild("head");
+        ModelPart body = this.zombie_impillager.getChild("body");
+        this.head = body.getChild("head");
     }
 
     public static TexturedModelData getTexturedModelData() {

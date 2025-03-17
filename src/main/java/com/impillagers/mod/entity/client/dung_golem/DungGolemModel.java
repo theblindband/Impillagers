@@ -12,11 +12,10 @@ import net.minecraft.util.Identifier;
 public class DungGolemModel <T extends DungGolemEntity> extends SinglePartEntityModel<T> {
     public static final EntityModelLayer DUNG_GOLEM = new EntityModelLayer(Identifier.of(Impillagers.MOD_ID, "dung_golem"), "main");
     private final ModelPart dung_golem;
-    private final ModelPart body;
 
     public DungGolemModel(ModelPart root) {
         this.dung_golem = root.getChild("dung_golem");
-        this.body = this.dung_golem.getChild("body");
+        ModelPart body = this.dung_golem.getChild("body");
     }
 
     public static TexturedModelData getTexturedModelData() {

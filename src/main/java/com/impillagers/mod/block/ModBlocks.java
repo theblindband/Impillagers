@@ -3,18 +3,15 @@ package com.impillagers.mod.block;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.custom.*;
 import com.impillagers.mod.block.entity.ModSignTypes;
-import com.impillagers.mod.block.init.ModBlockSetType;
 import com.impillagers.mod.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;
-import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
 import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;

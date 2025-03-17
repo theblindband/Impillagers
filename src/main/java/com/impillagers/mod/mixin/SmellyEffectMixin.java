@@ -5,8 +5,6 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.village.TradeOffer;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -14,9 +12,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(VillagerEntity.class)
 public abstract class SmellyEffectMixin {
-	private static final String MOD_ID = "impillagers";
-	private static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
-
 
 	@Inject(method = "prepareOffersFor", at = @At("TAIL"))
 	private void addHeroOfTheVillageDiscount(PlayerEntity player, CallbackInfo ci) {

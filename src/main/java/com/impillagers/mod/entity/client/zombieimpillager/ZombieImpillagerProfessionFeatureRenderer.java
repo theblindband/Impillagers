@@ -50,7 +50,7 @@ public class ZombieImpillagerProfessionFeatureRenderer extends FeatureRenderer<Z
 
         VillagerProfession impillagerProfession = zombieImpillagerEntity.getVillagerData().getProfession();
 
-            Identifier identifier = (Identifier) PROFESSION_TEXTURES.get(impillagerProfession);
+            Identifier identifier = PROFESSION_TEXTURES.get(impillagerProfession);
             if (identifier != null) {
                 renderModel(this.getContextModel(), identifier, matrixStack, vertexConsumerProvider, light, zombieImpillagerEntity, -1);
             }

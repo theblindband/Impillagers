@@ -43,9 +43,7 @@ public abstract class ZombieVillagerEntityMixin extends ZombieEntity {
                     .map(RegistryEntry::value)
                     .filter(profession -> !Registries.VILLAGER_PROFESSION.getId(profession).getNamespace().equals(Impillagers.MOD_ID))
                     .findAny()
-                    .ifPresent(profession -> {
-                        this.setVillagerData(this.getVillagerData().withProfession(profession));
-                    });
+                    .ifPresent(profession -> this.setVillagerData(this.getVillagerData().withProfession(profession)));
         }
     }
 }

@@ -2,7 +2,6 @@ package com.impillagers.mod.block.entity;
 
 import com.impillagers.mod.block.init.ModBlockSetType;
 import com.impillagers.mod.mixin.SignTypeAccessor;
-import net.minecraft.block.BlockSetType;
 import net.minecraft.block.WoodType;
 
 public class ModSignTypes {

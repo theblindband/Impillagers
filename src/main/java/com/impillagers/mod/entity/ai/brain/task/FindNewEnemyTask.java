@@ -16,11 +16,9 @@ public class FindNewEnemyTask {
             EntityType<? extends T> type,
             int maxDistance,
             MemoryModuleType<? super T> targetModule,
-            float speed,
-            int completionRange,
             Class<T> targetClass
     ) {
-        return create(type, maxDistance, e -> true, t -> true, targetModule, speed, completionRange, targetClass);
+        return create(type, maxDistance, e -> true, t -> true, targetModule, targetClass);
     }
 
     public static <E extends LivingEntity, T extends LivingEntity> Task<E> create(
@@ -29,8 +27,6 @@ public class FindNewEnemyTask {
             Predicate<E> entityPredicate,
             Predicate<T> targetPredicate,
             MemoryModuleType<? super T> targetModule,
-            float speed,
-            int completionRange,
             Class<T> targetClass
     ) {
         int i = maxDistance * maxDistance;
@@ -49,9 +45,7 @@ public class FindNewEnemyTask {
                     if (entityPredicate.test(entity) && livingTargetCache.anyMatch(predicate)) {
                         Optional<LivingEntity> optional = livingTargetCache.findFirst(target ->
                                 target.squaredDistanceTo(entity) <= (double) i && predicate.test(target));
-                        optional.ifPresent(target -> {
-                            targetValue.remember(targetClass.cast(target));
-                        });
+                        optional.ifPresent(target -> targetValue.remember(targetClass.cast(target)));
                         return true;
                     } else {
                         return false;

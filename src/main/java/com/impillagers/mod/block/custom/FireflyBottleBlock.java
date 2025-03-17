@@ -4,7 +4,6 @@ import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.block.LanternBlock;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundCategory;
@@ -28,7 +27,7 @@ public class FireflyBottleBlock extends LanternBlock {
 
     public FireflyBottleBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(LIT, Boolean.TRUE).with(HANGING, Boolean.valueOf(false)).with(WATERLOGGED, Boolean.valueOf(false)));
+        this.setDefaultState(this.stateManager.getDefaultState().with(LIT, Boolean.TRUE).with(HANGING, Boolean.FALSE).with(WATERLOGGED, Boolean.FALSE));
     }
 
     @Override

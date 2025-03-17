@@ -2,16 +2,13 @@ package com.impillagers.mod.entity.ai.brain.task;
 
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.brain.EntityLookTarget;
-import net.minecraft.entity.ai.brain.LivingTargetCache;
 import net.minecraft.entity.ai.brain.MemoryModuleType;
 import net.minecraft.entity.ai.brain.WalkTarget;
-import net.minecraft.entity.ai.brain.task.LookTargetUtil;
 import net.minecraft.entity.ai.brain.task.Task;
 import net.minecraft.entity.ai.brain.task.TaskTriggerer;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.util.math.Vec3d;
 
-import java.util.Optional;
 import java.util.function.Function;
 
 public class ImpillagerAttackMovementTask {
@@ -33,10 +30,8 @@ public class ImpillagerAttackMovementTask {
                                 context,
                                 (walkTarget, lookTarget, attackTarget, visibleMobs) -> (world, entity, time) -> {
                                     LivingEntity livingEntity = context.getValue(attackTarget);
-                                    Optional<LivingTargetCache> optional = context.getOptionalValue(visibleMobs);
                                     double currentDistance = entity.squaredDistanceTo(livingEntity);
 
-                                    // Calculate the relative direction to the livingEntity
                                     Vec3d relativeDirection = livingEntity.getPos().subtract(entity.getPos()).normalize();
 
                                     Vec3d targetPosition;

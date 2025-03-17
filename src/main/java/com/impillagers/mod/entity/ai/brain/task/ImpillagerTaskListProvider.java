@@ -41,15 +41,15 @@ public class ImpillagerTaskListProvider {
                 Pair.of(0, StartRaidTask.create()),
                 Pair.of(0, ForgetCompletedPointOfInterestTask.create(profession.heldWorkstation(), MemoryModuleType.JOB_SITE)),
                 Pair.of(0, ForgetCompletedPointOfInterestTask.create(profession.acquirableWorkstation(), MemoryModuleType.POTENTIAL_JOB_SITE)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.VILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, VillagerEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, PillagerEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, ZombieEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE_VILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, ZombieEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.WITCH, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, WitchEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIFIED_PIGLIN, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, ZombifiedPiglinEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, PiglinEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN_BRUTE, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, PiglinBruteEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(ModEntities.ZOMBIE_IMPILLAGER, 20, MemoryModuleType.ATTACK_TARGET, speed, 5, ZombieImpillagerEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.VILLAGER, 20, MemoryModuleType.ATTACK_TARGET, VillagerEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.PILLAGER, 20, MemoryModuleType.ATTACK_TARGET,  PillagerEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE, 20, MemoryModuleType.ATTACK_TARGET,  ZombieEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE_VILLAGER, 20, MemoryModuleType.ATTACK_TARGET,  ZombieEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.WITCH, 20, MemoryModuleType.ATTACK_TARGET,  WitchEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIFIED_PIGLIN, 20, MemoryModuleType.ATTACK_TARGET,  ZombifiedPiglinEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN, 20, MemoryModuleType.ATTACK_TARGET, PiglinEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN_BRUTE, 20, MemoryModuleType.ATTACK_TARGET, PiglinBruteEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(ModEntities.ZOMBIE_IMPILLAGER, 20, MemoryModuleType.ATTACK_TARGET, ZombieImpillagerEntity.class)),
                 Pair.of(1, ImpillagerAttackTask.create(5, 40, 2F)),
                 Pair.of(1, ImpillagerAttackMovementTask.create(0.75F, 6, 10, 1.5F)),
                 Pair.of(1, new SpawnGolemTask()),
@@ -180,6 +180,6 @@ public class ImpillagerTaskListProvider {
     private static void avoid(ImpillagerEntity impillager, LivingEntity target) {
         impillager.getBrain().forget(MemoryModuleType.ATTACK_TARGET);
         impillager.getBrain().forget(MemoryModuleType.WALK_TARGET);
-        impillager.getBrain().remember(MemoryModuleType.AVOID_TARGET, target, (long)AVOID_MEMORY_DURATION.get(impillager.getWorld().random));
+        impillager.getBrain().remember(MemoryModuleType.AVOID_TARGET, target, AVOID_MEMORY_DURATION.get(impillager.getWorld().random));
     }
 }

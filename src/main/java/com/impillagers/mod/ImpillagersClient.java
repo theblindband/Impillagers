@@ -47,17 +47,9 @@ public class ImpillagersClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.DUNG_GOLEM, DungGolemRenderer::new);
         EntityRendererRegistry.register(ModEntities.DUNG_BALL, FlyingItemEntityRenderer::new);
 
-        ParticleFactoryRegistry.getInstance().register(ModParticleTypes.FIREFLY,((spriteProvider) -> {
-            return (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
-                return new FireflyParticle(world, x, y, z, spriteProvider);
-            };
-        }));
+        ParticleFactoryRegistry.getInstance().register(ModParticleTypes.FIREFLY,((spriteProvider) -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> new FireflyParticle(world, x, y, z, spriteProvider)));
 
-        ClientPlayNetworking.registerGlobalReceiver(HudOverlayOpacityPayload.ID, (payload, context) -> {
-            context.client().execute(() -> {
-                ModHud.renderCallOfTheImpsOverlay (payload.opacity());
-            });
-        });
+        ClientPlayNetworking.registerGlobalReceiver(HudOverlayOpacityPayload.ID, (payload, context) -> context.client().execute(() -> ModHud.renderCallOfTheImpsOverlay (payload.opacity())));
     }
 
 }
