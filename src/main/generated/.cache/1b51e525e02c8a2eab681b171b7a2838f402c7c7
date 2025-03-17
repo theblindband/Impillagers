@@ -1,4 +1,4 @@
-// 1.21.1	2025-03-17T07:08:04.285874509	Impillagers/Block Loot Tables
+// 1.21.1	2025-03-17T14:00:42.425480077	Impillagers/Block Loot Tables
 42cc079918e9ed51ab0228682c5a669864c43fae data/impillagers/loot_table/blocks/packed_mud_slab.json
 0f47c47ba84e4c7ac8821a91f45256572903c5cb data/impillagers/loot_table/blocks/purple_heart_fence.json
 d8a11fe4f334a67de9fe7843bf65e68feb94c877 data/impillagers/loot_table/blocks/purple_heart_wall_sign.json
@@ -19,10 +19,10 @@ df094d09b5c7cfa6a8f66b12306c18b77be50da2 data/impillagers/loot_table/blocks/stri
 cb3b67d69b21d51ba0d43601703f5b090e4f6520 data/impillagers/loot_table/blocks/purple_heart_door.json
 3df48604981683ce004881665ec499b009dc4cf7 data/impillagers/loot_table/blocks/packed_mud_wall.json
 9ef5959d37595c8b0be1836b68a1cbd6a9baaab3 data/impillagers/loot_table/blocks/purple_heart_slab.json
-66851020f17dbbf1699bf6c51a3624c78593ebf0 data/impillagers/loot_table/blocks/purple_heart_pressure_plate.json
 9d304bf2f5fbe20551b3861c147fbcd1cf468ccf data/impillagers/loot_table/blocks/purple_heart_fence_gate.json
+66851020f17dbbf1699bf6c51a3624c78593ebf0 data/impillagers/loot_table/blocks/purple_heart_pressure_plate.json
 fec27e3386ad8aa81106f57e682a837573dcf5a1 data/impillagers/loot_table/blocks/belladonna.json
 dadbdc551b9193519dfa99b2c1aee4327b52655e data/impillagers/loot_table/blocks/potted_belladonna.json
 6889061a5a99ff744ee7f2f96c18fd460065576b data/impillagers/loot_table/blocks/purple_heart_planks.json
-de3edb0d95fdab16a9e82fff1833ed01197e5628 data/impillagers/loot_table/blocks/purple_heart_hanging_sign.json
 99828c1f1e666fdb5f91a1a9363d5da505dadbaf data/impillagers/loot_table/blocks/purple_heart_button.json
+de3edb0d95fdab16a9e82fff1833ed01197e5628 data/impillagers/loot_table/blocks/purple_heart_hanging_sign.json
