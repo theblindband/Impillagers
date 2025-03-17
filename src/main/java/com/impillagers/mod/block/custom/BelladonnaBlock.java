@@ -6,43 +6,56 @@ import net.minecraft.block.*;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
-import net.minecraft.particle.ParticleTypes;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.random.Random;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.world.BlockView;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
+import java.util.List;
+
 public class BelladonnaBlock extends FlowerBlock {
-    public static final MapCodec<WitherRoseBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(STEW_EFFECT_CODEC.forGetter(FlowerBlock::getStewEffects), createSettingsCodec()).apply(instance, WitherRoseBlock::new)
+    public static final MapCodec<BelladonnaBlock> CODEC = RecordCodecBuilder.mapCodec(
+            instance -> instance.group(
+                    STEW_EFFECT_CODEC.forGetter(FlowerBlock::getStewEffects),
+                    createSettingsCodec()
+            ).apply(instance, BelladonnaBlock::create)
     );
 
     @Override
-    public MapCodec<WitherRoseBlock> getCodec() {
+    public MapCodec<BelladonnaBlock> getCodec() {
         return CODEC;
     }
 
-    public BelladonnaBlock(RegistryEntry<StatusEffect> registryEntry, float f, AbstractBlock.Settings settings) {
-        this(createStewEffectList(registryEntry, f), settings);
+    private static BelladonnaBlock create(SuspiciousStewEffectsComponent effects, AbstractBlock.Settings settings) {
+        return new BelladonnaBlock(effects, settings);
     }
 
-    public BelladonnaBlock(SuspiciousStewEffectsComponent suspiciousStewEffectsComponent, AbstractBlock.Settings settings) {
-        super(suspiciousStewEffectsComponent, settings);
+    public BelladonnaBlock(SuspiciousStewEffectsComponent effects, AbstractBlock.Settings settings) {
+        super(effects, settings);
+    }
+
+    private static SuspiciousStewEffectsComponent createStewEffectList() {
+        List<SuspiciousStewEffectsComponent.StewEffect> effectsList = List.of(
+                new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.POISON, 360),
+                new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.NAUSEA, 360)
+        );
+        return new SuspiciousStewEffectsComponent(effectsList);
+    }
+
+    @Override
+    public SuspiciousStewEffectsComponent getStewEffects() {
+        return createStewEffectList();
     }
 
     @Override
     protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
-            if (entity instanceof LivingEntity livingEntity && !livingEntity.isInvulnerableTo(world.getDamageSources().wither())) {
-                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 40));
+            if (entity instanceof LivingEntity livingEntity
+                    && !livingEntity.isInvulnerableTo(world.getDamageSources().wither())) {
+                livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 40, 1));
             }
         }
     }
 }
+
