@@ -4,9 +4,7 @@ package com.impillagers.mod.entity.client.impillager;
 import com.google.common.collect.ImmutableMap;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
-import com.impillagers.mod.villager.professions.Banker;
-import com.impillagers.mod.villager.professions.DungCollector;
-import com.impillagers.mod.villager.professions.Musician;
+import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.VertexConsumerProvider;
@@ -25,9 +23,9 @@ public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<Impilla
 
             Map.entry(VillagerProfession.NONE, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/unemployed.png")),
             Map.entry(VillagerProfession.NITWIT, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/nitwit.png")),
-            Map.entry(DungCollector.DUNG_COLLECTOR, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/dung_collector.png")),
-            Map.entry(Banker.BANKER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/banker.png")),
-            Map.entry(Musician.MUSICIAN, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/musician.png"))
+            Map.entry(ModProfessions.DUNG_COLLECTOR, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/dung_collector.png")),
+            Map.entry(ModProfessions.BANKER, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/banker.png")),
+            Map.entry(ModProfessions.MUSICIAN, Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/professions/musician.png"))
     );
 
     public ImpillagerProfessionFeatureRenderer(FeatureRendererContext<ImpillagerEntity, ImpillagerModel<ImpillagerEntity>> featureRendererContext) {

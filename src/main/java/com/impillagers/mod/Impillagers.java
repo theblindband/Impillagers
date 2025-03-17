@@ -13,10 +13,8 @@ import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.util.HudOverlayOpacityPayload;
-import com.impillagers.mod.villager.professions.Banker;
-import com.impillagers.mod.villager.professions.DungCollector;
 import com.impillagers.mod.villager.ModTrades;
-import com.impillagers.mod.villager.professions.Musician;
+import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -46,6 +44,7 @@ public class Impillagers implements ModInitializer {
 		ModDataComponentTypes.registerDataComponentTypes();
 		ModTrades.registerModTrades();
 		ModEvents.registerModEvents();
+		ModProfessions.registerModProfessions();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
@@ -73,9 +72,9 @@ public class Impillagers implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.FIREFLY_BUSH, 60, 100);
 
 		//Villagers
-		DungCollector.registerVillager();
-		Banker.registerVillager();
-		Musician.registerVillager();
+		//DungCollector.registerVillager();
+		//Banker.registerVillager();
+		//Musician.registerVillager();
 
 		//Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());
