@@ -3,8 +3,6 @@ package com.impillagers.mod.villager;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.villager.professions.ModProfessions;
-import com.impillagers.mod.villager.professions.ModProfessions;
-import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
