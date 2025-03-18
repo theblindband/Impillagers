@@ -11,6 +11,9 @@ public class ModSoundEvents {
     //Firefly Bush Ambient Sounds
     public static final SoundEvent FIREFLY_BUSH = registerSoundEvent("block.firefly_bush");
 
+    public static final SoundEvent FIREFLY_BOTTLE_OPEN = registerSoundEvent("block.firefly_bottle.open");
+    public static final SoundEvent FIREFLY_BOTTLE_CLOSE = registerSoundEvent("block.firefly_bottle.close");
+
     public static final SoundEvent IMPILLAGER_DAMAGE = registerSoundEvent("entity.impillager.damage");
     public static final SoundEvent IMPILLAGER_DEATH = registerSoundEvent("entity.impillager.death");
     public static final SoundEvent IMPILLAGER_NO = registerSoundEvent("entity.impillager.no");
@@ -29,6 +32,6 @@ public class ModSoundEvents {
     }
 
     public static void registerModSounds() {
-        //BlindsMusicDiscs.LOGGER.info("Registering Sounds for Blind's Music Discs");
+        //Impillagers.LOGGER.info("Registering Sounds for Impillagers");
     }
 }

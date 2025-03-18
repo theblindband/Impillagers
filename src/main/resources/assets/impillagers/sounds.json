@@ -48,6 +48,22 @@
     ]
   },
 
+  "block.firefly_bottle.open":{
+    "sounds":[
+      {
+        "name":"impillagers:block/firefly_bottle/firefly_bottle_open",
+        "stream":true
+      }
+    ]
+  },
+  "block.firefly_bottle.close":{
+    "sounds":[
+      {
+        "name":"impillagers:block/firefly_bottle/firefly_bottle_close",
+        "stream":true
+      }
+    ]
+  },
 
 
 
