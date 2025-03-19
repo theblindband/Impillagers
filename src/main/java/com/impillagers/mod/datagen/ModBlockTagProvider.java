@@ -38,11 +38,14 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.PURPLE_HEART_FENCE_GATE);
 
         getOrCreateTagBuilder(BlockTags.STAIRS)
-                .add(ModBlocks.PACKED_MUD_STAIRS);
+                .add(ModBlocks.PACKED_MUD_STAIRS)
+                .add(ModBlocks.MOSSY_MUD_BRICKS_STAIRS);
         getOrCreateTagBuilder(BlockTags.SLABS)
-                .add(ModBlocks.PACKED_MUD_SLAB);
+                .add(ModBlocks.PACKED_MUD_SLAB)
+                .add(ModBlocks.MOSSY_MUD_BRICKS_SLAB);
         getOrCreateTagBuilder(BlockTags.WALLS)
-                .add(ModBlocks.PACKED_MUD_WALL);
+                .add(ModBlocks.PACKED_MUD_WALL)
+                .add(ModBlocks.MOSSY_MUD_BRICKS_WALL);
 
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
                 .add(ModBlocks.PURPLE_HEART_DOOR);
@@ -70,6 +73,13 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.SINKING_MUD)
                 .add(ModBlocks.DUNG_BLOCK);
+
+        getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
+                .add(ModBlocks.CRACKED_MUD_BRICKS)
+                .add(ModBlocks.MOSSY_MUD_BRICKS)
+                .add(ModBlocks.MOSSY_MUD_BRICKS_WALL)
+                .add(ModBlocks.MOSSY_MUD_BRICKS_SLAB)
+                .add(ModBlocks.MOSSY_MUD_BRICKS_STAIRS);
 
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.SINKING_MUD);

@@ -42,14 +42,25 @@ public class ModModelProvider extends FabricModelProvider {
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BELLADONNA, ModBlocks.POTTED_BELLADONNA, BlockStateModelGenerator.TintType.TINTED);
-        //blockStateModelGenerator.registerTintableCross(ModBlocks.FIREFLY_BUSH, BlockStateModelGenerator.TintType.TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.SWAMP_REED, BlockStateModelGenerator.TintType.TINTED);
 
+
+
+
+        //Dung Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DUNG_BLOCK);
 
-        BlockStateModelGenerator.BlockTexturePool packed_mud_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PACKED_MUD);
 
-        //blockStateModelGenerator.registerLantern(ModBlocks.FIREFLY_BOTTLE);
+
+        //Mud Blocks
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_MUD_BRICKS);
+
+        BlockStateModelGenerator.BlockTexturePool mossy_mud_bricks_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_MUD_BRICKS);
+        mossy_mud_bricks_pool.stairs(ModBlocks.MOSSY_MUD_BRICKS_STAIRS);
+        mossy_mud_bricks_pool.slab(ModBlocks.MOSSY_MUD_BRICKS_SLAB);
+        mossy_mud_bricks_pool.wall(ModBlocks.MOSSY_MUD_BRICKS_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool packed_mud_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(Blocks.PACKED_MUD);
 
         packed_mud_pool.stairs(ModBlocks.PACKED_MUD_STAIRS);
         packed_mud_pool.slab(ModBlocks.PACKED_MUD_SLAB);

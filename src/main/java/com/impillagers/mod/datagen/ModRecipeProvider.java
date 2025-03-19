@@ -50,6 +50,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.BELLADONNA, "", 1);
 
+        offerShapelessRecipe(exporter, Items.BROWN_DYE, ModBlocks.SWAMP_REED, "brown_dye", 2);
+
+
+
+
+        //Mud Recipes
+
+        offerCrackingRecipe(exporter, ModBlocks.CRACKED_MUD_BRICKS, Blocks.MUD_BRICKS);
+
         offerStairsRecipe(exporter, ModBlocks.PACKED_MUD_STAIRS, Blocks.PACKED_MUD);
         offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_MUD_SLAB, Blocks.PACKED_MUD);
         offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_MUD_WALL, Blocks.PACKED_MUD);
@@ -58,7 +67,32 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_MUD_SLAB, Blocks.PACKED_MUD, 2);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_MUD_WALL, Blocks.PACKED_MUD, 1);
 
-        offerShapelessRecipe(exporter, Items.BROWN_DYE, ModBlocks.SWAMP_REED, "brown_dye", 2);
+
+        offerStairsRecipe(exporter, ModBlocks.MOSSY_MUD_BRICKS_STAIRS, ModBlocks.MOSSY_MUD_BRICKS);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_SLAB, ModBlocks.MOSSY_MUD_BRICKS);
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_WALL, ModBlocks.MOSSY_MUD_BRICKS);
+
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_STAIRS, ModBlocks.MOSSY_MUD_BRICKS, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_SLAB, ModBlocks.MOSSY_MUD_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_WALL, ModBlocks.MOSSY_MUD_BRICKS, 1);
+
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS)
+                .input(Blocks.MUD_BRICKS)
+                .input(Blocks.VINE)
+                .criterion("has_mud_bricks", conditionsFromItem(Blocks.MUD_BRICKS))
+                .group("mud_bricks")
+                .offerTo(exporter, "mossy_mud_bricks_vine");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS)
+                .input(Blocks.MUD_BRICKS)
+                .input(Blocks.MOSS_BLOCK)
+                .criterion("has_mud_bricks", conditionsFromItem(Blocks.MUD_BRICKS))
+                .group("mud_bricks")
+                .offerTo(exporter, "mossy_mud_bricks_moss");
+
+
+
 
         //Undyeing Recipes
         offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, "undyeing_shulker_box");

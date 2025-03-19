@@ -47,13 +47,22 @@ public class ModBlocks {
     public static final Block FIREFLY_BUSH = registerBlock("firefly_bush", new FireflyBushBlock(AbstractBlock.Settings.copy(Blocks.POPPY).luminance(createLightLevelFromLitBlockState(6))));
     public static final Block SWAMP_REED = registerBlock("swamp_reed", new ReedBlock(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH)));
 
-    //Imp Blocks
+    //Dung Blocks
     public static final Block DUNG_BLOCK = registerBlock("dung_block", new Block(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(BlockSoundGroup.MUD)));
 
+    //Mud Blocks
     public static final Block PACKED_MUD_STAIRS = registerBlock("packed_mud_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
     public static final Block PACKED_MUD_SLAB = registerBlock("packed_mud_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
     public static final Block PACKED_MUD_WALL = registerBlock("packed_mud_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
 
+    public static final Block MOSSY_MUD_BRICKS_STAIRS = registerBlock("mossy_mud_bricks_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block MOSSY_MUD_BRICKS_SLAB = registerBlock("mossy_mud_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block MOSSY_MUD_BRICKS_WALL = registerBlock("mossy_mud_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+
+    public static final Block MOSSY_MUD_BRICKS = registerBlock("mossy_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block CRACKED_MUD_BRICKS = registerBlock("cracked_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+
+    //Decoration Blocks
     public static final Block FIREFLY_BOTTLE = registerBlockWithoutItem("firefly_bottle", new FireflyBottleBlock(AbstractBlock.Settings.create().strength(0.3F).sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromLitBlockState(13))));
 
     //Register Methods
