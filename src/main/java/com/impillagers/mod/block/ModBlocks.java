@@ -59,6 +59,7 @@ public class ModBlocks {
     public static final Block MOSSY_DUNG_BRICKS = registerBlock("mossy_dung_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block CRACKED_DUNG_BRICKS = registerBlock("cracked_dung_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block CHISELED_DUNG_BRICKS = registerBlock("chiseled_dung_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block DUNG_BRICKS_PILLAR = registerBlock("dung_bricks_pillar", new PillarBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
 
     public static final Block DUNG_BRICKS_STAIRS = registerBlock("dung_bricks_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block DUNG_BRICKS_SLAB = registerBlock("dung_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
@@ -78,6 +79,7 @@ public class ModBlocks {
     public static final Block MOSSY_MUD_BRICKS = registerBlock("mossy_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block CRACKED_MUD_BRICKS = registerBlock("cracked_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block CHISELED_MUD_BRICKS = registerBlock("chiseled_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block MUD_BRICKS_PILLAR = registerBlock("mud_bricks_pillar", new PillarBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
 
     public static final Block MOSSY_MUD_BRICKS_STAIRS = registerBlock("mossy_mud_bricks_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block MOSSY_MUD_BRICKS_SLAB = registerBlock("mossy_mud_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));

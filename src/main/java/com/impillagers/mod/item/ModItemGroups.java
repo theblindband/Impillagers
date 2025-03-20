@@ -74,6 +74,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MOSSY_MUD_BRICKS_WALL);
                         entries.add(ModBlocks.CRACKED_MUD_BRICKS);
                         entries.add(ModBlocks.CHISELED_MUD_BRICKS);
+                        entries.add(ModBlocks.MUD_BRICKS_PILLAR);
 
                         //Dung Blocks
                         entries.add(ModBlocks.DUNG_BLOCK);
@@ -91,6 +92,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.MOSSY_DUNG_BRICKS_WALL);
                         entries.add(ModBlocks.CRACKED_DUNG_BRICKS);
                         entries.add(ModBlocks.CHISELED_DUNG_BRICKS);
+                        entries.add(ModBlocks.DUNG_BRICKS_PILLAR);
 
                     }).build());
 

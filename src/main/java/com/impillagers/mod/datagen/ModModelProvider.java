@@ -1,14 +1,13 @@
 package com.impillagers.mod.datagen;
 
+import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
+import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
-import net.minecraft.data.client.BlockStateModelGenerator;
-import net.minecraft.data.client.ItemModelGenerator;
-import net.minecraft.data.client.Model;
-import net.minecraft.data.client.Models;
+import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
 
 import java.util.Optional;
@@ -46,11 +45,10 @@ public class ModModelProvider extends FabricModelProvider {
 
 
 
-
         //Dung Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DUNG_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_DUNG_BRICKS);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_DUNG_BRICKS);
+        blockStateModelGenerator.registerLog(ModBlocks.DUNG_BRICKS_PILLAR).log(ModBlocks.DUNG_BRICKS_PILLAR);
 
         BlockStateModelGenerator.BlockTexturePool packed_dung_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PACKED_DUNG);
         packed_dung_pool.stairs(ModBlocks.PACKED_DUNG_STAIRS);
@@ -69,7 +67,7 @@ public class ModModelProvider extends FabricModelProvider {
 
         //Mud Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_MUD_BRICKS);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_MUD_BRICKS);
+        blockStateModelGenerator.registerLog(ModBlocks.MUD_BRICKS_PILLAR).log(ModBlocks.MUD_BRICKS_PILLAR);
 
         BlockStateModelGenerator.BlockTexturePool mossy_mud_bricks_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_MUD_BRICKS);
         mossy_mud_bricks_pool.stairs(ModBlocks.MOSSY_MUD_BRICKS_STAIRS);
@@ -81,6 +79,7 @@ public class ModModelProvider extends FabricModelProvider {
         packed_mud_pool.stairs(ModBlocks.PACKED_MUD_STAIRS);
         packed_mud_pool.slab(ModBlocks.PACKED_MUD_SLAB);
         packed_mud_pool.wall(ModBlocks.PACKED_MUD_WALL);
+
     }
 
     @Override

@@ -73,6 +73,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.CRACKED_DUNG_BRICKS);
         addDrop(ModBlocks.CHISELED_DUNG_BRICKS);
+        addDrop(ModBlocks.DUNG_BRICKS_PILLAR);
 
         addDrop(ModBlocks.PACKED_MUD_STAIRS);
         addDrop(ModBlocks.PACKED_MUD_SLAB);
@@ -85,6 +86,7 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.CRACKED_MUD_BRICKS);
         addDrop(ModBlocks.CHISELED_MUD_BRICKS);
+        addDrop(ModBlocks.MUD_BRICKS_PILLAR);
 
         addDrop(ModBlocks.FIREFLY_BOTTLE, ModItems.FIREFLY_BOTTLE);
     }

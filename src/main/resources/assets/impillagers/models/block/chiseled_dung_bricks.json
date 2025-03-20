@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "impillagers:block/chiseled_dung_bricks",
+    "down": "impillagers:block/chiseled_dung_bricks_top",
+    "up": "impillagers:block/chiseled_dung_bricks_top",
+    "north": "impillagers:block/chiseled_dung_bricks",
+    "south": "impillagers:block/chiseled_dung_bricks",
+    "west": "impillagers:block/chiseled_dung_bricks",
+    "east": "impillagers:block/chiseled_dung_bricks"
+  }
+}

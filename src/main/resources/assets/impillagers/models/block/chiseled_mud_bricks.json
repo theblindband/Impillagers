@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "particle": "impillagers:block/chiseled_mud_bricks",
+    "down": "impillagers:block/chiseled_mud_bricks_top",
+    "up": "impillagers:block/chiseled_mud_bricks_top",
+    "north": "impillagers:block/chiseled_mud_bricks",
+    "south": "impillagers:block/chiseled_mud_bricks",
+    "west": "impillagers:block/chiseled_mud_bricks",
+    "east": "impillagers:block/chiseled_mud_bricks"
+  }
+}

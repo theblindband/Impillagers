@@ -105,6 +105,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOSSY_MUD_BRICKS_SLAB)
                 .add(ModBlocks.MOSSY_MUD_BRICKS_STAIRS)
                 .add(ModBlocks.CHISELED_MUD_BRICKS)
+                .add(ModBlocks.MUD_BRICKS_PILLAR)
 
                 .add(ModBlocks.PACKED_DUNG)
                 .add(ModBlocks.PACKED_DUNG_WALL)
@@ -119,7 +120,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOSSY_DUNG_BRICKS_SLAB)
                 .add(ModBlocks.MOSSY_DUNG_BRICKS_STAIRS)
                 .add(ModBlocks.CRACKED_DUNG_BRICKS)
-                .add(ModBlocks.CHISELED_DUNG_BRICKS);
+                .add(ModBlocks.CHISELED_DUNG_BRICKS)
+                .add(ModBlocks.DUNG_BRICKS_PILLAR);
 
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.SINKING_MUD);
