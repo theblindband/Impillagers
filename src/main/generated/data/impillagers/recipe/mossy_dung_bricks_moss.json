@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "building",
+  "group": "mossy_dung_bricks",
+  "ingredients": [
+    {
+      "item": "impillagers:dung_bricks"
+    },
+    {
+      "item": "minecraft:moss_block"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "id": "impillagers:mossy_dung_bricks"
+  }
+}

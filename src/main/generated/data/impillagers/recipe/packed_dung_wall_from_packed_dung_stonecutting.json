@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "impillagers:packed_dung"
+  },
+  "result": {
+    "count": 1,
+    "id": "impillagers:packed_dung_wall"
+  }
+}

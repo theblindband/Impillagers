@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_mossy_dung_bricks": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:mossy_dung_bricks"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "impillagers:mossy_dung_bricks_slab"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_mossy_dung_bricks"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "impillagers:mossy_dung_bricks_slab"
+    ]
+  }
+}

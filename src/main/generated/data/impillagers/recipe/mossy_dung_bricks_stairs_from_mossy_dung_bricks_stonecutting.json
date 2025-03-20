@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "impillagers:mossy_dung_bricks"
+  },
+  "result": {
+    "count": 1,
+    "id": "impillagers:mossy_dung_bricks_stairs"
+  }
+}

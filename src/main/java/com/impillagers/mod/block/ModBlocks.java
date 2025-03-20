@@ -48,19 +48,42 @@ public class ModBlocks {
     public static final Block SWAMP_REED = registerBlock("swamp_reed", new ReedBlock(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH)));
 
     //Dung Blocks
-    public static final Block DUNG_BLOCK = registerBlock("dung_block", new Block(AbstractBlock.Settings.create().strength(1f).requiresTool().sounds(BlockSoundGroup.MUD)));
+    public static final Block DUNG_BLOCK = registerBlock("dung_block", new Block(AbstractBlock.Settings.copy(Blocks.MUD)));
+
+    public static final Block PACKED_DUNG = registerBlock("packed_dung", new Block(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
+    public static final Block PACKED_DUNG_STAIRS = registerBlock("packed_dung_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
+    public static final Block PACKED_DUNG_SLAB = registerBlock("packed_dung_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
+    public static final Block PACKED_DUNG_WALL = registerBlock("packed_dung_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
+
+    public static final Block DUNG_BRICKS = registerBlock("dung_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block MOSSY_DUNG_BRICKS = registerBlock("mossy_dung_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block CRACKED_DUNG_BRICKS = registerBlock("cracked_dung_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block CHISELED_DUNG_BRICKS = registerBlock("chiseled_dung_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+
+    public static final Block DUNG_BRICKS_STAIRS = registerBlock("dung_bricks_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block DUNG_BRICKS_SLAB = registerBlock("dung_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block DUNG_BRICKS_WALL = registerBlock("dung_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+
+    public static final Block MOSSY_DUNG_BRICKS_STAIRS = registerBlock("mossy_dung_bricks_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block MOSSY_DUNG_BRICKS_SLAB = registerBlock("mossy_dung_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block MOSSY_DUNG_BRICKS_WALL = registerBlock("mossy_dung_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+
+
 
     //Mud Blocks
     public static final Block PACKED_MUD_STAIRS = registerBlock("packed_mud_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
     public static final Block PACKED_MUD_SLAB = registerBlock("packed_mud_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
     public static final Block PACKED_MUD_WALL = registerBlock("packed_mud_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
 
+    public static final Block MOSSY_MUD_BRICKS = registerBlock("mossy_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block CRACKED_MUD_BRICKS = registerBlock("cracked_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+    public static final Block CHISELED_MUD_BRICKS = registerBlock("chiseled_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+
     public static final Block MOSSY_MUD_BRICKS_STAIRS = registerBlock("mossy_mud_bricks_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block MOSSY_MUD_BRICKS_SLAB = registerBlock("mossy_mud_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block MOSSY_MUD_BRICKS_WALL = registerBlock("mossy_mud_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
 
-    public static final Block MOSSY_MUD_BRICKS = registerBlock("mossy_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
-    public static final Block CRACKED_MUD_BRICKS = registerBlock("cracked_mud_bricks", new Block(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
+
 
     //Decoration Blocks
     public static final Block FIREFLY_BOTTLE = registerBlockWithoutItem("firefly_bottle", new FireflyBottleBlock(AbstractBlock.Settings.create().strength(0.3F).sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromLitBlockState(13))));

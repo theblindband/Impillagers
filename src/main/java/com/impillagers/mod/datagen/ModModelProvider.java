@@ -49,11 +49,27 @@ public class ModModelProvider extends FabricModelProvider {
 
         //Dung Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DUNG_BLOCK);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_DUNG_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_DUNG_BRICKS);
 
+        BlockStateModelGenerator.BlockTexturePool packed_dung_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.PACKED_DUNG);
+        packed_dung_pool.stairs(ModBlocks.PACKED_DUNG_STAIRS);
+        packed_dung_pool.slab(ModBlocks.PACKED_DUNG_SLAB);
+        packed_dung_pool.wall(ModBlocks.PACKED_DUNG_WALL);
 
+        BlockStateModelGenerator.BlockTexturePool dung_bricks_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.DUNG_BRICKS);
+        dung_bricks_pool.stairs(ModBlocks.DUNG_BRICKS_STAIRS);
+        dung_bricks_pool.slab(ModBlocks.DUNG_BRICKS_SLAB);
+        dung_bricks_pool.wall(ModBlocks.DUNG_BRICKS_WALL);
+
+        BlockStateModelGenerator.BlockTexturePool mossy_dung_bricks_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_DUNG_BRICKS);
+        mossy_dung_bricks_pool.stairs(ModBlocks.MOSSY_DUNG_BRICKS_STAIRS);
+        mossy_dung_bricks_pool.slab(ModBlocks.MOSSY_DUNG_BRICKS_SLAB);
+        mossy_dung_bricks_pool.wall(ModBlocks.MOSSY_DUNG_BRICKS_WALL);
 
         //Mud Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_MUD_BRICKS);
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CHISELED_MUD_BRICKS);
 
         BlockStateModelGenerator.BlockTexturePool mossy_mud_bricks_pool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.MOSSY_MUD_BRICKS);
         mossy_mud_bricks_pool.stairs(ModBlocks.MOSSY_MUD_BRICKS_STAIRS);

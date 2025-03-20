@@ -21,10 +21,40 @@
   "block.impillagers.belladonna": "Belladonna",
   "block.impillagers.firefly_bush": "Firefly Bush",
   "block.impillagers.sinking_mud": "Sinking Mud",
-  "block.impillagers.dung_block": "Dung Block",
+
+
   "block.impillagers.packed_mud_stairs": "Packed Mud Stairs",
   "block.impillagers.packed_mud_slab": "Packed Mud Slab",
   "block.impillagers.packed_mud_wall": "Packed Mud Wall",
+
+  "block.impillagers.mossy_mud_bricks": "Mossy Mud Bricks",
+  "block.impillagers.mossy_mud_bricks_stairs": "Mossy Mud Brick Stairs",
+  "block.impillagers.mossy_mud_bricks_slab": "Mossy Mud Brick Slab",
+  "block.impillagers.mossy_mud_bricks_wall": "Mossy Mud Brick Wall",
+
+  "block.impillagers.cracked_mud_bricks": "Cracked Mud Bricks",
+  "block.impillagers.chiseled_mud_bricks": "Chiseled Mud Bricks",
+
+  "block.impillagers.dung_block": "Dung Block",
+  "block.impillagers.packed_dung": "Packed Dung Block",
+  "block.impillagers.packed_dung_stairs": "Packed Dung Stairs",
+  "block.impillagers.packed_dung_slab": "Packed Dung Slab",
+  "block.impillagers.packed_dung_wall": "Packed Dung Wall",
+
+  "block.impillagers.dung_bricks": "Dung Bricks",
+  "block.impillagers.dung_bricks_stairs": "Dung Brick Stairs",
+  "block.impillagers.dung_bricks_slab": "Dung Brick Slab",
+  "block.impillagers.dung_bricks_wall": "Dung Brick Wall",
+
+  "block.impillagers.mossy_dung_bricks": "Mossy Dung Bricks",
+  "block.impillagers.mossy_dung_bricks_stairs": "Mossy Dung Brick Stairs",
+  "block.impillagers.mossy_dung_bricks_slab": "Mossy Dung Brick Slab",
+  "block.impillagers.mossy_dung_bricks_wall": "Mossy Dung Brick Wall",
+
+  "block.impillagers.cracked_dung_bricks": "Cracked Dung Bricks",
+  "block.impillagers.chiseled_dung_bricks": "Chiseled Dung Bricks",
+
+
   "block.impillagers.swamp_reed": "Swamp Reeds",
   "block.impillagers.firefly_bottle": "Firefly Bottle",
 

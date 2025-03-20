@@ -58,7 +58,6 @@ public class ModItemGroups {
                         //Imp Trade Stuff
                         entries.add(ModItems.GOLD_COIN);
                         entries.add(ModItems.FAKE_GOLD_COIN);
-                        entries.add(ModBlocks.DUNG_BLOCK);
                         entries.add(ModItems.DUNG_BALL);
                         entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
                         entries.add(ModItems.SPIDER_PIEYE);
@@ -69,6 +68,29 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PACKED_MUD_STAIRS);
                         entries.add(ModBlocks.PACKED_MUD_SLAB);
                         entries.add(ModBlocks.PACKED_MUD_WALL);
+                        entries.add(ModBlocks.MOSSY_MUD_BRICKS);
+                        entries.add(ModBlocks.MOSSY_MUD_BRICKS_STAIRS);
+                        entries.add(ModBlocks.MOSSY_MUD_BRICKS_SLAB);
+                        entries.add(ModBlocks.MOSSY_MUD_BRICKS_WALL);
+                        entries.add(ModBlocks.CRACKED_MUD_BRICKS);
+                        entries.add(ModBlocks.CHISELED_MUD_BRICKS);
+
+                        //Dung Blocks
+                        entries.add(ModBlocks.DUNG_BLOCK);
+                        entries.add(ModBlocks.PACKED_DUNG);
+                        entries.add(ModBlocks.PACKED_DUNG_STAIRS);
+                        entries.add(ModBlocks.PACKED_DUNG_SLAB);
+                        entries.add(ModBlocks.PACKED_DUNG_WALL);
+                        entries.add(ModBlocks.DUNG_BRICKS);
+                        entries.add(ModBlocks.DUNG_BRICKS_STAIRS);
+                        entries.add(ModBlocks.DUNG_BRICKS_SLAB);
+                        entries.add(ModBlocks.DUNG_BRICKS_WALL);
+                        entries.add(ModBlocks.MOSSY_DUNG_BRICKS);
+                        entries.add(ModBlocks.MOSSY_DUNG_BRICKS_STAIRS);
+                        entries.add(ModBlocks.MOSSY_DUNG_BRICKS_SLAB);
+                        entries.add(ModBlocks.MOSSY_DUNG_BRICKS_WALL);
+                        entries.add(ModBlocks.CRACKED_DUNG_BRICKS);
+                        entries.add(ModBlocks.CHISELED_DUNG_BRICKS);
 
                     }).build());
 

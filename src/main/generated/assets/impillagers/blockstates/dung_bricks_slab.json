@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "impillagers:block/dung_bricks_slab"
+    },
+    "type=double": {
+      "model": "impillagers:block/dung_bricks"
+    },
+    "type=top": {
+      "model": "impillagers:block/dung_bricks_slab_top"
+    }
+  }
+}

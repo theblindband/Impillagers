@@ -71,10 +71,6 @@ public class Impillagers implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BELLADONNA, 60, 100);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.FIREFLY_BUSH, 60, 100);
 
-		//Villagers
-		//DungCollector.registerVillager();
-		//Banker.registerVillager();
-		//Musician.registerVillager();
 
 		//Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());

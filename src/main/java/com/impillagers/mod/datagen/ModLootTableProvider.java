@@ -56,16 +56,35 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
 
         addDrop(ModBlocks.DUNG_BLOCK, multipleOreDrops(ModBlocks.DUNG_BLOCK, ModItems.DUNG_BALL, 1, 4));
 
+        addDrop(ModBlocks.PACKED_DUNG);
+        addDrop(ModBlocks.PACKED_DUNG_STAIRS);
+        addDrop(ModBlocks.PACKED_DUNG_SLAB);
+        addDrop(ModBlocks.PACKED_DUNG_WALL);
+
+        addDrop(ModBlocks.DUNG_BRICKS);
+        addDrop(ModBlocks.DUNG_BRICKS_STAIRS);
+        addDrop(ModBlocks.DUNG_BRICKS_SLAB);
+        addDrop(ModBlocks.DUNG_BRICKS_WALL);
+
+        addDrop(ModBlocks.MOSSY_DUNG_BRICKS);
+        addDrop(ModBlocks.MOSSY_DUNG_BRICKS_STAIRS);
+        addDrop(ModBlocks.MOSSY_DUNG_BRICKS_SLAB);
+        addDrop(ModBlocks.MOSSY_DUNG_BRICKS_WALL);
+
+        addDrop(ModBlocks.CRACKED_DUNG_BRICKS);
+        addDrop(ModBlocks.CHISELED_DUNG_BRICKS);
+
         addDrop(ModBlocks.PACKED_MUD_STAIRS);
         addDrop(ModBlocks.PACKED_MUD_SLAB);
         addDrop(ModBlocks.PACKED_MUD_WALL);
 
+        addDrop(ModBlocks.MOSSY_MUD_BRICKS);
         addDrop(ModBlocks.MOSSY_MUD_BRICKS_STAIRS);
         addDrop(ModBlocks.MOSSY_MUD_BRICKS_SLAB);
         addDrop(ModBlocks.MOSSY_MUD_BRICKS_WALL);
 
         addDrop(ModBlocks.CRACKED_MUD_BRICKS);
-        addDrop(ModBlocks.MOSSY_MUD_BRICKS);
+        addDrop(ModBlocks.CHISELED_MUD_BRICKS);
 
         addDrop(ModBlocks.FIREFLY_BOTTLE, ModItems.FIREFLY_BOTTLE);
     }

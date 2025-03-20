@@ -53,8 +53,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerShapelessRecipe(exporter, Items.BROWN_DYE, ModBlocks.SWAMP_REED, "brown_dye", 2);
 
 
-
-
         //Mud Recipes
 
         offerCrackingRecipe(exporter, ModBlocks.CRACKED_MUD_BRICKS, Blocks.MUD_BRICKS);
@@ -66,7 +64,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_MUD_STAIRS, Blocks.PACKED_MUD, 1);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_MUD_SLAB, Blocks.PACKED_MUD, 2);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_MUD_WALL, Blocks.PACKED_MUD, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, Blocks.MUD_BRICKS, Blocks.PACKED_MUD, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, Blocks.MUD_BRICK_STAIRS, Blocks.PACKED_MUD, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, Blocks.MUD_BRICK_SLAB, Blocks.PACKED_MUD, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, Blocks.MUD_BRICK_WALL, Blocks.PACKED_MUD, 1);
 
+        //offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_MUD_BRICKS, Blocks.MUD_BRICKS, 1);
 
         offerStairsRecipe(exporter, ModBlocks.MOSSY_MUD_BRICKS_STAIRS, ModBlocks.MOSSY_MUD_BRICKS);
         offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_SLAB, ModBlocks.MOSSY_MUD_BRICKS);
@@ -75,7 +78,6 @@ public class ModRecipeProvider extends FabricRecipeProvider {
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_STAIRS, ModBlocks.MOSSY_MUD_BRICKS, 1);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_SLAB, ModBlocks.MOSSY_MUD_BRICKS, 2);
         offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS_WALL, ModBlocks.MOSSY_MUD_BRICKS, 1);
-
 
         ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_MUD_BRICKS)
                 .input(Blocks.MUD_BRICKS)
@@ -91,7 +93,83 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .group("mud_bricks")
                 .offerTo(exporter, "mossy_mud_bricks_moss");
 
+        /*ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_MUD_BRICKS, 1)
+                .input('M', Blocks.MUD_BRICK_SLAB)
+                .pattern("M")
+                .pattern("M")
+                .criterion("has_mud_brick_slab", conditionsFromItem(Blocks.MUD_BRICK_SLAB))
+                .group("chiseled_mud_bricks")
+                .offerTo(exporter, "mud_bricks_slabs_to_chiseled_mud_bricks");*/
 
+        //Dung Recipes
+
+        offerCrackingRecipe(exporter, ModBlocks.CRACKED_DUNG_BRICKS, ModBlocks.DUNG_BRICKS);
+
+        offerStairsRecipe(exporter, ModBlocks.PACKED_DUNG_STAIRS, ModBlocks.PACKED_DUNG);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_DUNG_SLAB, ModBlocks.PACKED_DUNG);
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_DUNG_WALL, ModBlocks.PACKED_DUNG);
+
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_DUNG_STAIRS, ModBlocks.PACKED_DUNG, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_DUNG_SLAB, ModBlocks.PACKED_DUNG, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_DUNG_WALL, ModBlocks.PACKED_DUNG, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS, ModBlocks.PACKED_DUNG, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS_STAIRS, ModBlocks.PACKED_DUNG, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS_SLAB, ModBlocks.PACKED_DUNG, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS_WALL, ModBlocks.PACKED_DUNG, 1);
+
+        offerStairsRecipe(exporter, ModBlocks.DUNG_BRICKS_STAIRS, ModBlocks.DUNG_BRICKS);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS_SLAB, ModBlocks.DUNG_BRICKS);
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS_WALL, ModBlocks.DUNG_BRICKS);
+
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS_STAIRS, ModBlocks.DUNG_BRICKS, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS_SLAB, ModBlocks.DUNG_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS_WALL, ModBlocks.DUNG_BRICKS, 1);
+        //offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_DUNG_BRICKS, ModBlocks.DUNG_BRICKS, 1);
+
+        offerStairsRecipe(exporter, ModBlocks.MOSSY_DUNG_BRICKS_STAIRS, ModBlocks.MOSSY_DUNG_BRICKS);
+        offerSlabRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DUNG_BRICKS_SLAB, ModBlocks.MOSSY_DUNG_BRICKS);
+        offerWallRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DUNG_BRICKS_WALL, ModBlocks.MOSSY_DUNG_BRICKS);
+
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DUNG_BRICKS_STAIRS, ModBlocks.MOSSY_DUNG_BRICKS, 1);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DUNG_BRICKS_SLAB, ModBlocks.MOSSY_DUNG_BRICKS, 2);
+        offerStonecuttingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DUNG_BRICKS_WALL, ModBlocks.MOSSY_DUNG_BRICKS, 1);
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DUNG_BRICKS)
+                .input(ModBlocks.DUNG_BRICKS)
+                .input(Blocks.VINE)
+                .criterion("has_dung_bricks", conditionsFromItem(ModBlocks.DUNG_BRICKS))
+                .group("mossy_dung_bricks")
+                .offerTo(exporter, "mossy_dung_bricks_vine");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.MOSSY_DUNG_BRICKS)
+                .input(ModBlocks.DUNG_BRICKS)
+                .input(Blocks.MOSS_BLOCK)
+                .criterion("has_dung_bricks", conditionsFromItem(ModBlocks.DUNG_BRICKS))
+                .group("mossy_dung_bricks")
+                .offerTo(exporter, "mossy_dung_bricks_moss");
+
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.PACKED_DUNG)
+                .input(ModBlocks.DUNG_BLOCK)
+                .input(Items.WHEAT)
+                .criterion("has_dung_block", conditionsFromItem(ModBlocks.DUNG_BLOCK))
+                .group("packed_dung")
+                .offerTo(exporter, "packed_dung");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BRICKS, 4)
+                .input('D', ModBlocks.PACKED_DUNG)
+                .pattern("DD")
+                .pattern("DD")
+                .criterion("has_dung_block", conditionsFromItem(ModBlocks.PACKED_DUNG))
+                .group("dung_bricks")
+                .offerTo(exporter, "packed_dung_to_dung_bricks");
+
+        /*ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_DUNG_BRICKS, 1)
+                .input('D', ModBlocks.DUNG_BRICKS_SLAB)
+                .pattern("D")
+                .pattern("D")
+                .criterion("has_dung_brick_slab", conditionsFromItem(ModBlocks.DUNG_BRICKS_SLAB))
+                .group("dung_bricks")
+                .offerTo(exporter, "dung_bricks_slabs_to_chiseled_dung_bricks");*/
 
 
         //Undyeing Recipes

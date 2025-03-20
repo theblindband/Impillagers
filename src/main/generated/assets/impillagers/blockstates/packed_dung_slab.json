@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "impillagers:block/packed_dung_slab"
+    },
+    "type=double": {
+      "model": "impillagers:block/packed_dung"
+    },
+    "type=top": {
+      "model": "impillagers:block/packed_dung_slab_top"
+    }
+  }
+}
