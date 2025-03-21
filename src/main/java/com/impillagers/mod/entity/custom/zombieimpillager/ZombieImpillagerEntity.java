@@ -123,7 +123,7 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
     public static DefaultAttributeContainer.Builder createZombieImpillagerAttributes() {
         return HostileEntity.createHostileAttributes()
                 .add(EntityAttributes.GENERIC_MAX_HEALTH, 10)
-                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.55)
+                .add(EntityAttributes.GENERIC_MOVEMENT_SPEED, 0.4)
                 .add(EntityAttributes.GENERIC_ATTACK_DAMAGE, 3)
                 .add(EntityAttributes.GENERIC_FOLLOW_RANGE, 20.0)
                 .add(EntityAttributes.GENERIC_ARMOR, 2.0)
