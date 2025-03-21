@@ -24,32 +24,26 @@ public class CreeperOilItem extends Item {
     @Override
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         super.finishUsing(stack, world, user);
+
         if (user instanceof ServerPlayerEntity serverPlayerEntity) {
             Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
 
-        if(user instanceof PlayerEntity player){
-            ItemUsage.consumeHeldItem(world, player, user.getActiveHand());
-
-            world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 2.0f, World.ExplosionSourceType.TNT);
-            user.damage(world.getDamageSources().explosion(user,user), 40);
-        }
-
-        if (stack.isEmpty()) {
-            return new ItemStack(Items.GLASS_BOTTLE);
-        } else {
-
-            if (user instanceof PlayerEntity playerEntity && !playerEntity.isInCreativeMode()) {
-                ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
-                if (!playerEntity.getInventory().insertStack(itemStack)) {
-                    playerEntity.dropItem(itemStack, false);
-                }
+        if (user instanceof PlayerEntity player) {
+            if (!player.isCreative()) {
+                stack.decrement(1);
             }
 
-            return stack;
+            world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 2.0f, World.ExplosionSourceType.TNT);
+
+            ItemStack glassBottle = new ItemStack(Items.GLASS_BOTTLE);
+            player.dropItem(glassBottle, true);
+
+            user.damage(world.getDamageSources().explosion(user, user), 40);
         }
 
+        return stack.isEmpty() ? ItemStack.EMPTY : stack;
     }
 
     @Override
