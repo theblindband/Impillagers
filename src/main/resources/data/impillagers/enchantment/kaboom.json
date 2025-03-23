@@ -10,31 +10,8 @@
           "type": "minecraft:all_of",
           "effects": [
             {
-             "type": "minecraft:explode",
-              "block_interaction": "mob",
-             "damage_type": "explosion",
-             "large_particle": {
-                "type": "minecraft:explosion"
-              },
-              "radius": {
-                "type": "minecraft:linear",
-                "base": 2.0,
-                "per_level_above_first": 2.0
-              },
-              "small_particle": {
-               "type": "minecraft:ash"
-              },
-              "sound": "minecraft:entity.generic.explode"
-            },
-            {
-              "type": "minecraft:play_sound",
-              "pitch": 1.0,
-              "sound": "minecraft:entity.tnt.primed",
-              "volume": 5.0
-            },
-            {
               "type": "minecraft:run_function",
-              "function": "impillagers:kill_arrow"
+              "function": "impillagers:kaboom_effect"
             }
           ]
         },
@@ -59,27 +36,8 @@
           "type": "minecraft:all_of",
           "effects": [
             {
-              "type": "minecraft:explode",
-              "block_interaction": "mob",
-              "damage_type": "explosion",
-              "large_particle": {
-                "type": "minecraft:explosion"
-              },
-              "radius": {
-                "type": "minecraft:linear",
-                "base": 2.0,
-                "per_level_above_first": 2.0
-              },
-              "small_particle": {
-                "type": "minecraft:ash"
-              },
-              "sound": "minecraft:entity.generic.explode"
-            },
-            {
-              "type": "minecraft:play_sound",
-              "pitch": 1.0,
-              "sound": "minecraft:entity.tnt.primed",
-              "volume": 5.0
+              "type": "minecraft:run_function",
+              "function": "impillagers:kaboom_effect"
             }
           ]
         },

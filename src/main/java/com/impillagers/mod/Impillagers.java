@@ -1,6 +1,7 @@
 package com.impillagers.mod;
 
 import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.command.ModCommands;
 import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
@@ -13,6 +14,7 @@ import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.util.HudOverlayOpacityPayload;
+import com.impillagers.mod.command.ModCommandListener;
 import com.impillagers.mod.villager.ModTrades;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.ModInitializer;
@@ -23,6 +25,7 @@ import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
 import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
 import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
 import net.minecraft.potion.Potions;
+import net.minecraft.server.MinecraftServer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -45,6 +48,8 @@ public class Impillagers implements ModInitializer {
 		ModTrades.registerModTrades();
 		ModEvents.registerModEvents();
 		ModProfessions.registerModProfessions();
+		ModCommandListener.registerListeners();
+		ModCommands.registerCommands();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
@@ -82,5 +87,8 @@ public class Impillagers implements ModInitializer {
 
 		//Packet Payloads
 		PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);
+
+
+
 	}
 }
