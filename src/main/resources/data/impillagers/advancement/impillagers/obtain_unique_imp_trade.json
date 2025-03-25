@@ -1,0 +1,89 @@
+{
+  "parent": "impillagers:impillagers/obtain_gold_coin",
+  "criteria": {
+    "creeper_oil": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:creeper_oil"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "painted_armor_trim_smithing_template": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:painted_armor_trim_smithing_template"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "spider_pieye": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:spider_pieye"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "totem_of_undyeing": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:totem_of_undyeing"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dung_ball": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:dung_ball"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dung_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:dung_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.obtain_unique_imp_trade.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "impillagers:totem_of_undyeing"
+    },
+    "title": {
+      "translate": "advancements.impillagers.obtain_unique_imp_trade.title"
+    }
+  },
+  "requirements": [
+    [
+      "creeper_oil",
+      "painted_armor_trim_smithing_template",
+      "spider_pieye",
+      "totem_of_undyeing",
+      "dung_ball",
+      "dung_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

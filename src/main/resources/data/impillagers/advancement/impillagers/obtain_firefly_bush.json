@@ -1,0 +1,33 @@
+{
+  "parent": "impillagers:impillagers/root",
+  "criteria": {
+    "firefly_bush": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:firefly_bush"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.obtain_firefly_bush.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "impillagers:firefly_bush"
+    },
+    "title": {
+      "translate": "advancements.impillagers.obtain_firefly_bush.title"
+    }
+  },
+  "requirements": [
+    [
+      "firefly_bush"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

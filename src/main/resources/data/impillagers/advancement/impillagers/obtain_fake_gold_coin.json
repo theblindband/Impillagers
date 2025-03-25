@@ -1,0 +1,34 @@
+{
+  "parent": "impillagers:impillagers/follow_frog_mask",
+  "criteria": {
+    "fake_gold_coin": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:fake_gold_coin"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.obtain_fake_gold_coin.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "impillagers:fake_gold_coin"
+    },
+    "title": {
+      "translate": "advancements.impillagers.obtain_fake_gold_coin.title"
+    }
+  },
+  "requirements": [
+    [
+      "fake_gold_coin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

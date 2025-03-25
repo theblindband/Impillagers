@@ -1,0 +1,99 @@
+{
+  "parent": "impillagers:impillagers/obtain_firefly_bush",
+  "criteria": {
+    "firefly_bush": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:firefly_bush"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "belladonna": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:belladonna"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "swamp_reed": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:swamp_reed"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "purple_heart_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:purple_heart_sapling"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "lily_pad": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:lily_pad"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "blue_orchid": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:blue_orchid"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.obtain_swamp_flora.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:lily_pad"
+    },
+    "title": {
+      "translate": "advancements.impillagers.obtain_swamp_flora.title"
+    }
+  },
+  "requirements": [
+    [
+      "firefly_bush"
+    ],
+    [
+      "belladonna"
+    ],
+    [
+      "swamp_reed"
+    ],
+    [
+      "purple_heart_sapling"
+    ],
+    [
+      "blue_orchid"
+    ],
+    [
+      "lily_pad"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

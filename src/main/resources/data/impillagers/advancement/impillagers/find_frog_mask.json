@@ -1,0 +1,34 @@
+{
+  "parent": "impillagers:impillagers/find_swamp_ruin",
+  "criteria": {
+    "frog_mask": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:frog_mask"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.find_frog_mask.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:brush"
+    },
+    "title": {
+      "translate": "advancements.impillagers.find_frog_mask.title"
+    }
+  },
+  "requirements": [
+    [
+      "frog_mask"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

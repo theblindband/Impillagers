@@ -18,22 +18,17 @@
         },
         {
           "type": "minecraft:item",
-          "name": "impillagers:gold_coin",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
-          "name": "impillagers:fake_gold_coin",
-          "weight": 2
-        },
-        {
-          "type": "minecraft:item",
           "name": "minecraft:slime_ball",
           "weight": 2
         },
         {
           "type": "minecraft:item",
           "name": "minecraft:gold_nugget",
+          "weight": 2
+        },
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:gold_ingot",
           "weight": 2
         }
       ],

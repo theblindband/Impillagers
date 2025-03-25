@@ -1,0 +1,40 @@
+{
+  "parent": "impillagers:impillagers/find_frog_mask",
+  "criteria": {
+    "in_impillager_village": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "impillagers:impillager_village"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.follow_frog_mask.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "impillagers:dung_ball"
+    },
+    "title": {
+      "translate": "advancements.impillagers.follow_frog_mask.title"
+    }
+  },
+  "requirements": [
+    [
+      "in_impillager_village"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

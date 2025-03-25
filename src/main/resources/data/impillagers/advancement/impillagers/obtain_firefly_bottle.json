@@ -1,0 +1,33 @@
+{
+  "parent": "impillagers:impillagers/obtain_firefly_bush",
+  "criteria": {
+    "firefly_bottle": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:firefly_bottle"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.obtain_firefly_bottle.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "impillagers:firefly_bottle"
+    },
+    "title": {
+      "translate": "advancements.impillagers.obtain_firefly_bottle.title"
+    }
+  },
+  "requirements": [
+    [
+      "firefly_bottle"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

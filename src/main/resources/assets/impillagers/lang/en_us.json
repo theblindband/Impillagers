@@ -102,5 +102,44 @@
   "tag.item.impillagers.dyed_terracotta": "Dyed Terracotta",
   "tag.item.impillagers.dyed_candle": "Dyed Candle",
   "tag.item.impillagers.purple_heart_logs": "Purple Heart Logs",
-  "tag.item.impillagers.frog_poisonous_food": "Frog Poisonous Food"
+  "tag.item.impillagers.frog_poisonous_food": "Frog Poisonous Food",
+
+  "advancements.impillagers.root.title": "Impillagers",
+  "advancements.impillagers.root.description": "The Swamp awakens.",
+
+  "advancements.impillagers.find_swamp_ruin.title": "Muddy History",
+  "advancements.impillagers.find_swamp_ruin.description": "Find a Swamp Ruin.",
+
+  "advancements.impillagers.find_frog_mask.title": "Mask of Wonders",
+  "advancements.impillagers.find_frog_mask.description": "Find a Frog Mask from a Swamp Ruin.",
+
+  "advancements.impillagers.find_swamp_sherds.title": "Swamp Pots",
+  "advancements.impillagers.find_swamp_sherds.description": "Find the new Sherds in the Swamp.",
+
+  "advancements.impillagers.follow_frog_mask.title": "Do I hear giggling?",
+  "advancements.impillagers.follow_frog_mask.description": "Follow the Frog Mask.",
+
+  "advancements.impillagers.obtain_firefly_bush.title": "A Glimpse into the Future",
+  "advancements.impillagers.obtain_firefly_bush.description": "Obtain a Firefly Bush.",
+
+  "advancements.impillagers.obtain_firefly_bottle.title": "Would not believe your eyes",
+  "advancements.impillagers.obtain_firefly_bottle.description": "Bottle up some Fireflies.",
+
+  "advancements.impillagers.walk_on_sinking_mud_with_leather_boots.title": "Jumping in Muddy Puddles",
+  "advancements.impillagers.walk_on_sinking_mud_with_leather_boots.description": "Use Leather Boots to walk on Sinking Mud.",
+
+  "advancements.impillagers.find_swamp_hut.title": "Same Old, Same Old",
+  "advancements.impillagers.find_swamp_hut.description": "Find a Swamp Hut.",
+
+  "advancements.impillagers.obtain_gold_coin.title": "New Money",
+  "advancements.impillagers.obtain_gold_coin.description": "Trade for a Gold Coin from an Imp.",
+
+  "advancements.impillagers.obtain_fake_gold_coin.title": "Something Smells",
+  "advancements.impillagers.obtain_fake_gold_coin.description": "Get scammed, idiot.",
+
+  "advancements.impillagers.obtain_swamp_flora.title": "Marshy Garden",
+  "advancements.impillagers.obtain_swamp_flora.description": "Obtain every plant exclusive to the Swamp.",
+
+  "advancements.impillagers.obtain_unique_imp_trade.title": "Lamp Oil, Rope, Bombs!",
+  "advancements.impillagers.obtain_unique_imp_trade.description": "Trade for one of the Impillager's unique wares."
 }
