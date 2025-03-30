@@ -55,7 +55,7 @@ public class Impillagers implements ModInitializer {
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_LEAVES, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.BELLADONNA, 0.65f);
-		CompostingChanceRegistry.INSTANCE.add(ModBlocks.FIREFLY_BUSH, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.FIREFLY_BUSH, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.DUNG_BLOCK, 1.0f);
 		CompostingChanceRegistry.INSTANCE.add(ModItems.DUNG_BALL, 0.5f);
 

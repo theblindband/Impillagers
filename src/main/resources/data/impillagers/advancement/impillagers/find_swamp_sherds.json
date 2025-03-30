@@ -1,0 +1,46 @@
+{
+  "parent": "impillagers:impillagers/find_swamp_ruin",
+  "criteria": {
+    "imp_sherd": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:imp_pottery_sherd"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "cover_sherd": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:cover_pottery_sherd"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.find_swamp_sherds.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "impillagers:imp_pottery_sherd"
+    },
+    "title": {
+      "translate": "advancements.impillagers.find_swamp_sherds.title"
+    }
+  },
+  "requirements": [
+    [
+      "imp_sherd"
+    ],
+    [
+      "cover_sherd"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

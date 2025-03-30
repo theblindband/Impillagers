@@ -1,0 +1,40 @@
+{
+  "parent": "impillagers:impillagers/root",
+  "criteria": {
+    "in_swamp_ruin": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structures": "impillagers:swamp_ruin"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.find_swamp_ruin.description"
+    },
+    "frame": "goal",
+    "icon": {
+      "count": 1,
+      "id": "minecraft:mud_bricks"
+    },
+    "title": {
+      "translate": "advancements.impillagers.find_swamp_ruin.title"
+    }
+  },
+  "requirements": [
+    [
+      "in_swamp_ruin"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
