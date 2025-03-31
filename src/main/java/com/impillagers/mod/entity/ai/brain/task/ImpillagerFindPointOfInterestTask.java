@@ -1,7 +1,6 @@
 package com.impillagers.mod.entity.ai.brain.task;
 
-
-import com.impillagers.mod.Impillagers;
+import com.impillagers.mod.util.PoiFilterUtil;
 import com.mojang.datafixers.util.Pair;
 import it.unimi.dsi.fastutil.longs.Long2ObjectMap;
 import it.unimi.dsi.fastutil.longs.Long2ObjectOpenHashMap;
@@ -16,10 +15,8 @@ import net.minecraft.entity.ai.brain.task.TaskTriggerer;
 import net.minecraft.entity.ai.pathing.Path;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.PathAwareEntity;
-import net.minecraft.registry.Registries;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.DebugInfoSender;
-import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.GlobalPos;
 import net.minecraft.util.math.random.Random;
@@ -63,10 +60,7 @@ public class ImpillagerFindPointOfInterestTask {
 									}
 								};
 
-								Predicate<RegistryEntry<PointOfInterestType>> filteredPoiPredicate = poiPredicate.and(entry -> {
-									Identifier poiId = Registries.POINT_OF_INTEREST_TYPE.getId(entry.value());
-									return poiId != null && Impillagers.MOD_ID.equals(poiId.getNamespace());
-								});
+								Predicate<RegistryEntry<PointOfInterestType>> filteredPoiPredicate = poiPredicate.and(PoiFilterUtil::isPoiValid);
 
 								Set<Pair<RegistryEntry<PointOfInterestType>, BlockPos>> set = pointOfInterestStorage.getSortedTypesAndPositions(filteredPoiPredicate, predicate2, entity.getBlockPos(), POI_SORTING_RADIUS, PointOfInterestStorage.OccupationStatus.HAS_SPACE).limit(5L).collect(Collectors.toSet());
 
@@ -143,4 +137,3 @@ public class ImpillagerFindPointOfInterestTask {
 		}
 	}
 }
-

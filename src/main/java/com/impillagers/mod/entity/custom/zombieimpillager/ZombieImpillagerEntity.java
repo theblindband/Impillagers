@@ -1,10 +1,10 @@
 package com.impillagers.mod.entity.custom.zombieimpillager;
 
-import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerTextures;
 import com.impillagers.mod.entity.mob.ZombieImpillagerEntityInterface;
+import com.impillagers.mod.util.ImpillagerProfessionHandler;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.BedBlock;
 import net.minecraft.block.BlockState;
@@ -26,7 +26,6 @@ import net.minecraft.inventory.StackReference;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.registry.Registries;
-import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Identifier;
@@ -38,6 +37,7 @@ import net.minecraft.world.WorldEvents;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Set;
 import java.util.UUID;
 
 public class ZombieImpillagerEntity extends ZombieVillagerEntity implements ZombieImpillagerEntityInterface {
@@ -56,13 +56,9 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
     public ZombieImpillagerEntity(EntityType<? extends ZombieVillagerEntity> entityType, World world) {
         super(entityType, world);
 
-        List<VillagerProfession> validProfessions = Registries.VILLAGER_PROFESSION
-                .streamEntries()
-                .map(RegistryEntry::value)
-                .filter(profession -> {
-                    String namespace = Registries.VILLAGER_PROFESSION.getId(profession).getNamespace();
-                    return namespace.equals(Impillagers.MOD_ID) || profession == VillagerProfession.NONE || profession == VillagerProfession.NITWIT;
-                })
+        Set<String> professionKeys = ImpillagerProfessionHandler.getProfessionKeys();
+        List<VillagerProfession> validProfessions = professionKeys.stream()
+                .map(key -> Registries.VILLAGER_PROFESSION.get(Identifier.of(key)))
                 .toList();
 
         if (!validProfessions.isEmpty()) {
@@ -181,7 +177,6 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
 
             villagerEntity.setExperience(this.xp);
 
-            // Transfer texture key
             if (villagerEntity instanceof ImpillagerEntity) {
                 villagerEntity.setTextureKey(this.dataTracker.get(ZombieImpillagerEntity.TEXTURE_KEY));
             }

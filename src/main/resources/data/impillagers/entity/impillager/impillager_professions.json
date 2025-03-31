@@ -1,0 +1,30 @@
+{
+  "poi_blocks": [
+    "impillagers:banker_poi",
+    "impillagers:dung_collector_poi",
+    "impillagers:musician_poi",
+    "minecraft:fisherman"
+  ],
+  "profession_textures": {
+    "minecraft:none": {
+      "impillager": "impillagers:textures/entity/impillager/professions/unemployed.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/unemployed.png"
+    },
+    "minecraft:nitwit": {
+      "impillager": "impillagers:textures/entity/impillager/professions/nitwit.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/nitwit.png"
+    },
+    "impillagers:dung_collector": {
+      "impillager": "impillagers:textures/entity/impillager/professions/dung_collector.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/dung_collector.png"
+    },
+    "impillagers:banker": {
+      "impillager": "impillagers:textures/entity/impillager/professions/banker.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/banker.png"
+    },
+    "impillagers:musician": {
+      "impillager": "impillagers:textures/entity/impillager/professions/musician.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/musician.png"
+    }
+  }
+}
