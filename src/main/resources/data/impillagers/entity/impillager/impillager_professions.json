@@ -2,8 +2,7 @@
   "poi_blocks": [
     "impillagers:banker_poi",
     "impillagers:dung_collector_poi",
-    "impillagers:musician_poi",
-    "minecraft:fisherman"
+    "impillagers:musician_poi"
   ],
   "profession_textures": {
     "minecraft:none": {
