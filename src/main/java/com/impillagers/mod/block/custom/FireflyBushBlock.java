@@ -51,9 +51,8 @@ public class FireflyBushBlock extends PlantBlock {
     }
 
     private boolean shouldBushBeLit(World world, BlockPos pos) {
-        return !world.isDay() && world.getLightLevel(pos) < 7;
+        return !world.isDay() && world.getLightLevel(pos) < 13;
     }
-
 
     private void updateBushLightState(BlockState state, World world, BlockPos pos) {
         if (state.get(COOLDOWN) == 0) {
@@ -105,7 +104,7 @@ public class FireflyBushBlock extends PlantBlock {
 
     @Override
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (state.get(FireflyBushBlock.LIT)) {
+        if (state.get(LIT)) {
             int i = pos.getX();
             int j = pos.getY();
             int k = pos.getZ();
@@ -129,6 +128,18 @@ public class FireflyBushBlock extends PlantBlock {
         }
     }
 
+    @Override
+    public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
+        if (state.get(COOLDOWN) == 0) {
+            updateBushLightState(state, world, pos);
+            scheduleNextTick(world, pos, random);
+        } else {
+            int newCooldown = state.get(COOLDOWN) - 1;
+            BlockState newState = state.with(COOLDOWN, newCooldown).with(LIT, false);
+            world.setBlockState(pos, newState, Block.NOTIFY_ALL);
+            scheduleCooldownTick(world, pos);
+        }
+    }
 
     @Override
     protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
