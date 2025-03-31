@@ -51,7 +51,7 @@ public class FireflyBushBlock extends PlantBlock {
     }
 
     private boolean shouldBushBeLit(World world, BlockPos pos) {
-        return !world.isDay() && world.getLightLevel(pos) < 13;
+        return !world.isDay() && world.getLightLevel(pos) < 7;
     }
 
 
