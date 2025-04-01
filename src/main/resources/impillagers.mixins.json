@@ -5,6 +5,7 @@
   "mixins": [
     "BlockEntityTypeMixin",
     "MobEntityAccessor",
+    "PersistentProjectileEntityAccessor",
     "PointOfInterestTaskMixin",
     "SignTypeAccessor",
     "SmellyEffectMixin",
