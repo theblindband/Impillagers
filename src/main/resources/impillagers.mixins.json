@@ -3,6 +3,7 @@
   "package": "com.impillagers.mod.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
+    "ArrowEntityAccessor",
     "BlockEntityTypeMixin",
     "MobEntityAccessor",
     "PersistentProjectileEntityAccessor",
