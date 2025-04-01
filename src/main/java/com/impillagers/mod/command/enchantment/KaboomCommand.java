@@ -64,13 +64,13 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
 
         if (projectileEntity instanceof ArrowEntity) {
             potionContents = ((ArrowEntityAccessor) projectileEntity).GetPotionContents();
-            if (potionContents.hasEffects()) {
-                applyLingeringPotion(projectileEntity, potionContents, radius, owner, world);
-                for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
-                    if (entity instanceof LivingEntity living) {
-                        for (StatusEffectInstance effect : potionContents.getEffects()) {
-                            living.addStatusEffect(new StatusEffectInstance(effect));
-                        }
+        }
+        if (potionContents.hasEffects()) {
+            applyLingeringPotion(projectileEntity, potionContents, radius, owner, world);
+            for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
+                if (entity instanceof LivingEntity living) {
+                    for (StatusEffectInstance effect : potionContents.getEffects()) {
+                        living.addStatusEffect(new StatusEffectInstance(effect));
                     }
                 }
             }
