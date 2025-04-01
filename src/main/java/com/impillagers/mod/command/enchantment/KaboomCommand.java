@@ -57,6 +57,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
 
         int kaboomLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Kaboom!");
         float radius = kaboomLevel == 2 ? 3.5f : kaboomLevel == 3 ? 6f : 2f;
+        Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
 
         world.createExplosion(owner, centerX, centerY, centerZ, radius, false, World.ExplosionSourceType.NONE);
 
@@ -69,13 +70,13 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
 
             }
         }
-        checkCombos(enchantmentEntries, radius, impactLocation, world);
+        checkCombos(enchantmentEntries, radius, impactLocation, world, area);
         if (projectileEntity instanceof ArrowEntity) {
             projectileEntity.kill();
         }
     }
 
-    private void checkCombos(Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries, float radius, Vec3d impactLocation, World world) {
+    private void checkCombos(Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries, float radius, Vec3d impactLocation, World world, Box area) {
 
         if (getEnchantmentLevel(enchantmentEntries, "Enchantment Flame") > 0) {
             int intRadius = (int) Math.ceil(radius);
@@ -92,8 +93,6 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
                     }
                 }
             }
-            Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
-
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
                 entity.setOnFireFor(5);
             }
@@ -101,7 +100,6 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
 
         int totalKnockbackLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Knockback") + getEnchantmentLevel(enchantmentEntries, "Enchantment Punch");
         if (totalKnockbackLevel > 0) {
-            Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
                 if (entity instanceof LivingEntity living) {
                     double dx = impactLocation.x - living.getX();
