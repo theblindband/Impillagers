@@ -52,8 +52,6 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
         float[] powerMapping = {2f, 3.5f, 6f};
         float radius = powerMapping[kaboomLevel - 1];
 
-        checkCombos(projectileEntity, enchantmentEntries, projectileEntity.getOwner(), radius);
-
         PotionContentsComponent potionContents = null;
         if (projectileEntity instanceof ArrowEntity) {
             potionContents = ((ArrowEntityAccessor) projectileEntity).GetPotionContents();
@@ -62,6 +60,9 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
                     applyLingeringPotion(projectileEntity, potionContents, radius);
                 }
             }
+        }
+        checkCombos(projectileEntity, enchantmentEntries, projectileEntity.getOwner(), radius);
+        if (projectileEntity instanceof ArrowEntity) {
             projectileEntity.kill();
         }
     }
@@ -109,14 +110,29 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
                     }
                 }
             }
-
-            Box area = new Box(
-                    centerX - radius, centerY - radius, centerZ - radius,
-                    centerX + radius, centerY + radius, centerZ + radius
-            );
+            Box area = calculateEffectArea(centerX, centerY, centerZ, radius);
 
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
                 entity.setOnFireFor(5);
+            }
+        }
+
+        int totalKnockbackLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Knockback") + getEnchantmentLevel(enchantmentEntries, "Enchantment Punch");
+        if (totalKnockbackLevel > 0) {
+            Box area = calculateEffectArea(centerX, centerY, centerZ, radius);
+
+            for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
+                if (entity instanceof LivingEntity living) {
+                    double dx = centerX - living.getX();
+                    double dz = centerZ - living.getZ();
+                    double distance = Math.sqrt(dx * dx + dz * dz);
+                    if (distance < 0.001) {
+                        distance = 0.001;
+                    }
+                    dx /= distance;
+                    dz /= distance;
+                    living.takeKnockback(totalKnockbackLevel, dx, dz);
+                }
             }
         }
     }
@@ -196,5 +212,13 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
         }
 
         return new Vec3d(centerX, centerY, centerZ);
+    }
+
+    private Box calculateEffectArea(Double X, Double Y, Double Z, Float radius) {
+
+        return new Box(
+                X - radius, Y - radius, Z - radius,
+                X + radius, Y + radius, Z + radius
+        );
     }
 }
