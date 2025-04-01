@@ -60,7 +60,6 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
             if (potionContents.hasEffects()) {
                 for (StatusEffectInstance effect : potionContents.getEffects()) {
                     applyLingeringPotion(projectileEntity, potionContents, radius);
-                    Impillagers.LOGGER.info("Potion Effect: {}", effect);
                 }
             }
             projectileEntity.kill();
@@ -124,7 +123,6 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
     public static int getEnchantmentLevel(Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries, String targetId)
     {
         for (Object2IntMap.Entry<RegistryEntry<Enchantment>> entry : enchantmentEntries) {
-            Impillagers.LOGGER.info("Key: {}, Value: {}", entry.getKey().value(), entry.getIntValue());
             if (entry.getKey().value().toString().equals(targetId)) {
                 return entry.getIntValue();
             }
