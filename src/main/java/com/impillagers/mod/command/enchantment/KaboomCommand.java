@@ -17,6 +17,8 @@ import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.command.ServerCommandSource;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Vec3d;
@@ -52,15 +54,18 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
         World world = projectileEntity.getWorld();
         Vec3d impactLocation = calculateImpactLocation(projectileEntity, world);
         LivingEntity owner = projectileEntity.getOwner() instanceof LivingEntity ? (LivingEntity) projectileEntity.getOwner() : null;
-        double centerX = impactLocation.x;
-        double centerY = impactLocation.y;
-        double centerZ = impactLocation.z;
 
         int kaboomLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Kaboom!");
         float radius = kaboomLevel == 2 ? 3.5f : kaboomLevel == 3 ? 6f : 2f;
         Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
 
-        world.createExplosion(owner, centerX, centerY, centerZ, radius, false, World.ExplosionSourceType.NONE);
+        for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
+            if (entity instanceof LivingEntity living) {
+                if (projectileEntity instanceof ArrowEntity) {
+                    living.damage(projectileEntity.getDamageSources().arrow(projectileEntity, owner), Math.round((float) (1.5 + (1.25 * (getEnchantmentLevel(enchantmentEntries, "Enchantment Power") + 1))) * 2) / 2.0f);
+                }
+            }
+        }
 
         if (projectileEntity instanceof ArrowEntity) {
             potionContents = ((ArrowEntityAccessor) projectileEntity).GetPotionContents();
@@ -98,6 +103,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
                     }
                 }
             }
+            world.playSound(null, new BlockPos((int) impactLocation.x, (int) impactLocation.y, (int) impactLocation.z), SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.BLOCKS, 2.0F, 1.4F);
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
                 entity.setOnFireFor(5);
             }
@@ -118,6 +124,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
                     living.takeKnockback(totalKnockbackLevel, dx, dz);
                 }
             }
+            world.playSound(null, new BlockPos((int) impactLocation.x, (int) impactLocation.y, (int) impactLocation.z), SoundEvents.ENTITY_BREEZE_WIND_BURST.value(), SoundCategory.BLOCKS, 2.0F, 1.0F);
         }
     }
 
@@ -147,6 +154,8 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
         areaEffectCloudEntity.setRadiusGrowth(-areaEffectCloudEntity.getRadius() / (float)areaEffectCloudEntity.getDuration());
         areaEffectCloudEntity.setPotionContents(potionContents);
         projectileEntity.getWorld().spawnEntity(areaEffectCloudEntity);
+
+        world.playSound(null, new BlockPos((int) impactLocation.x, (int) impactLocation.y, (int) impactLocation.z), SoundEvents.ENTITY_SPLASH_POTION_BREAK, SoundCategory.BLOCKS, 2.0F, 1.0F);
     }
 
     private Vec3d calculateImpactLocation(PersistentProjectileEntity projectileEntity, World world) {
