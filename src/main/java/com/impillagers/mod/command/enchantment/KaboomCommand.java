@@ -12,7 +12,6 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -31,6 +30,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
     public void handleEffect(ServerCommandSource source) {
 
         Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries = null;
+        PotionContentsComponent potionContents = null;
 
         Entity potentialProjectile = source.getEntity();
         if (potentialProjectile instanceof PersistentProjectileEntity projectileEntity) {
@@ -48,60 +48,42 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
             return;
         }
 
-        int kaboomLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Kaboom!");
-        float[] powerMapping = {2f, 3.5f, 6f};
-        float radius = powerMapping[kaboomLevel - 1];
+        World world = projectileEntity.getWorld();
+        Vec3d impactLocation = calculateImpactLocation(projectileEntity, world);
+        LivingEntity owner = projectileEntity.getOwner() instanceof LivingEntity ? (LivingEntity) projectileEntity.getOwner() : null;
+        double centerX = impactLocation.x;
+        double centerY = impactLocation.y;
+        double centerZ = impactLocation.z;
 
-        PotionContentsComponent potionContents = null;
+        int kaboomLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Kaboom!");
+        float radius = kaboomLevel == 2 ? 3.5f : kaboomLevel == 3 ? 6f : 2f;
+
+        world.createExplosion(owner, centerX, centerY, centerZ, radius, false, World.ExplosionSourceType.NONE);
+
         if (projectileEntity instanceof ArrowEntity) {
             potionContents = ((ArrowEntityAccessor) projectileEntity).GetPotionContents();
             if (potionContents.hasEffects()) {
-                for (StatusEffectInstance effect : potionContents.getEffects()) {
-                    applyLingeringPotion(projectileEntity, potionContents, radius);
+                if (potionContents.hasEffects()) {
+                    applyLingeringPotion(projectileEntity, potionContents, radius, owner, world);
                 }
+
             }
         }
-        checkCombos(projectileEntity, enchantmentEntries, projectileEntity.getOwner(), radius);
+        checkCombos(enchantmentEntries, radius, impactLocation, world);
         if (projectileEntity instanceof ArrowEntity) {
             projectileEntity.kill();
         }
     }
 
-    private void checkCombos(
-            PersistentProjectileEntity projectileEntity,
-            Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries,
-            Entity owner,
-            float radius
-    ) {
-        World world = projectileEntity.getWorld();
-        Vec3d impactLocation = calculateImpactLocation(projectileEntity);
-        double centerX = impactLocation.x;
-        double centerY = impactLocation.y;
-        double centerZ = impactLocation.z;
-
-        world.createExplosion(
-                owner,
-                centerX,
-                centerY,
-                centerZ,
-                radius,
-                false,
-                World.ExplosionSourceType.NONE
-        );
+    private void checkCombos(Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries, float radius, Vec3d impactLocation, World world) {
 
         if (getEnchantmentLevel(enchantmentEntries, "Enchantment Flame") > 0) {
-            BlockPos centerBlockPos = new BlockPos(
-                    (int) Math.round(centerX),
-                    (int) Math.round(centerY),
-                    (int) Math.round(centerZ)
-            );
-
             int intRadius = (int) Math.ceil(radius);
             for (int dx = -intRadius; dx <= intRadius; dx++) {
                 for (int dz = -intRadius; dz <= intRadius; dz++) {
                     if (dx * dx + dz * dz <= radius * radius) {
                         for (int dy = -1; dy <= 1; dy++) {
-                            BlockPos targetPos = centerBlockPos.add(dx, dy, dz);
+                            BlockPos targetPos = calculateBlockPos(impactLocation).add(dx, dy, dz);
                             if (world.getBlockState(targetPos).isAir() &&
                                     !world.getBlockState(targetPos.down()).isAir()) {
                                 world.setBlockState(targetPos, Blocks.FIRE.getDefaultState(), 3);
@@ -110,7 +92,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
                     }
                 }
             }
-            Box area = calculateEffectArea(centerX, centerY, centerZ, radius);
+            Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
 
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
                 entity.setOnFireFor(5);
@@ -119,12 +101,11 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
 
         int totalKnockbackLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Knockback") + getEnchantmentLevel(enchantmentEntries, "Enchantment Punch");
         if (totalKnockbackLevel > 0) {
-            Box area = calculateEffectArea(centerX, centerY, centerZ, radius);
-
+            Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
                 if (entity instanceof LivingEntity living) {
-                    double dx = centerX - living.getX();
-                    double dz = centerZ - living.getZ();
+                    double dx = impactLocation.x - living.getX();
+                    double dz = impactLocation.z - living.getZ();
                     double distance = Math.sqrt(dx * dx + dz * dz);
                     if (distance < 0.001) {
                         distance = 0.001;
@@ -136,6 +117,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
             }
         }
     }
+
     public static int getEnchantmentLevel(Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries, String targetId)
     {
         for (Object2IntMap.Entry<RegistryEntry<Enchantment>> entry : enchantmentEntries) {
@@ -145,18 +127,17 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
         }
         return 0;
     }
-    private void applyLingeringPotion(PersistentProjectileEntity projectileEntity, PotionContentsComponent potionContents, float radius)  {
 
-        Vec3d impactLocation = calculateImpactLocation(projectileEntity);
+    private void applyLingeringPotion(PersistentProjectileEntity projectileEntity, PotionContentsComponent potionContents, float radius, LivingEntity owner, World world)  {
+
+        Vec3d impactLocation = calculateImpactLocation(projectileEntity, world);
         double centerX = impactLocation.x;
         double centerY = impactLocation.y;
         double centerZ = impactLocation.z;
 
         AreaEffectCloudEntity areaEffectCloudEntity = new AreaEffectCloudEntity(projectileEntity.getWorld(), centerX, centerY, centerZ);
-        if (projectileEntity.getOwner() instanceof LivingEntity livingEntity) {
-            areaEffectCloudEntity.setOwner(livingEntity);
-        }
 
+        areaEffectCloudEntity.setOwner(owner);
         areaEffectCloudEntity.setRadius(radius);
         areaEffectCloudEntity.setRadiusOnUse(-0.5F);
         areaEffectCloudEntity.setWaitTime(10);
@@ -165,15 +146,10 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
         projectileEntity.getWorld().spawnEntity(areaEffectCloudEntity);
     }
 
-    private Vec3d calculateImpactLocation(PersistentProjectileEntity projectileEntity) {
-        World world = projectileEntity.getWorld();
+    private Vec3d calculateImpactLocation(PersistentProjectileEntity projectileEntity, World world) {
 
         double centerX, centerY, centerZ;
-        LivingEntity intersectingEntity = world.getOtherEntities(
-                projectileEntity,
-                projectileEntity.getBoundingBox(),
-                entity -> entity instanceof LivingEntity
-        ).stream().map(entity -> (LivingEntity) entity).findFirst().orElse(null);
+        LivingEntity intersectingEntity = world.getOtherEntities(projectileEntity, projectileEntity.getBoundingBox(), entity -> entity instanceof LivingEntity).stream().map(entity -> (LivingEntity) entity).findFirst().orElse(null);
 
         if (intersectingEntity != null && intersectingEntity.isAlive()) {
             Vec3d entityPos = intersectingEntity.getPos();
@@ -215,10 +191,10 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
     }
 
     private Box calculateEffectArea(Double X, Double Y, Double Z, Float radius) {
+        return new Box(X - radius, Y - radius, Z - radius, X + radius, Y + radius, Z + radius);
+    }
 
-        return new Box(
-                X - radius, Y - radius, Z - radius,
-                X + radius, Y + radius, Z + radius
-        );
+    private BlockPos calculateBlockPos(Vec3d impactLocation) {
+        return new BlockPos((int) Math.round(impactLocation.x), (int) Math.round(impactLocation.y), (int) Math.round(impactLocation.z));
     }
 }
