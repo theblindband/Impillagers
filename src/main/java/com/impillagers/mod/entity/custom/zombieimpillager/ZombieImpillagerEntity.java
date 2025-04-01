@@ -126,6 +126,11 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
                 .add(EntityAttributes.ZOMBIE_SPAWN_REINFORCEMENTS);
     }
 
+    @Override
+    public boolean canHaveStatusEffect(StatusEffectInstance effect) {
+        return !effect.equals(StatusEffects.POISON) && super.canHaveStatusEffect(effect);
+    }
+
     //-------------------------------------Tick-------------------------------------
 
     @Override
