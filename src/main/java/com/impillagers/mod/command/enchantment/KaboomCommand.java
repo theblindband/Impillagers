@@ -12,6 +12,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -64,10 +65,14 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
         if (projectileEntity instanceof ArrowEntity) {
             potionContents = ((ArrowEntityAccessor) projectileEntity).GetPotionContents();
             if (potionContents.hasEffects()) {
-                if (potionContents.hasEffects()) {
-                    applyLingeringPotion(projectileEntity, potionContents, radius, owner, world);
+                applyLingeringPotion(projectileEntity, potionContents, radius, owner, world);
+                for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
+                    if (entity instanceof LivingEntity living) {
+                        for (StatusEffectInstance effect : potionContents.getEffects()) {
+                            living.addStatusEffect(new StatusEffectInstance(effect));
+                        }
+                    }
                 }
-
             }
         }
         checkCombos(enchantmentEntries, radius, impactLocation, world, area);
