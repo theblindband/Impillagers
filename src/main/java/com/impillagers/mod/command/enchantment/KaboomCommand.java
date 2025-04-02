@@ -32,55 +32,57 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
     @Override
     public void handleEffect(ServerCommandSource source) {
 
-        Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries = null;
-        PotionContentsComponent potionContents = null;
-
         Entity potentialProjectile = source.getEntity();
         if (potentialProjectile instanceof PersistentProjectileEntity projectileEntity) {
+
+            Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries = null;
+            PotionContentsComponent potionContents = null;
+
             if (projectileEntity instanceof ArrowEntity) {
-                enchantmentEntries = ((PersistentProjectileEntityAccessor) projectileEntity)
-                        .getWeapon()
-                        .getEnchantments()
-                        .getEnchantmentEntries();
+                enchantmentEntries = ((PersistentProjectileEntityAccessor) projectileEntity).getWeapon().getEnchantments().getEnchantmentEntries();
             } else {
                 Impillagers.LOGGER.warn("Kaboom Enchantment: Kaboom was triggered by a non-arrow or non-spear projectile named: {}", Objects.requireNonNull(source.getEntity()).getDisplayName());
                 return;
             }
-        } else {
-            Impillagers.LOGGER.warn("Kaboom Enchantment: Kaboom was triggered by a non-projectile named: {}", Objects.requireNonNull(source.getEntity()).getDisplayName());
-            return;
-        }
 
-        World world = projectileEntity.getWorld();
-        Vec3d impactLocation = calculateImpactLocation(projectileEntity, world);
-        LivingEntity owner = projectileEntity.getOwner() instanceof LivingEntity ? (LivingEntity) projectileEntity.getOwner() : null;
-
-        int kaboomLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Kaboom!");
-        float radius = kaboomLevel == 2 ? 3.5f : kaboomLevel == 3 ? 6f : 2f;
-        Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
-
-        for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
-            if (entity instanceof LivingEntity living) {
-                living.damage(projectileEntity.getDamageSources().arrow(projectileEntity, owner), Math.round((float) (1.5 + (1.25 * (getEnchantmentLevel(enchantmentEntries, "Enchantment Power") + 1))) * 2) / 2.0f);
+            int kaboomLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Kaboom!");
+            if (kaboomLevel == 0) {
+                return;
             }
-        }
 
-        if (projectileEntity instanceof ArrowEntity) {
-            potionContents = ((ArrowEntityAccessor) projectileEntity).GetPotionContents();
-        }
-        if (potionContents.hasEffects()) {
-            applyLingeringPotion(projectileEntity, potionContents, radius, owner, world);
+            World world = projectileEntity.getWorld();
+            Vec3d impactLocation = calculateImpactLocation(projectileEntity, world);
+            LivingEntity owner = projectileEntity.getOwner() instanceof LivingEntity ? (LivingEntity) projectileEntity.getOwner() : null;
+            float radius = kaboomLevel == 2 ? 3.5f : kaboomLevel == 3 ? 6f : 2f;
+            Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
+
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
                 if (entity instanceof LivingEntity living) {
-                    for (StatusEffectInstance effect : potionContents.getEffects()) {
-                        living.addStatusEffect(new StatusEffectInstance(effect));
+                    living.damage(projectileEntity.getDamageSources().arrow(projectileEntity, owner), Math.round((float) (1.5 + (1.25 * (getEnchantmentLevel(enchantmentEntries, "Enchantment Power") + 1))) * 2) / 2.0f);
+                }
+            }
+
+            if (projectileEntity instanceof ArrowEntity) {
+                potionContents = ((ArrowEntityAccessor) projectileEntity).GetPotionContents();
+            }
+
+            if (potionContents.hasEffects()) {
+                applyLingeringPotion(projectileEntity, potionContents, radius, owner, world);
+                for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
+                    if (entity instanceof LivingEntity living) {
+                        for (StatusEffectInstance effect : potionContents.getEffects()) {
+                            living.addStatusEffect(new StatusEffectInstance(effect));
+                        }
                     }
                 }
             }
-        }
-        checkCombos(enchantmentEntries, radius, impactLocation, world, area);
-        if (projectileEntity instanceof ArrowEntity) {
-            projectileEntity.kill();
+
+            checkCombos(enchantmentEntries, radius, impactLocation, world, area);
+            if (projectileEntity instanceof ArrowEntity) {
+                projectileEntity.kill();
+            }
+        } else {
+            Impillagers.LOGGER.debug("Kaboom Enchantment: Kaboom was triggered by a non-projectile named: {}", Objects.requireNonNull(source.getEntity()).getDisplayName());
         }
     }
 
