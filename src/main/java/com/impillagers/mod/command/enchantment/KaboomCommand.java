@@ -88,7 +88,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
 
     private void checkCombos(Set<Object2IntMap.Entry<RegistryEntry<Enchantment>>> enchantmentEntries, float radius, Vec3d impactLocation, World world, Box area) {
 
-        if (getEnchantmentLevel(enchantmentEntries, "Enchantment Flame") > 0) {
+        if (getEnchantmentLevel(enchantmentEntries, "Enchantment Flame") > 0 || getEnchantmentLevel(enchantmentEntries, "Enchantment Fire Aspect") > 0) {
             int intRadius = (int) Math.ceil(radius);
             for (int dx = -intRadius; dx <= intRadius; dx++) {
                 for (int dz = -intRadius; dz <= intRadius; dz++) {
