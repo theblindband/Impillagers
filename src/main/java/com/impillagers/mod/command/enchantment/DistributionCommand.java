@@ -27,7 +27,7 @@ import net.minecraft.world.World;
 import java.util.Objects;
 import java.util.Set;
 
-public class KaboomCommand implements ModCommandListener.IEffectHandler {
+public class DistributionCommand implements ModCommandListener.IEffectHandler {
 
     @Override
     public void handleEffect(ServerCommandSource source) {
@@ -41,19 +41,19 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
             if (projectileEntity instanceof ArrowEntity) {
                 enchantmentEntries = ((PersistentProjectileEntityAccessor) projectileEntity).getWeapon().getEnchantments().getEnchantmentEntries();
             } else {
-                Impillagers.LOGGER.warn("Kaboom Enchantment: Kaboom was triggered by a non-arrow or non-spear projectile named: {}", Objects.requireNonNull(source.getEntity()).getDisplayName());
+                Impillagers.LOGGER.warn("Distribution Enchantment: Distribution was triggered by a non-arrow or non-spear projectile named: {}", Objects.requireNonNull(source.getEntity()).getDisplayName());
                 return;
             }
 
-            int kaboomLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Kaboom!");
-            if (kaboomLevel == 0) {
+            int distributionLevel = getEnchantmentLevel(enchantmentEntries, "Enchantment Distribution");
+            if (distributionLevel == 0) {
                 return;
             }
 
             World world = projectileEntity.getWorld();
             Vec3d impactLocation = calculateImpactLocation(projectileEntity, world);
             LivingEntity owner = projectileEntity.getOwner() instanceof LivingEntity ? (LivingEntity) projectileEntity.getOwner() : null;
-            float radius = kaboomLevel == 2 ? 3.5f : kaboomLevel == 3 ? 6f : 2f;
+            float radius = distributionLevel == 2 ? 3.5f : distributionLevel == 3 ? 6f : 2f;
             Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
 
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
@@ -82,7 +82,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
                 projectileEntity.kill();
             }
         } else {
-            Impillagers.LOGGER.debug("Kaboom Enchantment: Kaboom was triggered by a non-projectile named: {}", Objects.requireNonNull(source.getEntity()).getDisplayName());
+            Impillagers.LOGGER.debug("Distribution Enchantment: Distribution was triggered by a non-projectile named: {}", Objects.requireNonNull(source.getEntity()).getDisplayName());
         }
     }
 

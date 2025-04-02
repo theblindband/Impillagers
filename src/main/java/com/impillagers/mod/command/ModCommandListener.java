@@ -1,7 +1,7 @@
 package com.impillagers.mod.command;
 
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.command.enchantment.KaboomCommand;
+import com.impillagers.mod.command.enchantment.DistributionCommand;
 import net.minecraft.server.command.ServerCommandSource;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,6 +29,6 @@ public class ModCommandListener {
     }
 
     public static void registerListeners() {
-        registerHandler("kaboom_enchantment", new KaboomCommand());
+        registerHandler("distribution_enchantment", new DistributionCommand());
     }
 }

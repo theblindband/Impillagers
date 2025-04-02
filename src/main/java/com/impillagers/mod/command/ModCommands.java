@@ -12,9 +12,9 @@ public class ModCommands {
                     CommandManager.literal("impillagers")
                             .requires(source -> !(source.getEntity() instanceof PlayerEntity))
                             .then(CommandManager.literal("trigger_event_listener")
-                                    .then(CommandManager.literal("kaboom_enchantment")
+                                    .then(CommandManager.literal("distribution_enchantment")
                                             .executes(ctx -> {
-                                                ModCommandListener.dispatchEffect("kaboom_enchantment", ctx.getSource());
+                                                ModCommandListener.dispatchEffect("distribution_enchantment", ctx.getSource());
                                                 return Command.SINGLE_SUCCESS;
                                             })
                                     )

@@ -1,7 +1,7 @@
 {
   "anvil_cost": 8,
   "description": {
-    "translate": "enchantment.impillagers.kaboom"
+    "translate": "enchantment.impillagers.distribution"
   },
   "effects": {
     "minecraft:hit_block": [
@@ -11,7 +11,7 @@
           "effects": [
             {
               "type": "minecraft:run_function",
-              "function": "impillagers:kaboom_effect"
+              "function": "impillagers:distribution_effect"
             }
           ]
         },
@@ -37,7 +37,7 @@
           "effects": [
             {
               "type": "minecraft:run_function",
-              "function": "impillagers:kaboom_effect"
+              "function": "impillagers:distribution_effect"
             }
           ]
         },

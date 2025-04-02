@@ -39,7 +39,7 @@ public class ModTags {
 
         public static final TagKey<EntityType<?>> SINKING_MUD_WALKABLE_MOBS = createTag("sinking_mud_walkable_mobs");
         public static final TagKey<EntityType<?>> IGNORE_SMELLY = createTag("ignore_smelly");
-        public static final TagKey<EntityType<?>> KABOOM_ENCHANTABLE = createTag("kaboom_enchantable");
+        public static final TagKey<EntityType<?>> DISTRIBUTION_ENCHANTABLE = createTag("distribution_enchantable");
 
         private static TagKey<EntityType<?>> createTag(String name) {
             return TagKey.of(RegistryKeys.ENTITY_TYPE, Identifier.of(Impillagers.MOD_ID, name));
