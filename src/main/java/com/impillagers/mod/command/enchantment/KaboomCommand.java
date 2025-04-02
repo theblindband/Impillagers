@@ -61,9 +61,7 @@ public class KaboomCommand implements ModCommandListener.IEffectHandler {
 
         for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
             if (entity instanceof LivingEntity living) {
-                if (projectileEntity instanceof ArrowEntity) {
-                    living.damage(projectileEntity.getDamageSources().arrow(projectileEntity, owner), Math.round((float) (1.5 + (1.25 * (getEnchantmentLevel(enchantmentEntries, "Enchantment Power") + 1))) * 2) / 2.0f);
-                }
+                living.damage(projectileEntity.getDamageSources().arrow(projectileEntity, owner), Math.round((float) (1.5 + (1.25 * (getEnchantmentLevel(enchantmentEntries, "Enchantment Power") + 1))) * 2) / 2.0f);
             }
         }
 
