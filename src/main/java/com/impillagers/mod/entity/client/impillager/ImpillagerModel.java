@@ -31,7 +31,6 @@ public class ImpillagerModel extends SinglePartEntityModel<ImpillagerEntity> imp
 
 
     public ImpillagerModel(ModelPart root) {
-        super(RenderLayer::getEntityTranslucent);
         this.root = root.getChild(EntityModelPartNames.ROOT);
         this.body = this.root.getChild(EntityModelPartNames.BODY);
         this.head = this.body.getChild(EntityModelPartNames.HEAD);
