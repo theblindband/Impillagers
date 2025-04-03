@@ -29,7 +29,7 @@ public class ModProfessions {
             createProfession("musician", Blocks.JUKEBOX, SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN);
 
     public static final VillagerProfession GUARD =
-            createProfession("guard", Blocks.DIAMOND_BLOCK, SoundEvents.ITEM_SHIELD_BLOCK);
+            createProfession("guard", Blocks.TARGET, SoundEvents.ITEM_SHIELD_BLOCK);
 
     public static final VillagerProfession EXPLOSIVES_EXPERT =
             createProfession("explosives_expert", Blocks.TNT, SoundEvents.ENTITY_CREEPER_PRIMED);

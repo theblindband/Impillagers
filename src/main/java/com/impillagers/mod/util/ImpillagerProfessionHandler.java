@@ -12,9 +12,7 @@ import java.util.*;
 public class ImpillagerProfessionHandler {
     private static final String CONFIG_PATH = "/data/impillagers/entity/impillager/impillager_professions.json";
     private static final Set<String> VALID_POI_SET = new HashSet<>();
-
     private static final Map<String, ProfessionTexturePair> PROFESSION_TEXTURES = new HashMap<>();
-
     private static final Identifier DEFAULT_FALLBACK_TEXTURE;
 
     public record ProfessionTexturePair(Identifier impillager, Identifier zombie) {
@@ -26,33 +24,24 @@ public class ImpillagerProfessionHandler {
 
             JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
 
-            if (jsonObject.has("poi_blocks") && jsonObject.get("poi_blocks").isJsonArray()) {
-                JsonArray poiArray = jsonObject.getAsJsonArray("poi_blocks");
-                poiArray.forEach(element -> {
-                    if (element.isJsonPrimitive()) {
-                        String poiString = element.getAsString();
-                        try {
-                            Identifier poiId = Identifier.of(poiString);
-                            VALID_POI_SET.add(poiId.toString());
-                        } catch (Exception e) {
-                            Impillagers.LOGGER.error("Invalid POI identifier detected in JSON: {}", poiString);
-                        }
-                    }
-                });
-            } else {
-                Impillagers.LOGGER.error("Warning: 'poi_blocks' is missing or not an array in " + CONFIG_PATH);
-            }
-
             if (jsonObject.has("profession_textures") && jsonObject.get("profession_textures").isJsonObject()) {
                 JsonObject textures = jsonObject.getAsJsonObject("profession_textures");
                 for (Map.Entry<String, com.google.gson.JsonElement> entry : textures.entrySet()) {
                     String key = entry.getKey();
+
                     try {
                         Identifier.of(key);
                     } catch (Exception e) {
                         Impillagers.LOGGER.error("Invalid profession key detected in JSON: {}", key);
                         continue;
                     }
+
+                    String[] parts = key.split(":", 2);
+                    String namespace = parts[0];
+                    String professionName = parts[1];
+                    Identifier poiId = Identifier.of(namespace, professionName + "_poi");
+                    VALID_POI_SET.add(poiId.toString());
+
                     if (!entry.getValue().isJsonObject()) {
                         Impillagers.LOGGER.error("Expected an object for profession key {} but found: {}", key, entry.getValue());
                         continue;
@@ -134,6 +123,6 @@ public class ImpillagerProfessionHandler {
     }
 
     public static Set<String> getProfessionKeys() {
-        return java.util.Collections.unmodifiableSet(PROFESSION_TEXTURES.keySet());
+        return Collections.unmodifiableSet(PROFESSION_TEXTURES.keySet());
     }
 }

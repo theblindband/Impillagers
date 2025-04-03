@@ -1,15 +1,4 @@
 {
-  "poi_blocks": [
-    "impillagers:banker_poi",
-    "impillagers:dung_collector_poi",
-    "impillagers:musician_poi",
-    "impillagers:guard_poi",
-    "impillagers:explosives_expert_poi",
-    "impillagers:druid_poi",
-    "impillagers:alchemist_poi",
-    "impillagers:occultist_poi",
-    "impillagers:clan_leader_poi"
-  ],
   "profession_textures": {
     "minecraft:none": {
       "impillager": "impillagers:textures/entity/impillager/professions/unemployed.png",
