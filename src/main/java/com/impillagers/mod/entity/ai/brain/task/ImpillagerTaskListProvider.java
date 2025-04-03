@@ -87,7 +87,6 @@ public class ImpillagerTaskListProvider {
                                 )
                         )
                 ),
-                Pair.of(3, new GiveGiftsToHeroTask(100)),
                 Pair.of(3, FindInteractionTargetTask.create(EntityType.PLAYER, 4)),
                 Pair.of(3, new HoldTradeOffersTask(400, 1600)),
                 Pair.of(
