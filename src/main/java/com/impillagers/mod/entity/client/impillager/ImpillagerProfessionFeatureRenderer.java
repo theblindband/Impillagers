@@ -13,9 +13,9 @@ import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
 
 @Environment(EnvType.CLIENT)
-public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<ImpillagerEntity, ImpillagerModel<ImpillagerEntity>> {
+public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<ImpillagerEntity, ImpillagerModel> {
 
-    public ImpillagerProfessionFeatureRenderer(FeatureRendererContext<ImpillagerEntity, ImpillagerModel<ImpillagerEntity>> featureRendererContext) {
+    public ImpillagerProfessionFeatureRenderer(FeatureRendererContext<ImpillagerEntity, ImpillagerModel> featureRendererContext) {
         super(featureRendererContext);
     }
 

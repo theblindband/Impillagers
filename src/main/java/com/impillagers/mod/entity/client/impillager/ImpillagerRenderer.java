@@ -5,15 +5,17 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
+import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
-public class ImpillagerRenderer extends MobEntityRenderer<ImpillagerEntity, ImpillagerModel<ImpillagerEntity>> {
+public class ImpillagerRenderer extends MobEntityRenderer<ImpillagerEntity, ImpillagerModel> {
 
     public ImpillagerRenderer(EntityRendererFactory.Context context) {
-        super(context, new ImpillagerModel<>(context.getPart(ImpillagerModel.IMPILLAGER)), 0.4f);
+        super(context, new ImpillagerModel(context.getPart(ImpillagerModel.IMPILLAGER)), 0.4f);
         this.addFeature(new ImpillagerProfessionFeatureRenderer(this));
+        this.addFeature(new HeldItemFeatureRenderer<>(this, context.getHeldItemRenderer()));
     }
 
     @Override
