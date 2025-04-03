@@ -53,7 +53,7 @@ public class DistributionCommand implements ModCommandListener.IEffectHandler {
             World world = projectileEntity.getWorld();
             Vec3d impactLocation = calculateImpactLocation(projectileEntity, world);
             LivingEntity owner = projectileEntity.getOwner() instanceof LivingEntity ? (LivingEntity) projectileEntity.getOwner() : null;
-            float radius = distributionLevel == 2 ? 3.5f : distributionLevel == 3 ? 6f : 2f;
+            float radius = distributionLevel == 2 ? 3f : distributionLevel == 3 ? 4f : 2f;
             Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
 
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
