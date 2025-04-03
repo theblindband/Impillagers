@@ -10,6 +10,7 @@
     "PointOfInterestTaskMixin",
     "SignTypeAccessor",
     "SmellyEffectMixin",
+    "VillagerEntityMixin",
     "ZombieEntityMixin",
     "ZombieVillagerEntityMixin"
   ],
