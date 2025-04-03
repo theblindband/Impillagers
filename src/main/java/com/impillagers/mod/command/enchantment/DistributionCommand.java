@@ -12,6 +12,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.entity.projectile.PersistentProjectileEntity;
@@ -124,10 +125,20 @@ public class DistributionCommand implements ModCommandListener.IEffectHandler {
                     }
                     dx /= distance;
                     dz /= distance;
+
+                    double resistance = 0.0;
+                    if (living.getAttributes().hasAttribute(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE)) {
+                        resistance = living.getAttributeValue(EntityAttributes.GENERIC_KNOCKBACK_RESISTANCE);
+                    }
+                    double knockbackMultiplier = 1.0 - resistance;
+                    double baseUpwardBoost = 0.3;
+
                     living.takeKnockback(totalKnockbackLevel, dx, dz);
+                    living.addVelocity(0.0, baseUpwardBoost * knockbackMultiplier, 0.0);
                 }
             }
-            world.playSound(null, new BlockPos((int) impactLocation.x, (int) impactLocation.y, (int) impactLocation.z), SoundEvents.ENTITY_BREEZE_WIND_BURST.value(), SoundCategory.BLOCKS, 2.0F, 1.0F);
+            world.playSound(null, new BlockPos((int) impactLocation.x, (int) impactLocation.y, (int) impactLocation.z), SoundEvents.ENTITY_BREEZE_WIND_BURST.value(), SoundCategory.BLOCKS, 2.0F, 1.0F
+            );
         }
     }
 
