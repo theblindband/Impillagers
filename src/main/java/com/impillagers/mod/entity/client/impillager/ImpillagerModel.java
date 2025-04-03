@@ -26,8 +26,6 @@ public class ImpillagerModel extends SinglePartEntityModel<ImpillagerEntity> imp
     private final ModelPart right_hand;
     private final ModelPart leftArm;
     private final ModelPart left_hand;
-    private final ModelPart rightLeg;
-    private final ModelPart leftLeg;
 
 
     public ImpillagerModel(ModelPart root) {
@@ -38,8 +36,6 @@ public class ImpillagerModel extends SinglePartEntityModel<ImpillagerEntity> imp
         this.right_hand = this.rightArm.getChild(EntityModelPartNames.RIGHT_HAND);
         this.leftArm = this.body.getChild(EntityModelPartNames.LEFT_ARM);
         this.left_hand = this.leftArm.getChild(EntityModelPartNames.LEFT_HAND);
-        this.rightLeg = this.body.getChild(EntityModelPartNames.RIGHT_LEG);
-        this.leftLeg = this.body.getChild(EntityModelPartNames.LEFT_LEG);
     }
 
     public static TexturedModelData getTexturedModelData() {
