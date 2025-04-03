@@ -1,6 +1,5 @@
 package com.impillagers.mod.util;
 
-import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.impillagers.mod.Impillagers;
@@ -21,40 +20,37 @@ public class ImpillagerProfessionHandler {
     static {
         try (InputStreamReader reader = new InputStreamReader(
                 Objects.requireNonNull(ImpillagerProfessionHandler.class.getResourceAsStream(CONFIG_PATH)))) {
-
             JsonObject jsonObject = JsonParser.parseReader(reader).getAsJsonObject();
-
             if (jsonObject.has("profession_textures") && jsonObject.get("profession_textures").isJsonObject()) {
                 JsonObject textures = jsonObject.getAsJsonObject("profession_textures");
                 for (Map.Entry<String, com.google.gson.JsonElement> entry : textures.entrySet()) {
                     String key = entry.getKey();
-
                     try {
                         Identifier.of(key);
                     } catch (Exception e) {
                         Impillagers.LOGGER.error("Invalid profession key detected in JSON: {}", key);
                         continue;
                     }
-
                     String[] parts = key.split(":", 2);
                     String namespace = parts[0];
                     String professionName = parts[1];
                     Identifier poiId = Identifier.of(namespace, professionName + "_poi");
                     VALID_POI_SET.add(poiId.toString());
-
                     if (!entry.getValue().isJsonObject()) {
                         Impillagers.LOGGER.error("Expected an object for profession key {} but found: {}", key, entry.getValue());
                         continue;
                     }
                     JsonObject texturePairObj = entry.getValue().getAsJsonObject();
-
                     Identifier impTexture;
                     Identifier zombieTexture;
-
                     if (texturePairObj.has("impillager") && texturePairObj.get("impillager").isJsonPrimitive()) {
                         String impStr = texturePairObj.get("impillager").getAsString();
                         try {
                             impTexture = Identifier.of(impStr);
+                            if (!resourceExists(impTexture)) {
+                                Impillagers.LOGGER.error("Impillager texture resource not found for key {}: {}. Falling back to nitwit texture.", key, impStr);
+                                impTexture = null;
+                            }
                         } catch (Exception e) {
                             Impillagers.LOGGER.error("Invalid impillager texture identifier for key {}: {}. Falling back to nitwit texture.", key, impStr);
                             impTexture = null;
@@ -63,11 +59,14 @@ public class ImpillagerProfessionHandler {
                         Impillagers.LOGGER.error("Missing 'impillager' texture for key {}. Falling back to nitwit texture.", key);
                         impTexture = null;
                     }
-
                     if (texturePairObj.has("zombieimpillager") && texturePairObj.get("zombieimpillager").isJsonPrimitive()) {
                         String zomStr = texturePairObj.get("zombieimpillager").getAsString();
                         try {
                             zombieTexture = Identifier.of(zomStr);
+                            if (!resourceExists(zombieTexture)) {
+                                Impillagers.LOGGER.error("Zombie impillager texture resource not found for key {}: {}. Falling back to nitwit texture.", key, zomStr);
+                                zombieTexture = null;
+                            }
                         } catch (Exception e) {
                             Impillagers.LOGGER.error("Invalid zombieimpillager texture identifier for key {}: {}. Falling back to nitwit texture.", key, zomStr);
                             zombieTexture = null;
@@ -94,32 +93,23 @@ public class ImpillagerProfessionHandler {
         }
     }
 
+    private static boolean resourceExists(Identifier id) {
+        String resourcePath = "/assets/" + id.getNamespace() + "/" + id.getPath();
+        return Impillagers.class.getResourceAsStream(resourcePath) != null;
+    }
+
     public static Set<String> getValidPoiSet() {
         return VALID_POI_SET;
     }
 
     public static Identifier getImpillagerTextureForProfession(String professionKey) {
         ProfessionTexturePair pair = PROFESSION_TEXTURES.get(professionKey);
-        if (pair == null || pair.impillager == null) {
-            pair = PROFESSION_TEXTURES.get("minecraft:nitwit");
-            if (pair == null || pair.impillager == null) {
-                return DEFAULT_FALLBACK_TEXTURE;
-            }
-            return pair.impillager;
-        }
-        return pair.impillager;
+        return (pair == null || pair.impillager == null) ? DEFAULT_FALLBACK_TEXTURE : pair.impillager;
     }
 
     public static Identifier getZombieTextureForProfession(String professionKey) {
         ProfessionTexturePair pair = PROFESSION_TEXTURES.get(professionKey);
-        if (pair == null || pair.zombie == null) {
-            pair = PROFESSION_TEXTURES.get("minecraft:nitwit");
-            if (pair == null || pair.zombie == null) {
-                return DEFAULT_FALLBACK_TEXTURE;
-            }
-            return pair.zombie;
-        }
-        return pair.zombie;
+        return (pair == null || pair.zombie == null) ? DEFAULT_FALLBACK_TEXTURE : pair.zombie;
     }
 
     public static Set<String> getProfessionKeys() {
