@@ -17,11 +17,11 @@ public class ModEffectClient {
     }
 
     public static double getAdjustedFOV(double baseFOV) {
-        double minFOV = baseFOV - 40;
+        double minFOV = baseFOV - 30;
         double exponent = 3.0;
         double scaledOpacity = Math.pow(currentOpacity, exponent);
         double targetFOV = baseFOV - (scaledOpacity * (baseFOV - minFOV));
-        double smoothingFactor = 0.75;
+        double smoothingFactor = 0.05;
         lastAdjustedFOV = lerp(smoothingFactor, lastAdjustedFOV, targetFOV);
         return lastAdjustedFOV;
     }
