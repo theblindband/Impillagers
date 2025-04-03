@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/decor/lamp_1",
+        "location": "impillagers:impillager_village/decor/mud_pillar_1",
         "processors": {
           "processors": []
         },
@@ -14,24 +14,13 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/decor/stone_pillar_1",
+        "location": "impillagers:impillager_village/decor/mud_pillar_2",
         "processors": {
           "processors": []
         },
         "projection": "rigid"
       },
-      "weight": 20
-    },
-    {
-      "element": {
-        "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/decor/stone_pillar_2",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 20
+      "weight": 2
     },
     {
       "element": {
@@ -39,13 +28,13 @@
         "feature": "minecraft:pile_pumpkin",
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 5
     },
     {
       "element": {
         "element_type": "minecraft:empty_pool_element"
       },
-      "weight": 10
+      "weight": 15
     }
   ],
   "fallback": "minecraft:empty"

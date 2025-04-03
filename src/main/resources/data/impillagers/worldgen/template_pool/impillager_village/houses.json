@@ -3,24 +3,24 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/houses/small_house_1",
+        "location": "impillagers:impillager_village/houses/house",
         "processors": {
           "processors": []
         },
         "projection": "rigid"
       },
-      "weight": 3
+      "weight": 6
     },
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/houses/small_house_2",
+        "location": "impillagers:impillager_village/houses/bridge_house",
         "processors": {
           "processors": []
         },
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 6
     },
     {
       "element": {
@@ -36,13 +36,13 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/houses/musician_house",
+        "location": "impillagers:impillager_village/houses/dance_floor",
         "processors": {
           "processors": []
         },
         "projection": "rigid"
       },
-      "weight": 2
+      "weight": 1
     },
     {
       "element": {

@@ -31,29 +31,18 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 4
+      "weight": 2
     },
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/streets/corner_1",
+        "location": "impillagers:impillager_village/streets/corner",
         "processors": {
           "processors": []
         },
         "projection": "terrain_matching"
       },
-      "weight": 3
-    },
-    {
-      "element": {
-        "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/streets/corner_2",
-        "processors": {
-          "processors": []
-        },
-        "projection": "terrain_matching"
-      },
-      "weight": 3
+      "weight": 2
     },
     {
       "element": {
@@ -75,7 +64,7 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 3
+      "weight": 4
     },
     {
       "element": {
@@ -86,7 +75,7 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 3
+      "weight": 2
     }
   ],
   "fallback": "impillagers:impillager_village/terminators"
