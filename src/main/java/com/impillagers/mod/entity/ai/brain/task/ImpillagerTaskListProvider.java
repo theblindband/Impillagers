@@ -119,8 +119,8 @@ public class ImpillagerTaskListProvider {
                 5,
                 new RandomTask<>(
                         ImmutableList.of(
-                                Pair.of(LookAtMobTask.create(EntityType.CAT, 8.0F), 8),
-                                Pair.of(LookAtMobTask.create(EntityType.VILLAGER, 8.0F), 2),
+                                Pair.of(LookAtMobTask.create(EntityType.FROG, 8.0F), 8),
+                                Pair.of(LookAtMobTask.create(ModEntities.IMPILLAGER, 8.0F), 2),
                                 Pair.of(LookAtMobTask.create(EntityType.PLAYER, 8.0F), 2),
                                 Pair.of(LookAtMobTask.create(SpawnGroup.CREATURE, 8.0F), 1),
                                 Pair.of(LookAtMobTask.create(SpawnGroup.WATER_CREATURE, 8.0F), 1),
