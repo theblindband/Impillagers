@@ -3,6 +3,7 @@ package com.impillagers.mod.villager.professions;
 import com.google.common.collect.ImmutableSet;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.sounds.ModSoundEvents;
 import net.fabricmc.fabric.api.object.builder.v1.world.poi.PointOfInterestHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -26,6 +27,24 @@ public class ModProfessions {
 
     public static final VillagerProfession MUSICIAN =
             createProfession("musician", Blocks.JUKEBOX, SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN);
+
+    public static final VillagerProfession GUARD =
+            createProfession("guard", Blocks.DIAMOND_BLOCK, SoundEvents.ITEM_SHIELD_BLOCK);
+
+    public static final VillagerProfession EXPLOSIVES_EXPERT =
+            createProfession("explosives_expert", Blocks.TNT, SoundEvents.ENTITY_CREEPER_PRIMED);
+
+    public static final VillagerProfession DRUID =
+            createProfession("druid", ModBlocks.BELLADONNA, SoundEvents.ITEM_CROP_PLANT);
+
+    public static final VillagerProfession ALCHEMIST =
+            createProfession("alchemist", Blocks.CANDLE, SoundEvents.BLOCK_BREWING_STAND_BREW);
+
+    public static final VillagerProfession OCCULTIST =
+            createProfession("occultist", Blocks.REDSTONE_WIRE, SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE);
+
+    public static final VillagerProfession CLAN_LEADER =
+            createProfession("clan_leader", Blocks.CHERRY_STAIRS, ModSoundEvents.IMPILLAGER_YES);
 
 
 
@@ -57,6 +76,6 @@ public class ModProfessions {
     }
 
     public static void registerModProfessions() {
-        //Impillagers.LOGGER.info("Registering mod professions for " + Impillagers.MOD_ID);
+        Impillagers.LOGGER.info("Registering mod professions for " + Impillagers.MOD_ID);
     }
 }

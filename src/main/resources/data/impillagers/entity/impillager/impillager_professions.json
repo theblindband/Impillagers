@@ -2,7 +2,13 @@
   "poi_blocks": [
     "impillagers:banker_poi",
     "impillagers:dung_collector_poi",
-    "impillagers:musician_poi"
+    "impillagers:musician_poi",
+    "impillagers:guard_poi",
+    "impillagers:explosives_expert_poi",
+    "impillagers:druid_poi",
+    "impillagers:alchemist_poi",
+    "impillagers:occultist_poi",
+    "impillagers:clan_leader_poi"
   ],
   "profession_textures": {
     "minecraft:none": {
@@ -24,6 +30,30 @@
     "impillagers:musician": {
       "impillager": "impillagers:textures/entity/impillager/professions/musician.png",
       "zombieimpillager": "impillagers:textures/entity/impillager/professions/musician.png"
+    },
+    "impillagers:guard": {
+      "impillager": "impillagers:textures/entity/impillager/professions/guard.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/guard.png"
+    },
+    "impillagers:explosives_expert": {
+      "impillager": "impillagers:textures/entity/impillager/professions/explosives_expert.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/explosives_expert.png"
+    },
+    "impillagers:druid": {
+      "impillager": "impillagers:textures/entity/impillager/professions/druid.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/druid.png"
+    },
+    "impillagers:alchemist": {
+      "impillager": "impillagers:textures/entity/impillager/professions/alchemist.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/alchemist.png"
+    },
+    "impillagers:occultist": {
+      "impillager": "impillagers:textures/entity/impillager/professions/occultist.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/occultist.png"
+    },
+    "impillagers:clan_leader": {
+      "impillager": "impillagers:textures/entity/impillager/professions/clan_leader.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/clan_leader.png"
     }
   }
 }

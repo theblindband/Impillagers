@@ -137,6 +137,11 @@ public class ModTrades {
         //Level 3 - Creeper Oil
         //Level 4 - Enchantments
         //Level 5 - End Crystals (Might be too strong to buy them from it)
+
+        // Dung Collector - Level 5: Dung Blocks
+        registerTrades(ModProfessions.DRUID, 1,
+                new TradeData(ModItems.GOLD_COIN, 16, ModBlocks.DUNG_BLOCK, 8, 16, 6, 0.04f)
+        );
     }
 
     private static void registerTrades(VillagerProfession profession, int level, TradeData... trades) {

@@ -12,6 +12,30 @@
     {
       "id": "impillagers:musician_poi",
       "required": false
+    },
+    {
+      "id": "impillagers:guard_poi",
+      "required": false
+    },
+    {
+      "id": "impillagers:explosives_expert_poi",
+      "required": false
+    },
+    {
+      "id": "impillagers:druid_poi",
+      "required": false
+    },
+    {
+      "id": "impillagers:alchemist_poi",
+      "required": false
+    },
+    {
+      "id": "impillagers:occultist_poi",
+      "required": false
+    },
+    {
+      "id": "impillagers:clan_leader_poi",
+      "required": false
     }
   ]
 }

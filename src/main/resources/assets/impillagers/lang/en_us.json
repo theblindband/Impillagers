@@ -87,6 +87,12 @@
   "entity.impillagers.impillager.dung_collector": "Dung Collector",
   "entity.impillagers.impillager.banker": "Banker",
   "entity.impillagers.impillager.musician": "Musician",
+  "entity.impillagers.impillager.guard": "Guard",
+  "entity.impillagers.impillager.explosives_expert": "Explosives Expert",
+  "entity.impillagers.impillager.druid": "Druid",
+  "entity.impillagers.impillager.alchemist": "Alchemist",
+  "entity.impillagers.impillager.occultist": "Occultist",
+  "entity.impillagers.impillager.clan_leader": "Clan Leader",
 
   "effect.impillagers.smelly": "Smelly",
   "effect.impillagers.call_of_the_imps": "Call of the Imps",
