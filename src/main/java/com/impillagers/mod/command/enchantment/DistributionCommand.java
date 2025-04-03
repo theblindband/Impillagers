@@ -97,12 +97,15 @@ public class DistributionCommand implements ModCommandListener.IEffectHandler {
                             BlockPos targetPos = calculateBlockPos(impactLocation).add(dx, dy, dz);
                             if (world.getBlockState(targetPos).isAir() &&
                                     !world.getBlockState(targetPos.down()).isAir()) {
-                                world.setBlockState(targetPos, Blocks.FIRE.getDefaultState(), 3);
+                                if (Math.random() < 0.6) {
+                                    world.setBlockState(targetPos, Blocks.FIRE.getDefaultState(), 3);
+                                }
                             }
                         }
                     }
                 }
             }
+
             world.playSound(null, new BlockPos((int) impactLocation.x, (int) impactLocation.y, (int) impactLocation.z), SoundEvents.ITEM_FIRECHARGE_USE, SoundCategory.BLOCKS, 2.0F, 1.4F);
             for (Entity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
                 entity.setOnFireFor(5);
