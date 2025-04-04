@@ -19,6 +19,15 @@
 				"projection": "rigid",
 				"processors": "minecraft:empty"
 			}
+		},
+		{
+			"weight": 1,
+			"element": {
+				"element_type": "minecraft:single_pool_element",
+				"location": "impillagers:swamp_ruin/swamp_ruin_3",
+				"projection": "rigid",
+				"processors": "minecraft:empty"
+			}
 		}
 	]
 }

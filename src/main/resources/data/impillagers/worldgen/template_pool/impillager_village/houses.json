@@ -25,7 +25,7 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/houses/dung_collector_house",
+        "location": "impillagers:impillager_village/houses/dung_collector_building",
         "processors": {
           "processors": []
         },
@@ -36,7 +36,7 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/houses/dance_floor",
+        "location": "impillagers:impillager_village/houses/musician_building",
         "processors": {
           "processors": []
         },
