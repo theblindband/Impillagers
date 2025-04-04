@@ -9,7 +9,7 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 4
+      "weight": 8
     },
     {
       "element": {
@@ -20,7 +20,7 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 4
+      "weight": 8
     },
     {
       "element": {
@@ -53,7 +53,7 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 3
+      "weight": 1
     },
     {
       "element": {
@@ -64,7 +64,7 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 4
+      "weight": 6
     },
     {
       "element": {

@@ -19,6 +19,7 @@ import net.minecraft.world.poi.PointOfInterestType;
 
 public class ModProfessions {
 
+    //Safe
     public static final VillagerProfession BANKER =
             createProfession("banker", Blocks.GOLD_BLOCK, SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN);
 
@@ -28,21 +29,27 @@ public class ModProfessions {
     public static final VillagerProfession MUSICIAN =
             createProfession("musician", Blocks.JUKEBOX, SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN);
 
+    //Use either a Target Block or Anvil
     public static final VillagerProfession GUARD =
             createProfession("guard", Blocks.TARGET, SoundEvents.ITEM_SHIELD_BLOCK);
 
+    //We could make a custom block, but I like the idea of the imps having tnt lying around the buildings
+    //Depending on how much tnt we want in the building will decide on if it will be the workstation or not
     public static final VillagerProfession EXPLOSIVES_EXPERT =
             createProfession("explosives_expert", Blocks.TNT, SoundEvents.ENTITY_CREEPER_PRIMED);
 
     public static final VillagerProfession DRUID =
             createProfession("druid", ModBlocks.BELLADONNA, SoundEvents.ITEM_CROP_PLANT);
 
+    //Alchemy Table
     public static final VillagerProfession ALCHEMIST =
             createProfession("alchemist", Blocks.CANDLE, SoundEvents.BLOCK_BREWING_STAND_BREW);
 
+    //Altar
     public static final VillagerProfession OCCULTIST =
             createProfession("occultist", Blocks.REDSTONE_WIRE, SoundEvents.BLOCK_ENCHANTMENT_TABLE_USE);
 
+    //Throne or maybe the Bell since there can only be one of these per village
     public static final VillagerProfession CLAN_LEADER =
             createProfession("clan_leader", Blocks.CHERRY_STAIRS, ModSoundEvents.IMPILLAGER_YES);
 
