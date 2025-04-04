@@ -9,21 +9,22 @@ import net.minecraft.sound.SoundEvents;
 import java.util.Random;
 
 public class ModEffectClient {
-    private static float currentOpacity = 0.0f;
-    private static double lastAdjustedFOV = 70.0;
 
-    public static void adjustFOVBasedOnOpacity(float opacity) {
-        currentOpacity = Math.max(0.0f, Math.min(opacity, 1.0f));
+    private static double currentZoomProgress = 0.0;
+    private static double targetZoomProgress = 0.0;
+
+    public static void updateZoomState(double progress) {
+        targetZoomProgress = Math.max(0.0, Math.min(progress, 1.0));
     }
 
     public static double getAdjustedFOV(double baseFOV) {
-        double minFOV = baseFOV - 30;
+        double smoothingFactor = 0.1;
+        currentZoomProgress = lerp(smoothingFactor, currentZoomProgress, targetZoomProgress);
+
         double exponent = 3.0;
-        double scaledOpacity = Math.pow(currentOpacity, exponent);
-        double targetFOV = baseFOV - (scaledOpacity * (baseFOV - minFOV));
-        double smoothingFactor = 0.05;
-        lastAdjustedFOV = lerp(smoothingFactor, lastAdjustedFOV, targetFOV);
-        return lastAdjustedFOV;
+        double effectiveZoomProgress = Math.pow(currentZoomProgress, exponent);
+
+        return baseFOV - (effectiveZoomProgress * 30);
     }
 
     private static double lerp(double alpha, double start, double end) {
@@ -74,9 +75,9 @@ public class ModEffectClient {
         if (client == null) return;
 
         for (int i = 0; i < NUM_FIREFLY_CHANNELS; i++) {
-            if (currentOpacity > 0 && fireflyCooldowns[i] <= 0) {
-                float volume = currentOpacity * fireflyVolumeOffsets[i] * FIREFLY_MAX_VOLUME;
-                playSound(client, FIREFLY_SOUNDS[0], volume);
+            if (currentZoomProgress > 0 && fireflyCooldowns[i] <= 0) {
+                double volume = (currentZoomProgress * fireflyVolumeOffsets[i] * FIREFLY_MAX_VOLUME);
+                playSound(client, FIREFLY_SOUNDS[0], (float) volume);
                 fireflyCooldowns[i] = 40 + random.nextInt(61);
             } else {
                 fireflyCooldowns[i]--;
@@ -84,8 +85,8 @@ public class ModEffectClient {
         }
 
         for (int i = 0; i < NUM_SECONDARY_CHANNELS; i++) {
-            if (currentOpacity > 0 && secondaryCooldowns[i] <= 0) {
-                float frogChance = 0.3f + (1.0f - currentOpacity) * 0.7f;
+            if (currentZoomProgress > 0 && secondaryCooldowns[i] <= 0) {
+                double frogChance = (0.3f + (1.0f - currentZoomProgress) * 0.7f);
                 double chance = random.nextDouble();
                 SoundEvent chosenSound;
                 float channelMaxVolume;
@@ -96,8 +97,8 @@ public class ModEffectClient {
                     chosenSound = IMPILLAGER_SOUNDS[random.nextInt(IMPILLAGER_SOUNDS.length)];
                     channelMaxVolume = IMP_MAX_VOLUME;
                 }
-                float volume = currentOpacity * secondaryVolumeOffsets[i] * channelMaxVolume;
-                playSound(client, chosenSound, volume);
+                double volume = currentZoomProgress * secondaryVolumeOffsets[i] * channelMaxVolume;
+                playSound(client, chosenSound, (float) volume);
                 secondaryCooldowns[i] = 60 + random.nextInt(121);
             } else {
                 secondaryCooldowns[i]--;

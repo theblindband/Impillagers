@@ -10,11 +10,11 @@ public class ModHud {
 
     public static void renderCallOfTheImpsOverlay(float opacity) {
         InGameHud inGameHud = MinecraftClient.getInstance().inGameHud;
-
         if (inGameHud instanceof OpacityAccessor) {
             ((OpacityAccessor) inGameHud).impillagers$setOverlayOpacity(opacity);
         }
 
-        ModEffectClient.adjustFOVBasedOnOpacity(opacity);
+        ModEffectClient.updateZoomState(opacity);
     }
 }
+
