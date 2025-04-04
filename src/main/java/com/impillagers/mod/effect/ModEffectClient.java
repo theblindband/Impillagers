@@ -18,6 +18,10 @@ public class ModEffectClient {
     }
 
     public static double getAdjustedFOV(double baseFOV) {
+        if (baseFOV < 40.0) {
+            return baseFOV;
+        }
+
         double smoothingFactor = 0.1;
         currentZoomProgress = lerp(smoothingFactor, currentZoomProgress, targetZoomProgress);
 
