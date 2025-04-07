@@ -79,7 +79,7 @@
 
   "trim_pattern.impillagers.painted": "Painted Armor Trim",
 
-  "entity.impillagers.impillager": "Impillager",
+  "entity.impillagers.impillager.none": "Impillager",
   "entity.impillagers.zombie_impillager": "Zombie Impillager",
   "entity.impillagers.impillager.nitwit": "Impillager Nitwit",
   "entity.impillagers.dung_golem": "Dung Golem",
