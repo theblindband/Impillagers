@@ -1,13 +1,18 @@
 package com.impillagers.mod.entity.custom.dung_golem;
 
 import com.impillagers.mod.item.ModItems;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
 import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.sound.SoundEvent;
+import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
 public class DungGolemEntity extends IronGolemEntity {
@@ -29,7 +34,7 @@ public class DungGolemEntity extends IronGolemEntity {
 
     private void setupAnimationStates() {
         if (this.idleAnimationTimeout <= 0) {
-            this.idleAnimationTimeout = 40;
+            this.idleAnimationTimeout = 640;
             this.idleAnimationState.start(this.age);
         } else {
             --this.idleAnimationTimeout;
@@ -44,4 +49,22 @@ public class DungGolemEntity extends IronGolemEntity {
             this.setupAnimationStates();
         }
     }
+
+    //Sounds
+
+    @Override
+    protected void playStepSound(BlockPos pos, BlockState state) {
+        this.playSound(SoundEvents.BLOCK_MUD_STEP, 0.7F, 1.0F);
+    }
+
+    @Override
+    protected SoundEvent getHurtSound(DamageSource source) {
+        return SoundEvents.BLOCK_MUD_HIT;
+    }
+
+    @Override
+    protected SoundEvent getDeathSound() {
+        return SoundEvents.BLOCK_MUD_BREAK;
+    }
+
 }
