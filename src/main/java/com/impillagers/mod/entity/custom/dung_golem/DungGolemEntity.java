@@ -1,6 +1,5 @@
 package com.impillagers.mod.entity.custom.dung_golem;
 
-import com.impillagers.mod.item.ModItems;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.AnimationState;
 import net.minecraft.entity.EntityType;
@@ -9,9 +8,11 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
@@ -48,6 +49,13 @@ public class DungGolemEntity extends IronGolemEntity {
         if (this.getWorld().isClient()) {
             this.setupAnimationStates();
         }
+    }
+
+    //Interaction
+
+    @Override
+    protected ActionResult interactMob(PlayerEntity player, Hand hand) {
+        return ActionResult.FAIL;
     }
 
     //Sounds
