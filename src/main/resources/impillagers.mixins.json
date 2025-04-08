@@ -5,6 +5,7 @@
   "mixins": [
     "ArrowEntityAccessor",
     "BlockEntityTypeMixin",
+    "ImpillagerLightningMixin",
     "MobEntityAccessor",
     "PersistentProjectileEntityAccessor",
     "PointOfInterestTaskMixin",
