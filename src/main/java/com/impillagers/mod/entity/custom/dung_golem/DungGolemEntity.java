@@ -44,9 +44,4 @@ public class DungGolemEntity extends IronGolemEntity {
             this.setupAnimationStates();
         }
     }
-
-    public boolean isBreedingItem(ItemStack stack) {
-        return stack.isOf(ModItems.DUNG_BALL);
-    }
-
 }
