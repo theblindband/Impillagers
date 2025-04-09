@@ -1,6 +1,7 @@
 package com.impillagers.mod;
 
 import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.block.entity.ModBlockEntities;
 import com.impillagers.mod.command.ModCommands;
 import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
@@ -41,6 +42,7 @@ public class Impillagers implements ModInitializer {
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
+		ModBlockEntities.registerModBlockEntities();
 		ModParticleTypes.registerModParticles();
 		ModEffects.registerModEffects();
 		ModSoundEvents.registerModSounds();
