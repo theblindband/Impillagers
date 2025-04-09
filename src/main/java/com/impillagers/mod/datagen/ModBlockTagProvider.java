@@ -93,7 +93,8 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.SINKING_MUD)
-                .add(ModBlocks.DUNG_BLOCK);
+                .add(ModBlocks.DUNG_BLOCK)
+                .add(ModBlocks.SUSPICIOUS_DIRT);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.PACKED_MUD_WALL)

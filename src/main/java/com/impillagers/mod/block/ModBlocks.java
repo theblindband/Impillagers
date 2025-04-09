@@ -6,15 +6,17 @@ import com.impillagers.mod.block.entity.ModSignTypes;
 import com.impillagers.mod.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.NoteBlockInstrument;
+import net.minecraft.block.piston.PistonBehavior;
 import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.sound.BlockSoundGroup;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
-import static net.minecraft.block.Blocks.createLightLevelFromLitBlockState;
+import static net.minecraft.block.Blocks.*;
 
 public class ModBlocks {
 
@@ -85,10 +87,11 @@ public class ModBlocks {
     public static final Block MOSSY_MUD_BRICKS_SLAB = registerBlock("mossy_mud_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block MOSSY_MUD_BRICKS_WALL = registerBlock("mossy_mud_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
 
-
-
     //Decoration Blocks
     public static final Block FIREFLY_BOTTLE = registerBlockWithoutItem("firefly_bottle", new FireflyBottleBlock(AbstractBlock.Settings.create().strength(0.3F).sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromLitBlockState(13))));
+
+    //Brushable Blocks
+    public static final Block SUSPICIOUS_DIRT = registerBlock("suspicious_dirt", new NoGravityBrushableBlock(Blocks.DIRT, SoundEvents.ITEM_BRUSH_BRUSHING_GENERIC, SoundEvents.ITEM_BRUSH_BRUSHING_GRAVEL, AbstractBlock.Settings.copy(Blocks.DIRT).pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)));
 
     //Register Methods
     private static Block registerBlock(String name, Block block) {
