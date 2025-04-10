@@ -37,6 +37,7 @@ public class ModItemGroups {
 
                         //Natural Items
                         entries.add(ModBlocks.SINKING_MUD);
+                        entries.add(ModBlocks.SUSPICIOUS_DIRT);
                         entries.add(ModBlocks.BELLADONNA);
                         entries.add(ModBlocks.SWAMP_REED);
 
@@ -93,6 +94,11 @@ public class ModItemGroups {
                         entries.add(ModBlocks.CRACKED_DUNG_BRICKS);
                         entries.add(ModBlocks.CHISELED_DUNG_BRICKS);
                         entries.add(ModBlocks.DUNG_BRICKS_PILLAR);
+
+
+                        //Fertile Blocks
+                        entries.add(ModBlocks.FERTILE_DIRT);
+                        entries.add(ModBlocks.FERTILE_FARMLAND);
 
                     }).build());
 

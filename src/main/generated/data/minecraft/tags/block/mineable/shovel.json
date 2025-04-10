@@ -2,6 +2,8 @@
   "values": [
     "impillagers:sinking_mud",
     "impillagers:dung_block",
-    "impillagers:suspicious_dirt"
+    "impillagers:suspicious_dirt",
+    "impillagers:fertile_dirt",
+    "impillagers:fertile_farmland"
   ]
 }

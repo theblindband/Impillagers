@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "impillagers:block/suspicious_dirt"
+    "all": "impillagers:block/fertile_dirt"
   }
 }

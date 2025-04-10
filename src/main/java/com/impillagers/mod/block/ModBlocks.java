@@ -87,11 +87,15 @@ public class ModBlocks {
     public static final Block MOSSY_MUD_BRICKS_SLAB = registerBlock("mossy_mud_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block MOSSY_MUD_BRICKS_WALL = registerBlock("mossy_mud_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
 
+    //Dirt Blocks
+    public static final Block FERTILE_FARMLAND = registerBlock("fertile_farmland", new FertileFarmlandBlock(AbstractBlock.Settings.copy(FARMLAND).ticksRandomly()));
+    public static final Block FERTILE_DIRT = registerBlock("fertile_dirt", new Block(AbstractBlock.Settings.copy(COARSE_DIRT)));
+
     //Decoration Blocks
     public static final Block FIREFLY_BOTTLE = registerBlockWithoutItem("firefly_bottle", new FireflyBottleBlock(AbstractBlock.Settings.create().strength(0.3F).sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromLitBlockState(13))));
 
     //Brushable Blocks
-    public static final Block SUSPICIOUS_DIRT = registerBlock("suspicious_dirt", new NoGravityBrushableBlock(Blocks.DIRT, SoundEvents.ITEM_BRUSH_BRUSHING_GENERIC, SoundEvents.ITEM_BRUSH_BRUSHING_GRAVEL, AbstractBlock.Settings.copy(Blocks.DIRT).pistonBehavior(PistonBehavior.DESTROY).sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)));
+    public static final Block SUSPICIOUS_DIRT = registerBlock("suspicious_dirt", new NoGravityBrushableBlock(Blocks.DIRT, SoundEvents.ITEM_BRUSH_BRUSHING_GENERIC, SoundEvents.ITEM_BRUSH_BRUSHING_GRAVEL, AbstractBlock.Settings.copy(Blocks.DIRT).pistonBehavior(PistonBehavior.DESTROY).strength(0.25F).sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)));
 
     //Register Methods
     private static Block registerBlock(String name, Block block) {

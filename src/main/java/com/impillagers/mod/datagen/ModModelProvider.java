@@ -44,7 +44,9 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.SWAMP_REED, BlockStateModelGenerator.TintType.TINTED);
 
 
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SUSPICIOUS_DIRT);
+        blockStateModelGenerator.registerBrushableBlock(ModBlocks.SUSPICIOUS_DIRT);
+
+        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FERTILE_DIRT);
 
 
         //Dung Blocks

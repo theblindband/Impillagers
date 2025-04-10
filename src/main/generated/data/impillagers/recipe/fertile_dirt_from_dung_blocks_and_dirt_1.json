@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "fertile_dirt",
+  "key": {
+    "D": {
+      "item": "impillagers:dung_block"
+    },
+    "d": {
+      "item": "minecraft:dirt"
+    }
+  },
+  "pattern": [
+    "Dd",
+    "dD"
+  ],
+  "result": {
+    "count": 4,
+    "id": "impillagers:fertile_dirt"
+  }
+}

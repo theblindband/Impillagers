@@ -21,10 +21,8 @@ import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
-import net.fabricmc.fabric.api.registry.CompostingChanceRegistry;
-import net.fabricmc.fabric.api.registry.FabricBrewingRecipeRegistryBuilder;
-import net.fabricmc.fabric.api.registry.FlammableBlockRegistry;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.fabricmc.fabric.api.registry.*;
+import net.minecraft.item.HoeItem;
 import net.minecraft.potion.Potions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -77,6 +75,8 @@ public class Impillagers implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BELLADONNA, 60, 100);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.FIREFLY_BUSH, 60, 100);
 
+		//Tillable Blocks
+		TillableBlockRegistry.register(ModBlocks.FERTILE_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(ModBlocks.FERTILE_FARMLAND.getDefaultState()));
 
 		//Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());

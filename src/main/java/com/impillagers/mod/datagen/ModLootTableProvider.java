@@ -5,6 +5,7 @@ import com.impillagers.mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
@@ -87,6 +88,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.CRACKED_MUD_BRICKS);
         addDrop(ModBlocks.CHISELED_MUD_BRICKS);
         addDrop(ModBlocks.MUD_BRICKS_PILLAR);
+
+        addDrop(ModBlocks.FERTILE_DIRT);
+        addDrop(ModBlocks.FERTILE_FARMLAND, ModBlocks.FERTILE_DIRT);
 
         addDrop(ModBlocks.FIREFLY_BOTTLE, ModItems.FIREFLY_BOTTLE);
     }

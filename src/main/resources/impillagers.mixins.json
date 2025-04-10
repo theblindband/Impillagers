@@ -5,6 +5,8 @@
   "mixins": [
     "ArrowEntityAccessor",
     "BlockEntityTypeMixin",
+    "CropBlockMixin",
+    "FarmlandBlockMixin",
     "ImpillagerLightningMixin",
     "MobEntityAccessor",
     "PersistentProjectileEntityAccessor",

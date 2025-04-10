@@ -94,7 +94,9 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.SHOVEL_MINEABLE)
                 .add(ModBlocks.SINKING_MUD)
                 .add(ModBlocks.DUNG_BLOCK)
-                .add(ModBlocks.SUSPICIOUS_DIRT);
+                .add(ModBlocks.SUSPICIOUS_DIRT)
+                .add(ModBlocks.FERTILE_DIRT)
+                .add(ModBlocks.FERTILE_FARMLAND);
 
         getOrCreateTagBuilder(BlockTags.PICKAXE_MINEABLE)
                 .add(ModBlocks.PACKED_MUD_WALL)
@@ -125,7 +127,11 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.DUNG_BRICKS_PILLAR);
 
         getOrCreateTagBuilder(BlockTags.DIRT)
-                .add(ModBlocks.SINKING_MUD);
+                .add(ModBlocks.SINKING_MUD)
+                .add(ModBlocks.FERTILE_DIRT);
+
+        getOrCreateTagBuilder(BlockTags.BIG_DRIPLEAF_PLACEABLE)
+                .add(ModBlocks.FERTILE_FARMLAND);
 
         getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
                 .add(ModBlocks.BELLADONNA);

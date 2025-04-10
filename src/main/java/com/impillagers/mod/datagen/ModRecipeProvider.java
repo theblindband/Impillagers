@@ -190,6 +190,25 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .group("mud_bricks_pillar")
                 .offerTo(exporter, "dung_bricks_to_dung_bricks_pillar");
 
+        //Fertile Dirt
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FERTILE_DIRT, 4)
+                .input('D', ModBlocks.DUNG_BLOCK)
+                .input('d', Blocks.DIRT)
+                .pattern("Dd")
+                .pattern("dD")
+                .criterion("has_dung_block", conditionsFromItem(ModBlocks.DUNG_BLOCK))
+                .group("fertile_dirt")
+                .offerTo(exporter, "fertile_dirt_from_dung_blocks_and_dirt_1");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.FERTILE_DIRT, 4)
+                .input('D', ModBlocks.DUNG_BLOCK)
+                .input('d', Blocks.DIRT)
+                .pattern("dD")
+                .pattern("Dd")
+                .criterion("has_dung_block", conditionsFromItem(ModBlocks.DUNG_BLOCK))
+                .group("fertile_dirt")
+                .offerTo(exporter, "fertile_dirt_from_dung_blocks_and_dirt_2");
 
         //Undyeing Recipes
         offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, "undyeing_shulker_box");
