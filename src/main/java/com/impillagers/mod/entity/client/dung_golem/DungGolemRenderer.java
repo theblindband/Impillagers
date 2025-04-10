@@ -29,4 +29,9 @@ public class DungGolemRenderer extends MobEntityRenderer<DungGolemEntity, DungGo
 
         super.render(livingEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }
+
+    @Override
+    protected float getShadowRadius(DungGolemEntity dungGolemEntity) {
+        return dungGolemEntity.isBaby() ? 0.4F * 0.5F : 0.4F;
+    }
 }
