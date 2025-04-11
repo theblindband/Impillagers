@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-10T20:03:07.802597429	Impillagers/Block Loot Tables
+// 1.21.1	2025-04-11T20:07:45.59376583	Impillagers/Block Loot Tables
 42cc079918e9ed51ab0228682c5a669864c43fae data/impillagers/loot_table/blocks/packed_mud_slab.json
 63dc3e687f0e506877d3039400af2275787e1f0d data/impillagers/loot_table/blocks/packed_dung_stairs.json
 0f47c47ba84e4c7ac8821a91f45256572903c5cb data/impillagers/loot_table/blocks/purple_heart_fence.json
@@ -36,8 +36,8 @@ c2d59840dcdd78352e02ee5459f35d9f92c26f5e data/impillagers/loot_table/blocks/purp
 d8a11fe4f334a67de9fe7843bf65e68feb94c877 data/impillagers/loot_table/blocks/purple_heart_sign.json
 12eb617749873ae48097b9f92a832698d573355d data/impillagers/loot_table/blocks/mossy_mud_bricks.json
 c30d9fc48131d73f3f6b416a372a09469924a804 data/impillagers/loot_table/blocks/dung_block.json
-99127f5d90b3aefc1d1b3f064a3e9d6db01c807b data/impillagers/loot_table/blocks/dung_bricks_slab.json
 4e2e514fa2dd8bb0dabaa76948472a51dbba1f8e data/impillagers/loot_table/blocks/purple_heart_wood.json
+99127f5d90b3aefc1d1b3f064a3e9d6db01c807b data/impillagers/loot_table/blocks/dung_bricks_slab.json
 1785e1b15b750f28271927282552b56157712e80 data/impillagers/loot_table/blocks/chiseled_mud_bricks.json
 61aede0ba4f09aa6276f76d192b1c862325adb7d data/impillagers/loot_table/blocks/packed_mud_stairs.json
 6119d0b3e6e2fa9734ba3fc0f9c779d0aeefa90d data/impillagers/loot_table/blocks/sinking_mud.json
