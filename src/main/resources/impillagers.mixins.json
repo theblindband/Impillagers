@@ -10,6 +10,7 @@
     "ImpillagerLightningMixin",
     "MobEntityAccessor",
     "PersistentProjectileEntityAccessor",
+    "PlantBlockMixin",
     "PointOfInterestTaskMixin",
     "SignTypeAccessor",
     "SmellyEffectMixin",
