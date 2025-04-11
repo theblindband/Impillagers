@@ -15,6 +15,7 @@
     "SaplingBlockMixin",
     "SignTypeAccessor",
     "SmellyEffectMixin",
+    "SugarCaneBlockMixin",
     "VillagerEntityMixin",
     "ZombieEntityMixin",
     "ZombieVillagerEntityMixin"
