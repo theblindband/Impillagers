@@ -2,11 +2,13 @@ package com.impillagers.mod.mixin;
 
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.entity.ModEntities;
+import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.CarvedPumpkinBlock;
 import net.minecraft.entity.Entity;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
@@ -47,6 +49,10 @@ public class CarvedPumpkinBlockMixin {
         if (dungGolem != null) {
             dungGolem.refreshPositionAndAngles(pos.getX() + 0.5, pos.down().getY(), pos.getZ() + 0.5, 0.0F, 0.0F);
             world.spawnEntity(dungGolem);
+
+            for (ServerPlayerEntity player : world.getNonSpectatingEntities(ServerPlayerEntity.class, dungGolem.getBoundingBox().expand(5.0D))) {
+                Criteria.SUMMONED_ENTITY.trigger(player, dungGolem);
+            }
         }
     }
 
