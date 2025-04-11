@@ -12,6 +12,7 @@
     "PersistentProjectileEntityAccessor",
     "PlantBlockMixin",
     "PointOfInterestTaskMixin",
+    "SaplingBlockMixin",
     "SignTypeAccessor",
     "SmellyEffectMixin",
     "VillagerEntityMixin",
