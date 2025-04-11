@@ -11,7 +11,7 @@
 		"BluePixelNinja"
 	],
 	"contact": {
-		"homepage": "https://github.com/theblindband/Impillagers/tree/Fabric-1.21.1"
+		"homepage": "https://modrinth.com/mod/impillagers"
 	},
 	"license": "MIT",
 	"icon": "assets/impillagers/icon.png",
@@ -37,6 +37,6 @@
 		"fabric-api": "*"
 	},
 	"suggests": {
-		"another-mod": "*"
+		"continuity": "*"
 	}
 }
