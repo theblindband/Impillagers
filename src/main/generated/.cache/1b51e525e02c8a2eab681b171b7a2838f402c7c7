@@ -1,4 +1,4 @@
-// 1.21.1	2025-04-11T20:07:45.59376583	Impillagers/Block Loot Tables
+// 1.21.1	2025-04-11T20:15:50.597632318	Impillagers/Block Loot Tables
 42cc079918e9ed51ab0228682c5a669864c43fae data/impillagers/loot_table/blocks/packed_mud_slab.json
 63dc3e687f0e506877d3039400af2275787e1f0d data/impillagers/loot_table/blocks/packed_dung_stairs.json
 0f47c47ba84e4c7ac8821a91f45256572903c5cb data/impillagers/loot_table/blocks/purple_heart_fence.json
@@ -47,6 +47,6 @@ cb3b67d69b21d51ba0d43601703f5b090e4f6520 data/impillagers/loot_table/blocks/purp
 9ef5959d37595c8b0be1836b68a1cbd6a9baaab3 data/impillagers/loot_table/blocks/purple_heart_slab.json
 4e3aac8023b46eb0af6acf2c4c092f8ddfa4eb82 data/impillagers/loot_table/blocks/mossy_dung_bricks_slab.json
 000af88e75b02a0d49df71138a1de66a63c79ee8 data/impillagers/loot_table/blocks/mossy_mud_bricks_wall.json
-dadbdc551b9193519dfa99b2c1aee4327b52655e data/impillagers/loot_table/blocks/potted_belladonna.json
 fe212d4c7e13cacee3b810e6c5bf6d831cc1e635 data/impillagers/loot_table/blocks/dung_bricks_stairs.json
+dadbdc551b9193519dfa99b2c1aee4327b52655e data/impillagers/loot_table/blocks/potted_belladonna.json
 99828c1f1e666fdb5f91a1a9363d5da505dadbaf data/impillagers/loot_table/blocks/purple_heart_button.json
