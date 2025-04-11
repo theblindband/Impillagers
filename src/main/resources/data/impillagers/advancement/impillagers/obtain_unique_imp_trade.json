@@ -40,26 +40,6 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
-    },
-    "dung_ball": {
-      "conditions": {
-        "items": [
-          {
-            "items": "impillagers:dung_ball"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
-    },
-    "dung_block": {
-      "conditions": {
-        "items": [
-          {
-            "items": "impillagers:dung_block"
-          }
-        ]
-      },
-      "trigger": "minecraft:inventory_changed"
     }
   },
   "display": {
@@ -80,9 +60,7 @@
       "creeper_oil",
       "painted_armor_trim_smithing_template",
       "spider_pieye",
-      "totem_of_undyeing",
-      "dung_ball",
-      "dung_block"
+      "totem_of_undyeing"
     ]
   ],
   "sends_telemetry_event": true
