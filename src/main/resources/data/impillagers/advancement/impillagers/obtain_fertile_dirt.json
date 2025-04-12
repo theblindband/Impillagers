@@ -1,0 +1,33 @@
+{
+  "parent": "impillagers:impillagers/obtain_dung",
+  "criteria": {
+    "fertile_dirt": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:fertile_dirt"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.obtain_fertile_dirt.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "impillagers:fertile_dirt"
+    },
+    "title": {
+      "translate": "advancements.impillagers.obtain_fertile_dirt.title"
+    }
+  },
+  "requirements": [
+    [
+      "fertile_dirt"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

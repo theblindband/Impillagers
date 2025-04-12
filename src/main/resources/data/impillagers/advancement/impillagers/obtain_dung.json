@@ -1,0 +1,44 @@
+{
+  "parent": "impillagers:impillagers/follow_frog_mask",
+  "criteria": {
+    "dung_ball": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:dung_ball"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "dung_block": {
+      "conditions": {
+        "items": [
+          {
+            "items": "impillagers:dung_block"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.obtain_dung_ball.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "impillagers:dung_ball"
+    },
+    "title": {
+      "translate": "advancements.impillagers.obtain_dung_ball.title"
+    }
+  },
+  "requirements": [
+    [
+      "dung_ball",
+      "dung_block"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

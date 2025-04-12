@@ -162,6 +162,12 @@
   "advancements.impillagers.obtain_unique_imp_trade.title": "Lamp Oil, Rope, Bombs!",
   "advancements.impillagers.obtain_unique_imp_trade.description": "Trade for one of the Impillager's unique wares",
 
-  "advancements.adventure.trade.description": "Successfully trade with a trader",
-  "advancements.adventure.trade_at_world_height.description": "Trade with a trader at the build height limit"
+  "advancements.impillagers.summon_dung_golem.title": "They See Me Rolling",
+  "advancements.impillagers.summon_dung_golem.description": "Build a Dung Golem",
+
+  "advancements.impillagers.obtain_fertile_dirt.title": "Now you're Thinking like an Imp",
+  "advancements.impillagers.obtain_fertile_dirt.description": "Craft some Fertile Dirt",
+
+  "advancements.impillagers.obtain_dung.title": "That is one big pile of...",
+  "advancements.impillagers.obtain_dung.description": "Obtain some Dung"
 }
