@@ -29,27 +29,21 @@ public class CreeperOilItem extends Item {
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
         }
 
-        if(user instanceof PlayerEntity player){
-            ItemUsage.consumeHeldItem(world, player, user.getActiveHand());
-
-            world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 2.0f, World.ExplosionSourceType.TNT);
-            user.damage(world.getDamageSources().explosion(user,user), 40);
-        }
-
-        if (stack.isEmpty()) {
-            return new ItemStack(Items.GLASS_BOTTLE);
-        } else {
-
-            if (user instanceof PlayerEntity playerEntity && !playerEntity.isInCreativeMode()) {
-                ItemStack itemStack = new ItemStack(Items.GLASS_BOTTLE);
-                if (!playerEntity.getInventory().insertStack(itemStack)) {
-                    playerEntity.dropItem(itemStack, false);
-                }
+        //The Following Section has been adjusted to implement a fix I had done to prevent Creeper Oil Duping, I have fully tested this in Singleplayer & Multiplayer - Minico
+        if(user instanceof PlayerEntity player) {
+            if (!player.isCreative()) {
+                stack.decrement(1);
             }
 
-            return stack;
-        }
+            //This line has been modified to prevent block damage when mobGriefing is disabled, the clientside check is to ensure there is no desync between server and client, I have fully tested this in Singleplayer & Multiplayer - Minico
+            world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 2.0f, world.isClient() ? World.ExplosionSourceType.NONE : World.ExplosionSourceType.MOB);
 
+            ItemStack glassBottle = new ItemStack(Items.GLASS_BOTTLE);
+            player.giveItemStack(glassBottle);
+
+            user.damage(world.getDamageSources().explosion(user, user), 40);
+        }
+        return stack.isEmpty() ? ItemStack.EMPTY : stack;
     }
 
     @Override
