@@ -24,14 +24,14 @@
   },
   "display": {
     "description": {
-      "translate": "advancements.impillagers.obtain_dung_ball.description"
+      "translate": "advancements.impillagers.obtain_dung.description"
     },
     "icon": {
       "count": 1,
       "id": "impillagers:dung_ball"
     },
     "title": {
-      "translate": "advancements.impillagers.obtain_dung_ball.title"
+      "translate": "advancements.impillagers.obtain_dung.title"
     }
   },
   "requirements": [
