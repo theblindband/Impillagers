@@ -4,6 +4,7 @@ import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.block.entity.ModBlockEntities;
 import com.impillagers.mod.command.ModCommands;
 import com.impillagers.mod.component.ModDataComponentTypes;
+import com.impillagers.mod.damage.ModDamageTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.dung_golem.DungGolemEntity;
@@ -49,6 +50,7 @@ public class Impillagers implements ModInitializer {
 		ModProfessions.registerModProfessions();
 		ModCommandListener.registerListeners();
 		ModCommands.registerCommands();
+		ModDamageTypes.registerDamageTypes();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);

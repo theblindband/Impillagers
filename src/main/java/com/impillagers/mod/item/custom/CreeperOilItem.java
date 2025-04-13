@@ -1,5 +1,6 @@
 package com.impillagers.mod.item.custom;
 
+import com.impillagers.mod.damage.ModDamageTypes;
 import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,7 +15,11 @@ import net.minecraft.stat.Stats;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.util.UseAction;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
+
+import java.util.Objects;
 
 public class CreeperOilItem extends Item {
     public CreeperOilItem(Settings settings) {
@@ -25,24 +30,28 @@ public class CreeperOilItem extends Item {
     public ItemStack finishUsing(ItemStack stack, World world, LivingEntity user) {
         super.finishUsing(stack, world, user);
 
-        if (user instanceof ServerPlayerEntity serverPlayerEntity) {
+        if (!world.isClient() && user instanceof ServerPlayerEntity serverPlayerEntity) {
+
             Criteria.CONSUME_ITEM.trigger(serverPlayerEntity, stack);
             serverPlayerEntity.incrementStat(Stats.USED.getOrCreateStat(this));
-        }
 
-        if (user instanceof PlayerEntity player) {
-            if (!player.isCreative()) {
+            if (!serverPlayerEntity.isCreative()) {
+                serverPlayerEntity.giveItemStack(new ItemStack(Items.GLASS_BOTTLE));
                 stack.decrement(1);
             }
 
-            world.createExplosion(user, user.getX(), user.getY(), user.getZ(), 2.0f, World.ExplosionSourceType.TNT);
+            Objects.requireNonNull(serverPlayerEntity.getServer()).execute(() -> {
+                World.ExplosionSourceType explosionType;
+                if (world.getDifficulty() == Difficulty.PEACEFUL) {
+                    explosionType = world.getGameRules().getBoolean(GameRules.DO_MOB_GRIEFING) ? World.ExplosionSourceType.TNT : World.ExplosionSourceType.NONE;
+                } else {
+                    explosionType = World.ExplosionSourceType.MOB;
+                }
+                world.createExplosion(serverPlayerEntity, serverPlayerEntity.getX(), serverPlayerEntity.getY(), serverPlayerEntity.getZ(), 2.0f, explosionType);
 
-            ItemStack glassBottle = new ItemStack(Items.GLASS_BOTTLE);
-            player.dropItem(glassBottle, true);
-
-            user.damage(world.getDamageSources().explosion(user, user), 40);
+                serverPlayerEntity.damage(ModDamageTypes.getStrongStuff(serverPlayerEntity), 40);
+            });
         }
-
         return stack.isEmpty() ? ItemStack.EMPTY : stack;
     }
 

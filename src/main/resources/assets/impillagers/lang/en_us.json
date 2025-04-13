@@ -163,5 +163,8 @@
   "advancements.impillagers.obtain_unique_imp_trade.description": "Trade for one of the Impillager's unique wares",
 
   "advancements.adventure.trade.description": "Successfully trade with a trader",
-  "advancements.adventure.trade_at_world_height.description": "Trade with a trader at the build height limit"
+  "advancements.adventure.trade_at_world_height.description": "Trade with a trader at the build height limit",
+
+  "death.attack.strongstuff": "%s drank the strong stuff",
+  "death.attack.strongstuff.player": "%s drank the strong stuff to escape %s"
 }
