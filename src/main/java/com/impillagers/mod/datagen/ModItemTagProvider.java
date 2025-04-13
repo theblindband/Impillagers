@@ -72,7 +72,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModBlocks.SWAMP_REED.asItem());
 
         getOrCreateTagBuilder(ModTags.Items.FROG_POISONOUS_FOOD)
-                .add(ModBlocks.FIREFLY_BUSH.asItem());
+                .add(ModBlocks.FIREFLY_BUSH.asItem())
+                .add((ModBlocks.FIREFLY_BOTTLE.asItem()));
 
         getOrCreateTagBuilder(ModTags.Items.DYED_TERRACOTTA)
                 .add(Blocks.WHITE_TERRACOTTA.asItem())

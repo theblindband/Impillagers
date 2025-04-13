@@ -8,6 +8,7 @@
     "CarvedPumpkinBlockMixin",
     "CropBlockMixin",
     "FarmlandBlockMixin",
+    "FrogEntityMixin",
     "ImpillagerLightningMixin",
     "MobEntityAccessor",
     "PersistentProjectileEntityAccessor",
