@@ -25,7 +25,7 @@
     "frame": "goal",
     "icon": {
       "count": 1,
-      "id": "impillagers:dung_ball"
+      "id": "impillagers:chiseled_dung_bricks"
     },
     "title": {
       "translate": "advancements.impillagers.follow_frog_mask.title"

@@ -1,0 +1,37 @@
+{
+  "parent": "impillagers:impillagers/obtain_dung",
+  "criteria": {
+    "summoned_golem": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "impillagers:dung_golem"
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:summoned_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.summon_dung_golem.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "impillagers:dung_block"
+    },
+    "title": {
+      "translate": "advancements.impillagers.summon_dung_golem.title"
+    }
+  },
+  "requirements": [
+    [
+      "summoned_golem"
+    ]
+  ],
+  "sends_telemetry_event": true
+}
