@@ -1,0 +1,41 @@
+{
+  "parent": "minecraft:husbandry/tadpole_in_a_bucket",
+  "criteria": {
+    "poisoned_frog": {
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:frog"
+            }
+          }
+        ],
+        "item": {
+          "items": "#impillagers:frog_poisonous_food"
+        }
+      },
+      "trigger": "minecraft:player_interacted_with_entity"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.impillagers.poisoned_frog.description"
+    },
+    "hidden": true,
+    "icon": {
+      "count": 1,
+      "id": "minecraft:poisonous_potato"
+    },
+    "title": {
+      "translate": "advancements.impillagers.poisoned_frog.title"
+    }
+  },
+  "requirements": [
+    [
+      "poisoned_frog"
+    ]
+  ],
+  "sends_telemetry_event": true
+}

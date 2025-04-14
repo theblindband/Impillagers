@@ -3,7 +3,7 @@
     {
       "element": {
         "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/center/center_1",
+        "location": "impillagers:impillager_village/temple/temple_1",
         "processors": {
           "processors": []
         },
