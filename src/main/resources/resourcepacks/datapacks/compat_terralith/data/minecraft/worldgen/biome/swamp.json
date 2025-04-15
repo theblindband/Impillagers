@@ -144,7 +144,7 @@
         "weight": 95
       },
       {
-        "type": "minecraft:zombie_villager",
+        "type": "impillagers:zombie_impillager",
         "maxCount": 1,
         "minCount": 1,
         "weight": 5

@@ -9,7 +9,7 @@
     "downfall": 0.9,
     "effects": {
         "fog_color": 10660776,
-        "foliage_color": 10387789,
+        "foliage_color": 6975545,
         "grass_color": 6979667,
         "grass_color_modifier": "swamp",
         "mood_sound": {
@@ -85,10 +85,10 @@
         [
             "minecraft:glow_lichen",
 			"impillagers:patch_firefly_bush",
+            "impillagers:flower_swamp",
 			"impillagers:patch_swamp_reed",
             "terralith:swamp/ice/small/trees_small",
             "terralith:swamp/ice/tiny/trees_tiny",
-            "minecraft:flower_swamp",
             "minecraft:patch_grass_normal",
             "minecraft:patch_dead_bush",
             "minecraft:patch_waterlily",
@@ -118,28 +118,10 @@
         "axolotls": [],
         "creature": [
             {
-                "type": "minecraft:sheep",
-                "maxCount": 2,
-                "minCount": 2,
-                "weight": 12
-            },
-            {
                 "type": "minecraft:pig",
                 "maxCount": 2,
                 "minCount": 2,
                 "weight": 10
-            },
-            {
-                "type": "minecraft:chicken",
-                "maxCount": 2,
-                "minCount": 2,
-                "weight": 10
-            },
-            {
-                "type": "minecraft:cow",
-                "maxCount": 2,
-                "minCount": 2,
-                "weight": 8
             },
             {
                 "type": "minecraft:frog",
@@ -169,16 +151,16 @@
                 "weight": 5
             },
             {
-                "type": "minecraft:skeleton",
-                "maxCount": 4,
-                "minCount": 4,
-                "weight": 70
-            },
-            {
               "type": "minecraft:bogged",
               "maxCount": 4,
               "minCount": 4,
               "weight": 30
+            },
+            {
+                "type": "minecraft:stray",
+                "maxCount": 4,
+                "minCount": 4,
+                "weight": 30
             },
             {
                 "type": "minecraft:creeper",
