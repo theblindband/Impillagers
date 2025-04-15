@@ -171,6 +171,9 @@
   "advancements.impillagers.obtain_dung.title": "That is one big pile of...",
   "advancements.impillagers.obtain_dung.description": "Obtain some Dung",
 
+  "advancements.impillagers.poisoned_frog.title": "They did warn you",
+  "advancements.impillagers.poisoned_frog.description": "Feed a Frog some fireflies and suffer the consequences",
+
   "death.attack.strongstuff": "%s drank the strong stuff",
   "death.attack.strongstuff.player": "%s drank the strong stuff to escape %s"
 }
