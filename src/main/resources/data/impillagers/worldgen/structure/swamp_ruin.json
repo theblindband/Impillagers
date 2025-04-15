@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:jigsaw",
 	"start_pool": "impillagers:swamp_ruin",
-	"biomes": "#impillagers:imp_swamp",
+	"biomes": "#impillagers:is_purple_heart_swamp",
 	"project_start_to_heightmap": "WORLD_SURFACE_WG",
 	"liquid_settings": "ignore_waterlogging",
 	"start_height": {
