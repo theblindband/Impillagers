@@ -1,0 +1,31 @@
+{
+    "pack": {
+        "id": "impillagers",
+        "supported_formats": [
+            48,
+            61
+        ],
+        "pack_format": 48,
+        "description": [
+            {
+                "text": "Terralith Impillagers Patch",
+                "color": "#1eb2bc"
+            }
+        ]
+    },
+    "overlays": {
+        "entries": [
+            {
+                "formats": [
+                    57,
+                    61
+                ],
+                "directory": "1-21-2-overlay"
+            },
+            {
+                "formats": 61,
+                "directory": "1-21-4-overlay"
+            }
+        ]
+    }
+}
