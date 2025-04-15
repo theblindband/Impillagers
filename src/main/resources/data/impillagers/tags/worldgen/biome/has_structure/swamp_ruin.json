@@ -1,0 +1,14 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:swamp",
+    {
+      "id": "terralith:ice_marsh",
+      "required": false
+    },
+    {
+      "id": "clifftree:bog",
+      "required": false
+    }
+  ]
+}

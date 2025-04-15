@@ -16,6 +16,7 @@ public class ModDataPacks {
         // The datapack folder is at: resources/resourcepacks/datapacks/
         // requiredModId is optional, set to null for no conditional registering
         registerBuiltinDatapack("compat_terralith", true, "terralith");
+        registerBuiltinDatapack("compat_clifftree", true, "clifftree");
     }
 
     private static final ModContainer modContainer = FabricLoader.getInstance()
