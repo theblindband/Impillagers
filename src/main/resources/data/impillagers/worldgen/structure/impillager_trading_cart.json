@@ -1,7 +1,7 @@
 {
 	"type": "minecraft:jigsaw",
-	"start_pool": "impillagers:swamp_ruins",
-	"biomes": "#impillagers:has_structure/swamp_ruin",
+	"start_pool": "impillagers:impillager_trading_carts",
+	"biomes": "#impillagers:has_structure/impillager_trading_cart",
 	"project_start_to_heightmap": "WORLD_SURFACE_WG",
 	"liquid_settings": "ignore_waterlogging",
 	"start_height": {
