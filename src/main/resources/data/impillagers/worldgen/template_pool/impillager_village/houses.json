@@ -20,7 +20,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 6
+      "weight": 5
     },
     {
       "element": {
@@ -43,6 +43,17 @@
         "projection": "rigid"
       },
       "weight": 1
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/houses/banker_building",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
     },
     {
       "element": {
