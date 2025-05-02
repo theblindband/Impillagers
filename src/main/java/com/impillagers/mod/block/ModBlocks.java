@@ -71,8 +71,6 @@ public class ModBlocks {
     public static final Block MOSSY_DUNG_BRICKS_SLAB = registerBlock("mossy_dung_bricks_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
     public static final Block MOSSY_DUNG_BRICKS_WALL = registerBlock("mossy_dung_bricks_wall", new WallBlock(AbstractBlock.Settings.copy(Blocks.MUD_BRICKS)));
 
-
-
     //Mud Blocks
     public static final Block PACKED_MUD_STAIRS = registerBlock("packed_mud_stairs", new StairsBlock(Blocks.PACKED_MUD.getDefaultState(), AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
     public static final Block PACKED_MUD_SLAB = registerBlock("packed_mud_slab", new SlabBlock(AbstractBlock.Settings.copy(Blocks.PACKED_MUD)));
@@ -93,6 +91,7 @@ public class ModBlocks {
 
     //Decoration Blocks
     public static final Block FIREFLY_BOTTLE = registerBlockWithoutItem("firefly_bottle", new FireflyBottleBlock(AbstractBlock.Settings.create().strength(0.3F).sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromLitBlockState(13))));
+    public static final Block SAFE = registerBlock("safe", new SafeBlock(AbstractBlock.Settings.copy(IRON_BLOCK)));
 
     //Brushable Blocks
     public static final Block SUSPICIOUS_DIRT = registerBlock("suspicious_dirt", new NoGravityBrushableBlock(Blocks.DIRT, SoundEvents.ITEM_BRUSH_BRUSHING_GENERIC, SoundEvents.ITEM_BRUSH_BRUSHING_GRAVEL, AbstractBlock.Settings.copy(Blocks.DIRT).pistonBehavior(PistonBehavior.DESTROY).strength(0.25F).sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)));
