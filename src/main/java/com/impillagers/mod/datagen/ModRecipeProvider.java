@@ -52,6 +52,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerShapelessRecipe(exporter, Items.BROWN_DYE, ModBlocks.SWAMP_REED, "brown_dye", 2);
 
+        offerShapelessRecipe(exporter, Blocks.TRAPPED_CHEST, Items.NETHERITE_INGOT, "", 1);
+
 
         //Mud Recipes
 

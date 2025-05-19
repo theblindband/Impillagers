@@ -18,13 +18,15 @@
   "block.impillagers.purple_heart_sapling": "Purple Heart Sapling",
   "block.impillagers.purple_heart_sign": "Purple Heart Sign",
   "block.impillagers.purple_heart_hanging_sign": "Purple Heart Hanging Sign",
-  "block.impillagers.belladonna": "Belladonna",
-  "block.impillagers.firefly_bush": "Firefly Bush",
-  "block.impillagers.sinking_mud": "Sinking Mud",
 
+  "block.impillagers.belladonna": "Belladonna",
+  "block.impillagers.swamp_reed": "Swamp Reeds",
+
+  "block.impillagers.firefly_bush": "Firefly Bush",
+  "block.impillagers.firefly_bottle": "Firefly Bottle",
+
+  "block.impillagers.sinking_mud": "Sinking Mud",
   "block.impillagers.suspicious_dirt": "Suspicious Dirt",
-  "block.impillagers.fertile_dirt": "Fertile Dirt",
-  "block.impillagers.fertile_farmland": "Fertile Farmland",
 
   "block.impillagers.packed_mud_stairs": "Packed Mud Stairs",
   "block.impillagers.packed_mud_slab": "Packed Mud Slab",
@@ -59,9 +61,10 @@
   "block.impillagers.chiseled_dung_bricks": "Chiseled Dung Bricks",
   "block.impillagers.dung_bricks_pillar": "Dung Brick Pillar",
 
+  "block.impillagers.fertile_dirt": "Fertile Dirt",
+  "block.impillagers.fertile_farmland": "Fertile Farmland",
 
-  "block.impillagers.swamp_reed": "Swamp Reeds",
-  "block.impillagers.firefly_bottle": "Firefly Bottle",
+  "block.impillagers.safe": "Safe",
 
   "item.impillagers.imp_pottery_sherd": "Imp Pottery Sherd",
   "item.impillagers.cover_pottery_sherd": "Cover Pottery Sherd",
