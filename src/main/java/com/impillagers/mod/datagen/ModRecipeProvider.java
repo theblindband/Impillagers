@@ -52,8 +52,12 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offerShapelessRecipe(exporter, Items.BROWN_DYE, ModBlocks.SWAMP_REED, "brown_dye", 2);
 
-        offerShapelessRecipe(exporter, Blocks.TRAPPED_CHEST, Items.NETHERITE_INGOT, "", 1);
-
+        ShapelessRecipeJsonBuilder.create(RecipeCategory.DECORATIONS, ModBlocks.SAFE, 1)
+                .input(Blocks.TRAPPED_CHEST)
+                .input(Items.NETHERITE_INGOT)
+                .group("")
+                .criterion("has_netherite_ingot", conditionsFromItem(Items.NETHERITE_INGOT))
+                .offerTo(exporter, "safe");
 
         //Mud Recipes
 
