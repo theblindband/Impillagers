@@ -24,6 +24,10 @@ public class ModSoundEvents {
     public static final SoundEvent IMPILLAGER_ATTACK_MELEE = registerSoundEvent("entity.impillager.attack.melee");
     public static final SoundEvent IMPILLAGER_ATTACK_RANGED = registerSoundEvent("entity.impillager.attack.ranged");
 
+    public static final SoundEvent IMPILLAGER_WORK_BANKER = registerSoundEvent("entity.impillager.work.banker");
+    public static final SoundEvent IMPILLAGER_WORK_MUSICIAN = registerSoundEvent("entity.impillager.work.musician");
+
+
 
 
     private static SoundEvent registerSoundEvent(String name) {

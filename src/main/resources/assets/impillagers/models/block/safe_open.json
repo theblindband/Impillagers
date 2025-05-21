@@ -3,7 +3,7 @@
 	"texture_size": [64, 64],
 	"textures": {
 		"0": "impillagers:block/safe",
-		"particle": "impillagers:block/safe"
+		"particle": "minecraft:block/netherite_block"
 	},
 	"elements": [
 		{

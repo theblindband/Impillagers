@@ -21,24 +21,24 @@ public class ModProfessions {
 
     //Safe
     public static final VillagerProfession BANKER =
-            createProfession("banker", ModBlocks.SAFE, SoundEvents.ENTITY_VILLAGER_WORK_TOOLSMITH);
+            createProfession("banker", ModBlocks.SAFE, ModSoundEvents.IMPILLAGER_WORK_BANKER);
 
     public static final VillagerProfession DUNG_COLLECTOR =
-            createProfession("dung_collector", ModBlocks.DUNG_BLOCK, SoundEvents.BLOCK_MUD_HIT);
+            createProfession("dung_collector", ModBlocks.DUNG_BLOCK, SoundEvents.ENTITY_VILLAGER_WORK_FARMER);
 
     public static final VillagerProfession MUSICIAN =
-            createProfession("musician", Blocks.JUKEBOX, SoundEvents.ENTITY_VILLAGER_WORK_LIBRARIAN);
+            createProfession("musician", Blocks.JUKEBOX, ModSoundEvents.IMPILLAGER_WORK_MUSICIAN);
 
     public static final VillagerProfession EXPLOSIVES_EXPERT =
-            createProfession("explosives_expert", Blocks.TNT, SoundEvents.ENTITY_CREEPER_PRIMED);
+            createProfession("explosives_expert", Blocks.TNT, SoundEvents.ENTITY_VILLAGER_WORK_FLETCHER);
 
     //???
     public static final VillagerProfession DRUID =
-            createProfession("druid", ModBlocks.FIREFLY_BOTTLE, SoundEvents.ITEM_CROP_PLANT);
+            createProfession("druid", ModBlocks.FIREFLY_BOTTLE, SoundEvents.ENTITY_VILLAGER_WORK_FARMER);
 
     //Alchemy Table
     public static final VillagerProfession ALCHEMIST =
-            createProfession("alchemist", Blocks.WARPED_WART_BLOCK, SoundEvents.BLOCK_BREWING_STAND_BREW);
+            createProfession("alchemist", Blocks.WARPED_WART_BLOCK, SoundEvents.ENTITY_VILLAGER_WORK_CLERIC);
 
     //Altar
     public static final VillagerProfession OCCULTIST =

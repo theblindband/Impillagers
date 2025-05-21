@@ -220,5 +220,19 @@
         "name": "impillagers:entity/impillager/impillager_attack_ranged_6"
       }
     ]
+  },
+  "entity.impillager.work.banker": {
+    "sounds": [
+      {
+        "name": "impillagers:entity/impillager/impillager_work_banker"
+      }
+    ]
+  },
+  "entity.impillager.work.musician": {
+    "sounds": [
+      {
+        "name": "impillagers:entity/impillager/impillager_work_musician"
+      }
+    ]
   }
 }
