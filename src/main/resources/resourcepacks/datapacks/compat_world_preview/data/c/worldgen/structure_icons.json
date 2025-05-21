@@ -1,0 +1,8 @@
+{
+  "impillagers:swamp_ruin": {
+    "texture": "impillagers:textures/compat/world_preview/swamp_ruin.png"
+  },
+  "impillagers:impillager_village": {
+    "texture": "impillagers:textures/compat/world_preview/impillager_village.png"
+  }
+}

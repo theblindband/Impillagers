@@ -1,0 +1,16 @@
+{
+    "pack": {
+        "id": "impillagers",
+        "supported_formats": [
+            48,
+            61
+        ],
+        "pack_format": 48,
+        "description": [
+            {
+                "text": "World Preview Compatibility Pack",
+                "color": "#1eb2bc"
+            }
+        ]
+    }
+}

@@ -1,13 +1,13 @@
 {
-  "placement": {
-    "type": "minecraft:random_spread",
-    "salt": 10387312,
-    "separation": 20,
-    "spacing": 80
-  },
-  "structures": [
-    {
-      "structure": "impillagers:impillager_village",
+    "placement": {
+      "type": "minecraft:random_spread",
+      "salt": 10387312,
+      "separation": 30,
+      "spacing": 60
+    },
+    "structures": [
+      {
+        "structure": "impillagers:impillager_village",
       "weight": 1
     }
   ]
