@@ -9,7 +9,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 6
+      "weight": 5
     },
     {
       "element": {
@@ -20,7 +20,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 5
+      "weight": 4
     },
     {
       "element": {
@@ -57,9 +57,20 @@
     },
     {
       "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/houses/explosives_expert_building",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 2
+    },
+    {
+      "element": {
         "element_type": "minecraft:empty_pool_element"
       },
-      "weight": 4
+      "weight": 3
     }
   ],
   "fallback": "impillagers:impillager_village/terminators"

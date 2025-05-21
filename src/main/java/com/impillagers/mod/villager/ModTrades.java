@@ -5,8 +5,11 @@ import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.block.Blocks;
+import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.PotionItem;
+import net.minecraft.potion.Potions;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
 import net.minecraft.item.ItemConvertible;
@@ -91,8 +94,8 @@ public class ModTrades {
                 new TradeData(ModItems.GOLD_COIN, 36, Items.MUSIC_DISC_PIGSTEP, 1, 3, 20, 0.02f),
                 new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_RELIC, 1, 3, 15, 0.02f),
                 new TradeData(ModItems.GOLD_COIN, 36, Items.MUSIC_DISC_CREATOR, 1, 3, 15, 0.02f),
-                new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_CREATOR_MUSIC_BOX, 3, 16, 20, 0.02f),
-                new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_PRECIPICE, 3, 16, 20, 0.02f)
+                new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_CREATOR_MUSIC_BOX, 1, 16, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_PRECIPICE, 1, 16, 20, 0.02f)
         );
         // Musician - Level 5: Goat Horns
         registerTrades(ModProfessions.MUSICIAN, 5,
@@ -160,33 +163,105 @@ public class ModTrades {
         );
 
         /* -----DRUID----- */
-        // Druid - Level 1:
+        // Druid - Level 1: Wheat Seeds + Grass
         registerTrades(ModProfessions.DRUID, 1,
-                new TradeData(ModItems.GOLD_COIN, 64, ModBlocks.BELLADONNA, 1, 1, 6, 0.02f)
+                new TradeData(Items.WHEAT_SEEDS, 15, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.WHEAT_SEEDS, 15, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.SHORT_GRASS, 12, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.SHORT_GRASS, 12, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.TALL_GRASS, 8, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.TALL_GRASS, 8, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f)
+        );
+        // Druid - Level 2: Other Seeds
+        registerTrades(ModProfessions.DRUID, 2,
+                new TradeData(Items.BEETROOT_SEEDS, 15, ModItems.GOLD_COIN, 1, 5, 6, 0.02f),
+                new TradeData(Items.BEETROOT_SEEDS, 15, ModItems.FAKE_GOLD_COIN, 1, 5, 6, 0.02f),
+                new TradeData(Items.MELON_SEEDS, 15, ModItems.GOLD_COIN, 1, 5, 6, 0.02f),
+                new TradeData(Items.MELON_SEEDS, 15, ModItems.FAKE_GOLD_COIN, 1, 5, 6, 0.02f),
+                new TradeData(Items.PUMPKIN_SEEDS, 15, ModItems.GOLD_COIN, 1, 5, 6, 0.02f),
+                new TradeData(Items.PUMPKIN_SEEDS, 15, ModItems.FAKE_GOLD_COIN, 1, 5, 6, 0.02f)
+        );
+        // Druid - Level 3: Vines and Ferns
+        registerTrades(ModProfessions.DRUID, 3,
+                new TradeData(Items.VINE, 12, ModItems.GOLD_COIN, 1, 16, 15, 0.02f),
+                new TradeData(Items.VINE, 12, ModItems.FAKE_GOLD_COIN, 1, 16, 15, 0.02f),
+                new TradeData(Items.FERN, 10, ModItems.GOLD_COIN, 1, 16, 15, 0.02f),
+                new TradeData(Items.FERN, 10, ModItems.FAKE_GOLD_COIN, 1, 16, 15, 0.02f),
+                new TradeData(Items.LARGE_FERN, 6, ModItems.GOLD_COIN, 1, 16, 15, 0.02f),
+                new TradeData(Items.LARGE_FERN, 6, ModItems.FAKE_GOLD_COIN, 1, 16, 15, 0.02f)
+        );
+        // Druid - Level 4: Sniffer Seeds
+        registerTrades(ModProfessions.DRUID, 4,
+                new TradeData(ModItems.GOLD_COIN, 36, Items.TORCHFLOWER_SEEDS, 1, 4, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 36, Items.PITCHER_POD, 1, 4, 20, 0.02f)
+        );
+        // Druid - Level 5: Venus Fly Trap Seeds
+        registerTrades(ModProfessions.DRUID, 5,
+                new TradeData(ModItems.GOLD_COIN, 36, Items.WHEAT_SEEDS, 1, 3, 30, 0.02f)
         );
 
         /* -----ALCHEMIST----- */
-        // Alchemist - Level 1:
+        // Alchemist - Level 1: Potion Ingredients
         registerTrades(ModProfessions.ALCHEMIST, 1,
-                new TradeData(ModItems.GOLD_COIN, 64, Items.GLASS_BOTTLE, 1, 1, 6, 0.02f)
+                new TradeData(Items.NETHER_WART, 15, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.NETHER_WART, 15, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.GLASS_BOTTLE, 8, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.GLASS_BOTTLE, 8, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.SUGAR, 15, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.SUGAR, 15, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.GLOWSTONE_DUST, 12, ModItems.GOLD_COIN, 1, 16, 4, 0.02f),
+                new TradeData(Items.GLOWSTONE_DUST, 12, ModItems.FAKE_GOLD_COIN, 1, 16, 4, 0.02f),
+                new TradeData(Items.PHANTOM_MEMBRANE, 8, ModItems.GOLD_COIN, 1, 16, 4, 0.02f),
+                new TradeData(Items.PHANTOM_MEMBRANE, 8, ModItems.FAKE_GOLD_COIN, 1, 16, 4, 0.02f)
+        );
+        // Alchemist - Level 2: Low Tier Potions
+        registerTrades(ModProfessions.ALCHEMIST, 2,
+                new TradeData(ModItems.GOLD_COIN, 18, PotionContentsComponent.createStack(Items.POTION, Potions.STRONG_HEALING).getItem(), 1, 5, 8, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 18, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.STRONG_HARMING).getItem(), 1, 5, 8, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 18, PotionContentsComponent.createStack(Items.POTION, Potions.STRONG_LEAPING).getItem(), 1, 5, 8, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 18, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_LEAPING).getItem(), 1, 5, 8, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 18, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_NIGHT_VISION).getItem(), 1, 5, 8, 0.02f)
+        );
+        // Alchemist - Level 3: Middle Tier Potions
+        registerTrades(ModProfessions.ALCHEMIST, 3,
+                new TradeData(ModItems.GOLD_COIN, 22, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_SWIFTNESS).getItem(), 1, 5, 15, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 22, PotionContentsComponent.createStack(Items.POTION, Potions.STRONG_SWIFTNESS).getItem(), 1, 5, 15, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 22, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.LONG_SLOWNESS).getItem(), 1, 5, 15, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 22, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.STRONG_SLOWNESS).getItem(), 1, 5, 15, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 22, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.LONG_POISON).getItem(), 1, 5, 15, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 22, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.STRONG_POISON).getItem(), 1, 5, 15, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 22, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.LONG_SLOW_FALLING).getItem(), 1, 5, 15, 0.02f)
+        );
+        // Alchemist - Level 4: High Tier Potions
+        registerTrades(ModProfessions.ALCHEMIST, 4,
+                new TradeData(ModItems.GOLD_COIN, 28, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_INVISIBILITY).getItem(), 1, 4, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_WATER_BREATHING).getItem(), 1, 4, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_FIRE_RESISTANCE).getItem(), 1, 4, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_REGENERATION).getItem(), 1, 4, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, PotionContentsComponent.createStack(Items.POTION, Potions.STRONG_REGENERATION).getItem(), 1, 4, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.OOZING).getItem(), 1, 4, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.INFESTED).getItem(), 1, 4, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.WEAVING).getItem(), 1, 4, 20, 0.02f)
+        );
+        // Alchemist - Level 5: Combo Potions
+        registerTrades(ModProfessions.ALCHEMIST, 5,
+                new TradeData(ModItems.GOLD_COIN, 36, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_TURTLE_MASTER).getItem(), 1, 3, 30, 0.02f)
         );
 
         /* -----OCCULTIST----- */
-        // Occultist - Level 1:
+        // Occultist - Level 1: ???
         registerTrades(ModProfessions.OCCULTIST, 1,
-                new TradeData(ModItems.GOLD_COIN, 64, Items.NETHER_WART, 1, 1, 6, 0.02f)
-        );
-
-        /* -----CLAN LEADER----- */
-        // Clan Leader - Level 1:
-        registerTrades(ModProfessions.CLAN_LEADER, 1,
-                new TradeData(ModItems.GOLD_COIN, 64, Items.GOLDEN_APPLE, 1, 1, 6, 0.02f)
+                new TradeData(ModItems.GOLD_COIN, 64, Items.REDSTONE, 1, 1, 6, 0.02f)
         );
 
         /* -----GUARD----- */
-        // Guard - Level 1:
+        // Guard - Level 1: Spear
         registerTrades(ModProfessions.GUARD, 1,
-                new TradeData(ModItems.GOLD_COIN, 64, Items.TRIDENT, 1, 1, 6, 0.02f)
+                new TradeData(ModItems.GOLD_COIN, 36, Items.TRIDENT, 1, 1, 6, 0.02f),
+                new TradeData(Items.IRON_INGOT, 4, ModItems.GOLD_COIN, 1, 16, 6, 0.02f),
+                new TradeData(Items.IRON_INGOT, 4, ModItems.FAKE_GOLD_COIN, 1, 16, 6, 0.02f),
+                new TradeData(Items.STICK, 32, ModItems.GOLD_COIN, 1, 16, 6, 0.02f),
+                new TradeData(Items.STICK, 32, ModItems.FAKE_GOLD_COIN, 1, 16, 6, 0.02f)
         );
     }
 

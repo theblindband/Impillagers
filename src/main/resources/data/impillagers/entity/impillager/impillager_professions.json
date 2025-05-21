@@ -19,6 +19,10 @@
     "impillagers:musician": {
       "impillager": "impillagers:textures/entity/impillager/professions/musician.png",
       "zombieimpillager": "impillagers:textures/entity/impillager/professions/musician.png"
+    },
+    "impillagers:explosives_expert": {
+      "impillager": "impillagers:textures/entity/impillager/professions/explosives_expert.png",
+      "zombieimpillager": "impillagers:textures/entity/impillager/professions/explosives_expert.png"
     }
   }
 }
