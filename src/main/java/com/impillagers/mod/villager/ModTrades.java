@@ -6,14 +6,21 @@ import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.block.Blocks;
 import net.minecraft.component.type.PotionContentsComponent;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.PotionItem;
+import net.minecraft.item.*;
 import net.minecraft.potion.Potions;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
-import net.minecraft.item.ItemConvertible;
 import net.minecraft.village.VillagerProfession;
+
+/*
+TODO
+
+Musician needs goat horn trades for the 4 screaming goat horns
+Explosives Expert needs book trades for Distribution and Fuse
+
+Change code to allow for two inputs for a trade
+E.g. Like the Emerald + Gravel for Flint trades that the fletcher has
+ */
 
 public class ModTrades {
 
@@ -99,7 +106,10 @@ public class ModTrades {
         );
         // Musician - Level 5: Goat Horns
         registerTrades(ModProfessions.MUSICIAN, 5,
-                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f)
+                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f), //Screaming Goat Horn
+                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f), //Screaming Goat Horn
+                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f), //Screaming Goat Horn
+                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f)  //Screaming Goat Horn
         );
 
         /* -----DUNG COLLECTOR----- */
@@ -145,17 +155,23 @@ public class ModTrades {
                 new TradeData(Blocks.SAND, 12, ModItems.GOLD_COIN, 1, 16, 3, 0.02f),
                 new TradeData(Blocks.SAND, 12, ModItems.FAKE_GOLD_COIN, 1, 16, 3, 0.02f)
         );
-        // Explosives Expert - Level 2: TNT
+        // Explosives Expert - Level 2: Flint and Steel
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 2,
-                new TradeData(ModItems.GOLD_COIN, 10, Blocks.TNT, 2, 5, 12, 0.02f)
+                new TradeData(Items.IRON_INGOT, 15, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.IRON_INGOT, 15, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.FLINT, 12, ModItems.GOLD_COIN, 1, 16, 3, 0.02f),
+                new TradeData(Items.FLINT, 12, ModItems.FAKE_GOLD_COIN, 1, 16, 3, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 10, Items.FLINT_AND_STEEL, 2, 5, 12, 0.02f)
         );
-        // Explosives Expert - Level 3: Creeper Oil
+        // Explosives Expert - Level 3: Creeper Oil and TNT
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 3,
+                new TradeData(ModItems.GOLD_COIN, 10, Blocks.TNT, 2, 5, 12, 0.02f),
                 new TradeData(ModItems.GOLD_COIN, 10, ModItems.CREEPER_OIL, 1, 3, 20, 0.02f)
         );
         // Explosives Expert - Level 4: Enchantments
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 4,
-                new TradeData(ModItems.GOLD_COIN, 64, Items.BOOK, 1, 1, 6, 0.02f)
+                new TradeData(ModItems.GOLD_COIN, 64, Items.ENCHANTED_BOOK, 1, 1, 20, 0.02f), //Distribution Enchant
+                new TradeData(ModItems.GOLD_COIN, 64, Items.ENCHANTED_BOOK, 1, 1, 20, 0.02f) //Fuse Enchant
         );
         // Explosives Expert - Level 5: End Crystal
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 5,
@@ -249,6 +265,9 @@ public class ModTrades {
         );
 
         /* -----OCCULTIST----- */
+        //Theme trades around warping items into something else?
+        //E.g. Nether Wart into Warped Nether Wart
+        //Might need trades with multiple inputs
         // Occultist - Level 1: ???
         registerTrades(ModProfessions.OCCULTIST, 1,
                 new TradeData(ModItems.GOLD_COIN, 64, Items.REDSTONE, 1, 1, 6, 0.02f)

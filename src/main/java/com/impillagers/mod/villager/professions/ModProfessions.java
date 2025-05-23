@@ -17,9 +17,20 @@ import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
 import net.minecraft.world.poi.PointOfInterestType;
 
+/*
+TODO
+
+Job Blocks for the remaining professions
+Dung Collector: Block that collects dung based on the mobs around it
+Druid: Plant based work station?
+Alchemist: Potion based work station?
+Occultist: Altar?
+Clan Leader: Throne that the imp will sit on during work hours
+
+ */
+
 public class ModProfessions {
 
-    //Safe
     public static final VillagerProfession BANKER =
             createProfession("banker", ModBlocks.SAFE, ModSoundEvents.IMPILLAGER_WORK_BANKER);
 

@@ -23,14 +23,13 @@ import net.minecraft.world.World;
 
 /*
 TODO
-Has same amount of space as a single chest
+Has less space compared to a chest
 Sneak click locks it to the player that sneak clicked it
 When locked only the player who locked it can open it
 Sneak click again by the same player unlocks it
 
-Hoppers don't work on the safe when locked
+Hoppers shouldn't work on the safe when locked
 */
-
 public class SafeBlock extends Block {
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty LOCKED = Properties.LOCKED;
