@@ -17,6 +17,7 @@ public class ModDataPacks {
         // requiredModId is optional, set to null for no conditional registering
         registerBuiltinDatapack("compat_terralith", true, "terralith");
         registerBuiltinDatapack("compat_clifftree", true, "mr_clifftree");
+        registerBuiltinDatapack("compat_wwoo", true, "wwoo");
 
 
         registerBuiltinDatapack("compat_world_preview", true, "world_preview");
