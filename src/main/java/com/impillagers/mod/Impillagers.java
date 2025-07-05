@@ -21,6 +21,7 @@ import com.impillagers.mod.command.ModCommandListener;
 import com.impillagers.mod.villager.ModTrades;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.*;
@@ -82,15 +83,19 @@ public class Impillagers implements ModInitializer {
 		//Tillable Blocks
 		TillableBlockRegistry.register(ModBlocks.FERTILE_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(ModBlocks.FERTILE_FARMLAND.getDefaultState()));
 
-		//Mob Attributes
-		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());
-		FabricDefaultAttributeRegistry.register(ModEntities.ZOMBIE_IMPILLAGER, ZombieImpillagerEntity.createZombieImpillagerAttributes());
-		FabricDefaultAttributeRegistry.register(ModEntities.DUNG_GOLEM, DungGolemEntity.createDungGolemAttributes());
-
 		//Potion Recipes
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.BELLADONNA.asItem(), Potions.STRONG_POISON));
 
 		//Packet Payloads
 		PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);
+
+		ServerLifecycleEvents.SERVER_STARTING.register(server -> registerAttributes());
+	}
+
+	private void registerAttributes() {
+		//Register Mob Attributes on server start
+		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.ZOMBIE_IMPILLAGER, ZombieImpillagerEntity.createZombieImpillagerAttributes());
+		FabricDefaultAttributeRegistry.register(ModEntities.DUNG_GOLEM, DungGolemEntity.createDungGolemAttributes());
 	}
 }
