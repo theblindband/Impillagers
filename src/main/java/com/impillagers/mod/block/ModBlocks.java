@@ -91,7 +91,10 @@ public class ModBlocks {
 
     //Decoration Blocks
     public static final Block FIREFLY_BOTTLE = registerBlockWithoutItem("firefly_bottle", new FireflyBottleBlock(AbstractBlock.Settings.create().strength(0.3F).sounds(BlockSoundGroup.GLASS).luminance(createLightLevelFromLitBlockState(13))));
+
+    //Job Blocks
     public static final Block SAFE = registerBlock("safe", new SafeBlock(AbstractBlock.Settings.copy(IRON_BLOCK)));
+    public static final Block WASTE_BASKET = registerBlock("waste_basket", new WasteBasketBlock(AbstractBlock.Settings.copy(IRON_BLOCK)));
 
     //Brushable Blocks
     public static final Block SUSPICIOUS_DIRT = registerBlock("suspicious_dirt", new NoGravityBrushableBlock(Blocks.DIRT, SoundEvents.ITEM_BRUSH_BRUSHING_GENERIC, SoundEvents.ITEM_BRUSH_BRUSHING_GRAVEL, AbstractBlock.Settings.copy(Blocks.DIRT).pistonBehavior(PistonBehavior.DESTROY).strength(0.25F).sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)));

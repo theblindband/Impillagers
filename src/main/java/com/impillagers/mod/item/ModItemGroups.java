@@ -93,6 +93,7 @@ public class ModItemGroups {
                         entries.add(ModItems.FAKE_GOLD_COIN);
                         //Imp Job Blocks
                         entries.add(ModBlocks.SAFE);
+                        entries.add(ModBlocks.WASTE_BASKET);
 
                         //Imp Trade Items
                         entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);

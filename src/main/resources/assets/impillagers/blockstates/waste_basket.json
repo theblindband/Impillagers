@@ -1,0 +1,39 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "minecraft:block/composter"
+      }
+    },
+    {
+      "when": { "dung_level": 1 },
+      "apply": {
+        "model": "minecraft:block/composter_contents1"
+      }
+    },
+    {
+      "when": { "dung_level": 2 },
+      "apply": {
+        "model": "minecraft:block/composter_contents2"
+      }
+    },
+    {
+      "when": { "dung_level": 3 },
+      "apply": {
+        "model": "minecraft:block/composter_contents4"
+      }
+    },
+    {
+      "when": { "dung_level": 4 },
+      "apply": {
+        "model": "minecraft:block/composter_contents6"
+      }
+    },
+    {
+      "when": { "dung_level": 5 },
+      "apply": {
+        "model": "minecraft:block/composter_contents_ready"
+      }
+    }
+  ]
+}

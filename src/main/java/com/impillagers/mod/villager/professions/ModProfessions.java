@@ -35,7 +35,7 @@ public class ModProfessions {
             createProfession("banker", ModBlocks.SAFE, ModSoundEvents.IMPILLAGER_WORK_BANKER);
 
     public static final VillagerProfession DUNG_COLLECTOR =
-            createProfession("dung_collector", ModBlocks.DUNG_BLOCK, SoundEvents.ENTITY_VILLAGER_WORK_FARMER);
+            createProfession("dung_collector", ModBlocks.WASTE_BASKET, SoundEvents.BLOCK_MUD_PLACE);
 
     public static final VillagerProfession MUSICIAN =
             createProfession("musician", Blocks.JUKEBOX, ModSoundEvents.IMPILLAGER_WORK_MUSICIAN);

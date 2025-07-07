@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:cow",
+    "minecraft:sheep",
+    "minecraft:pig",
+    "minecraft:chicken",
+    "minecraft:mooshroom",
+    "minecraft:goat",
+    "impillagers:impillager",
+    "impillagers:dung_golem"
+  ]
+}
