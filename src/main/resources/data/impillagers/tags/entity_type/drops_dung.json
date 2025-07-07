@@ -1,13 +1,24 @@
 {
   "replace": false,
   "values": [
+    "minecraft:camel",
     "minecraft:cow",
-    "minecraft:sheep",
-    "minecraft:pig",
-    "minecraft:chicken",
-    "minecraft:mooshroom",
+    "minecraft:donkey",
     "minecraft:goat",
-    "impillagers:impillager",
-    "impillagers:dung_golem"
+    "minecraft:hoglin",
+    "minecraft:horse",
+    "minecraft:llama",
+    "minecraft:mooshroom",
+    "minecraft:mule",
+    "minecraft:panda",
+    "minecraft:pig",
+    "minecraft:polar_bear",
+    "minecraft:ravager",
+    "minecraft:sheep",
+    "minecraft:sniffer",
+    "minecraft:strider",
+    "minecraft:trader_llama",
+
+    "impillagers:impillager"
   ]
 }
