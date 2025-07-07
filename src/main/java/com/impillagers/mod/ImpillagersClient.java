@@ -44,6 +44,7 @@ public class ImpillagersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FIREFLY_BUSH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SWAMP_REED, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FIREFLY_BOTTLE, RenderLayer.getCutout());
+        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.WASTE_BASKET, RenderLayer.getCutout());
 
         EntityModelLayerRegistry.registerModelLayer(ImpillagerModel.IMPILLAGER, ImpillagerModel::getTexturedModelData);
         EntityModelLayerRegistry.registerModelLayer(ZombieImpillagerModel.ZOMBIE_IMPILLAGER, ZombieImpillagerModel::getTexturedModelData);

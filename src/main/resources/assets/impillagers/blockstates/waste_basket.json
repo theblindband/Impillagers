@@ -1,38 +1,60 @@
 {
   "multipart": [
     {
+      "when": { "facing": "north" },
       "apply": {
-        "model": "minecraft:block/composter"
+        "model": "impillagers:block/waste_basket"
+      }
+    },
+    {
+      "when": { "facing": "east" },
+      "apply": {
+        "model": "impillagers:block/waste_basket",
+        "y": 90
+      }
+    },
+    {
+      "when": { "facing": "south" },
+      "apply": {
+        "model": "impillagers:block/waste_basket",
+        "y": 180
+      }
+    },
+    {
+      "when": { "facing": "west" },
+      "apply": {
+        "model": "impillagers:block/waste_basket",
+        "y": 270
       }
     },
     {
       "when": { "dung_level": 1 },
       "apply": {
-        "model": "minecraft:block/composter_contents1"
+        "model": "impillagers:block/waste_basket_contents1"
       }
     },
     {
       "when": { "dung_level": 2 },
       "apply": {
-        "model": "minecraft:block/composter_contents2"
+        "model": "impillagers:block/waste_basket_contents2"
       }
     },
     {
       "when": { "dung_level": 3 },
       "apply": {
-        "model": "minecraft:block/composter_contents4"
+        "model": "impillagers:block/waste_basket_contents3"
       }
     },
     {
       "when": { "dung_level": 4 },
       "apply": {
-        "model": "minecraft:block/composter_contents6"
+        "model": "impillagers:block/waste_basket_contents4"
       }
     },
     {
       "when": { "dung_level": 5 },
       "apply": {
-        "model": "minecraft:block/composter_contents_ready"
+        "model": "impillagers:block/waste_basket_contents_ready"
       }
     }
   ]

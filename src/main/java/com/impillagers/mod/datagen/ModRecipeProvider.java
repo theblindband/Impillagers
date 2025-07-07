@@ -15,6 +15,7 @@ import net.minecraft.item.Items;
 import net.minecraft.recipe.Ingredient;
 import net.minecraft.recipe.book.RecipeCategory;
 import net.minecraft.registry.RegistryWrapper;
+import net.minecraft.registry.tag.ItemTags;
 import net.minecraft.util.Identifier;
 
 import java.util.concurrent.CompletableFuture;
@@ -215,6 +216,15 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .criterion("has_dung_block", conditionsFromItem(ModBlocks.DUNG_BLOCK))
                 .group("fertile_dirt")
                 .offerTo(exporter, "fertile_dirt_from_dung_blocks_and_dirt_2");
+
+        ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WASTE_BASKET, 1)
+                .input('P', ItemTags.PLANKS)
+                .input('S', ItemTags.WOODEN_SLABS)
+                .pattern("S S")
+                .pattern("PSP")
+                .criterion("has_planks", conditionsFromItem(ModBlocks.PURPLE_HEART_PLANKS))
+                .group("waste_basket")
+                .offerTo(exporter, "waste_basket");
 
         //Undyeing Recipes
         offerSingleItemUndyeingRecipe(exporter, Blocks.SHULKER_BOX, Blocks.WHITE_SHULKER_BOX, "undyeing_shulker_box");

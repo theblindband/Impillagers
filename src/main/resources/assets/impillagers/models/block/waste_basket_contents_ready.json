@@ -1,0 +1,14 @@
+{
+    "textures": {
+        "particle": "impillagers:block/dung_block",
+        "inside": "impillagers:block/dung_block"
+    },
+    "elements": [
+        {   "from": [ 2, 0, 2 ],
+            "to": [ 14, 15, 14 ],
+            "faces": {
+                "up": { "texture": "#inside" }
+            }
+        }
+    ]
+}

@@ -4,42 +4,85 @@ import com.impillagers.mod.block.entity.ModBlockEntities;
 import com.impillagers.mod.block.entity.WasteBasketBlockEntity;
 import com.impillagers.mod.item.ModItems;
 import com.mojang.serialization.MapCodec;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
+import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
+import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.BlockMirror;
+import net.minecraft.util.BlockRotation;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Direction;
+import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
-
 public class WasteBasketBlock extends BlockWithEntity {
 
+    private static final VoxelShape NS_SHAPE = VoxelShapes.union(
+            Block.createCuboidShape(0.0F, 0.0F, 0.0F, 2.0F, 16.0F, 16.0F),
+            Block.createCuboidShape(14.0F, 0.0F, 0.0F, 16.0F, 16.0F, 16.0F),
+            Block.createCuboidShape(2.0F, 0.0F, 0.0F, 14.0F, 12.0F, 2.0F),
+            Block.createCuboidShape(2.0F, 0.0F, 14.0F, 14.0F, 12.0F, 16.0F),
+            Block.createCuboidShape(0.0F, 0.0F, 0.0F, 16.0F, 2.0F, 16.0F));
+
+    private static final VoxelShape EW_SHAPE = VoxelShapes.union(
+            Block.createCuboidShape(0.0F, 0.0F, 0.0F, 16.0F, 16.0F, 2.0F),
+            Block.createCuboidShape(14.0F, 0.0F, 2.0F, 16.0F, 12.0F, 14.0F),
+            Block.createCuboidShape(0.0F, 0.0F, 14.0F, 16.0F, 16.0F, 16.0F),
+            Block.createCuboidShape(0.0F, 0.0F, 2.0F, 2.0F, 12.0F, 14.0F),
+            Block.createCuboidShape(0.0F, 0.0F, 0.0F, 16.0F, 2.0F, 6.0F));
+
+    public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final IntProperty DUNG_LEVEL = IntProperty.of("dung_level", 0, 5);
 
     public WasteBasketBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(this.stateManager.getDefaultState().with(DUNG_LEVEL, 0)
+        this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(DUNG_LEVEL, 0)
         );
+    }
+
+    //Hit Box
+    @Override
+    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return switch (state.get(FACING)) {
+            case Direction.EAST, Direction.WEST -> EW_SHAPE;
+            default -> NS_SHAPE;
+        };
+    }
+
+    //Facing Block State
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
+    }
+
+    @Override
+    protected BlockState rotate(BlockState state, BlockRotation rotation) {
+        return state.with(FACING, rotation.rotate(state.get(FACING)));
+    }
+
+    @Override
+    protected BlockState mirror(BlockState state, BlockMirror mirror) {
+        return state.rotate(mirror.getRotation(state.get(FACING)));
     }
 
     @Override
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
     }
-
 
     @Override
     protected MapCodec<? extends BlockWithEntity> getCodec() {
@@ -48,7 +91,7 @@ public class WasteBasketBlock extends BlockWithEntity {
 
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(DUNG_LEVEL);
+        builder.add(FACING, DUNG_LEVEL);
     }
 
     @Override
@@ -85,7 +128,6 @@ public class WasteBasketBlock extends BlockWithEntity {
         world.playSound(null, pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5, SoundEvents.BLOCK_MUD_PLACE, SoundCategory.BLOCKS, 0.8f, 1.0f);
         return ActionResult.SUCCESS;
     }
-
 
     @Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(

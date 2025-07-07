@@ -5,7 +5,6 @@ import com.impillagers.mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricBlockLootTableProvider;
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.Enchantments;
 import net.minecraft.item.Item;
@@ -93,6 +92,9 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.FERTILE_FARMLAND, ModBlocks.FERTILE_DIRT);
 
         addDrop(ModBlocks.FIREFLY_BOTTLE, ModItems.FIREFLY_BOTTLE);
+
+        addDrop(ModBlocks.SAFE);
+        addDrop(ModBlocks.WASTE_BASKET);
     }
 
     //Loot Table Builders

@@ -94,7 +94,7 @@ public class ModBlocks {
 
     //Job Blocks
     public static final Block SAFE = registerBlock("safe", new SafeBlock(AbstractBlock.Settings.copy(IRON_BLOCK)));
-    public static final Block WASTE_BASKET = registerBlock("waste_basket", new WasteBasketBlock(AbstractBlock.Settings.copy(IRON_BLOCK)));
+    public static final Block WASTE_BASKET = registerBlock("waste_basket", new WasteBasketBlock(AbstractBlock.Settings.copy(OAK_PLANKS)));
 
     //Brushable Blocks
     public static final Block SUSPICIOUS_DIRT = registerBlock("suspicious_dirt", new NoGravityBrushableBlock(Blocks.DIRT, SoundEvents.ITEM_BRUSH_BRUSHING_GENERIC, SoundEvents.ITEM_BRUSH_BRUSHING_GRAVEL, AbstractBlock.Settings.copy(Blocks.DIRT).pistonBehavior(PistonBehavior.DESTROY).strength(0.25F).sounds(BlockSoundGroup.SUSPICIOUS_GRAVEL)));
