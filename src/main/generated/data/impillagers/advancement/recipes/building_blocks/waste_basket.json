@@ -1,11 +1,11 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_planks": {
+    "has_bamboo": {
       "conditions": {
         "items": [
           {
-            "items": "impillagers:purple_heart_planks"
+            "items": "minecraft:bamboo"
           }
         ]
       },
@@ -21,7 +21,7 @@
   "requirements": [
     [
       "has_the_recipe",
-      "has_planks"
+      "has_bamboo"
     ]
   ],
   "rewards": {
