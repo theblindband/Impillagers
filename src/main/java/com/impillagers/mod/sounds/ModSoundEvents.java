@@ -14,6 +14,11 @@ public class ModSoundEvents {
     public static final SoundEvent FIREFLY_BOTTLE_OPEN = registerSoundEvent("block.firefly_bottle.open");
     public static final SoundEvent FIREFLY_BOTTLE_CLOSE = registerSoundEvent("block.firefly_bottle.close");
 
+    public static final SoundEvent SAFE_OPEN = registerSoundEvent("block.safe.open");
+    public static final SoundEvent SAFE_CLOSE = registerSoundEvent("block.safe.close");
+    public static final SoundEvent SAFE_LOCK = registerSoundEvent("block.safe.lock");
+    public static final SoundEvent SAFE_UNLOCK = registerSoundEvent("block.safe.unlock");
+
     public static final SoundEvent IMPILLAGER_DAMAGE = registerSoundEvent("entity.impillager.damage");
     public static final SoundEvent IMPILLAGER_DEATH = registerSoundEvent("entity.impillager.death");
     public static final SoundEvent IMPILLAGER_NO = registerSoundEvent("entity.impillager.no");

@@ -1,44 +1,132 @@
 package com.impillagers.mod.block.custom;
 
+import com.impillagers.mod.block.entity.SafeBlockEntity;
 import com.impillagers.mod.sounds.ModSoundEvents;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
+import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.BlockMirror;
-import net.minecraft.util.BlockRotation;
+import net.minecraft.text.Text;
+import net.minecraft.util.*;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
-/*
-TODO
-Has less space compared to a chest
-Sneak click locks it to the player that sneak clicked it
-When locked only the player who locked it can open it
-Sneak click again by the same player unlocks it
+import java.util.UUID;
 
-Hoppers shouldn't work on the safe when locked
-*/
-public class SafeBlock extends Block {
+public class SafeBlock extends BlockWithEntity implements BlockEntityProvider{
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty LOCKED = Properties.LOCKED;
 
     private static final VoxelShape SHAPE = Block.createCuboidShape(2.0, 1.0, 2.0, 14.0, 13.0, 14.0);
 
+    @Override
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+        if (world.isClient) {
+            return ActionResult.success(true);
+        }
+
+        SafeBlockEntity be = (SafeBlockEntity) world.getBlockEntity(pos);
+        if (be == null) return ActionResult.FAIL;
+
+        boolean locked = state.get(LOCKED);
+        UUID playerId = player.getUuid();
+
+        if (!player.isSneaking()) {
+            if (!locked || be.isOwner(playerId)) {
+                player.openHandledScreen(be);
+                world.playSound(null,
+                        pos,
+                        SoundEvents.BLOCK_IRON_DOOR_OPEN,
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F);
+                return ActionResult.SUCCESS;
+            } else {
+                player.sendMessage(
+                        Text.translatable("message.impillagers.safe.locked"),
+                        true
+                );
+                return ActionResult.FAIL;
+            }
+        }
+
+        if (locked) {
+            if (be.isOwner(playerId)) {
+                world.setBlockState(pos,
+                        state.with(SafeBlock.LOCKED, false),
+                        Block.NOTIFY_ALL);
+                be.clearOwner();
+                world.playSound(null,
+                        pos,
+                        ModSoundEvents.SAFE_UNLOCK,
+                        SoundCategory.BLOCKS,
+                        1.0F,
+                        1.0F);
+
+                player.sendMessage(
+                        Text.translatable("message.impillagers.safe.unlocked"),
+                        true
+                );
+            } else {
+                player.sendMessage(
+                        Text.translatable("message.impillagers.safe.not_owner"),
+                        true
+                );
+            }
+        } else {
+            world.setBlockState(pos,
+                    state.with(SafeBlock.LOCKED, true),
+                    Block.NOTIFY_ALL);
+            be.setOwner(playerId);
+            world.playSound(null,
+                    pos,
+                    ModSoundEvents.SAFE_LOCK,
+                    SoundCategory.BLOCKS,
+                    1.0F,
+                    1.0F);
+
+            player.sendMessage(
+                    Text.translatable("message.impillagers.safe.locked_success"),
+                    true
+            );
+        }
+
+        return ActionResult.SUCCESS;
+    }
+
+    @Override
+    protected void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
+        if(state.getBlock() != newState.getBlock()){
+            BlockEntity blockEntity = world.getBlockEntity(pos);
+            if(blockEntity instanceof SafeBlockEntity){
+                ItemScatterer.spawn(world, pos, ((SafeBlockEntity) blockEntity));
+                world.updateComparators(pos, this);
+            }
+            super.onStateReplaced(state, world, pos, newState, moved);
+        }
+    }
+
     public SafeBlock(Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(FACING, Direction.NORTH).with(LOCKED, false));
+    }
+
+    @Override
+    protected MapCodec<? extends BlockWithEntity> getCodec() {
+        return createCodec(SafeBlock::new);
     }
 
     //Hit Box
@@ -63,24 +151,19 @@ public class SafeBlock extends Block {
         return state.rotate(mirror.getRotation(state.get(FACING)));
     }
 
-    //Locking/Unlocking
-    @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
-        if (!world.isClient() && player.isSneaking()) {
-            boolean locked = state.get(LOCKED);
-            state = state.with(LOCKED, !locked);
-            world.setBlockState(pos, state, Block.NOTIFY_ALL);
-            if (locked) {
-                world.playSound(null, pos, SoundEvents.BLOCK_IRON_DOOR_CLOSE, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            } else {
-                world.playSound(null, pos, SoundEvents.BLOCK_IRON_DOOR_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
-            }
-        }
-        return ActionResult.success(world.isClient());
-    }
-
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING, LOCKED);
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
+        return new SafeBlockEntity(pos, state);
+    }
+
+    @Override
+    public BlockRenderType getRenderType(BlockState state) {
+        return BlockRenderType.MODEL;
     }
 }

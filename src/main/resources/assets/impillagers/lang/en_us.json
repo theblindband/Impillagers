@@ -179,5 +179,12 @@
   "advancements.impillagers.poisoned_frog.description": "Feed a Frog some fireflies and suffer the consequences",
 
   "death.attack.strongstuff": "%s drank the strong stuff",
-  "death.attack.strongstuff.player": "%s drank the strong stuff to escape %s"
+  "death.attack.strongstuff.player": "%s drank the strong stuff to escape %s",
+
+  "container.impillagers.safe": "Safe",
+
+  "message.impillagers.safe.not_owner": "Cannot Unlock: Safe locked by another player",
+  "message.impillagers.safe.locked": "Locked",
+  "message.impillagers.safe.locked_success": "Locked Safe",
+  "message.impillagers.safe.unlocked": "Unlocked Safe"
 }
