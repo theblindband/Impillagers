@@ -3,14 +3,16 @@
   "category": "building",
   "group": "waste_basket",
   "key": {
-    "B": {
-      "item": "minecraft:bamboo"
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "S": {
+      "tag": "minecraft:wooden_slabs"
     }
   },
   "pattern": [
-    "B B",
-    "B B",
-    "BBB"
+    "S S",
+    "PSP"
   ],
   "result": {
     "count": 1,

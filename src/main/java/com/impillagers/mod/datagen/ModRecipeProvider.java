@@ -218,11 +218,11 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .offerTo(exporter, "fertile_dirt_from_dung_blocks_and_dirt_2");
 
         ShapedRecipeJsonBuilder.create(RecipeCategory.BUILDING_BLOCKS, ModBlocks.WASTE_BASKET, 1)
-                .input('B', Items.BAMBOO)
-                .pattern("B B")
-                .pattern("B B")
-                .pattern("BBB")
-                .criterion("has_bamboo", conditionsFromItem(Items.BAMBOO))
+                .input('P', ItemTags.PLANKS)
+                .input('S', ItemTags.WOODEN_SLABS)
+                .pattern("S S")
+                .pattern("PSP")
+                .criterion("has_planks", conditionsFromItem(ModBlocks.PURPLE_HEART_PLANKS))
                 .group("waste_basket")
                 .offerTo(exporter, "waste_basket");
 
