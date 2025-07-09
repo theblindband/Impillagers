@@ -12,6 +12,8 @@ import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
 
+import java.util.Optional;
+
 /*
 TODO
 
@@ -290,6 +292,7 @@ public class ModTrades {
                 factories.add((entity, random) ->
                         new TradeOffer(
                                 new TradedItem(data.inputItem, data.inputCount),
+                                Optional.of(new TradedItem(data.inputItem, data.inputCount)),
                                 new ItemStack(data.outputItem, data.outputCount),
                                 data.maxUses,
                                 data.merchantExperience,
