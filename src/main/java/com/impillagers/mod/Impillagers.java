@@ -14,6 +14,7 @@ import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity
 import com.impillagers.mod.event.ModEvents;
 import com.impillagers.mod.item.ModItemGroups;
 import com.impillagers.mod.item.ModItems;
+import com.impillagers.mod.item.sherd.ModSherds;
 import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.sounds.ModSoundEvents;
@@ -56,6 +57,7 @@ public class Impillagers implements ModInitializer {
 		ModCommands.registerCommands();
 		ModDamageTypes.registerDamageTypes();
 		ModDataPacks.registerDataPacks();
+		ModSherds.registerSherds();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
