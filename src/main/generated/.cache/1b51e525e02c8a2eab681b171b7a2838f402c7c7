@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-09T13:28:16.322852476	Impillagers/Block Loot Tables
+// 1.21.1	2025-07-09T18:19:21.089289974	Impillagers/Block Loot Tables
 e6874c0b781f55f4c085197c9369ca7dcf013e10 data/impillagers/loot_table/blocks/mossy_mud_bricks_slab.json
 d8a11fe4f334a67de9fe7843bf65e68feb94c877 data/impillagers/loot_table/blocks/purple_heart_sign.json
 36ae4b6abdcbad9f7dc98f402378358c6b0a53f1 data/impillagers/loot_table/blocks/mossy_mud_bricks_stairs.json
@@ -48,7 +48,7 @@ de3edb0d95fdab16a9e82fff1833ed01197e5628 data/impillagers/loot_table/blocks/purp
 fa208f3face02ed592f8f6de1b67d61278b58928 data/impillagers/loot_table/blocks/dung_bricks_pillar.json
 30938c2e29e93d658873343c7e557dd846086594 data/impillagers/loot_table/blocks/mossy_dung_bricks_wall.json
 df094d09b5c7cfa6a8f66b12306c18b77be50da2 data/impillagers/loot_table/blocks/stripped_purple_heart_log.json
-de3edb0d95fdab16a9e82fff1833ed01197e5628 data/impillagers/loot_table/blocks/purple_heart_hanging_sign.json
 9a9c20e3f4a797c392062a80288eaa88cb0fd255 data/impillagers/loot_table/blocks/chiseled_dung_bricks.json
+de3edb0d95fdab16a9e82fff1833ed01197e5628 data/impillagers/loot_table/blocks/purple_heart_hanging_sign.json
 1f5593624bfa8433daf53d7f7a90a448bed0eba4 data/impillagers/loot_table/blocks/mossy_dung_bricks_stairs.json
 c2d59840dcdd78352e02ee5459f35d9f92c26f5e data/impillagers/loot_table/blocks/purple_heart_trapdoor.json
