@@ -8,7 +8,7 @@ issueTrackerURL = "https://github.com/Thomas-Nurse/Impillagers/issues"
 
 [[mods]]
 modId="impillagers"
-version="1.5.0"
+version="1.6.0-dev-2"
 displayName="Impillagers"
 logoFile = "assets/impillagers/icon.png"
 logoBlur = false
