@@ -7,7 +7,7 @@ import com.impillagers.mod.entity.boat.ModBoats;
 import com.impillagers.mod.item.custom.CreeperOilItem;
 import com.impillagers.mod.item.custom.DungBallItem;
 import com.impillagers.mod.item.custom.FrogMaskItem;
-import com.impillagers.mod.item.custom.TotemofUndyeingItem;
+import com.impillagers.mod.item.custom.TotemOfUndyeingItem;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -40,7 +40,7 @@ public class ModItems {
 
     public static final Item CREEPER_OIL = registerItem("creeper_oil", new CreeperOilItem(new Item.Settings()));
 
-    public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new TotemofUndyeingItem(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON)));
+    public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new TotemOfUndyeingItem(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON)));
 
 
     //Boats
