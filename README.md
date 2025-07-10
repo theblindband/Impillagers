@@ -39,8 +39,6 @@
 
 Updates may slow for a bit as we are in the middle of a **MASSIVE** 2.0 update!
 
-**NeoForge Players:** You may find that you are unable to swim after installing the mod, this is a known bug of Sinytra Connector. A fix can be downloaded [here](https://github.com/unilock/sinytra1343/releases/tag/1.1.0).
-
 
 
 ##
