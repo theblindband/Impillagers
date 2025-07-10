@@ -79,7 +79,7 @@ public class ImpillagerTaskListProvider {
                                 ImmutableList.of(
                                         Pair.of(FindEntityTask.create(ModEntities.IMPILLAGER, 8, MemoryModuleType.INTERACTION_TARGET, speed, 2), 2),
                                         Pair.of(FindEntityTask.create(ModEntities.IMPILLAGER, 8, PassiveEntity::isReadyToBreed, PassiveEntity::isReadyToBreed, MemoryModuleType.BREED_TARGET, speed, 2), 1),
-                                        Pair.of(FindEntityTask.create(EntityType.CAT, 8, MemoryModuleType.INTERACTION_TARGET, speed, 2), 1),
+                                        Pair.of(FindEntityTask.create(EntityType.FROG, 12, MemoryModuleType.INTERACTION_TARGET, speed, 2), 1),
                                         Pair.of(FindWalkTargetTask.create(speed), 1),
                                         Pair.of(GoTowardsLookTargetTask.create(speed, 2), 1),
                                         Pair.of(new JumpInBedTask(speed), 1),
