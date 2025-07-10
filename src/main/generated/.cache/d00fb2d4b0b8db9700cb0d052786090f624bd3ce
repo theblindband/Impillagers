@@ -1,4 +1,4 @@
-// 1.21.1	2025-07-09T18:19:21.092360782	Impillagers/Model Definitions
+// 1.21.1	2025-07-10T15:21:27.430990801	Impillagers/Model Definitions
 89defd5388d42a73700c7f86b081f564926fccec assets/impillagers/models/block/purple_heart_door_top_right_open.json
 01ecd7541bd0e2f512931f28fcae60dd46e5d78f assets/impillagers/models/block/purple_heart_sapling.json
 1a75ff262da527cff2fc7b17ae66dc32604e7ccd assets/impillagers/models/item/suspicious_dirt.json
@@ -134,6 +134,7 @@ d74fc0c8ec7f57f8fef2f08ae58bf1177d505b97 assets/minecraft/blockstates/packed_mud
 ad3fa04fb76f6be5fcaa8b26d90fdcb5eaa52f6b assets/impillagers/models/block/stripped_purple_heart_log_horizontal.json
 7537acdb6b57f3c6230278b73116d93837168bc3 assets/impillagers/models/block/purple_heart_fence_gate_wall_open.json
 366c5a9def0ddd03bc7c2813741aabd3f2007909 assets/impillagers/models/item/stripped_purple_heart_wood.json
+d9285c9e76516dc2744ece1e9aaca372e88d0657 assets/impillagers/models/item/purple_heart_chest_boat.json
 877e8afb256165f8b558528934b46e961bde5b9d assets/impillagers/blockstates/purple_heart_trapdoor.json
 6c8642625ebdbd848166d7562679102a382c29eb assets/impillagers/models/block/mossy_dung_bricks_stairs_outer.json
 10f0412667c53db167b93f569443d347ed92a99f assets/impillagers/models/item/dung_bricks_stairs.json
@@ -160,6 +161,7 @@ f7f6052a4f3ca857208c19a25c33c053a9de35df assets/impillagers/models/block/dung_br
 0a56ef9545d7e1d549b93c9114a61b047ce514ca assets/impillagers/models/block/purple_heart_slab_top.json
 83d11e95e71b939dbcf2d599abcbc947af7c5b36 assets/impillagers/models/block/mossy_mud_bricks_slab_top.json
 eee2d163d366680a27a603919caec671c709755a assets/impillagers/models/item/purple_heart_log.json
+656e21510976501abc31481f5353827fd866cf4f assets/impillagers/models/item/purple_heart_boat.json
 8efe5b46635bc05554869e08899327ccea046b35 assets/impillagers/models/block/packed_dung_wall_inventory.json
 a151f62718aedc3f1f7f2d256b4c814295e6d44a assets/impillagers/blockstates/purple_heart_pressure_plate.json
 2c0de7211124b92f662420852b23ee127c639e06 assets/impillagers/models/block/purple_heart_trapdoor_top.json

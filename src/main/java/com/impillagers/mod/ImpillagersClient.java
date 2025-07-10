@@ -3,6 +3,7 @@ package com.impillagers.mod;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.effect.ModEffectClient;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.boat.ModBoats;
 import com.impillagers.mod.entity.client.*;
 import com.impillagers.mod.entity.client.dung_golem.DungGolemModel;
 import com.impillagers.mod.entity.client.dung_golem.DungGolemRenderer;
@@ -18,6 +19,7 @@ import com.impillagers.mod.particle.custom.FireflyParticle;
 import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.screen.custom.SafeScreen;
 import com.impillagers.mod.util.HudOverlayOpacityPayload;
+import com.terraformersmc.terraform.boat.api.client.TerraformBoatClientHelper;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -72,5 +74,9 @@ public class ImpillagersClient implements ClientModInitializer {
         });
 
         HandledScreens.register(ModScreenHandlers.SAFE_SCREEN_HANDLER, SafeScreen::new);
+
+        if (!Impillagers.NEOFORGE){
+        TerraformBoatClientHelper.registerModelLayers(ModBoats.PURPLE_HEART_BOAT_ID, false);
+        }
     }
 }

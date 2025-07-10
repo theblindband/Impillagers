@@ -8,6 +8,7 @@ import com.impillagers.mod.damage.ModDamageTypes;
 import com.impillagers.mod.data.ModDataPacks;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.boat.ModBoats;
 import com.impillagers.mod.entity.custom.dung_golem.DungGolemEntity;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
@@ -28,6 +29,7 @@ import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.*;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.item.HoeItem;
 import net.minecraft.potion.Potions;
 import org.slf4j.Logger;
@@ -36,6 +38,7 @@ import org.slf4j.LoggerFactory;
 public class Impillagers implements ModInitializer {
 	public static final String MOD_ID = "impillagers";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+	public static final boolean NEOFORGE = FabricLoader.getInstance().isModLoaded("connector");
 
 	@Override
 	public void onInitialize() {
@@ -59,6 +62,10 @@ public class Impillagers implements ModInitializer {
 		ModDamageTypes.registerDamageTypes();
 		ModDataPacks.registerDataPacks();
 		ModSherds.registerSherds();
+
+		if (!NEOFORGE) {
+			ModBoats.registerBoats();
+		}
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);

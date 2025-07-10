@@ -3,9 +3,11 @@ package com.impillagers.mod.item;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.boat.ModBoats;
 import com.impillagers.mod.item.custom.CreeperOilItem;
 import com.impillagers.mod.item.custom.DungBallItem;
 import com.impillagers.mod.item.custom.FrogMaskItem;
+import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -40,6 +42,18 @@ public class ModItems {
 
                                                                                                                                                         //This bit should make the item stay in crafting, not working for some reason
     public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new Item(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON).recipeRemainder(ModItems.TOTEM_OF_UNDYEING)));
+
+
+    //Boats
+    public static Item PURPLE_HEART_BOAT;
+    public static Item PURPLE_HEART_CHEST_BOAT;
+
+    static {
+        if (!Impillagers.NEOFORGE){
+            PURPLE_HEART_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.PURPLE_HEART_BOAT_ID, ModBoats.PURPLE_HEART_BOAT_KEY, false);
+            PURPLE_HEART_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.PURPLE_HEART_CHEST_BOAT_ID, ModBoats.PURPLE_HEART_BOAT_KEY, true);
+        }
+    }
 
     //Register Methods
     private static Item registerItem(String name, Item item) {
