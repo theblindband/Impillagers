@@ -7,6 +7,7 @@ import com.impillagers.mod.entity.boat.ModBoats;
 import com.impillagers.mod.item.custom.CreeperOilItem;
 import com.impillagers.mod.item.custom.DungBallItem;
 import com.impillagers.mod.item.custom.FrogMaskItem;
+import com.impillagers.mod.item.custom.TotemofUndyeingItem;
 import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
@@ -39,9 +40,7 @@ public class ModItems {
 
     public static final Item CREEPER_OIL = registerItem("creeper_oil", new CreeperOilItem(new Item.Settings()));
 
-
-                                                                                                                                                        //This bit should make the item stay in crafting, not working for some reason
-    public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new Item(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON).recipeRemainder(ModItems.TOTEM_OF_UNDYEING)));
+    public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new TotemofUndyeingItem(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON)));
 
 
     //Boats
