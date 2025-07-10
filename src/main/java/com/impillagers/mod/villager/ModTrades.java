@@ -291,29 +291,31 @@ public class ModTrades {
         TradeOfferHelper.registerVillagerOffers(prof, level, factories -> {
             for (TradeData t : trades) {
                 factories.add((entity, random) -> {
+
+                    TradedItem first  = new TradedItem(t.input1(), t.count1());
+
+                    Optional<TradedItem> second = (t.count2() > 0 && t.input2() != Items.AIR) ? Optional.of(new TradedItem(t.input2(), t.count2())) : Optional.empty();
+
                     ItemStack result = t.outputStackSupplier().get();
-                    return new TradeOffer(
-                            new TradedItem(t.inputItem(), t.inputCount()),
-                            Optional.of(new TradedItem(t.inputItem(), t.inputCount())),
-                            result,
-                            t.maxUses(),
-                            t.merchantExperience(),
-                            t.priceMultiplier()
-                    );
+
+                    return new TradeOffer(first, second, result, t.maxUses(), t.merchantExperience(), t.priceMultiplier());
                 });
             }
         });
     }
 
-
-    public record TradeData(ItemConvertible inputItem, int inputCount, ItemConvertible outputItem, int outputCount, Supplier<ItemStack> outputStackSupplier, int maxUses, int merchantExperience, float priceMultiplier) {
-        public TradeData(ItemConvertible inItem, int inCount, ItemConvertible outItem, int outCount, int uses, int xp, float priceMult) {
-            this(inItem, inCount, outItem, outCount, () -> new ItemStack(outItem, outCount), uses, xp, priceMult);
+    public record TradeData(ItemConvertible input1, int count1, ItemConvertible input2, int count2, Supplier<ItemStack> outputStackSupplier, int maxUses, int merchantExperience, float priceMultiplier
+    ) {
+        public TradeData(ItemConvertible in1, int c1, ItemConvertible outItem, int outCount, int uses, int xp, float priceMult) {
+            this(in1, c1, Items.AIR, 0, () -> new ItemStack(outItem, outCount), uses, xp, priceMult);
         }
 
-        public TradeData(ItemConvertible inItem, int inCount, Supplier<ItemStack> stackSupplier, int uses, int xp, float priceMult) {
-            this(inItem, inCount, null, 0, stackSupplier, uses, xp, priceMult);
+        public TradeData(ItemConvertible in1, int c1, ItemConvertible in2, int c2, ItemConvertible outItem, int outCount, int uses, int xp, float priceMult) {
+            this(in1, c1, in2, c2, () -> new ItemStack(outItem, outCount), uses, xp, priceMult);
+        }
+
+        public TradeData(ItemConvertible in1, int c1, Supplier<ItemStack> outputSupplier, int uses, int xp, float priceMult) {
+            this(in1, c1, Items.AIR, 0, outputSupplier, uses, xp, priceMult);
         }
     }
-
 }
