@@ -18,6 +18,7 @@ import com.impillagers.mod.item.sherd.ModSherds;
 import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.sounds.ModSoundEvents;
+import com.impillagers.mod.util.EnchantRegistryHolder;
 import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.command.ModCommandListener;
 import com.impillagers.mod.villager.ModTrades;
@@ -94,6 +95,7 @@ public class Impillagers implements ModInitializer {
 		PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);
 
 		ServerLifecycleEvents.SERVER_STARTING.register(server -> registerAttributes());
+		ServerLifecycleEvents.SERVER_STARTED.register(EnchantRegistryHolder::init);
 	}
 
 	private void registerAttributes() {

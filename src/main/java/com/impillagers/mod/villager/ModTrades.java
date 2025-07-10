@@ -1,27 +1,28 @@
 package com.impillagers.mod.villager;
 
+import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
+import com.impillagers.mod.util.EnchantRegistryHolder;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.block.Blocks;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.*;
 import net.minecraft.potion.Potions;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
 
 import java.util.Optional;
+import java.util.function.Supplier;
 
 /*
 TODO
 
 Musician needs goat horn trades for the 4 screaming goat horns
-Explosives Expert needs book trades for Distribution and Fuse
-
-Change code to allow for two inputs for a trade
-E.g. Like the Emerald + Gravel for Flint trades that the fletcher has
  */
 
 public class ModTrades {
@@ -172,8 +173,8 @@ public class ModTrades {
         );
         // Explosives Expert - Level 4: Enchantments
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 4,
-                new TradeData(ModItems.GOLD_COIN, 64, Items.ENCHANTED_BOOK, 1, 1, 20, 0.02f), //Distribution Enchant
-                new TradeData(ModItems.GOLD_COIN, 64, Items.ENCHANTED_BOOK, 1, 1, 20, 0.02f) //Fuse Enchant
+                new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> book.addEnchantment(EnchantRegistryHolder.getEntry(Identifier.of(Impillagers.MOD_ID, "distribution")), 1)), 1, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> book.addEnchantment(EnchantRegistryHolder.getEntry(Identifier.of(Impillagers.MOD_ID, "fuse")), 1)), 1, 20, 0.02f)
         );
         // Explosives Expert - Level 5: End Crystal
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 5,
@@ -286,23 +287,33 @@ public class ModTrades {
         );
     }
 
-    private static void registerTrades(VillagerProfession profession, int level, TradeData... trades) {
-        TradeOfferHelper.registerVillagerOffers(profession, level, factories -> {
-            for (TradeData data : trades) {
-                factories.add((entity, random) ->
-                        new TradeOffer(
-                                new TradedItem(data.inputItem, data.inputCount),
-                                Optional.of(new TradedItem(data.inputItem, data.inputCount)),
-                                new ItemStack(data.outputItem, data.outputCount),
-                                data.maxUses,
-                                data.merchantExperience,
-                                data.priceMultiplier
-                        )
-                );
+    private static void registerTrades(VillagerProfession prof, int level, TradeData... trades) {
+        TradeOfferHelper.registerVillagerOffers(prof, level, factories -> {
+            for (TradeData t : trades) {
+                factories.add((entity, random) -> {
+                    ItemStack result = t.outputStackSupplier().get();
+                    return new TradeOffer(
+                            new TradedItem(t.inputItem(), t.inputCount()),
+                            Optional.of(new TradedItem(t.inputItem(), t.inputCount())),
+                            result,
+                            t.maxUses(),
+                            t.merchantExperience(),
+                            t.priceMultiplier()
+                    );
+                });
             }
         });
     }
 
-    private record TradeData(ItemConvertible inputItem, int inputCount, ItemConvertible outputItem, int outputCount, int maxUses, int merchantExperience, float priceMultiplier) {
+
+    public record TradeData(ItemConvertible inputItem, int inputCount, ItemConvertible outputItem, int outputCount, Supplier<ItemStack> outputStackSupplier, int maxUses, int merchantExperience, float priceMultiplier) {
+        public TradeData(ItemConvertible inItem, int inCount, ItemConvertible outItem, int outCount, int uses, int xp, float priceMult) {
+            this(inItem, inCount, outItem, outCount, () -> new ItemStack(outItem, outCount), uses, xp, priceMult);
+        }
+
+        public TradeData(ItemConvertible inItem, int inCount, Supplier<ItemStack> stackSupplier, int uses, int xp, float priceMult) {
+            this(inItem, inCount, null, 0, stackSupplier, uses, xp, priceMult);
+        }
     }
+
 }
