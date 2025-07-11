@@ -10,6 +10,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.*;
 import net.minecraft.potion.Potions;
+import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
 import net.minecraft.village.TradeOffer;
@@ -17,6 +18,7 @@ import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
 
 import java.util.Optional;
+import java.util.Random;
 import java.util.function.Supplier;
 
 /*
@@ -109,10 +111,10 @@ public class ModTrades {
         );
         // Musician - Level 5: Goat Horns
         registerTrades(ModProfessions.MUSICIAN, 5,
-                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f), //Screaming Goat Horn
-                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f), //Screaming Goat Horn
-                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f), //Screaming Goat Horn
-                new TradeData(ModItems.GOLD_COIN, 15, Items.GOAT_HORN, 1, 3, 30, 0.02f)  //Screaming Goat Horn
+                new TradeData(ModItems.GOLD_COIN,15,GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(Identifier.of("minecraft","admire_goat_horn")).orElseThrow()),1,3,0.02f),
+                new TradeData(ModItems.GOLD_COIN,15,GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(Identifier.of("minecraft","call_goat_horn")).orElseThrow()),1,3,0.02f),
+                new TradeData(ModItems.GOLD_COIN,15,GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(Identifier.of("minecraft","yearn_goat_horn")).orElseThrow()),1,3,0.02f),
+                new TradeData(ModItems.GOLD_COIN,15,GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(Identifier.of("minecraft","dream_goat_horn")).orElseThrow()),1,3,0.02f)
         );
 
         /* -----DUNG COLLECTOR----- */
@@ -316,6 +318,10 @@ public class ModTrades {
 
         public TradeData(ItemConvertible in1, int c1, Supplier<ItemStack> outputSupplier, int uses, int xp, float priceMult) {
             this(in1, c1, Items.AIR, 0, outputSupplier, uses, xp, priceMult);
+        }
+
+        public TradeData(ItemConvertible in1, int c1, ItemStack outStack, int uses, int xp, float priceMult) {
+            this(in1, c1, Items.AIR, 0, outStack::copy, uses, xp, priceMult);
         }
     }
 }
