@@ -27,11 +27,7 @@ public class WasteBasketBlockEntity extends BlockEntity {
     }
 
 
-    public static void tick(
-            World world,
-            BlockPos pos,
-            BlockState state,
-            WasteBasketBlockEntity be
+    public static void tick(World world, BlockPos pos, BlockState state, WasteBasketBlockEntity be
     ) {
         if (world.isClient()) return;
 
@@ -42,11 +38,7 @@ public class WasteBasketBlockEntity extends BlockEntity {
                 pos.getX() - SCAN_RADIUS, pos.getY() - SCAN_HEIGHT, pos.getZ() - SCAN_RADIUS,
                 pos.getX() + SCAN_RADIUS, pos.getY() + SCAN_HEIGHT, pos.getZ() + SCAN_RADIUS
         );
-        List<LivingEntity> found = world.getEntitiesByClass(
-                LivingEntity.class,
-                box,
-                e -> e.getType().isIn(ModTags.EntityTypes.DROPS_DUNG)
-        );
+        List<LivingEntity> found = world.getEntitiesByClass(LivingEntity.class, box, e -> e.getType().isIn(ModTags.EntityTypes.DROPS_DUNG));
 
         if (found.size() >= 3 && world.random.nextInt(50) == 0) {
             int current = state.get(WasteBasketBlock.DUNG_LEVEL);
@@ -56,10 +48,6 @@ public class WasteBasketBlockEntity extends BlockEntity {
                 BlockState updated = state.with(WasteBasketBlock.DUNG_LEVEL, next);
                 world.setBlockState(pos, updated, Block.NOTIFY_ALL);
                 world.playSound(null, pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5, SoundEvents.BLOCK_MUD_PLACE, SoundCategory.BLOCKS, 0.8f, 1.0f);
-
-                Impillagers.LOGGER.info(
-                        "Waste Basket at {} advanced to level {}", pos, next
-                );
             }
         }
     }
