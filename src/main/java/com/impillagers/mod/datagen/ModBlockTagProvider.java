@@ -125,7 +125,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOSSY_DUNG_BRICKS_STAIRS)
                 .add(ModBlocks.CRACKED_DUNG_BRICKS)
                 .add(ModBlocks.CHISELED_DUNG_BRICKS)
-                .add(ModBlocks.DUNG_BRICKS_PILLAR);
+                .add(ModBlocks.DUNG_BRICKS_PILLAR)
+
+                .add(ModBlocks.SAFE);
+
+        getOrCreateTagBuilder(BlockTags.AXE_MINEABLE)
+                .add(ModBlocks.WASTE_BASKET);
 
         getOrCreateTagBuilder(BlockTags.DIRT)
                 .add(ModBlocks.SINKING_MUD)
