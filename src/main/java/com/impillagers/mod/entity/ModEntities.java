@@ -1,6 +1,8 @@
 package com.impillagers.mod.entity;
 
 import com.impillagers.mod.Impillagers;
+import com.impillagers.mod.entity.boat.ModBoatEntity;
+import com.impillagers.mod.entity.boat.ModChestBoatEntity;
 import com.impillagers.mod.entity.custom.dung_golem.DungGolemEntity;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
@@ -32,6 +34,16 @@ public class ModEntities {
             Identifier.of(Impillagers.MOD_ID, "dung_ball"),
             EntityType.Builder.<DungBallEntity>create(DungBallEntity::new, SpawnGroup.MISC)
                     .dimensions(0.25f, 0.25f).build());
+
+    public static final EntityType<ModBoatEntity> BOAT = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Impillagers.MOD_ID, "boat"),
+            EntityType.Builder.<ModBoatEntity>create(ModBoatEntity::new, SpawnGroup.MISC)
+                    .dimensions(1.375F, 0.5625F).maxTrackingRange(5).trackingTickInterval(3).build());
+
+    public static final EntityType<ModChestBoatEntity> CHEST_BOAT = Registry.register(Registries.ENTITY_TYPE,
+            Identifier.of(Impillagers.MOD_ID, "chest_boat"),
+            EntityType.Builder.create(ModChestBoatEntity::new, SpawnGroup.MISC)
+                    .dimensions(1.375F, 0.5625F).maxTrackingRange(5).trackingTickInterval(3).build());
 
 
     public static void registerModEntities(){

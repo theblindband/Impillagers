@@ -3,12 +3,12 @@ package com.impillagers.mod.item;
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.entity.ModEntities;
-import com.impillagers.mod.entity.boat.ModBoats;
+import com.impillagers.mod.entity.boat.ModBoatType;
+import com.impillagers.mod.item.boat.ModBoatItem;
 import com.impillagers.mod.item.custom.CreeperOilItem;
 import com.impillagers.mod.item.custom.DungBallItem;
 import com.impillagers.mod.item.custom.FrogMaskItem;
 import com.impillagers.mod.item.custom.TotemOfUndyeingItem;
-import com.terraformersmc.terraform.boat.api.item.TerraformBoatItemHelper;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -20,7 +20,8 @@ public class ModItems {
     //Purple Heart Items
     public static final Item PURPLE_HEART_SIGN = registerItem("purple_heart_sign", new SignItem(new Item.Settings().maxCount(16), ModBlocks.PURPLE_HEART_SIGN,ModBlocks.PURPLE_HEART_WALL_SIGN));
     public static final Item PURPLE_HEART_HANGING_SIGN = registerItem("purple_heart_hanging_sign", new HangingSignItem(ModBlocks.PURPLE_HEART_HANGING_SIGN,ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN, new Item.Settings().maxCount(16)));
-
+    public static final Item PURPLE_HEART_BOAT = registerItem("purple_heart_boat", new ModBoatItem(false, ModBoatType.PURPLE_HEART, ModEntities.BOAT, ModEntities.CHEST_BOAT, new Item.Settings().maxCount(1)));
+    public static final Item PURPLE_HEART_CHEST_BOAT = registerItem("purple_heart_chest_boat", new ModBoatItem(true, ModBoatType.PURPLE_HEART, ModEntities.BOAT, ModEntities.CHEST_BOAT, new Item.Settings().maxCount(1)));
     //Ruin Loot
     public static final Item FROG_MASK = registerItem("frog_mask", new
             FrogMaskItem(ModArmorMaterials.FROG_MASK_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1).rarity(Rarity.RARE)));
@@ -42,17 +43,6 @@ public class ModItems {
 
     public static final Item TOTEM_OF_UNDYEING = registerItem("totem_of_undyeing", new TotemOfUndyeingItem(new Item.Settings().maxCount(16).rarity(Rarity.UNCOMMON)));
 
-
-    //Boats
-    public static Item PURPLE_HEART_BOAT;
-    public static Item PURPLE_HEART_CHEST_BOAT;
-
-    static {
-        if (!Impillagers.NEOFORGE){
-            PURPLE_HEART_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.PURPLE_HEART_BOAT_ID, ModBoats.PURPLE_HEART_BOAT_KEY, false);
-            PURPLE_HEART_CHEST_BOAT = TerraformBoatItemHelper.registerBoatItem(ModBoats.PURPLE_HEART_CHEST_BOAT_ID, ModBoats.PURPLE_HEART_BOAT_KEY, true);
-        }
-    }
 
     //Register Methods
     private static Item registerItem(String name, Item item) {

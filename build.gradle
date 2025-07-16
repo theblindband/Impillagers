@@ -15,13 +15,6 @@ fabricApi {
 		client = true
 	}
 }
-repositories {
-
-	maven {
-		name = 'TerraformersMC'
-		url = 'https://maven.terraformersmc.com/'
-	}
-}
 
 dependencies {
 	// To change the versions see the gradle.properties file
@@ -31,8 +24,6 @@ dependencies {
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	include (modImplementation "com.terraformersmc.terraform-api:terraform-wood-api-v1:11.0.0")
 }
 
 processResources {

@@ -304,10 +304,8 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                 .group("undyeing")
                 .offerTo(exporter, "totem_of_undyeing_gravel");
 
-        if (!Impillagers.NEOFORGE) {
-            offerBoatRecipe(exporter, ModItems.PURPLE_HEART_BOAT, ModBlocks.PURPLE_HEART_PLANKS);
-            offerChestBoatRecipe(exporter, ModItems.PURPLE_HEART_CHEST_BOAT, ModItems.PURPLE_HEART_BOAT);
-        }
+        offerBoatRecipe(exporter, ModItems.PURPLE_HEART_BOAT, ModBlocks.PURPLE_HEART_PLANKS);
+        offerChestBoatRecipe(exporter, ModItems.PURPLE_HEART_CHEST_BOAT, ModItems.PURPLE_HEART_BOAT);
     }
 
     public static void offerSingleItemUndyeingRecipe(RecipeExporter exporter, ItemConvertible output, ItemConvertible input, String group) {

@@ -34,7 +34,8 @@ public class ModItemGroups {
                         entries.add(ModBlocks.PURPLE_HEART_SAPLING);
                         entries.add(ModItems.PURPLE_HEART_SIGN);
                         entries.add(ModItems.PURPLE_HEART_HANGING_SIGN);
-
+                        entries.add(ModItems.PURPLE_HEART_BOAT);
+                        entries.add(ModItems.PURPLE_HEART_CHEST_BOAT);
 
                         //Natural Items
                         entries.add(ModBlocks.BELLADONNA);
@@ -101,12 +102,6 @@ public class ModItemGroups {
                         entries.add(ModItems.SPIDER_PIEYE);
                         entries.add(ModItems.TOTEM_OF_UNDYEING);
                         entries.add(ModItems.CREEPER_OIL);
-
-
-                        if (!Impillagers.NEOFORGE) {
-                            entries.add(ModItems.PURPLE_HEART_BOAT);
-                            entries.add(ModItems.PURPLE_HEART_CHEST_BOAT);
-                        }
                     }).build());
 
     public static void registerModItemGroups() {

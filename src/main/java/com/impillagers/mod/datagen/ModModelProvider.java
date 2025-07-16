@@ -1,11 +1,9 @@
 package com.impillagers.mod.datagen;
 
-import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
-import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.data.client.*;
 import net.minecraft.util.Identifier;
