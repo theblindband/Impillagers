@@ -8,7 +8,7 @@ issueTrackerURL = "https://github.com/Team-Apiary/Impillagers/issues"
 
 [[mods]]
 modId="impillagers"
-version="1.6.0-dev-2"
+version="1.6.0"
 displayName="Impillagers"
 logoFile = "assets/impillagers/icon.png"
 logoBlur = false
