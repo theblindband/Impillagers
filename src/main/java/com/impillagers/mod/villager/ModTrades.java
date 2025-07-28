@@ -18,15 +18,8 @@ import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
 
 import java.util.Optional;
-import java.util.Random;
 import java.util.function.Supplier;
 import java.util.random.RandomGenerator;
-
-/*
-TODO
-
-Musician needs goat horn trades for the 4 screaming goat horns
- */
 
 public class ModTrades {
 
