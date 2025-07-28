@@ -50,12 +50,6 @@
       "apply": {
         "model": "impillagers:block/waste_basket_contents4"
       }
-    },
-    {
-      "when": { "dung_level": 5 },
-      "apply": {
-        "model": "impillagers:block/waste_basket_contents_ready"
-      }
     }
   ]
 }
