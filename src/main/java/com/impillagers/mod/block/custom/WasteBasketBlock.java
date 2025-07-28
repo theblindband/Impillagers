@@ -46,7 +46,7 @@ public class WasteBasketBlock extends BlockWithEntity {
             Block.createCuboidShape(0.0F, 0.0F, 0.0F, 16.0F, 2.0F, 6.0F));
 
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
-    public static final IntProperty DUNG_LEVEL = IntProperty.of("dung_level", 0, 5);
+    public static final IntProperty DUNG_LEVEL = IntProperty.of("dung_level", 0, 4);
 
     public WasteBasketBlock(Settings settings) {
         super(settings);
