@@ -9,11 +9,11 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-
+//TODO: FIX
 public class ModItemGroups {
     public static final ItemGroup IMPILLAGERS_ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Impillagers.MOD_ID, "impillagers_item_group"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.FROG_MASK))
+            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.GOLD_COIN))
                     .displayName(Text.translatable("itemgroup.impillagers"))
                     .entries((displayContext, entries) -> {
                         //Purple Heart Woodset
@@ -38,7 +38,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PURPLE_HEART_CHEST_BOAT);
 
                         //Natural Items
-                        entries.add(ModBlocks.BELLADONNA);
+                        //entries.add(ModBlocks.BELLADONNA);
                         entries.add(ModBlocks.SWAMP_REED);
 
                         entries.add(ModBlocks.FIREFLY_BUSH);
@@ -59,7 +59,7 @@ public class ModItemGroups {
 
                         //Ruin Loot
                         entries.add(ModBlocks.SUSPICIOUS_DIRT);
-                        entries.add(ModItems.FROG_MASK);
+                        //entries.add(ModItems.FROG_MASK);
                         entries.add(ModItems.IMP_POTTERY_SHERD);
                         entries.add(ModItems.COVER_POTTERY_SHERD);
 
@@ -98,7 +98,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WASTE_BASKET);
 
                         //Imp Trade Items
-                        entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
+                        //entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
                         entries.add(ModItems.SPIDER_PIEYE);
                         entries.add(ModItems.TOTEM_OF_UNDYEING);
                         entries.add(ModItems.CREEPER_OIL);

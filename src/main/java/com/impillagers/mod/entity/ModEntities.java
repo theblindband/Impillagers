@@ -18,35 +18,35 @@ public class ModEntities {
     public static final EntityType<ImpillagerEntity> IMPILLAGER = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Impillagers.MOD_ID, "impillager"),
             EntityType.Builder.create(ImpillagerEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.625f, 0.9f).build());
+                    .setDimensions(0.625f, 0.9f).build("impillager"));
 
     public static final EntityType<ZombieImpillagerEntity> ZOMBIE_IMPILLAGER = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Impillagers.MOD_ID, "zombie_impillager"),
             EntityType.Builder.create(ZombieImpillagerEntity::new, SpawnGroup.MONSTER)
-                    .dimensions(0.625f, 0.9f).build());
+                    .setDimensions(0.625f, 0.9f).build("zombie_impillager"));
 
     public static final EntityType<DungGolemEntity> DUNG_GOLEM = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Impillagers.MOD_ID, "dung_golem"),
             EntityType.Builder.create(DungGolemEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.625f, 0.9f).build());
+                    .setDimensions(0.625f, 0.9f).build("dung_golem"));
 
     public static final EntityType<DungBallEntity> DUNG_BALL = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Impillagers.MOD_ID, "dung_ball"),
             EntityType.Builder.<DungBallEntity>create(DungBallEntity::new, SpawnGroup.MISC)
-                    .dimensions(0.25f, 0.25f).build());
+                    .setDimensions(0.25f, 0.25f).build("dung_ball"));
 
     public static final EntityType<ModBoatEntity> BOAT = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Impillagers.MOD_ID, "boat"),
             EntityType.Builder.<ModBoatEntity>create(ModBoatEntity::new, SpawnGroup.MISC)
-                    .dimensions(1.375F, 0.5625F).maxTrackingRange(5).trackingTickInterval(3).build());
+                    .setDimensions(1.375F, 0.5625F).maxTrackingRange(5).trackingTickInterval(3).build("boat"));
 
     public static final EntityType<ModChestBoatEntity> CHEST_BOAT = Registry.register(Registries.ENTITY_TYPE,
             Identifier.of(Impillagers.MOD_ID, "chest_boat"),
             EntityType.Builder.create(ModChestBoatEntity::new, SpawnGroup.MISC)
-                    .dimensions(1.375F, 0.5625F).maxTrackingRange(5).trackingTickInterval(3).build());
+                    .setDimensions(1.375F, 0.5625F).maxTrackingRange(5).trackingTickInterval(3).build("chest_boat"));
 
 
-    public static void registerModEntities(){
+    public static void registerModEntities() {
         //Impillagers.LOGGER.info("Registering Mod Entities for " + Impillagers.MOD_ID);
     }
 }

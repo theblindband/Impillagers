@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-
+//TODO: FIX
 public class DungGolemRenderer extends MobEntityRenderer<DungGolemEntity, DungGolemModel<DungGolemEntity>> {
     public DungGolemRenderer(EntityRendererFactory.Context context) {
         super(context, new DungGolemModel<>(context.getPart(DungGolemModel.DUNG_GOLEM)), 0.75f);
@@ -30,8 +30,8 @@ public class DungGolemRenderer extends MobEntityRenderer<DungGolemEntity, DungGo
         super.render(livingEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }
 
-    @Override
+    /*@Override
     protected float getShadowRadius(DungGolemEntity dungGolemEntity) {
         return dungGolemEntity.isBaby() ? 0.4F * 0.5F : 0.4F;
-    }
+    }*/
 }

@@ -18,10 +18,10 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.registry.RegistryWrapper;
 
 import java.util.concurrent.CompletableFuture;
-
+//TODO: FIX
 public class ModLootTableProvider extends FabricBlockLootTableProvider {
-    public ModLootTableProvider(FabricDataOutput dataOutput, CompletableFuture<RegistryWrapper.WrapperLookup> registryLookup) {
-        super(dataOutput, registryLookup);
+    public ModLootTableProvider(FabricDataOutput dataOutput) {
+        super(dataOutput);
     }
 
     @Override
@@ -50,11 +50,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN, ModItems.PURPLE_HEART_HANGING_SIGN);
 
         addDrop(ModBlocks.SINKING_MUD);
-        addDrop(ModBlocks.BELLADONNA);
-        addPottedPlantDrops(ModBlocks.POTTED_BELLADONNA);
+        /*addDrop(ModBlocks.BELLADONNA);
+        addPottedPlantDrops(ModBlocks.POTTED_BELLADONNA);*/
         addDrop(ModBlocks.FIREFLY_BUSH);
 
-        addDrop(ModBlocks.DUNG_BLOCK, multipleOreDrops(ModBlocks.DUNG_BLOCK, ModItems.DUNG_BALL, 1, 4));
+        //addDrop(ModBlocks.DUNG_BLOCK, multipleOreDrops(ModBlocks.DUNG_BLOCK, ModItems.DUNG_BALL, 1, 4));
 
         addDrop(ModBlocks.PACKED_DUNG);
         addDrop(ModBlocks.PACKED_DUNG_STAIRS);
@@ -97,11 +97,11 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.WASTE_BASKET);
     }
 
-    //Loot Table Builders
+    /*//Loot Table Builders
     public LootTable.Builder multipleOreDrops(Block drop, Item item, float minDrops, float maxDrops) {
         RegistryWrapper.Impl<Enchantment> impl = this.registryLookup.getWrapperOrThrow(RegistryKeys.ENCHANTMENT);
         return this.dropsWithSilkTouch(drop, this.applyExplosionDecay(drop, ((LeafEntry.Builder<?>)
                 ItemEntry.builder(item).apply(SetCountLootFunction.builder(UniformLootNumberProvider.create(minDrops, maxDrops))))
                 .apply(ApplyBonusLootFunction.oreDrops(impl.getOrThrow(Enchantments.FORTUNE)))));
-    }
+    }*/
 }

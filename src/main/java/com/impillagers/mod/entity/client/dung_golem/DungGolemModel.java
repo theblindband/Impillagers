@@ -60,10 +60,10 @@ public class DungGolemModel <T extends DungGolemEntity> extends SinglePartEntity
         this.animateMovement(DungGolemAnimations.WALK, limbSwing, limbSwingAmount, 2f, 2.5f);
         this.updateAnimation(entity.idleAnimationState, DungGolemAnimations.IDLE, ageInTicks, 1f);
     }
-
+    
     @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, int color) {
-        root.render(matrices, vertexConsumer, light, overlay, color);
+    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
+            super.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
     }
 
     @Override

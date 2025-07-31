@@ -14,7 +14,7 @@ public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
         super(output);
     }
-
+//TODO: FIX
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
         blockStateModelGenerator.registerLog(ModBlocks.PURPLE_HEART_LOG).log(ModBlocks.PURPLE_HEART_LOG).wood(ModBlocks.PURPLE_HEART_WOOD);
@@ -38,7 +38,7 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerHangingSign(ModBlocks.STRIPPED_PURPLE_HEART_LOG, ModBlocks.PURPLE_HEART_HANGING_SIGN, ModBlocks.PURPLE_HEART_WALL_HANGING_SIGN);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.SINKING_MUD);
-        blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BELLADONNA, ModBlocks.POTTED_BELLADONNA, BlockStateModelGenerator.TintType.TINTED);
+        //blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BELLADONNA, ModBlocks.POTTED_BELLADONNA, BlockStateModelGenerator.TintType.TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.SWAMP_REED, BlockStateModelGenerator.TintType.TINTED);
 
 
@@ -88,15 +88,15 @@ public class ModModelProvider extends FabricModelProvider {
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
         itemModelGenerator.register(ModItems.IMP_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(ModItems.COVER_POTTERY_SHERD, Models.GENERATED);
-        itemModelGenerator.register(ModItems.FROG_MASK, Models.GENERATED);
-        itemModelGenerator.register(ModItems.PAINTED_SMITHING_TEMPLATE, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.FROG_MASK, Models.GENERATED);
+        //itemModelGenerator.register(ModItems.PAINTED_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURPLE_HEART_SIGN, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURPLE_HEART_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURPLE_HEART_CHEST_BOAT, Models.GENERATED);
 
-        itemModelGenerator.register(ModItems.IMPILLAGER_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
-        itemModelGenerator.register(ModItems.ZOMBIE_IMPILLAGER_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
-        itemModelGenerator.register(ModItems.DUNG_GOLEM_SPAWN_EGG, new Model(Optional.of(Identifier.of("item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.IMPILLAGER_SPAWN_EGG, new Model(Optional.of(Identifier.of("minecraft", "item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.ZOMBIE_IMPILLAGER_SPAWN_EGG, new Model(Optional.of(Identifier.of("minecraft","item/template_spawn_egg")), Optional.empty()));
+        itemModelGenerator.register(ModItems.DUNG_GOLEM_SPAWN_EGG, new Model(Optional.of(Identifier.of("minecraft","item/template_spawn_egg")), Optional.empty()));
         itemModelGenerator.register(ModItems.DUNG_BALL, Models.GENERATED);
         itemModelGenerator.register(ModItems.GOLD_COIN, Models.GENERATED);
         itemModelGenerator.register(ModItems.FAKE_GOLD_COIN, Models.GENERATED);

@@ -26,8 +26,11 @@ import java.util.Map;
 
 //TODO: FIX
 public class FrogMaskItem extends ArmorItem {
+    public FrogMaskItem(ArmorMaterial material, Type type, Settings settings) {
+        super(material, type, settings);
+    }
 
-    private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
+    /*private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
                     .put(ModArmorMaterials.FROG_MASK_MATERIAL,
                             List.of(new StatusEffectInstance(ModEffects.CALL_OF_THE_IMPS.value(), 40, 0, false, false))).build();
@@ -146,6 +149,6 @@ public class FrogMaskItem extends ArmorItem {
             double ratio = angle / threshold;
             return (float) (1 - Math.pow(ratio, 2));
         }
-    }
+    }*/
 
 }

@@ -11,7 +11,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
-
+//TODO: the ints for renderModel are maybe wrong?
 @Environment(EnvType.CLIENT)
 public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<ImpillagerEntity, ImpillagerModel> {
 
@@ -36,6 +36,6 @@ public class ImpillagerProfessionFeatureRenderer extends FeatureRenderer<Impilla
         String key = professionId.toString();
 
         Identifier textureIdentifier = ImpillagerProfessionHandler.getImpillagerTextureForProfession(key);
-        renderModel(this.getContextModel(), textureIdentifier, matrixStack, vertexConsumerProvider, light, impillagerEntity, -1);
+        renderModel(this.getContextModel(), textureIdentifier, matrixStack, vertexConsumerProvider, light, impillagerEntity, 1, 1, 1);
     }
 }

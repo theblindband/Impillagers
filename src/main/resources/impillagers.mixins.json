@@ -7,7 +7,6 @@
     "BlockEntityTypeMixin",
     "CarvedPumpkinBlockMixin",
     "CropBlockMixin",
-    "DecoratedPotPatternsMixin",
     "FarmlandBlockMixin",
     "FrogEntityMixin",
     "ImpillagerLightningMixin",

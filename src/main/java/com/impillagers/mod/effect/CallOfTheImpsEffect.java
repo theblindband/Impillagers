@@ -10,8 +10,8 @@ public class CallOfTheImpsEffect extends StatusEffect {
     }
 
     @Override
-    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        return super.applyUpdateEffect(entity, amplifier);
+    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
+        super.applyUpdateEffect(entity, amplifier);
     }
 
     @Override

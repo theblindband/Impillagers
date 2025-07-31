@@ -6,7 +6,7 @@ import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.Vec3d;
-
+//TODO: onTargetDamaged variables might be reversed
 public interface Impillager {
 
     static boolean tryAttack(LivingEntity attacker, LivingEntity target) {
@@ -22,7 +22,7 @@ public interface Impillager {
         boolean bl = target.damage(damageSource, g);
         if (bl) {
             if (attacker.getWorld() instanceof ServerWorld serverWorld) {
-                EnchantmentHelper.onTargetDamaged(serverWorld, target, damageSource);
+                EnchantmentHelper.onTargetDamaged(attacker, target);
             }
 
             if (!attacker.isBaby()) {

@@ -18,7 +18,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
 import org.joml.Quaternionf;
-
+//TODO: model.render might not use correct values
 public class ModBoatRenderer<E extends BoatEntity & IModBoat> extends EntityRenderer<E> {
 
     private final CompositeEntityModel<BoatEntity> model;
@@ -66,7 +66,7 @@ public class ModBoatRenderer<E extends BoatEntity & IModBoat> extends EntityRend
 
         model.setAngles(boat, tickDelta, 0.0F, -0.1F, 0.0F, 0.0F);
         VertexConsumer vb = vcp.getBuffer(model.getLayer(tex));
-        model.render(ms, vb, light, OverlayTexture.DEFAULT_UV);
+        model.render(ms, vb, light, OverlayTexture.DEFAULT_UV,1,1,1,1);
 
         if (!boat.isSubmergedInWater() && model instanceof ModelWithWaterPatch) {
             VertexConsumer wb = vcp.getBuffer(RenderLayer.getWaterMask());

@@ -7,15 +7,31 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
+import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import org.jetbrains.annotations.Nullable;
 
+//TODO: FIX
 public class SafeScreenHandler extends ScreenHandler {
+    protected SafeScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId) {
+        super(type, syncId);
+    }
 
-    private final Inventory inventory;
+    @Override
+    public ItemStack quickMove(PlayerEntity player, int slot) {
+        return null;
+    }
+
+    @Override
+    public boolean canUse(PlayerEntity player) {
+        return false;
+    }
+
+    /*private final Inventory inventory;
     private final World world;
     private final BlockPos pos;
 
@@ -101,5 +117,5 @@ public class SafeScreenHandler extends ScreenHandler {
             );
         }
         super.onClosed(player);
-    }
+    }*/
 }

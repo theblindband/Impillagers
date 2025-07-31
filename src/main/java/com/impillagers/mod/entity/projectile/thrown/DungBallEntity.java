@@ -32,7 +32,7 @@ public class DungBallEntity extends ThrownItemEntity {
         Entity entity = entityHitResult.getEntity();
         int i = entity instanceof VillagerEntity ? 3 : 1;
         entity.damage(this.getDamageSources().thrown(this, this.getOwner()), (float)i);
-        ((LivingEntity)entity).addStatusEffect(new StatusEffectInstance(ModEffects.SMELLY, 2400, 0), this);
+        ((LivingEntity)entity).addStatusEffect(new StatusEffectInstance(ModEffects.SMELLY.value(), 2400, 0), this);
     }
 
 

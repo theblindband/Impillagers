@@ -15,8 +15,8 @@ public abstract class SmellyEffectMixin {
 
 	@Inject(method = "prepareOffersFor", at = @At("TAIL"))
 	private void addHeroOfTheVillageDiscount(PlayerEntity player, CallbackInfo ci) {
-		if (player.hasStatusEffect(ModEffects.SMELLY)) {
-			StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY);
+		if (player.hasStatusEffect(ModEffects.SMELLY.value())) {
+			StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY.value());
 			assert statusEffectInstance != null;
 
 			for (TradeOffer tradeOffer : ((VillagerEntity) (Object) this).getOffers()) {

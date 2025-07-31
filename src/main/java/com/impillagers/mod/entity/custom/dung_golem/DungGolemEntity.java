@@ -57,8 +57,8 @@ public class DungGolemEntity extends IronGolemEntity implements RangedAttackMob 
         super.tick();
 
         if (!this.getWorld().isClient()) {
-            if (this.getStatusEffect(ModEffects.SMELLY) == null || Objects.requireNonNull(this.getStatusEffect(ModEffects.SMELLY)).getDuration() <= 1) {
-                this.addStatusEffect(new StatusEffectInstance(ModEffects.SMELLY, -1, 0, false, true));
+            if (this.getStatusEffect(ModEffects.SMELLY.value()) == null || Objects.requireNonNull(this.getStatusEffect(ModEffects.SMELLY.value())).getDuration() <= 1) {
+                this.addStatusEffect(new StatusEffectInstance(ModEffects.SMELLY.value(), -1, 0, false, true));
             }
         }
 
@@ -88,7 +88,7 @@ public class DungGolemEntity extends IronGolemEntity implements RangedAttackMob 
     //Shoot Dung
 
     @Override
-    public void shootAt(LivingEntity target, float pullProgress) {
+    public void attack(LivingEntity target, float pullProgress) {
         DungBallEntity dungBallEntity = new DungBallEntity(this, this.getWorld());
         double d = target.getEyeY() - 1.1F;
         double e = target.getX() - this.getX();
@@ -123,5 +123,6 @@ public class DungGolemEntity extends IronGolemEntity implements RangedAttackMob 
     protected SoundEvent getDeathSound() {
         return SoundEvents.BLOCK_MUD_BREAK;
     }
+
 
 }

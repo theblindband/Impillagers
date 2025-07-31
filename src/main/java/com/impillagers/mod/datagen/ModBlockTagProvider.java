@@ -9,7 +9,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
-
+//TODO: FIX
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -139,10 +139,10 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
         getOrCreateTagBuilder(BlockTags.BIG_DRIPLEAF_PLACEABLE)
                 .add(ModBlocks.FERTILE_FARMLAND);
 
-        getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
+        /*getOrCreateTagBuilder(BlockTags.SMALL_FLOWERS)
                 .add(ModBlocks.BELLADONNA);
         getOrCreateTagBuilder(BlockTags.FLOWER_POTS)
-                .add(ModBlocks.POTTED_BELLADONNA);
+                .add(ModBlocks.POTTED_BELLADONNA);*/
 
         getOrCreateTagBuilder(BlockTags.TALL_FLOWERS)
                 .add(ModBlocks.SWAMP_REED);

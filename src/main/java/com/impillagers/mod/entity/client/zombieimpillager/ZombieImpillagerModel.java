@@ -78,8 +78,8 @@ public class ZombieImpillagerModel<T extends ZombieImpillagerEntity> extends Sin
     }
 
     @Override
-    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, int color) {
-        zombie_impillager.render(matrices, vertexConsumer, light, overlay, color);
+    public void render(MatrixStack matrices, VertexConsumer vertexConsumer, int light, int overlay, float red, float green, float blue, float alpha) {
+        zombie_impillager.render(matrices, vertexConsumer, light, overlay, red, green, blue, alpha);
     }
 
     @Override

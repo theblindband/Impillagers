@@ -11,8 +11,7 @@ public class SmellyEffect extends StatusEffect {
     }
 
     @Override
-    public boolean applyUpdateEffect(LivingEntity entity, int amplifier) {
-        return false;
+    public void applyUpdateEffect(LivingEntity entity, int amplifier) {
     }
 
     @Override
