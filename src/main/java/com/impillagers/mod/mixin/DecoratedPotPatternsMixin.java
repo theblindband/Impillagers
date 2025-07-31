@@ -1,4 +1,6 @@
 package com.impillagers.mod.mixin;
+//TODO: FIX
+/*
 
 import com.impillagers.mod.item.sherd.ModSherds;
 import net.minecraft.block.DecoratedPotPattern;
@@ -26,3 +28,4 @@ public class DecoratedPotPatternsMixin {
         }
     }
 }
+*/

@@ -16,6 +16,7 @@ public class DungBallItem extends Item {
         super(settings);
 
     }
+
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         ItemStack itemStack = user.getStackInHand(hand);
@@ -37,7 +38,9 @@ public class DungBallItem extends Item {
         }
 
         user.incrementStat(Stats.USED.getOrCreateStat(this));
-        itemStack.decrementUnlessCreative(1, user);
+        if (!user.getAbilities().creativeMode) {
+            itemStack.decrement(1);
+        }
         return TypedActionResult.success(itemStack, world.isClient());
     }
 }

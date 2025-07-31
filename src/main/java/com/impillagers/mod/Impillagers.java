@@ -3,7 +3,7 @@ package com.impillagers.mod;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.block.entity.ModBlockEntities;
 import com.impillagers.mod.command.ModCommands;
-import com.impillagers.mod.component.ModDataComponentTypes;
+//import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.damage.ModDamageTypes;
 import com.impillagers.mod.data.ModDataPacks;
 import com.impillagers.mod.effect.ModEffects;
@@ -19,20 +19,20 @@ import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.util.EnchantRegistryHolder;
-import com.impillagers.mod.util.HudOverlayOpacityPayload;
+//import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.command.ModCommandListener;
 import com.impillagers.mod.villager.ModTrades;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
+//import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.item.HoeItem;
 import net.minecraft.potion.Potions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+//TODO: FIX
 public class Impillagers implements ModInitializer {
 	public static final String MOD_ID = "impillagers";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
@@ -58,7 +58,7 @@ public class Impillagers implements ModInitializer {
 		ModCommands.registerCommands();
 		ModDamageTypes.registerDamageTypes();
 		ModDataPacks.registerDataPacks();
-		ModSherds.registerSherds();
+		//ModSherds.registerSherds();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
@@ -89,10 +89,10 @@ public class Impillagers implements ModInitializer {
 		TillableBlockRegistry.register(ModBlocks.FERTILE_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(ModBlocks.FERTILE_FARMLAND.getDefaultState()));
 
 		//Potion Recipes
-		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.BELLADONNA.asItem(), Potions.STRONG_POISON));
+		//FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.BELLADONNA.asItem(), Potions.STRONG_POISON));
 
 		//Packet Payloads
-		PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);
+		//PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);
 
 		ServerLifecycleEvents.SERVER_STARTING.register(server -> registerAttributes());
 		ServerLifecycleEvents.SERVER_STARTED.register(EnchantRegistryHolder::init);

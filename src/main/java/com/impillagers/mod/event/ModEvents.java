@@ -3,7 +3,7 @@ package com.impillagers.mod.event;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.mixin.MobEntityAccessor;
 import com.impillagers.mod.predicate.SmellyPredicate;
-import com.impillagers.mod.util.HudOverlayOpacityPayload;
+//import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.util.ModTags;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;
@@ -16,7 +16,7 @@ import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.entity.passive.WanderingTraderEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
-
+//TODO: FIX
 public class ModEvents {
 
     public static void registerModEvents() {
@@ -41,13 +41,13 @@ public class ModEvents {
         ServerPlayConnectionEvents.JOIN.register((handler, sender, server) -> {
             ServerPlayerEntity player = handler.getPlayer();
             if (!player.getEntityWorld().isClient()) {
-                ServerPlayNetworking.send(player, new HudOverlayOpacityPayload(0));
+                //ServerPlayNetworking.send(player, new HudOverlayOpacityPayload(0));
             }
         });
 
         ServerPlayerEvents.AFTER_RESPAWN.register((oldPlayer, newPlayer, alive) -> {
             if (!newPlayer.getEntityWorld().isClient()) {
-                ServerPlayNetworking.send(newPlayer, new HudOverlayOpacityPayload(0));
+                //ServerPlayNetworking.send(newPlayer, new HudOverlayOpacityPayload(0));
             }
         });
     }

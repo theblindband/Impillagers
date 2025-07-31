@@ -9,7 +9,7 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.BedBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-import net.minecraft.component.EnchantmentEffectComponentTypes;
+//import net.minecraft.component.EnchantmentEffectComponentTypes;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -58,7 +58,10 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
 
         Set<String> professionKeys = ImpillagerProfessionHandler.getProfessionKeys();
         List<VillagerProfession> validProfessions = professionKeys.stream()
-                .map(key -> Registries.VILLAGER_PROFESSION.get(Identifier.of(key)))
+                .map(key -> {
+                    String[] parts = key.split(":", 2);
+                    return Registries.VILLAGER_PROFESSION.get(Identifier.of(parts[0], parts[1]));
+                })
                 .toList();
 
         if (!validProfessions.isEmpty()) {
@@ -73,9 +76,9 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
     }
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-        super.initDataTracker(builder);
-        builder.add(TEXTURE_KEY, "");
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(TEXTURE_KEY, "");
     }
 
     @Override
@@ -139,7 +142,7 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
             int i = this.getConversionRate();
             this.conversionTimer -= i;
             if (this.conversionTimer <= 0) {
-                this.finishConversion((ServerWorld)this.getWorld());
+                //this.finishConversion((ServerWorld)this.getWorld());
             }
         }
 
@@ -160,8 +163,8 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
         }
     }
 
-
-    private void finishConversion(ServerWorld world) {
+//TODO: FIX
+    /*private void finishConversion(ServerWorld world) {
         ImpillagerEntity villagerEntity = this.convertTo(ModEntities.IMPILLAGER, false);
         if (villagerEntity != null) {
             for (EquipmentSlot equipmentSlot : this.dropEquipment(
@@ -201,7 +204,7 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
                 world.syncWorldEvent(null, WorldEvents.ZOMBIE_VILLAGER_CURED, this.getBlockPos(), 0);
             }
         }
-    }
+    }*/
 
 
     private int getConversionRate() {

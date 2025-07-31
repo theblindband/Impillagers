@@ -54,9 +54,8 @@ public class CreeperOilItem extends Item {
         }
         return stack.isEmpty() ? ItemStack.EMPTY : stack;
     }
-
     @Override
-    public int getMaxUseTime(ItemStack stack, LivingEntity user) {
+    public int getMaxUseTime(ItemStack stack) {
         return 40;
     }
 

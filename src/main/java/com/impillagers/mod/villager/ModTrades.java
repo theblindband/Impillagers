@@ -1,26 +1,20 @@
 package com.impillagers.mod.villager;
 
-import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.item.ModItems;
-import com.impillagers.mod.util.EnchantRegistryHolder;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.block.Blocks;
-import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.item.*;
-import net.minecraft.potion.Potions;
 import net.minecraft.registry.Registries;
+import net.minecraft.registry.RegistryKey;
+import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
 import net.minecraft.village.TradeOffer;
-import net.minecraft.village.TradedItem;
 import net.minecraft.village.VillagerProfession;
 
-import java.util.Optional;
 import java.util.function.Supplier;
-import java.util.random.RandomGenerator;
-
+//TODO:FIX
 public class ModTrades {
 
     public static void registerModTrades() {
@@ -98,17 +92,17 @@ public class ModTrades {
                 new TradeData(ModItems.GOLD_COIN, 36, Items.MUSIC_DISC_OTHERSIDE, 1, 3, 15, 0.02f),
                 new TradeData(ModItems.GOLD_COIN, 4, Items.DISC_FRAGMENT_5, 1, 18, 5, 0.02f),
                 new TradeData(ModItems.GOLD_COIN, 36, Items.MUSIC_DISC_PIGSTEP, 1, 3, 20, 0.02f),
-                new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_RELIC, 1, 3, 15, 0.02f),
-                new TradeData(ModItems.GOLD_COIN, 36, Items.MUSIC_DISC_CREATOR, 1, 3, 15, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_RELIC, 1, 3, 15, 0.02f)
+                /*new TradeData(ModItems.GOLD_COIN, 36, Items.MUSIC_DISC_CREATOR, 1, 3, 15, 0.02f),
                 new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_CREATOR_MUSIC_BOX, 1, 16, 20, 0.02f),
-                new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_PRECIPICE, 1, 16, 20, 0.02f)
+                new TradeData(ModItems.GOLD_COIN, 28, Items.MUSIC_DISC_PRECIPICE, 1, 16, 20, 0.02f)*/
         );
         // Musician - Level 5: Goat Horns
         registerTrades(ModProfessions.MUSICIAN, 5,
-                new TradeData(ModItems.GOLD_COIN,15,GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(Identifier.of("minecraft","admire_goat_horn")).orElseThrow()),1,3,0.02f),
-                new TradeData(ModItems.GOLD_COIN,15,GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(Identifier.of("minecraft","call_goat_horn")).orElseThrow()),1,3,0.02f),
-                new TradeData(ModItems.GOLD_COIN,15,GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(Identifier.of("minecraft","yearn_goat_horn")).orElseThrow()),1,3,0.02f),
-                new TradeData(ModItems.GOLD_COIN,15,GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(Identifier.of("minecraft","dream_goat_horn")).orElseThrow()),1,3,0.02f)
+                new TradeData(ModItems.GOLD_COIN, 15, GoatHornItem.getStackForInstrument(Items.GOAT_HORN, Registries.INSTRUMENT.getEntry(RegistryKey.of(RegistryKeys.INSTRUMENT, Identifier.of("minecraft", "admire_goat_horn"))).orElseThrow()), 1, 3, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 15, GoatHornItem.getStackForInstrument(Items.GOAT_HORN, Registries.INSTRUMENT.getEntry(RegistryKey.of(RegistryKeys.INSTRUMENT, Identifier.of("minecraft", "call_goat_horn"))).orElseThrow()), 1, 3, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 15, GoatHornItem.getStackForInstrument(Items.GOAT_HORN, Registries.INSTRUMENT.getEntry(RegistryKey.of(RegistryKeys.INSTRUMENT, Identifier.of("minecraft", "yearn_goat_horn"))).orElseThrow()), 1, 3, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 15, GoatHornItem.getStackForInstrument(Items.GOAT_HORN,Registries.INSTRUMENT.getEntry(RegistryKey.of(RegistryKeys.INSTRUMENT, Identifier.of("minecraft","dream_goat_horn"))).orElseThrow()),1,3,0.02f)
         );
 
         /* -----DUNG COLLECTOR----- */
@@ -168,10 +162,10 @@ public class ModTrades {
                 new TradeData(ModItems.GOLD_COIN, 10, ModItems.CREEPER_OIL, 1, 3, 20, 0.02f)
         );
         // Explosives Expert - Level 4: Enchantments
-        registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 4,
+        /*registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 4,
                 new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> book.addEnchantment(EnchantRegistryHolder.getEntry(Identifier.of(Impillagers.MOD_ID, "distribution")), RandomGenerator.getDefault().nextInt(3) + 1)), 1, 20, 0.02f),
                 new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> book.addEnchantment(EnchantRegistryHolder.getEntry(Identifier.of(Impillagers.MOD_ID, "fuse")), 1)), 1, 20, 0.02f)
-        );
+        );*/
         // Explosives Expert - Level 5: End Crystal
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 5,
                 new TradeData(ModItems.GOLD_COIN, 36, Items.END_CRYSTAL, 1, 4, 30, 0.02f)
@@ -182,8 +176,8 @@ public class ModTrades {
         registerTrades(ModProfessions.DRUID, 1,
                 new TradeData(Items.WHEAT_SEEDS, 15, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
                 new TradeData(Items.WHEAT_SEEDS, 15, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
-                new TradeData(Items.SHORT_GRASS, 12, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
-                new TradeData(Items.SHORT_GRASS, 12, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.GRASS, 12, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
+                new TradeData(Items.GRASS, 12, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f),
                 new TradeData(Items.TALL_GRASS, 8, ModItems.GOLD_COIN, 1, 16, 2, 0.02f),
                 new TradeData(Items.TALL_GRASS, 8, ModItems.FAKE_GOLD_COIN, 1, 16, 2, 0.02f)
         );
@@ -229,7 +223,7 @@ public class ModTrades {
                 new TradeData(Items.PHANTOM_MEMBRANE, 8, ModItems.GOLD_COIN, 1, 16, 4, 0.02f),
                 new TradeData(Items.PHANTOM_MEMBRANE, 8, ModItems.FAKE_GOLD_COIN, 1, 16, 4, 0.02f)
         );
-        // Alchemist - Level 2: Low Tier Potions
+       /* // Alchemist - Level 2: Low Tier Potions
         registerTrades(ModProfessions.ALCHEMIST, 2,
                 new TradeData(ModItems.GOLD_COIN, 18, PotionContentsComponent.createStack(Items.POTION, Potions.STRONG_HEALING).getItem(), 1, 5, 8, 0.02f),
                 new TradeData(ModItems.GOLD_COIN, 18, PotionContentsComponent.createStack(Items.SPLASH_POTION, Potions.STRONG_HARMING).getItem(), 1, 5, 8, 0.02f),
@@ -261,7 +255,7 @@ public class ModTrades {
         // Alchemist - Level 5: Combo Potions
         registerTrades(ModProfessions.ALCHEMIST, 5,
                 new TradeData(ModItems.GOLD_COIN, 36, PotionContentsComponent.createStack(Items.POTION, Potions.LONG_TURTLE_MASTER).getItem(), 1, 3, 30, 0.02f)
-        );
+        );*/
 
         /* -----OCCULTIST----- */
         //Theme trades around warping items into something else?
@@ -288,9 +282,9 @@ public class ModTrades {
             for (TradeData t : trades) {
                 factories.add((entity, random) -> {
 
-                    TradedItem first  = new TradedItem(t.input1(), t.count1());
+                    ItemStack first = new ItemStack(t.input1(), t.count1());
 
-                    Optional<TradedItem> second = (t.count2() > 0 && t.input2() != Items.AIR) ? Optional.of(new TradedItem(t.input2(), t.count2())) : Optional.empty();
+                    ItemStack second = (t.count2() > 0 && t.input2() != Items.AIR) ? new ItemStack(t.input2(), t.count2()) : ItemStack.EMPTY;
 
                     ItemStack result = t.outputStackSupplier().get();
 

@@ -1,4 +1,6 @@
 package com.impillagers.mod.component;
+//TODO: FIX
+/*
 
 import com.impillagers.mod.Impillagers;
 import net.minecraft.component.ComponentType;
@@ -18,3 +20,4 @@ public class ModDataComponentTypes {
         //Impillagers.LOGGER.info("Registering Data Component Types for " + Impillagers.MOD_ID);
     }
 }
+*/

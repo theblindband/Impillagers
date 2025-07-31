@@ -63,7 +63,10 @@ public class ModBoatItem extends Item {
         if (!world.isClient) {
             world.spawnEntity(boat);
             world.emitGameEvent(user, GameEvent.ENTITY_PLACE, hit.getPos());
-            stack.decrementUnlessCreative(1, user);
+            user.incrementStat(Stats.USED.getOrCreateStat(this));
+            if (!user.getAbilities().creativeMode) {
+                stack.decrement(1);
+            }
         }
 
         user.incrementStat(Stats.USED.getOrCreateStat(this));

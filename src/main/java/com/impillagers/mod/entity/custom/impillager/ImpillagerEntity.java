@@ -59,9 +59,9 @@ public class ImpillagerEntity extends VillagerEntity {
     }
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-        super.initDataTracker(builder);
-        builder.add(TEXTURE_KEY, "");
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(TEXTURE_KEY, "");
     }
 
     @Override
@@ -286,7 +286,7 @@ public class ImpillagerEntity extends VillagerEntity {
     }
     @Override
     public void playCelebrateSound() {
-        this.playSound(ModSoundEvents.IMPILLAGER_CELEBRATE);
+        this.playSound(ModSoundEvents.IMPILLAGER_CELEBRATE, 1f, 1f);
     }
 
 
@@ -300,8 +300,8 @@ public class ImpillagerEntity extends VillagerEntity {
     //-------------------------------------Traits-------------------------------------
 
     @Override
-    public boolean canBeLeashed() {
-        return true;
+    public boolean canBeLeashedBy(PlayerEntity player) {
+        return super.canBeLeashedBy(player);
     }
 
     @Override
@@ -310,7 +310,7 @@ public class ImpillagerEntity extends VillagerEntity {
     }
 
     @Override
-    protected int getXpToDrop() {
+    public int getXpToDrop() {
         return this.experiencePoints;
     }
 
@@ -347,7 +347,7 @@ public class ImpillagerEntity extends VillagerEntity {
     private void sayNo() {
         this.setHeadRollingTimeLeft(20);
         if (!this.getWorld().isClient()) {
-            this.playSound(ModSoundEvents.IMPILLAGER_NO);
+            this.playSound(ModSoundEvents.IMPILLAGER_NO, 1f, 1f);
         }
     }
 
@@ -364,8 +364,8 @@ public class ImpillagerEntity extends VillagerEntity {
                 tradeOffer.increaseSpecialPrice(-MathHelper.floor((float) i * tradeOffer.getPriceMultiplier()));
             }
         }
-        if (player.hasStatusEffect(ModEffects.SMELLY)) {
-            StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY);
+        if (player.hasStatusEffect(ModEffects.SMELLY.value())) {
+            StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY.value());
             assert statusEffectInstance != null;
 
             for (TradeOffer tradeOffer : this.getOffers()) {
@@ -375,7 +375,7 @@ public class ImpillagerEntity extends VillagerEntity {
             }
         }
         if (player.hasStatusEffect(StatusEffects.HERO_OF_THE_VILLAGE)) {
-            StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY);
+            StatusEffectInstance statusEffectInstance = player.getStatusEffect(ModEffects.SMELLY.value());
             assert statusEffectInstance != null;
 
             for (TradeOffer tradeOffer : this.getOffers()) {
@@ -407,7 +407,7 @@ public class ImpillagerEntity extends VillagerEntity {
             return false;
         } else {
             this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_ATTACK_SOUND);
-            this.playSound(getMeleeAttackSound());
+            this.playSound(getMeleeAttackSound(), 1f, 1f);
             return Impillager.tryAttack(this, (LivingEntity)target);
         }
     }

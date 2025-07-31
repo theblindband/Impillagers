@@ -2,7 +2,6 @@ package com.impillagers.mod.block.custom;
 
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.particle.ModParticleTypes;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -14,8 +13,9 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.IntProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
-import net.minecraft.util.ItemActionResult;
+//import net.minecraft.util.ItemActionResult;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -27,7 +27,6 @@ import net.minecraft.world.World;
 public class FireflyBushBlock extends PlantBlock {
     public static final BooleanProperty LIT = Properties.LIT;
     public static final IntProperty COOLDOWN = IntProperty.of("cooldown", 0, 10);
-    public static final MapCodec<DeadBushBlock> CODEC = createCodec(DeadBushBlock::new);
     protected static final VoxelShape SHAPE = Block.createCuboidShape(2.0, 0.0, 2.0, 14.0, 13.0, 14.0);
 
     public FireflyBushBlock(AbstractBlock.Settings settings) {
@@ -36,17 +35,12 @@ public class FireflyBushBlock extends PlantBlock {
     }
 
     @Override
-    public MapCodec<DeadBushBlock> getCodec() {
-        return CODEC;
-    }
-
-    @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(LIT, COOLDOWN);
     }
 
     @Override
-    protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
@@ -142,7 +136,7 @@ public class FireflyBushBlock extends PlantBlock {
     }
 
     @Override
-    protected ItemActionResult onUseWithItem(ItemStack stack, BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient()) {
             if (state.get(LIT)) {
                 world.setBlockState(pos, state.with(LIT, false), Block.NOTIFY_ALL);
@@ -160,7 +154,7 @@ public class FireflyBushBlock extends PlantBlock {
                     BlockState newState = state.with(LIT, false).with(COOLDOWN, 10);
                     world.setBlockState(pos, newState, Block.NOTIFY_ALL);
                     scheduleCooldownTick(world, pos);
-                    return ItemActionResult.CONSUME;
+                    return ActionResult.CONSUME;
                 } else {
                     world.playSound(null,
                             pos.getX(), pos.getY(), pos.getZ(),
@@ -168,10 +162,10 @@ public class FireflyBushBlock extends PlantBlock {
                             SoundCategory.NEUTRAL,
                             0.75F,
                             0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
-                    return ItemActionResult.SUCCESS;
+                    return ActionResult.SUCCESS;
                 }
             }
         }
-        return ItemActionResult.SUCCESS;
+        return ActionResult.SUCCESS;
     }
 }

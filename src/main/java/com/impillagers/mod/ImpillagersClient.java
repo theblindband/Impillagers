@@ -18,7 +18,7 @@ import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.particle.custom.FireflyParticle;
 import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.screen.custom.SafeScreen;
-import com.impillagers.mod.util.HudOverlayOpacityPayload;
+//import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
@@ -31,7 +31,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
-
+//TODO: FIX
 public class ImpillagersClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
@@ -43,8 +43,8 @@ public class ImpillagersClient implements ClientModInitializer {
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_HEART_LEAVES, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_HEART_SAPLING, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_PURPLE_HEART_SAPLING, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BELLADONNA, RenderLayer.getCutout());
-        BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BELLADONNA, RenderLayer.getCutout());
+        //BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.BELLADONNA, RenderLayer.getCutout());
+        //BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.POTTED_BELLADONNA, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FIREFLY_BUSH, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.SWAMP_REED, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.FIREFLY_BOTTLE, RenderLayer.getCutout());
@@ -63,7 +63,7 @@ public class ImpillagersClient implements ClientModInitializer {
 
         ParticleFactoryRegistry.getInstance().register(ModParticleTypes.FIREFLY,((spriteProvider) -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> new FireflyParticle(world, x, y, z, spriteProvider)));
 
-        ClientPlayNetworking.registerGlobalReceiver(HudOverlayOpacityPayload.ID, (payload, context) -> context.client().execute(() -> ModHud.renderCallOfTheImpsOverlay (payload.opacity())));
+        //ClientPlayNetworking.registerGlobalReceiver(HudOverlayOpacityPayload.ID, (payload, context) -> context.client().execute(() -> ModHud.renderCallOfTheImpsOverlay (payload.opacity())));
 
         ClientTickEvents.END_CLIENT_TICK.register(client -> {ModEffectClient.updateSoundEffects();});
 

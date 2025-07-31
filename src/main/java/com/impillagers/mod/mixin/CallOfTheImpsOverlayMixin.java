@@ -5,7 +5,6 @@ import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.util.OpacityAccessor;
 import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.hud.InGameHud;
-import net.minecraft.client.render.RenderTickCounter;
 import net.minecraft.util.Identifier;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
@@ -25,10 +24,12 @@ public abstract class CallOfTheImpsOverlayMixin implements OpacityAccessor {
 	private static float overlayOpacity = 0.0F;
 
 	@Override
-	public void impillagers$setOverlayOpacity(float opacity) {overlayOpacity = opacity;}
+	public void impillagers$setOverlayOpacity(float opacity) {
+		overlayOpacity = opacity;
+	}
 
-	@Inject(method = "renderMiscOverlays", at = @At("HEAD"))
-	private void injectCustomOverlay(DrawContext context, RenderTickCounter tickCounter, CallbackInfo info) {
+	@Inject(method = "render", at = @At("TAIL"))
+	private void injectCustomOverlay(DrawContext context, float tickDelta, CallbackInfo ci) {
 		float opacity = overlayOpacity;
 
 		if (opacity > 0.0F) {

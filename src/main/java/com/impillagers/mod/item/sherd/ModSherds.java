@@ -2,7 +2,7 @@ package com.impillagers.mod.item.sherd;
 
 import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.item.ModItems;
-import net.minecraft.block.DecoratedPotPattern;
+//import net.minecraft.block.DecoratedPotPattern;
 import net.minecraft.item.Item;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
@@ -11,9 +11,9 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
+//TODO: FIX
 public final class ModSherds {
-    private static final List<Sherd> ALL_SHERDS = new ArrayList<>();
+    /*private static final List<Sherd> ALL_SHERDS = new ArrayList<>();
     private static final Map<Item, RegistryKey<DecoratedPotPattern>> SHERD_TO_PATTERN = new HashMap<>();
 
     public static final Sherd IMP_SHERD   = addSherd(id("imp_pottery_pattern"),   ModItems.IMP_POTTERY_SHERD);
@@ -42,5 +42,5 @@ public final class ModSherds {
 
     private static Identifier id(String path) {
         return Identifier.of(Impillagers.MOD_ID, path);
-    }
+    }*/
 }

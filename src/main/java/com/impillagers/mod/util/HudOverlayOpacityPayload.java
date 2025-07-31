@@ -1,6 +1,6 @@
 package com.impillagers.mod.util;
-
-import net.minecraft.network.RegistryByteBuf;
+//TODO: FIX
+/*mport net.minecraft.network.RegistryByteBuf;
 import net.minecraft.network.codec.PacketCodec;
 import net.minecraft.network.codec.PacketCodecs;
 import net.minecraft.network.packet.CustomPayload;
@@ -14,3 +14,4 @@ public record HudOverlayOpacityPayload(float opacity) implements CustomPayload {
         return ID;
     }
 }
+*/

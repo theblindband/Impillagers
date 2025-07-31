@@ -7,7 +7,7 @@ import com.impillagers.mod.mixin.ArrowEntityAccessor;
 import com.impillagers.mod.mixin.PersistentProjectileEntityAccessor;
 import it.unimi.dsi.fastutil.objects.Object2IntMap;
 import net.minecraft.block.Blocks;
-import net.minecraft.component.type.PotionContentsComponent;
+// net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
@@ -27,10 +27,14 @@ import net.minecraft.world.World;
 
 import java.util.Objects;
 import java.util.Set;
-
+//TODO: FIX
 public class DistributionCommand implements ModCommandListener.IEffectHandler {
-
     @Override
+    public void handleEffect(ServerCommandSource source) {
+
+    }
+
+    /*@Override
     public void handleEffect(ServerCommandSource source) {
 
         Entity potentialProjectile = source.getEntity();
@@ -222,5 +226,5 @@ public class DistributionCommand implements ModCommandListener.IEffectHandler {
 
     private BlockPos calculateBlockPos(Vec3d impactLocation) {
         return new BlockPos((int) Math.round(impactLocation.x), (int) Math.round(impactLocation.y), (int) Math.round(impactLocation.z));
-    }
+    }*/
 }

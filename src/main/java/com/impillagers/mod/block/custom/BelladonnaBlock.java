@@ -1,5 +1,7 @@
 package com.impillagers.mod.block.custom;
+//TODO: FIX
 
+/*
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.block.*;
@@ -58,4 +60,5 @@ public class BelladonnaBlock extends FlowerBlock {
         }
     }
 }
+*/
 

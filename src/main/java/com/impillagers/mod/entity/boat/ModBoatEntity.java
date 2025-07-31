@@ -10,7 +10,7 @@ import net.minecraft.item.Item;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.world.World;
 
-public class ModBoatEntity extends BoatEntity implements IModBoat{
+public class ModBoatEntity extends BoatEntity implements IModBoat {
 
     private static final TrackedData<Integer> MOD_BOAT_TYPE =
             DataTracker.registerData(ModBoatEntity.class, TrackedDataHandlerRegistry.INTEGER);
@@ -20,9 +20,9 @@ public class ModBoatEntity extends BoatEntity implements IModBoat{
     }
 
     @Override
-    protected void initDataTracker(DataTracker.Builder builder) {
-        super.initDataTracker(builder);
-        builder.add(MOD_BOAT_TYPE, 0);
+    protected void initDataTracker() {
+        super.initDataTracker();
+        this.dataTracker.startTracking(MOD_BOAT_TYPE, 0);
     }
 
     @Override
@@ -36,6 +36,7 @@ public class ModBoatEntity extends BoatEntity implements IModBoat{
         super.readCustomDataFromNbt(nbt);
         this.setModBoatType(ModBoatType.byId(nbt.getInt("ModBoatType")).ordinal());
     }
+
     @Override
     public void setModBoatType(int id) {
         this.dataTracker.set(MOD_BOAT_TYPE, id);

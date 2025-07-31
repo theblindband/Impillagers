@@ -10,10 +10,10 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.network.listener.ClientPlayPacketListener;
 import net.minecraft.network.packet.Packet;
 import net.minecraft.network.packet.s2c.play.BlockEntityUpdateS2CPacket;
-import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
@@ -25,7 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.UUID;
 import java.util.stream.IntStream;
 
-public class SafeBlockEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory<BlockPos> {
+public class SafeBlockEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory {
 
     private UUID ownerUuid;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
@@ -73,11 +73,6 @@ public class SafeBlockEntity extends BlockEntity implements ImplementedInventory
     }
 
     @Override
-    public BlockPos getScreenOpeningData(ServerPlayerEntity serverPlayerEntity) {
-        return this.pos;
-    }
-
-    @Override
     public Text getDisplayName() {
         return Text.literal("Safe");
     }
@@ -88,9 +83,9 @@ public class SafeBlockEntity extends BlockEntity implements ImplementedInventory
     }
 
     @Override
-    protected void writeNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.writeNbt(nbt, registryLookup);
-        Inventories.writeNbt(nbt, this.inventory, registryLookup);
+    protected void writeNbt(NbtCompound nbt) {
+        super.writeNbt(nbt);
+        Inventories.writeNbt(nbt, this.inventory);
 
         if (ownerUuid != null) {
             nbt.putUuid("Owner", ownerUuid);
@@ -98,9 +93,9 @@ public class SafeBlockEntity extends BlockEntity implements ImplementedInventory
     }
 
     @Override
-    protected void readNbt(NbtCompound nbt, RegistryWrapper.WrapperLookup registryLookup) {
-        super.readNbt(nbt, registryLookup);
-        Inventories.readNbt(nbt, this.inventory, registryLookup);
+    public void readNbt(NbtCompound nbt) {
+        super.readNbt(nbt);
+        Inventories.readNbt(nbt, this.inventory);
 
         if (nbt.containsUuid("Owner")) {
             this.ownerUuid = nbt.getUuid("Owner");
@@ -113,7 +108,12 @@ public class SafeBlockEntity extends BlockEntity implements ImplementedInventory
     }
 
     @Override
-    public NbtCompound toInitialChunkDataNbt(RegistryWrapper.WrapperLookup registryLookup) {
-        return createNbt(registryLookup);
+    public NbtCompound toInitialChunkDataNbt() {
+        return createNbt();
+    }
+
+    @Override
+    public void writeScreenOpeningData(ServerPlayerEntity serverPlayerEntity, PacketByteBuf packetByteBuf) {
+        packetByteBuf.writeBlockPos(this.pos);
     }
 }
