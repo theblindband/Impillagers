@@ -7,7 +7,7 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-//TODO: FIX
+
 @Environment(EnvType.CLIENT)
 public class ZombieImpillagerRenderer extends MobEntityRenderer<ZombieImpillagerEntity, ZombieImpillagerModel<ZombieImpillagerEntity>> {
 
@@ -26,10 +26,4 @@ public class ZombieImpillagerRenderer extends MobEntityRenderer<ZombieImpillager
         float g = 0.9375F * zombieImpillagerEntity.getScaleFactor();
         matrixStack.scale(g, g, g);
     }
-
-    /*@Override
-    protected float getShadowRadius(ZombieImpillagerEntity zombieImpillagerEntity) {
-        float f = super.getShadowRadius(zombieImpillagerEntity);
-        return zombieImpillagerEntity.isBaby() ? f * 0.5F : f;
-    }*/
 }
