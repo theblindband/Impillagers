@@ -18,7 +18,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.RotationAxis;
 import org.joml.Quaternionf;
-//TODO: model.render might not use correct values
+
 public class ModBoatRenderer<E extends BoatEntity & IModBoat> extends EntityRenderer<E> {
 
     private final CompositeEntityModel<BoatEntity> model;
