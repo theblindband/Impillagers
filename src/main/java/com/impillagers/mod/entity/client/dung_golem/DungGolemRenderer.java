@@ -7,10 +7,10 @@ import net.minecraft.client.render.entity.EntityRendererFactory;
 import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-//TODO: FIX
+
 public class DungGolemRenderer extends MobEntityRenderer<DungGolemEntity, DungGolemModel<DungGolemEntity>> {
     public DungGolemRenderer(EntityRendererFactory.Context context) {
-        super(context, new DungGolemModel<>(context.getPart(DungGolemModel.DUNG_GOLEM)), 0.75f);
+        super(context, new DungGolemModel<>(context.getPart(DungGolemModel.DUNG_GOLEM)), 0.4f);
     }
 
     @Override
@@ -19,8 +19,7 @@ public class DungGolemRenderer extends MobEntityRenderer<DungGolemEntity, DungGo
     }
 
     @Override
-    public void render(DungGolemEntity livingEntity, float f, float g, MatrixStack matrixStack,
-                       VertexConsumerProvider vertexConsumerProvider, int i) {
+    public void render(DungGolemEntity livingEntity, float f, float g, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int i) {
         if(livingEntity.isBaby()) {
             matrixStack.scale(0.5f, 0.5f, 0.5f);
         } else {
@@ -29,9 +28,4 @@ public class DungGolemRenderer extends MobEntityRenderer<DungGolemEntity, DungGo
 
         super.render(livingEntity, f, g, matrixStack, vertexConsumerProvider, i);
     }
-
-    /*@Override
-    protected float getShadowRadius(DungGolemEntity dungGolemEntity) {
-        return dungGolemEntity.isBaby() ? 0.4F * 0.5F : 0.4F;
-    }*/
 }
