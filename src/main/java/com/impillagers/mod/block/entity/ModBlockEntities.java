@@ -9,7 +9,7 @@ import net.minecraft.block.entity.BrushableBlockEntity;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
-//TODO: CHECK IF THESE WORK
+
 public class ModBlockEntities {
 
     public static final BlockEntityType<WasteBasketBlockEntity> WASTE_BASKET_BLOCK_ENTITY = registerBlockEntity("waste_basket_block_entity", WasteBasketBlockEntity::new, ModBlocks.WASTE_BASKET);
