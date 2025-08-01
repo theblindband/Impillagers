@@ -9,7 +9,6 @@ import net.minecraft.advancement.criterion.Criteria;
 import net.minecraft.block.BedBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
-//import net.minecraft.component.EnchantmentEffectComponentTypes;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.*;
 import net.minecraft.entity.attribute.DefaultAttributeContainer;
@@ -22,7 +21,7 @@ import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.inventory.StackReference;
+import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.registry.Registries;
@@ -142,7 +141,7 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
             int i = this.getConversionRate();
             this.conversionTimer -= i;
             if (this.conversionTimer <= 0) {
-                //this.finishConversion((ServerWorld)this.getWorld());
+                this.finishConversion((ServerWorld)this.getWorld());
             }
         }
 
@@ -163,15 +162,21 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
         }
     }
 
-//TODO: FIX
-    /*private void finishConversion(ServerWorld world) {
+    private void finishConversion(ServerWorld world) {
         ImpillagerEntity villagerEntity = this.convertTo(ModEntities.IMPILLAGER, false);
         if (villagerEntity != null) {
-            for (EquipmentSlot equipmentSlot : this.dropEquipment(
-                    stack -> !EnchantmentHelper.hasAnyEnchantmentsWith(stack, EnchantmentEffectComponentTypes.PREVENT_ARMOR_CHANGE)
-            )) {
-                StackReference stackReference = villagerEntity.getStackReference(equipmentSlot.getEntitySlotId() + 300);
-                stackReference.set(this.getEquippedStack(equipmentSlot));
+            for (EquipmentSlot equipmentSlot : EquipmentSlot.values()) {
+                ItemStack itemStack = this.getEquippedStack(equipmentSlot);
+                if (!itemStack.isEmpty()) {
+                    if (EnchantmentHelper.hasBindingCurse(itemStack)) {
+                        villagerEntity.getStackReference(equipmentSlot.getEntitySlotId() + 300).set(itemStack);
+                    } else {
+                        double d = this.getDropChance(equipmentSlot);
+                        if (d > (double) 1.0F) {
+                            this.dropStack(itemStack);
+                        }
+                    }
+                }
             }
 
             villagerEntity.setVillagerData(this.getVillagerData());
@@ -180,16 +185,15 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
             }
 
             if (this.offerData != null) {
-                villagerEntity.setOffers(this.offerData.copy());
+                villagerEntity.setOffers(new TradeOfferList(this.offerData.toNbt()));
             }
-
-            villagerEntity.setExperience(this.xp);
 
             if (villagerEntity instanceof ImpillagerEntity) {
                 villagerEntity.setTextureKey(this.dataTracker.get(ZombieImpillagerEntity.TEXTURE_KEY));
             }
 
-            villagerEntity.initialize(world, world.getLocalDifficulty(villagerEntity.getBlockPos()), SpawnReason.CONVERSION, null);
+            villagerEntity.setExperience(this.xp);
+            villagerEntity.initialize(world, world.getLocalDifficulty(villagerEntity.getBlockPos()), SpawnReason.CONVERSION, null, null);
             villagerEntity.reinitializeBrain(world);
             if (this.converter != null) {
                 PlayerEntity playerEntity = world.getPlayerByUuid(this.converter);
@@ -204,8 +208,7 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
                 world.syncWorldEvent(null, WorldEvents.ZOMBIE_VILLAGER_CURED, this.getBlockPos(), 0);
             }
         }
-    }*/
-
+    }
 
     private int getConversionRate() {
         int i = 1;
@@ -228,8 +231,6 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
                 }
             }
         }
-
         return i;
     }
-
 }
