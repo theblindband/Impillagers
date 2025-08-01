@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "purple_heart_button",
+  "ingredients": [
+    {
+      "item": "impillagers:purple_heart_planks"
+    }
+  ],
+  "result": {
+    "item": "impillagers:purple_heart_button"
+  }
+}

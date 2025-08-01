@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "undyeing",
+  "key": {
+    "#": {
+      "tag": "impillagers:concrete_powder"
+    },
+    "T": {
+      "item": "impillagers:totem_of_undyeing"
+    }
+  },
+  "pattern": [
+    "###",
+    "#T#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "item": "minecraft:gravel"
+  },
+  "show_notification": true
+}

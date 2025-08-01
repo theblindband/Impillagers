@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:totem_of_undyeing_glass"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_totem_of_undyeing": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "impillagers:totem_of_undyeing"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_totem_of_undyeing",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:totem_of_undyeing_glass"
+    ]
+  },
+  "sends_telemetry_event": false
+}

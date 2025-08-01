@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "dung_bricks",
+  "key": {
+    "D": {
+      "item": "impillagers:packed_dung"
+    }
+  },
+  "pattern": [
+    "DD",
+    "DD"
+  ],
+  "result": {
+    "count": 4,
+    "item": "impillagers:dung_bricks"
+  },
+  "show_notification": true
+}

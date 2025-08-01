@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "dung_bricks",
+  "key": {
+    "D": {
+      "item": "impillagers:dung_bricks_slab"
+    }
+  },
+  "pattern": [
+    "D",
+    "D"
+  ],
+  "result": {
+    "item": "impillagers:chiseled_dung_bricks"
+  },
+  "show_notification": true
+}

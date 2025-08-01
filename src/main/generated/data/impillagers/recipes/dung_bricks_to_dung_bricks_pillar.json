@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "mud_bricks_pillar",
+  "key": {
+    "D": {
+      "item": "impillagers:dung_bricks"
+    }
+  },
+  "pattern": [
+    "D",
+    "D"
+  ],
+  "result": {
+    "item": "impillagers:dung_bricks_pillar"
+  },
+  "show_notification": true
+}

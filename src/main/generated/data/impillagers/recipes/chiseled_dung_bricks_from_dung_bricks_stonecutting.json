@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "count": 1,
+  "ingredient": {
+    "item": "impillagers:dung_bricks"
+  },
+  "result": "impillagers:chiseled_dung_bricks"
+}

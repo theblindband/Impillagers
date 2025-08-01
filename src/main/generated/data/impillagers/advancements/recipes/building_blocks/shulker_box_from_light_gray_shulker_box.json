@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "minecraft:shulker_box_from_light_gray_shulker_box"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "has_totem_of_undyeing": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "impillagers:totem_of_undyeing"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "has_totem_of_undyeing",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "minecraft:shulker_box_from_light_gray_shulker_box"
+    ]
+  },
+  "sends_telemetry_event": false
+}

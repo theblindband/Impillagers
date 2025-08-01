@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "impillagers:packed_mud_stairs",
+    "impillagers:packed_dung_stairs",
+    "impillagers:mossy_mud_bricks_stairs",
+    "impillagers:mossy_dung_bricks_stairs",
+    "impillagers:dung_bricks_stairs"
+  ]
+}

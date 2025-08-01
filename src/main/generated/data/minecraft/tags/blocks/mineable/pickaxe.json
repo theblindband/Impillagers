@@ -1,0 +1,31 @@
+{
+  "replace": false,
+  "values": [
+    "impillagers:packed_mud_wall",
+    "impillagers:packed_mud_slab",
+    "impillagers:packed_mud_stairs",
+    "impillagers:cracked_mud_bricks",
+    "impillagers:mossy_mud_bricks",
+    "impillagers:mossy_mud_bricks_wall",
+    "impillagers:mossy_mud_bricks_slab",
+    "impillagers:mossy_mud_bricks_stairs",
+    "impillagers:chiseled_mud_bricks",
+    "impillagers:mud_bricks_pillar",
+    "impillagers:packed_dung",
+    "impillagers:packed_dung_wall",
+    "impillagers:packed_dung_slab",
+    "impillagers:packed_dung_stairs",
+    "impillagers:dung_bricks",
+    "impillagers:dung_bricks_wall",
+    "impillagers:dung_bricks_slab",
+    "impillagers:dung_bricks_stairs",
+    "impillagers:mossy_dung_bricks",
+    "impillagers:mossy_dung_bricks_wall",
+    "impillagers:mossy_dung_bricks_slab",
+    "impillagers:mossy_dung_bricks_stairs",
+    "impillagers:cracked_dung_bricks",
+    "impillagers:chiseled_dung_bricks",
+    "impillagers:dung_bricks_pillar",
+    "impillagers:safe"
+  ]
+}
