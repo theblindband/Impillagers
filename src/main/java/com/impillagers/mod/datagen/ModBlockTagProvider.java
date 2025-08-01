@@ -9,7 +9,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
 import java.util.concurrent.CompletableFuture;
-//TODO: FIX
+
 public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
     public ModBlockTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> registriesFuture) {
         super(output, registriesFuture);
@@ -28,8 +28,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.PURPLE_HEART_PLANKS);
-
-
 
         //Stairs
 
