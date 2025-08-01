@@ -98,7 +98,7 @@ public class ModItemGroups {
                         entries.add(ModBlocks.WASTE_BASKET);
 
                         //Imp Trade Items
-                        //entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
+                        entries.add(ModItems.PAINTED_SMITHING_TEMPLATE);
                         entries.add(ModItems.SPIDER_PIEYE);
                         entries.add(ModItems.TOTEM_OF_UNDYEING);
                         entries.add(ModItems.CREEPER_OIL);

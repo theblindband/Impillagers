@@ -10,7 +10,7 @@ import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
-//TODO: FIX
+
 public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
     public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
         super(output, completableFuture);
@@ -22,8 +22,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(ModItems.IMP_POTTERY_SHERD)
                 .add(ModItems.COVER_POTTERY_SHERD);
 
-        /*getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
-                .add(ModItems.PAINTED_SMITHING_TEMPLATE);*/
+        getOrCreateTagBuilder(ItemTags.TRIM_TEMPLATES)
+                .add(ModItems.PAINTED_SMITHING_TEMPLATE);
 
         getOrCreateTagBuilder(ItemTags.LOGS_THAT_BURN)
                 .addTag(ModTags.Items.PURPLE_HEART_LOGS);

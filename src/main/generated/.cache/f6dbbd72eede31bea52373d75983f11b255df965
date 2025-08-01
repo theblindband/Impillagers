@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-01T08:07:00.068656133	Impillagers/Tags for minecraft:item
+// 1.20.1	2025-08-01T13:24:14.530261691	Impillagers/Tags for minecraft:item
 81c0b30a9e1b1d72562f7414732a8cabb26c6af9 data/minecraft/tags/items/tall_flowers.json
 255e19b6fd0fc3879904cb9dfff7ae76088bdffa data/minecraft/tags/items/leaves.json
 f41ec169e5a870835ec60ebcb5903fb9ab27881f data/minecraft/tags/items/saplings.json
@@ -16,10 +16,11 @@ a2227a316c13c82e86a385687a727f505cd8d77b data/minecraft/tags/items/logs_that_bur
 a9353b31a7b81f137cdd92467cdfaac4947c680f data/minecraft/tags/items/wooden_stairs.json
 d21029de002b15ad5b55eb0b4101043b0bffb993 data/impillagers/tags/items/frog_poisonous_food.json
 d4a4af290bd1dad5598af99df3a088353c79ee6a data/minecraft/tags/items/small_flowers.json
+aa7699ec6fe17c97ca347bfcde32eb99f742f39d data/minecraft/tags/items/trim_templates.json
 f57cc54f0fab37117fb2cf1701d1c2c1c16370f5 data/impillagers/tags/items/dyed_terracotta.json
 11834cdba501e09079bfeb3f2620c55c8d10b78c data/minecraft/tags/items/signs.json
-01cbbd71215c23f94f3223924a8c84fd1ca795ca data/minecraft/tags/items/wooden_buttons.json
 aac1eb1fe2521701e49e5bca7adb7ab84dca4b9e data/minecraft/tags/items/wooden_pressure_plates.json
+01cbbd71215c23f94f3223924a8c84fd1ca795ca data/minecraft/tags/items/wooden_buttons.json
 74bcdf3cc7f9f0130a3ba8648b5a6230a8727219 data/minecraft/tags/items/wooden_doors.json
 68fb0e0fe78a79f605ace4514f0ccc2a494536bf data/minecraft/tags/items/fence_gates.json
 8cd6d558eba95727cb11f0f3a1d6c1f1fe79a375 data/impillagers/tags/items/dyed_candle.json

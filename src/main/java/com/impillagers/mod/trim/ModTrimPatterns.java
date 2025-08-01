@@ -11,10 +11,10 @@ import net.minecraft.registry.RegistryKeys;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Util;
-//TODO: FIX
+
 public class ModTrimPatterns {
 
-    /*public static final RegistryKey<ArmorTrimPattern> PAINTED = RegistryKey.of(RegistryKeys.TRIM_PATTERN,
+    public static final RegistryKey<ArmorTrimPattern> PAINTED = RegistryKey.of(RegistryKeys.TRIM_PATTERN,
             Identifier.of(Impillagers.MOD_ID, "painted"));
 
     public static void bootstrap(Registerable<ArmorTrimPattern> context) {
@@ -23,8 +23,8 @@ public class ModTrimPatterns {
 
     private static void register(Registerable<ArmorTrimPattern> context, Item item, RegistryKey<ArmorTrimPattern> key) {
         ArmorTrimPattern trimPattern = new ArmorTrimPattern(key.getValue(), Registries.ITEM.getEntry(item),
-                Text.translatable(Util.createTranslationKey("trim_pattern", key.getValue())), false);
+                Text.translatable(Util.createTranslationKey("trim_pattern", key.getValue())));
 
         context.register(key, trimPattern);
-    }*/
+    }
 }

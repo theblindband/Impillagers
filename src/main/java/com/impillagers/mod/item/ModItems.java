@@ -34,7 +34,7 @@ public class ModItems {
     public static final Item GOLD_COIN = registerItem("gold_coin", new Item(new Item.Settings()));
     public static final Item FAKE_GOLD_COIN = registerItem("fake_gold_coin", new Item(new Item.Settings()));
     public static final Item FIREFLY_BOTTLE = registerItem("firefly_bottle", new BlockItem(ModBlocks.FIREFLY_BOTTLE, new Item.Settings().maxCount(16)));
-    //public static final Item PAINTED_SMITHING_TEMPLATE = registerItem("painted_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of(Impillagers.MOD_ID, "painted"), FeatureFlags.VANILLA));
+    public static final Item PAINTED_SMITHING_TEMPLATE = registerItem("painted_armor_trim_smithing_template", SmithingTemplateItem.of(Identifier.of(Impillagers.MOD_ID, "painted")));
     public static final Item DUNG_BALL = registerItem("dung_ball", new DungBallItem(new Item.Settings()));
     public static final Item SPIDER_PIEYE = registerItem("spider_pieye", new Item(new Item.Settings().food(ModFoodComponents.SPIDER_PIEYE)));
 

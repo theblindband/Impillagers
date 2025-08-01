@@ -89,7 +89,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModelGenerator.register(ModItems.IMP_POTTERY_SHERD, Models.GENERATED);
         itemModelGenerator.register(ModItems.COVER_POTTERY_SHERD, Models.GENERATED);
         //itemModelGenerator.register(ModItems.FROG_MASK, Models.GENERATED);
-        //itemModelGenerator.register(ModItems.PAINTED_SMITHING_TEMPLATE, Models.GENERATED);
+        itemModelGenerator.register(ModItems.PAINTED_SMITHING_TEMPLATE, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURPLE_HEART_SIGN, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURPLE_HEART_BOAT, Models.GENERATED);
         itemModelGenerator.register(ModItems.PURPLE_HEART_CHEST_BOAT, Models.GENERATED);
