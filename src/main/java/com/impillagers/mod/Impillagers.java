@@ -14,9 +14,7 @@ import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity
 import com.impillagers.mod.event.ModEvents;
 import com.impillagers.mod.item.ModItemGroups;
 import com.impillagers.mod.item.ModItems;
-import com.impillagers.mod.item.sherd.ModSherds;
 import com.impillagers.mod.particle.ModParticleTypes;
-import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.util.EnchantRegistryHolder;
 //import com.impillagers.mod.util.HudOverlayOpacityPayload;
@@ -30,6 +28,7 @@ import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRe
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.item.HoeItem;
 import net.minecraft.potion.Potions;
+import net.minecraft.recipe.BrewingRecipeRegistry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 //TODO: FIX
@@ -63,7 +62,7 @@ public class Impillagers implements ModInitializer {
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_LEAVES, 0.3f);
-		//CompostingChanceRegistry.INSTANCE.add(ModBlocks.BELLADONNA, 0.65f);
+		CompostingChanceRegistry.INSTANCE.add(ModBlocks.BELLADONNA, 0.65f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.FIREFLY_BUSH, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.DUNG_BLOCK, 1.0f);
 		CompostingChanceRegistry.INSTANCE.add(ModItems.DUNG_BALL, 0.5f);
@@ -82,14 +81,14 @@ public class Impillagers implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_FENCE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_STAIRS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_LEAVES, 30, 60);
-		//FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BELLADONNA, 60, 100);
+		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BELLADONNA, 60, 100);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.FIREFLY_BUSH, 60, 100);
 
 		//Tillable Blocks
 		TillableBlockRegistry.register(ModBlocks.FERTILE_DIRT, HoeItem::canTillFarmland, HoeItem.createTillAction(ModBlocks.FERTILE_FARMLAND.getDefaultState()));
 
 		//Potion Recipes
-		//FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.BELLADONNA.asItem(), Potions.STRONG_POISON));
+		BrewingRecipeRegistry.registerPotionRecipe(Potions.AWKWARD, ModBlocks.BELLADONNA.asItem(), Potions.STRONG_POISON);
 
 		//Packet Payloads
 		//PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);

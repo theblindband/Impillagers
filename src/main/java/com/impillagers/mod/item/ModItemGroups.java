@@ -38,7 +38,7 @@ public class ModItemGroups {
                         entries.add(ModItems.PURPLE_HEART_CHEST_BOAT);
 
                         //Natural Items
-                        //entries.add(ModBlocks.BELLADONNA);
+                        entries.add(ModBlocks.BELLADONNA);
                         entries.add(ModBlocks.SWAMP_REED);
 
                         entries.add(ModBlocks.FIREFLY_BUSH);

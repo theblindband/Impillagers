@@ -50,7 +50,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
 
         offer2x2CompactingRecipe(exporter, RecipeCategory.BUILDING_BLOCKS, ModBlocks.DUNG_BLOCK, ModItems.DUNG_BALL);
 
-        //offerShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.BELLADONNA, "", 1);
+        offerShapelessRecipe(exporter, Items.PURPLE_DYE, ModBlocks.BELLADONNA, "", 1);
 
         offerShapelessRecipe(exporter, Items.BROWN_DYE, ModBlocks.SWAMP_REED, "brown_dye", 2);
 

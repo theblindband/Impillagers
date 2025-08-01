@@ -8,6 +8,7 @@ import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
 //import net.minecraft.component.type.SuspiciousStewEffectsComponent;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -44,8 +45,8 @@ public class ModBlocks {
 
     //Natural Blocks
     public static final Block SINKING_MUD = registerBlock("sinking_mud", new SinkingMudBlock(AbstractBlock.Settings.create().mapColor(MapColor.BLACK).strength(0.25F).sounds(BlockSoundGroup.MUD).dynamicBounds().allowsSpawning(Blocks::never).solidBlock(Blocks::never).suffocates(Blocks::never).blockVision(Blocks::always)));
-    //public static final Block BELLADONNA = registerBlock("belladonna", new BelladonnaBlock(SuspiciousStewEffectsComponent.DEFAULT, AbstractBlock.Settings.copy(Blocks.POPPY)));
-    //public static final Block POTTED_BELLADONNA = registerBlockWithoutItem("potted_belladonna", new FlowerPotBlock(ModBlocks.BELLADONNA, AbstractBlock.Settings.copy(Blocks.POTTED_POPPY)));
+    public static final Block BELLADONNA = registerBlock("belladonna", new BelladonnaBlock(StatusEffects.POISON, 120, AbstractBlock.Settings.copy(Blocks.POPPY).offset(AbstractBlock.OffsetType.XZ)));
+    public static final Block POTTED_BELLADONNA = registerBlockWithoutItem("potted_belladonna", new FlowerPotBlock(ModBlocks.BELLADONNA, AbstractBlock.Settings.copy(Blocks.POTTED_POPPY)));
     public static final Block FIREFLY_BUSH = registerBlock("firefly_bush", new FireflyBushBlock(AbstractBlock.Settings.copy(Blocks.POPPY).luminance(createLightLevelFromLitBlockState(2)).ticksRandomly()));
     public static final Block SWAMP_REED = registerBlock("swamp_reed", new ReedBlock(AbstractBlock.Settings.copy(Blocks.ROSE_BUSH)));
 

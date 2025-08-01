@@ -65,8 +65,8 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
         getOrCreateTagBuilder(ItemTags.HANGING_SIGNS)
                 .add(ModItems.PURPLE_HEART_HANGING_SIGN);
 
-        /*getOrCreateTagBuilder(ItemTags.SMALL_FLOWERS)
-                .add(ModBlocks.BELLADONNA.asItem());*/
+        getOrCreateTagBuilder(ItemTags.SMALL_FLOWERS)
+                .add(ModBlocks.BELLADONNA.asItem());
 
         getOrCreateTagBuilder(ItemTags.TALL_FLOWERS)
                 .add(ModBlocks.SWAMP_REED.asItem());
