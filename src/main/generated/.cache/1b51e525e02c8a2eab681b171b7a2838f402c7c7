@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-01T13:24:14.539962411	Impillagers/Block Loot Tables
+// 1.20.1	2025-08-01T17:31:29.971206207	Impillagers/Block Loot Tables
 9a0a47442900d07037b8cfa7c47d443542e84830 data/impillagers/loot_tables/blocks/safe.json
 42cc079918e9ed51ab0228682c5a669864c43fae data/impillagers/loot_tables/blocks/packed_mud_slab.json
 e9ee4371c274195476df7e2e09396e8398668a24 data/impillagers/loot_tables/blocks/packed_dung_wall.json
@@ -20,8 +20,8 @@ d8a11fe4f334a67de9fe7843bf65e68feb94c877 data/impillagers/loot_tables/blocks/pur
 63dc3e687f0e506877d3039400af2275787e1f0d data/impillagers/loot_tables/blocks/packed_dung_stairs.json
 b51b8b2bb66eee96104d29136f811220e0e3f8fd data/impillagers/loot_tables/blocks/dung_bricks.json
 30938c2e29e93d658873343c7e557dd846086594 data/impillagers/loot_tables/blocks/mossy_dung_bricks_wall.json
-0f47c47ba84e4c7ac8821a91f45256572903c5cb data/impillagers/loot_tables/blocks/purple_heart_fence.json
 12eb617749873ae48097b9f92a832698d573355d data/impillagers/loot_tables/blocks/mossy_mud_bricks.json
+0f47c47ba84e4c7ac8821a91f45256572903c5cb data/impillagers/loot_tables/blocks/purple_heart_fence.json
 5a28bab0b0ccaa6b1bec6b1feee381d26badd875 data/impillagers/loot_tables/blocks/purple_heart_log.json
 6889061a5a99ff744ee7f2f96c18fd460065576b data/impillagers/loot_tables/blocks/purple_heart_planks.json
 07da99c126e3c53a6df9f13d274a415a3cb4a77b data/impillagers/loot_tables/blocks/packed_dung.json
@@ -40,6 +40,7 @@ c2d59840dcdd78352e02ee5459f35d9f92c26f5e data/impillagers/loot_tables/blocks/pur
 1f5593624bfa8433daf53d7f7a90a448bed0eba4 data/impillagers/loot_tables/blocks/mossy_dung_bricks_stairs.json
 61aede0ba4f09aa6276f76d192b1c862325adb7d data/impillagers/loot_tables/blocks/packed_mud_stairs.json
 fa208f3face02ed592f8f6de1b67d61278b58928 data/impillagers/loot_tables/blocks/dung_bricks_pillar.json
+997a546ba3668561b30d789466507ee09f4056cd data/impillagers/loot_tables/blocks/dung_block.json
 cb3b67d69b21d51ba0d43601703f5b090e4f6520 data/impillagers/loot_tables/blocks/purple_heart_door.json
 d8a11fe4f334a67de9fe7843bf65e68feb94c877 data/impillagers/loot_tables/blocks/purple_heart_wall_sign.json
 8932071bee5ad0574237870fc30629998f919ceb data/impillagers/loot_tables/blocks/fertile_farmland.json
