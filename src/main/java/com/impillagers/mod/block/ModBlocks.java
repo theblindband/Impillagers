@@ -7,7 +7,6 @@ import com.impillagers.mod.world.tree.ModSaplingGenerators;
 import net.minecraft.block.*;
 import net.minecraft.block.enums.Instrument;
 import net.minecraft.block.piston.PistonBehavior;
-//import net.minecraft.component.type.SuspiciousStewEffectsComponent;
 import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
@@ -18,7 +17,7 @@ import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Identifier;
 
 import static net.minecraft.block.Blocks.*;
-//TODO: FIX
+
 public class ModBlocks {
 
     //Purple Heart Blocks
