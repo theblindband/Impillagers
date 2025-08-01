@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
-//TODO: DEPRECATED METHOD USED
+
 public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterloggable {
     private static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
@@ -33,6 +33,7 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
         );
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity) {
@@ -68,6 +69,7 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
