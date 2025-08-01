@@ -59,7 +59,7 @@ public class WasteBasketBlock extends BlockWithEntity {
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(FACING)) {
-            case Direction.EAST, Direction.WEST -> EW_SHAPE;
+            case EAST, WEST -> EW_SHAPE;
             default -> NS_SHAPE;
         };
     }
