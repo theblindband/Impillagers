@@ -11,7 +11,7 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.registry.Registries;
 import net.minecraft.util.Identifier;
 import net.minecraft.village.VillagerProfession;
-//TODO: the ints for renderModel are maybe wrong?
+
 @Environment(EnvType.CLIENT)
 public class ZombieImpillagerProfessionFeatureRenderer extends FeatureRenderer<ZombieImpillagerEntity, ZombieImpillagerModel<ZombieImpillagerEntity>> {
 
@@ -20,16 +20,7 @@ public class ZombieImpillagerProfessionFeatureRenderer extends FeatureRenderer<Z
     }
 
     @Override
-    public void render(MatrixStack matrixStack,
-                       VertexConsumerProvider vertexConsumerProvider,
-                       int light,
-                       ZombieImpillagerEntity zombieImpillagerEntity,
-                       float limbAngle,
-                       float limbDistance,
-                       float tickDelta,
-                       float animationProgress,
-                       float headYaw,
-                       float headPitch) {
+    public void render(MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int light, ZombieImpillagerEntity zombieImpillagerEntity, float limbAngle, float limbDistance, float tickDelta, float animationProgress, float headYaw, float headPitch) {
 
         VillagerProfession profession = zombieImpillagerEntity.getVillagerData().getProfession();
         Identifier professionId = Registries.VILLAGER_PROFESSION.getId(profession);
