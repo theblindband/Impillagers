@@ -11,7 +11,7 @@ import net.minecraft.util.math.random.Random;
 
 public class NoGravityBrushableBlock extends BrushableBlock {
     public NoGravityBrushableBlock(Block baseBlock, SoundEvent brushingSound, SoundEvent brushingCompleteSound, Settings settings) {
-        super(baseBlock, brushingSound, brushingCompleteSound, settings);
+        super(baseBlock, settings, brushingCompleteSound, brushingSound);
     }
 
     @Override

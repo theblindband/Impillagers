@@ -10,12 +10,13 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
-
+//TODO: DEPRECATED METHOD USED
 public class FireflyBottleBlock extends LanternBlock {
     public static final BooleanProperty LIT = Properties.LIT;
     public static final BooleanProperty OPEN = Properties.OPEN;
@@ -83,7 +84,7 @@ public class FireflyBottleBlock extends LanternBlock {
     }
 
     @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient()) {
             boolean open = state.get(OPEN);
             state = state.with(OPEN, !open);

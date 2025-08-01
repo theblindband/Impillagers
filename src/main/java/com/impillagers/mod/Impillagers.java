@@ -46,11 +46,11 @@ public class Impillagers implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModBlockEntities.registerModBlockEntities();
-		ModScreenHandlers.registerModScreenHandlers();
+		//ModScreenHandlers.registerModScreenHandlers();
 		ModParticleTypes.registerModParticles();
 		ModEffects.registerModEffects();
 		ModSoundEvents.registerModSounds();
-		ModDataComponentTypes.registerDataComponentTypes();
+		//ModDataComponentTypes.registerDataComponentTypes();
 		ModTrades.registerModTrades();
 		ModEvents.registerModEvents();
 		ModProfessions.registerModProfessions();
@@ -63,7 +63,7 @@ public class Impillagers implements ModInitializer {
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_LEAVES, 0.3f);
-		CompostingChanceRegistry.INSTANCE.add(ModBlocks.BELLADONNA, 0.65f);
+		//CompostingChanceRegistry.INSTANCE.add(ModBlocks.BELLADONNA, 0.65f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.FIREFLY_BUSH, 0.3f);
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.DUNG_BLOCK, 1.0f);
 		CompostingChanceRegistry.INSTANCE.add(ModItems.DUNG_BALL, 0.5f);
@@ -82,7 +82,7 @@ public class Impillagers implements ModInitializer {
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_FENCE, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_STAIRS, 5, 20);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.PURPLE_HEART_LEAVES, 30, 60);
-		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BELLADONNA, 60, 100);
+		//FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.BELLADONNA, 60, 100);
 		FlammableBlockRegistry.getDefaultInstance().add(ModBlocks.FIREFLY_BUSH, 60, 100);
 
 		//Tillable Blocks

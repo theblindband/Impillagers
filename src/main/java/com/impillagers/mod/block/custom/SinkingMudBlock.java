@@ -23,9 +23,8 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
-
+//TODO: DEPRECATED METHOD USED
 public class SinkingMudBlock extends Block implements Waterloggable{
-    public static final MapCodec<SinkingMudBlock> CODEC = createCodec(SinkingMudBlock::new);
     private static final float field_31216 = 0.083333336F;
     private static final float HORIZONTAL_MOVEMENT_MULTIPLIER = 0.9F;
     private static final float VERTICAL_MOVEMENT_MULTIPLIER = 1.5F;
@@ -36,18 +35,13 @@ public class SinkingMudBlock extends Block implements Waterloggable{
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
-    @Override
-    public MapCodec<SinkingMudBlock> getCodec() {
-        return CODEC;
-    }
-
     public SinkingMudBlock(AbstractBlock.Settings settings) {
         super(settings);
         this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, Boolean.FALSE));
     }
 
     @Override
-    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!(entity instanceof LivingEntity) || entity.getBlockStateAtPos().isOf(this)) {
             entity.slowMovement(state, new Vec3d(0.9F, 1.5, 0.9F));
             if (world.isClient) {
@@ -73,7 +67,7 @@ public class SinkingMudBlock extends Block implements Waterloggable{
     }
 
     @Override
-    protected VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         if (context instanceof EntityShapeContext entityShapeContext) {
             Entity entity = entityShapeContext.getEntity();
             if (entity != null) {
@@ -92,7 +86,7 @@ public class SinkingMudBlock extends Block implements Waterloggable{
     }
 
     @Override
-    protected VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+    public VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return VoxelShapes.empty();
     }
 
@@ -110,22 +104,20 @@ public class SinkingMudBlock extends Block implements Waterloggable{
     }
 
     @Override
-    protected FluidState getFluidState(BlockState state) {
+    public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
     @Override
-    protected boolean canPathfindThrough(BlockState state, NavigationType type) {
-        return true;
-    }
+    public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {return true;}
 
     @Override
-    protected boolean isTransparent(BlockState state, BlockView world, BlockPos pos) {
+    public boolean isTransparent(BlockState state, BlockView world, BlockPos pos) {
         return false;
     }
 
     @Override
-    protected int getOpacity(BlockState state, BlockView world, BlockPos pos) {
+    public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
         return world.getMaxLightLevel();
     }
 }

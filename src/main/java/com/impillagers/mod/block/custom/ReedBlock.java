@@ -22,7 +22,7 @@ import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import net.minecraft.world.WorldView;
 import org.jetbrains.annotations.Nullable;
-
+//TODO: DEPRECATED METHOD USED
 public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterloggable {
     private static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
@@ -34,7 +34,7 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
     }
 
     @Override
-    protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (entity instanceof LivingEntity) {
             Vec3d motion = entity.getVelocity();
             entity.setVelocity(motion.multiply(0.9, 1.0, 0.9)); // Reduce the speed by half
@@ -69,12 +69,12 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
     }
 
     @Override
-    protected FluidState getFluidState(BlockState state) {
+    public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
     @Override
-    protected boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
+    public boolean canPlaceAt(BlockState state, WorldView world, BlockPos pos) {
         if (state.get(HALF) == DoubleBlockHalf.UPPER) {
             return super.canPlaceAt(state, world, pos);
         } else {
@@ -85,7 +85,7 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
     }
 
     @Override
-    protected BlockState getStateForNeighborUpdate(
+    public BlockState getStateForNeighborUpdate(
             BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos
     ) {
         if (state.get(WATERLOGGED)) {
@@ -101,9 +101,7 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
     }
 
     @Override
-    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state) {
-        return true;
-    }
+    public boolean isFertilizable(WorldView world, BlockPos pos, BlockState state, boolean isClient) {return true;}
 
     @Override
     public boolean canGrow(World world, Random random, BlockPos pos, BlockState state) {

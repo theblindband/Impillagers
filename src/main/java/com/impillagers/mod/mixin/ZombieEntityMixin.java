@@ -10,6 +10,7 @@ import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.ZombieEntity;
 import net.minecraft.entity.mob.ZombieVillagerEntity;
 import net.minecraft.entity.passive.VillagerEntity;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.Difficulty;
@@ -48,11 +49,11 @@ public abstract class ZombieEntityMixin extends HostileEntity {
                 ZombieImpillagerEntity zombieImpillagerEntity = impillagerEntity.convertTo(ModEntities.ZOMBIE_IMPILLAGER, false);
                 if (zombieImpillagerEntity != null) {
                     zombieImpillagerEntity.initialize(
-                            world, world.getLocalDifficulty(zombieImpillagerEntity.getBlockPos()), SpawnReason.CONVERSION, new ZombieEntity.ZombieData(false, true)
+                            world, world.getLocalDifficulty(zombieImpillagerEntity.getBlockPos()), SpawnReason.CONVERSION, new ZombieEntity.ZombieData(false, true), null
                     );
                     zombieImpillagerEntity.setVillagerData(impillagerEntity.getVillagerData());
                     zombieImpillagerEntity.setGossipData(impillagerEntity.getGossip().serialize(NbtOps.INSTANCE));
-                    zombieImpillagerEntity.setOfferData(impillagerEntity.getOffers().copy());
+                    zombieImpillagerEntity.setOfferData(impillagerEntity.getOffers().toNbt());
                     zombieImpillagerEntity.setXp(impillagerEntity.getExperience());
 
                     // Transfer texture key using set method
@@ -79,11 +80,11 @@ public abstract class ZombieEntityMixin extends HostileEntity {
             ZombieVillagerEntity zombieVillagerEntity = villagerEntity.convertTo(EntityType.ZOMBIE_VILLAGER, false);
             if (zombieVillagerEntity != null) {
                 zombieVillagerEntity.initialize(
-                        world, world.getLocalDifficulty(zombieVillagerEntity.getBlockPos()), SpawnReason.CONVERSION, new ZombieEntity.ZombieData(false, true)
+                        world, world.getLocalDifficulty(zombieVillagerEntity.getBlockPos()), SpawnReason.CONVERSION, new ZombieEntity.ZombieData(false, true), null
                 );
                 zombieVillagerEntity.setVillagerData(villagerEntity.getVillagerData());
                 zombieVillagerEntity.setGossipData(villagerEntity.getGossip().serialize(NbtOps.INSTANCE));
-                zombieVillagerEntity.setOfferData(villagerEntity.getOffers().copy());
+                zombieVillagerEntity.setOfferData(villagerEntity.getOffers().toNbt());
                 zombieVillagerEntity.setXp(villagerEntity.getExperience());
                 if (!this.isSilent()) {
                     world.syncWorldEvent(null, WorldEvents.ZOMBIE_INFECTS_VILLAGER, this.getBlockPos(), 0);

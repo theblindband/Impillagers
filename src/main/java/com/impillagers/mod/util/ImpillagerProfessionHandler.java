@@ -26,7 +26,8 @@ public class ImpillagerProfessionHandler {
                 for (Map.Entry<String, com.google.gson.JsonElement> entry : textures.entrySet()) {
                     String key = entry.getKey();
                     try {
-                        Identifier.of(key);
+                        String[] keyParts = key.split(":", 2);
+                        Identifier.of(keyParts[0], keyParts[1]);
                     } catch (Exception e) {
                         Impillagers.LOGGER.error("Invalid profession key detected in JSON: {}", key);
                         continue;
@@ -46,7 +47,8 @@ public class ImpillagerProfessionHandler {
                     if (texturePairObj.has("impillager") && texturePairObj.get("impillager").isJsonPrimitive()) {
                         String impStr = texturePairObj.get("impillager").getAsString();
                         try {
-                            impTexture = Identifier.of(impStr);
+                            String[] impParts = impStr.split(":", 2);
+                            impTexture = Identifier.of(impParts[0], impParts[1]);
                             if (!resourceExists(impTexture)) {
                                 Impillagers.LOGGER.error("Impillager texture resource not found for key {}: {}. Falling back to nitwit texture.", key, impStr);
                                 impTexture = null;
@@ -62,7 +64,8 @@ public class ImpillagerProfessionHandler {
                     if (texturePairObj.has("zombieimpillager") && texturePairObj.get("zombieimpillager").isJsonPrimitive()) {
                         String zomStr = texturePairObj.get("zombieimpillager").getAsString();
                         try {
-                            zombieTexture = Identifier.of(zomStr);
+                            String[] zomParts = zomStr.split(":", 2);
+                            zombieTexture = Identifier.of(zomParts[0], zomParts[1]);
                             if (!resourceExists(zombieTexture)) {
                                 Impillagers.LOGGER.error("Zombie impillager texture resource not found for key {}: {}. Falling back to nitwit texture.", key, zomStr);
                                 zombieTexture = null;

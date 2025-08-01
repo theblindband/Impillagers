@@ -9,7 +9,7 @@ public class SmellyPredicate implements Predicate<LivingEntity> {
 
     @Override
     public boolean test(LivingEntity entity) {
-        return entity.hasStatusEffect(ModEffects.SMELLY);
+        return entity.hasStatusEffect(ModEffects.SMELLY.value());
     }
 }
 
