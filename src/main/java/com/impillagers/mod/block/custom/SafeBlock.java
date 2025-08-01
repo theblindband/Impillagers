@@ -2,12 +2,10 @@ package com.impillagers.mod.block.custom;
 
 import com.impillagers.mod.block.entity.SafeBlockEntity;
 import com.impillagers.mod.sounds.ModSoundEvents;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -25,13 +23,14 @@ import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
-//TODO: DEPRECATED METHOD USED
+
 public class SafeBlock extends BlockWithEntity implements BlockEntityProvider{
     public static final DirectionProperty FACING = HorizontalFacingBlock.FACING;
     public static final BooleanProperty LOCKED = Properties.LOCKED;
 
     private static final VoxelShape SHAPE = Block.createCuboidShape(2.0, 1.0, 2.0, 14.0, 13.0, 14.0);
 
+    @SuppressWarnings("deprecation")
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient) {
@@ -107,6 +106,7 @@ public class SafeBlock extends BlockWithEntity implements BlockEntityProvider{
         return ActionResult.SUCCESS;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if(state.getBlock() != newState.getBlock()){
@@ -125,6 +125,7 @@ public class SafeBlock extends BlockWithEntity implements BlockEntityProvider{
     }
 
     //Hit Box
+    @SuppressWarnings("deprecation")
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
@@ -136,11 +137,13 @@ public class SafeBlock extends BlockWithEntity implements BlockEntityProvider{
         return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public BlockState mirror(BlockState state, BlockMirror mirror) {
         return state.rotate(mirror.getRotation(state.get(FACING)));
