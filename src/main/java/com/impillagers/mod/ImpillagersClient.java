@@ -74,6 +74,6 @@ public class ImpillagersClient implements ClientModInitializer {
             FabricDefaultAttributeRegistry.register(ModEntities.DUNG_GOLEM, DungGolemEntity.createDungGolemAttributes());
         });
 
-        //HandledScreens.register(ModScreenHandlers.SAFE_SCREEN_HANDLER, SafeScreen::new);
+        HandledScreens.register(ModScreenHandlers.SAFE_SCREEN_HANDLER, SafeScreen::new);
     }
 }

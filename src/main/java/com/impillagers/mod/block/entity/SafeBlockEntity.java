@@ -24,12 +24,11 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.UUID;
 import java.util.stream.IntStream;
-//TODO: FIX
+
 public class SafeBlockEntity extends BlockEntity implements ImplementedInventory, ExtendedScreenHandlerFactory {
 
     private UUID ownerUuid;
     private final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(9, ItemStack.EMPTY);
-
 
     public SafeBlockEntity(BlockPos pos, BlockState state) {
         super(ModBlockEntities.SAFE_BLOCK_ENTITY, pos, state);
@@ -37,7 +36,7 @@ public class SafeBlockEntity extends BlockEntity implements ImplementedInventory
 
     public void setOwner(UUID uuid) {
         this.ownerUuid = uuid;
-        markDirty();                  // ensure it saves
+        markDirty();
     }
 
     public void clearOwner() {
@@ -79,8 +78,7 @@ public class SafeBlockEntity extends BlockEntity implements ImplementedInventory
 
     @Override
     public @Nullable ScreenHandler createMenu(int syncId, PlayerInventory playerInventory, PlayerEntity player) {
-        //return new SafeScreenHandler(syncId, playerInventory, this.pos);
-        return null;
+        return new SafeScreenHandler(syncId, playerInventory, this.pos);
     }
 
     @Override

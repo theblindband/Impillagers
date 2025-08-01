@@ -16,6 +16,7 @@ import com.impillagers.mod.item.ModItemGroups;
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.item.sherd.ModSherds;
 import com.impillagers.mod.particle.ModParticleTypes;
+import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.util.EnchantRegistryHolder;
 //import com.impillagers.mod.util.HudOverlayOpacityPayload;
@@ -46,7 +47,7 @@ public class Impillagers implements ModInitializer {
 		ModBlocks.registerModBlocks();
 		ModEntities.registerModEntities();
 		ModBlockEntities.registerModBlockEntities();
-		//ModScreenHandlers.registerModScreenHandlers();
+		ModScreenHandlers.registerModScreenHandlers();
 		ModParticleTypes.registerModParticles();
 		ModEffects.registerModEffects();
 		ModSoundEvents.registerModSounds();

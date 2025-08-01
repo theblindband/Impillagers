@@ -1,50 +1,33 @@
 package com.impillagers.mod.screen.custom;
 
 import com.impillagers.mod.screen.ModScreenHandlers;
-import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
-//TODO: FIX
 public class SafeScreenHandler extends ScreenHandler {
-    protected SafeScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId) {
-        super(type, syncId);
-    }
-
-    @Override
-    public ItemStack quickMove(PlayerEntity player, int slot) {
-        return null;
-    }
-
-    @Override
-    public boolean canUse(PlayerEntity player) {
-        return false;
-    }
-
-    /*private final Inventory inventory;
+    private final Inventory inventory;
     private final World world;
     private final BlockPos pos;
 
-    public SafeScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
-        this(syncId, playerInventory, playerInventory.player.getWorld().getBlockEntity(pos));
-
+    public SafeScreenHandler(int syncId, PlayerInventory playerInventory, PacketByteBuf buf) {
+        this(syncId, playerInventory, buf.readBlockPos());
     }
 
-    public SafeScreenHandler(int syncId, PlayerInventory playerInventory, BlockEntity blockEntity) {
+
+    public SafeScreenHandler(int syncId, PlayerInventory playerInventory, BlockPos pos) {
         super(ModScreenHandlers.SAFE_SCREEN_HANDLER, syncId);
-        this.inventory = ((Inventory) blockEntity);
-        this.world = blockEntity.getWorld();
-        this.pos   = blockEntity.getPos();
+        this.world = playerInventory.player.getWorld();
+        this.inventory = ((Inventory) world.getBlockEntity(pos));
+        this.pos = pos;
 
         int startX = 62, startY = 17;
         for (int row = 0; row < 3; row++) {
@@ -117,5 +100,5 @@ public class SafeScreenHandler extends ScreenHandler {
             );
         }
         super.onClosed(player);
-    }*/
+    }
 }
