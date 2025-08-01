@@ -1,7 +1,6 @@
 package com.impillagers.mod.block.custom;
 
 import com.impillagers.mod.util.ModTags;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -23,15 +22,10 @@ import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
-//TODO: DEPRECATED METHOD USED
+
 public class SinkingMudBlock extends Block implements Waterloggable{
-    private static final float field_31216 = 0.083333336F;
-    private static final float HORIZONTAL_MOVEMENT_MULTIPLIER = 0.9F;
-    private static final float VERTICAL_MOVEMENT_MULTIPLIER = 1.5F;
-    private static final float field_31219 = 2.5F;
+
     private static final VoxelShape FALLING_SHAPE = VoxelShapes.cuboid(0.0, 0.0, 0.0, 1.0, 0.9F, 1.0);
-    private static final double field_36189 = 4.0;
-    private static final double SMALL_FALL_SOUND_MAX_DISTANCE = 7.0;
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
@@ -40,6 +34,7 @@ public class SinkingMudBlock extends Block implements Waterloggable{
         this.setDefaultState(this.stateManager.getDefaultState().with(WATERLOGGED, Boolean.FALSE));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!(entity instanceof LivingEntity) || entity.getBlockStateAtPos().isOf(this)) {
@@ -66,6 +61,7 @@ public class SinkingMudBlock extends Block implements Waterloggable{
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         if (context instanceof EntityShapeContext entityShapeContext) {
@@ -85,6 +81,7 @@ public class SinkingMudBlock extends Block implements Waterloggable{
         return VoxelShapes.empty();
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public VoxelShape getCameraCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return VoxelShapes.empty();
@@ -103,11 +100,13 @@ public class SinkingMudBlock extends Block implements Waterloggable{
         builder.add(WATERLOGGED);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public FluidState getFluidState(BlockState state) {
         return state.get(WATERLOGGED) ? Fluids.WATER.getStill(false) : super.getFluidState(state);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {return true;}
 
@@ -116,6 +115,7 @@ public class SinkingMudBlock extends Block implements Waterloggable{
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public int getOpacity(BlockState state, BlockView world, BlockPos pos) {
         return world.getMaxLightLevel();
