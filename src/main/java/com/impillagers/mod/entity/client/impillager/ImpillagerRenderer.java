@@ -8,7 +8,7 @@ import net.minecraft.client.render.entity.MobEntityRenderer;
 import net.minecraft.client.render.entity.feature.HeldItemFeatureRenderer;
 import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.util.Identifier;
-//TODO: FIX
+
 @Environment(EnvType.CLIENT)
 public class ImpillagerRenderer extends MobEntityRenderer<ImpillagerEntity, ImpillagerModel> {
 
@@ -28,11 +28,4 @@ public class ImpillagerRenderer extends MobEntityRenderer<ImpillagerEntity, Impi
         float g = 0.9375F * impillagerEntity.getScaleFactor();
         matrixStack.scale(g, g, g);
     }
-
-    /*@Override
-    protected float getShadowRadius(ImpillagerEntity impillagerEntity) {
-        float f = super.getShadowRadius(impillagerEntity);
-        return impillagerEntity.isBaby() ? f * 0.5F : f;
-    }*/
-
 }
