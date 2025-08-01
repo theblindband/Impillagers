@@ -3,7 +3,6 @@ package com.impillagers.mod.block.custom;
 import com.impillagers.mod.block.entity.ModBlockEntities;
 import com.impillagers.mod.block.entity.WasteBasketBlockEntity;
 import com.impillagers.mod.item.ModItems;
-import com.mojang.serialization.MapCodec;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.BlockEntityTicker;
@@ -29,7 +28,7 @@ import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-//TODO: onUse is Deprecated
+
 public class WasteBasketBlock extends BlockWithEntity {
 
     private static final VoxelShape NS_SHAPE = VoxelShapes.union(
@@ -56,6 +55,7 @@ public class WasteBasketBlock extends BlockWithEntity {
     }
 
     //Hit Box
+    @SuppressWarnings("deprecation")
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return switch (state.get(FACING)) {
@@ -75,6 +75,7 @@ public class WasteBasketBlock extends BlockWithEntity {
         return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public BlockState mirror(BlockState state, BlockMirror mirror) {
         return state.rotate(mirror.getRotation(state.get(FACING)));
@@ -90,6 +91,7 @@ public class WasteBasketBlock extends BlockWithEntity {
         builder.add(FACING, DUNG_LEVEL);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (world.isClient()) {
