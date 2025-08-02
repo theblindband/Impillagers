@@ -11,7 +11,6 @@ import org.spongepowered.asm.mixin.injection.ModifyVariable;
 public class FovMixin {
     @ModifyVariable(method = "getFov", at = @At("STORE"), ordinal = 0)
     private double modifyFov(double fov) {
-        Impillagers.LOGGER.info("Original FOV: {}", fov);
         return ModEffectClient.getAdjustedFOV(fov);
     }
 }

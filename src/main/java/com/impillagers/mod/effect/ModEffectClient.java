@@ -20,7 +20,6 @@ public class ModEffectClient {
 
     public static double getAdjustedFOV(double baseFOV) {
         if (baseFOV < 40.0) {
-            Impillagers.LOGGER.info("Returning Base FOV");
             return baseFOV;
         }
 
@@ -31,7 +30,6 @@ public class ModEffectClient {
         double effectiveZoomProgress = Math.pow(currentZoomProgress, exponent);
 
         double newFOV = baseFOV - (effectiveZoomProgress * 30);
-        Impillagers.LOGGER.info("New FOV: {}", newFOV);
         return newFOV;
     }
 
