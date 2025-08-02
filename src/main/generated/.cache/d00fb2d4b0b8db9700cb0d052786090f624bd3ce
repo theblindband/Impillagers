@@ -1,4 +1,4 @@
-// 1.20.1	2025-08-01T17:31:29.973710786	Impillagers/Model Definitions
+// 1.20.1	2025-08-02T07:28:36.487180729	Impillagers/Model Definitions
 89defd5388d42a73700c7f86b081f564926fccec assets/impillagers/models/block/purple_heart_door_top_right_open.json
 01ecd7541bd0e2f512931f28fcae60dd46e5d78f assets/impillagers/models/block/purple_heart_sapling.json
 1a75ff262da527cff2fc7b17ae66dc32604e7ccd assets/impillagers/models/item/suspicious_dirt.json
@@ -11,6 +11,7 @@ d8a06630571aeb9f8f9cea6c7c4cc514191feded assets/impillagers/blockstates/purple_h
 35dba084798dab746567f8e027d55dd03896e37d assets/impillagers/blockstates/packed_dung_slab.json
 f36e6d68a1578932a52b9c7fe9ad07a70f60f9aa assets/impillagers/models/block/purple_heart_trapdoor_bottom.json
 6772a65f9e02fcb753fb5f91036567391840fb44 assets/impillagers/models/block/packed_mud_wall_post.json
+71347129c2f36314018568dc8deb6d09c3050e51 assets/impillagers/models/item/frog_mask.json
 1752509258390ca150495342460ea583b0f06af2 assets/impillagers/models/block/purple_heart_leaves.json
 a8f0a340c7e5a4c4c6e6c4ceb0a6bbc52f84133c assets/impillagers/models/block/mud_bricks_pillar_horizontal.json
 eb710006129dcfbc82046ee6c10646adc758dfe7 assets/impillagers/models/block/mossy_mud_bricks_wall_inventory.json

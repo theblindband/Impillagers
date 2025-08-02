@@ -9,7 +9,7 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
-//TODO: FIX
+
 public class ModItemGroups {
     public static final ItemGroup IMPILLAGERS_ITEM_GROUP = Registry.register(Registries.ITEM_GROUP,
             Identifier.of(Impillagers.MOD_ID, "impillagers_item_group"),
@@ -59,7 +59,7 @@ public class ModItemGroups {
 
                         //Ruin Loot
                         entries.add(ModBlocks.SUSPICIOUS_DIRT);
-                        //entries.add(ModItems.FROG_MASK);
+                        entries.add(ModItems.FROG_MASK);
                         entries.add(ModItems.IMP_POTTERY_SHERD);
                         entries.add(ModItems.COVER_POTTERY_SHERD);
 

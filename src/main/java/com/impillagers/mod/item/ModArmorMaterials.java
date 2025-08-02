@@ -1,26 +1,51 @@
 package com.impillagers.mod.item;
 
-import com.impillagers.mod.Impillagers;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.recipe.Ingredient;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.sound.SoundEvent;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.Util;
 
-import java.util.EnumMap;
-import java.util.List;
-import java.util.function.Supplier;
-//TODO: FIX
 public class ModArmorMaterials {
-    /*public static final RegistryEntry<ArmorMaterial> FROG_MASK_MATERIAL = registerArmorMaterial("frog_mask",
-            () -> new ArmorMaterial(Util.make(new EnumMap<>(ArmorItem.Type.class), map -> map.put(ArmorItem.Type.HELMET, 0)), 0, SoundEvents.ITEM_ARMOR_EQUIP_LEATHER, () -> Ingredient.EMPTY,
-                    List.of(new ArmorMaterial.Layer(Identifier.of(Impillagers.MOD_ID, "frog_mask"))), 0,0));
+    public static final ArmorMaterial FROG_MASK = new ArmorMaterial() {
+        @Override
+        public int getDurability(ArmorItem.Type type) {
+            return 20;
+        }
 
-    public static RegistryEntry<ArmorMaterial> registerArmorMaterial(String name, Supplier<ArmorMaterial> material) {
-        return Registry.registerReference(Registries.ARMOR_MATERIAL, Identifier.of(Impillagers.MOD_ID, name), material.get());
-    }*/
+        @Override
+        public int getProtection(ArmorItem.Type type) {
+            return 1;
+        }
+
+        @Override
+        public int getEnchantability() {
+            return 0;
+        }
+
+        @Override
+        public SoundEvent getEquipSound() {
+            return SoundEvents.ITEM_ARMOR_EQUIP_LEATHER;
+        }
+
+        @Override
+        public Ingredient getRepairIngredient() {
+            return Ingredient.EMPTY;
+        }
+
+        @Override
+        public String getName() {
+            return "impillagers:frog_mask";
+        }
+
+        @Override
+        public float getToughness() {
+            return 0.0F;
+        }
+
+        @Override
+        public float getKnockbackResistance() {
+            return 0.0F;
+        }
+    };
 }

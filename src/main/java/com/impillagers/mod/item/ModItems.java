@@ -15,7 +15,7 @@ import net.minecraft.registry.Registry;
 import net.minecraft.resource.featuretoggle.FeatureFlags;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
-//TODO: FIX
+
 public class ModItems {
     //Purple Heart Items
     public static final Item PURPLE_HEART_SIGN = registerItem("purple_heart_sign", new SignItem(new Item.Settings().maxCount(16), ModBlocks.PURPLE_HEART_SIGN,ModBlocks.PURPLE_HEART_WALL_SIGN));
@@ -23,7 +23,7 @@ public class ModItems {
     public static final Item PURPLE_HEART_BOAT = registerItem("purple_heart_boat", new ModBoatItem(false, ModBoatType.PURPLE_HEART, ModEntities.BOAT, ModEntities.CHEST_BOAT, new Item.Settings().maxCount(1)));
     public static final Item PURPLE_HEART_CHEST_BOAT = registerItem("purple_heart_chest_boat", new ModBoatItem(true, ModBoatType.PURPLE_HEART, ModEntities.BOAT, ModEntities.CHEST_BOAT, new Item.Settings().maxCount(1)));
     //Ruin Loot
-    //public static final Item FROG_MASK = registerItem("frog_mask", new FrogMaskItem(ModArmorMaterials.FROG_MASK_MATERIAL, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1).rarity(Rarity.RARE)));
+    public static final Item FROG_MASK = registerItem("frog_mask", new FrogMaskItem(ModArmorMaterials.FROG_MASK, ArmorItem.Type.HELMET, new Item.Settings().maxCount(1).rarity(Rarity.RARE)));
     public static final Item IMP_POTTERY_SHERD = registerItem("imp_pottery_sherd", new Item(new Item.Settings()));
     public static final Item COVER_POTTERY_SHERD = registerItem("cover_pottery_sherd", new Item(new Item.Settings()));
 

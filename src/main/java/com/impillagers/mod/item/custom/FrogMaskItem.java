@@ -1,12 +1,9 @@
 package com.impillagers.mod.item.custom;
 
 import com.google.common.collect.ImmutableMap;
-//import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.item.ModArmorMaterials;
-//import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.util.ModTags;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,7 +12,6 @@ import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtHelper;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -26,18 +22,15 @@ import java.util.Map;
 
 //TODO: FIX
 public class FrogMaskItem extends ArmorItem {
+
     public FrogMaskItem(ArmorMaterial material, Type type, Settings settings) {
         super(material, type, settings);
     }
 
-    /*private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
+    private static final Map<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>>())
-                    .put(ModArmorMaterials.FROG_MASK_MATERIAL,
+                    .put(RegistryEntry.of(ModArmorMaterials.FROG_MASK),
                             List.of(new StatusEffectInstance(ModEffects.CALL_OF_THE_IMPS.value(), 40, 0, false, false))).build();
-
-    public FrogMaskItem(RegistryEntry<ArmorMaterial> material, Type type, Settings settings) {
-        super(material.value(), type, settings);
-    }
 
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
@@ -56,16 +49,15 @@ public class FrogMaskItem extends ArmorItem {
 
     private void evaluateArmorEffects(PlayerEntity player) {
         for (Map.Entry<RegistryEntry<ArmorMaterial>, List<StatusEffectInstance>> entry : MATERIAL_TO_EFFECT_MAP.entrySet()) {
-            RegistryEntry<ArmorMaterial> mapArmorMaterial = entry.getKey();
             List<StatusEffectInstance> mapStatusEffects = entry.getValue();
 
-            if (hasCorrectArmorOn(mapArmorMaterial, player)) {
-                addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffects);
+            if (shouldGiveEffect(player)) {
+                addStatusEffectForMaterial(player, mapStatusEffects);
             }
         }
     }
 
-    private void addStatusEffectForMaterial(PlayerEntity player, RegistryEntry<ArmorMaterial> mapArmorMaterial, List<StatusEffectInstance> mapStatusEffect) {
+    private void addStatusEffectForMaterial(PlayerEntity player, List<StatusEffectInstance> mapStatusEffect) {
         boolean hasPlayerEffect = mapStatusEffect.stream().allMatch(statusEffectInstance -> player.hasStatusEffect(statusEffectInstance.getEffectType()));
 
         if (!hasPlayerEffect) {
@@ -78,24 +70,15 @@ public class FrogMaskItem extends ArmorItem {
 
     private boolean hasHelmetOn(PlayerEntity player) {
         ItemStack helmet = player.getInventory().getArmorStack(3);
-
         return !helmet.isEmpty();
     }
 
-    private boolean hasCorrectArmorOn(RegistryEntry<ArmorMaterial> material, PlayerEntity player) {
-        for (ItemStack armorStack : player.getInventory().armor) {
-            if (armorStack.getItem() instanceof FrogMaskItem) {
-                ArmorItem helmet = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
-                if (helmet.getMaterial() == material) {
-                    updateVillageCoordinates(armorStack, player);
-                    float threshold = 45.0f;
-                    double angle = isLookingAtVillage(armorStack, player, threshold);
-                    if (angle >= 0) {
-                        return true;
-                    }
-                }
+    private boolean shouldGiveEffect(PlayerEntity player) {
+        ItemStack helmet = player.getInventory().getArmorStack(3);
+            if ( helmet.getItem() instanceof FrogMaskItem) {
+                updateVillageCoordinates(helmet, player);
+                return isLookingAtVillage(helmet, player, 45f);
             }
-        }
         return false;
     }
 
@@ -111,7 +94,7 @@ public class FrogMaskItem extends ArmorItem {
         }
     }
 
-    private double isLookingAtVillage(ItemStack stack, PlayerEntity player, float threshold) {
+    private boolean isLookingAtVillage(ItemStack stack, PlayerEntity player, float threshold) {
         BlockPos village = getVillageCoordinates(stack);
         if (village != null) {
             Vec3d viewDirection = new Vec3d(player.getRotationVec(1.0F).x, 0, player.getRotationVec(1.0F).z).normalize();
@@ -124,15 +107,13 @@ public class FrogMaskItem extends ArmorItem {
             if (!player.getEntityWorld().isClient()) {
                 //ServerPlayNetworking.send((ServerPlayerEntity) player, new HudOverlayOpacityPayload(opacity));
             }
-            if (angle < threshold) {
-                return angle;
-            }
+            return angle < threshold;
         }
-        return -1;
+        return false;
     }
 
     private BlockPos getVillageCoordinates(ItemStack stack) {
-        if (stack.hasNbt() && stack.getNbt().contains("VillageCoordinates")) {
+        if (stack.hasNbt() && stack.getNbt() != null && stack.getNbt().contains("VillageCoordinates")) {
             return NbtHelper.toBlockPos(stack.getNbt().getCompound("VillageCoordinates"));
         }
         return null;
@@ -149,6 +130,5 @@ public class FrogMaskItem extends ArmorItem {
             double ratio = angle / threshold;
             return (float) (1 - Math.pow(ratio, 2));
         }
-    }*/
-
+    }
 }
