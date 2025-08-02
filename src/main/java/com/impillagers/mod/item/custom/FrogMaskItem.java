@@ -3,7 +3,10 @@ package com.impillagers.mod.item.custom;
 import com.google.common.collect.ImmutableMap;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.item.ModArmorMaterials;
+import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.util.ModTags;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -11,7 +14,9 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NbtHelper;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.registry.entry.RegistryEntry;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
@@ -20,7 +25,6 @@ import net.minecraft.world.World;
 import java.util.List;
 import java.util.Map;
 
-//TODO: FIX
 public class FrogMaskItem extends ArmorItem {
 
     public FrogMaskItem(ArmorMaterial material, Type type, Settings settings) {
@@ -39,7 +43,7 @@ public class FrogMaskItem extends ArmorItem {
                 if (hasHelmetOn(player)) {
                     evaluateArmorEffects(player);
                 } else {
-                    //ServerPlayNetworking.send((ServerPlayerEntity) player, new HudOverlayOpacityPayload(0F));
+                    ServerPlayNetworking.send((ServerPlayerEntity) player, HudOverlayOpacityPayload.PACKET_ID, new HudOverlayOpacityPayload(0F).write(PacketByteBufs.create()));
                 }
             }
         }
@@ -75,10 +79,10 @@ public class FrogMaskItem extends ArmorItem {
 
     private boolean shouldGiveEffect(PlayerEntity player) {
         ItemStack helmet = player.getInventory().getArmorStack(3);
-            if ( helmet.getItem() instanceof FrogMaskItem) {
-                updateVillageCoordinates(helmet, player);
-                return isLookingAtVillage(helmet, player, 45f);
-            }
+        if (helmet.getItem() instanceof FrogMaskItem) {
+            updateVillageCoordinates(helmet, player);
+            return isLookingAtVillage(helmet, player, 45f);
+        }
         return false;
     }
 
@@ -105,7 +109,7 @@ public class FrogMaskItem extends ArmorItem {
             float opacity = calculateOpacity(angle, threshold);
 
             if (!player.getEntityWorld().isClient()) {
-                //ServerPlayNetworking.send((ServerPlayerEntity) player, new HudOverlayOpacityPayload(opacity));
+                ServerPlayNetworking.send((ServerPlayerEntity) player, HudOverlayOpacityPayload.PACKET_ID, new HudOverlayOpacityPayload(opacity).write(PacketByteBufs.create()));
             }
             return angle < threshold;
         }

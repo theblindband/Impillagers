@@ -1,5 +1,6 @@
 package com.impillagers.mod.effect;
 
+import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.PositionedSoundInstance;
@@ -19,6 +20,7 @@ public class ModEffectClient {
 
     public static double getAdjustedFOV(double baseFOV) {
         if (baseFOV < 40.0) {
+            Impillagers.LOGGER.info("Returning Base FOV");
             return baseFOV;
         }
 
@@ -28,7 +30,9 @@ public class ModEffectClient {
         double exponent = 3.0;
         double effectiveZoomProgress = Math.pow(currentZoomProgress, exponent);
 
-        return baseFOV - (effectiveZoomProgress * 30);
+        double newFOV = baseFOV - (effectiveZoomProgress * 30);
+        Impillagers.LOGGER.info("New FOV: {}", newFOV);
+        return newFOV;
     }
 
     private static double lerp(double alpha, double start, double end) {

@@ -1,17 +1,17 @@
 package com.impillagers.mod.util;
-//TODO: FIX
-/*mport net.minecraft.network.RegistryByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.codec.PacketCodecs;
-import net.minecraft.network.packet.CustomPayload;
 
-public record HudOverlayOpacityPayload(float opacity) implements CustomPayload {
-    public static final CustomPayload.Id<HudOverlayOpacityPayload> ID = new CustomPayload.Id<>(ModNetworking.UPDATE_OVERLAY_OPACITY);
-    public static final PacketCodec<RegistryByteBuf, HudOverlayOpacityPayload> CODEC = PacketCodec.tuple(PacketCodecs.FLOAT, HudOverlayOpacityPayload::opacity, HudOverlayOpacityPayload::new);
+import net.minecraft.network.PacketByteBuf;
+import net.minecraft.util.Identifier;
 
-    @Override
-    public CustomPayload.Id<? extends CustomPayload> getId() {
-        return ID;
+public record HudOverlayOpacityPayload(float opacity) {
+    public static final Identifier PACKET_ID = new Identifier("impillagers", "hud_overlay_opacity");
+
+    public PacketByteBuf write(PacketByteBuf buf) {
+        buf.writeFloat(opacity);
+        return buf;
+    }
+
+    public static HudOverlayOpacityPayload read(PacketByteBuf buf) {
+        return new HudOverlayOpacityPayload(buf.readFloat());
     }
 }
-*/
