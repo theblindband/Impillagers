@@ -4,6 +4,8 @@ import com.impillagers.mod.mixin.ArrowEntityAccessor;
 import net.minecraft.block.Blocks;
 import net.minecraft.enchantment.Enchantment;
 import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.enchantment.EnchantmentTarget;
+import net.minecraft.enchantment.Enchantments;
 import net.minecraft.entity.AreaEffectCloudEntity;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -31,7 +33,7 @@ import java.util.List;
 public class DistributionEnchantment extends Enchantment {
 
     public DistributionEnchantment() {
-        super(Rarity.RARE, null, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
+        super(Rarity.RARE, EnchantmentTarget.BOW, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }
 
     @Override
@@ -61,7 +63,7 @@ public class DistributionEnchantment extends Enchantment {
 
     @Override
     protected boolean canAccept(Enchantment other) {
-        return super.canAccept(other);
+        return super.canAccept(other) && other != Enchantments.INFINITY && other != ModEnchantments.FUSE;
     }
 
     public void onProjectileHit(PersistentProjectileEntity projectile, LivingEntity owner, Vec3d impactLocation) {

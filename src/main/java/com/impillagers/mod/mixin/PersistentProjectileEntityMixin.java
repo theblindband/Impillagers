@@ -1,6 +1,5 @@
 package com.impillagers.mod.mixin;
 
-import com.impillagers.mod.enchantment.DistributionEnchantment;
 import com.impillagers.mod.enchantment.ModEnchantments;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.LivingEntity;
@@ -36,10 +35,17 @@ public abstract class PersistentProjectileEntityMixin {
         if (!(projectile.getOwner() instanceof LivingEntity owner)) return;
 
         ItemStack weapon = owner.getMainHandStack();
-        int distributionLevel = EnchantmentHelper.getLevel(ModEnchantments.DISTRIBUTION, weapon);
-        if (distributionLevel == 0) return;
 
-        DistributionEnchantment enchantment = ModEnchantments.DISTRIBUTION;
-        enchantment.onProjectileHit(projectile, owner, impactLocation);
+        // Handle Distribution enchantment
+        int distributionLevel = EnchantmentHelper.getLevel(ModEnchantments.DISTRIBUTION, weapon);
+        if (distributionLevel > 0) {
+            ModEnchantments.DISTRIBUTION.onProjectileHit(projectile, owner, impactLocation);
+        }
+
+        // Handle Fuse enchantment
+        int fuseLevel = EnchantmentHelper.getLevel(ModEnchantments.FUSE, weapon);
+        if (fuseLevel > 0) {
+            ModEnchantments.FUSE.onProjectileHit(projectile, owner, impactLocation);
+        }
     }
 }

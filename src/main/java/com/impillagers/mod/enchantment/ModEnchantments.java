@@ -7,10 +7,14 @@ import net.minecraft.util.Identifier;
 
 public class ModEnchantments {
     public static final DistributionEnchantment DISTRIBUTION = new DistributionEnchantment();
+    public static final FuseEnchantment FUSE = new FuseEnchantment();
 
     public static void registerEnchantments() {
         Registry.register(Registries.ENCHANTMENT,
                 new Identifier(Impillagers.MOD_ID, "distribution"),
                          DISTRIBUTION);
+        Registry.register(Registries.ENCHANTMENT,
+                new Identifier(Impillagers.MOD_ID, "fuse"),
+                         FUSE);
     }
 }

@@ -19,7 +19,7 @@ import net.minecraft.village.VillagerProfession;
 import java.util.function.Supplier;
 import java.util.random.RandomGenerator;
 
-//TODO:FIX
+
 public class ModTrades {
 
     public static void registerModTrades() {
@@ -168,8 +168,8 @@ public class ModTrades {
         );
         // Explosives Expert - Level 4: Enchantments
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 4,
-                new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> EnchantedBookItem.addEnchantment(book, new EnchantmentLevelEntry(ModEnchantments.DISTRIBUTION, RandomGenerator.getDefault().nextInt(3) + 1))), 1, 20, 0.02f)
-                //new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> book.addEnchantment(EnchantRegistryHolder.getEntry(Identifier.of(Impillagers.MOD_ID, "fuse")), 1)), 1, 20, 0.02f)
+                new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> EnchantedBookItem.addEnchantment(book, new EnchantmentLevelEntry(ModEnchantments.DISTRIBUTION, RandomGenerator.getDefault().nextInt(3) + 1))), 1, 20, 0.02f),
+                new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> EnchantedBookItem.addEnchantment(book, new EnchantmentLevelEntry(ModEnchantments.FUSE, RandomGenerator.getDefault().nextInt(3) + 1))), 1, 20, 0.02f)
         );
         // Explosives Expert - Level 5: End Crystal
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 5,
