@@ -1,19 +1,24 @@
 package com.impillagers.mod.villager;
 
 import com.impillagers.mod.block.ModBlocks;
+import com.impillagers.mod.enchantment.ModEnchantments;
 import com.impillagers.mod.item.ModItems;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.block.Blocks;
+import net.minecraft.enchantment.EnchantmentLevelEntry;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Util;
 import net.minecraft.village.TradeOffer;
 import net.minecraft.village.VillagerProfession;
 
 import java.util.function.Supplier;
+import java.util.random.RandomGenerator;
+
 //TODO:FIX
 public class ModTrades {
 
@@ -162,10 +167,10 @@ public class ModTrades {
                 new TradeData(ModItems.GOLD_COIN, 10, ModItems.CREEPER_OIL, 1, 3, 20, 0.02f)
         );
         // Explosives Expert - Level 4: Enchantments
-        /*registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 4,
-                new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> book.addEnchantment(EnchantRegistryHolder.getEntry(Identifier.of(Impillagers.MOD_ID, "distribution")), RandomGenerator.getDefault().nextInt(3) + 1)), 1, 20, 0.02f),
-                new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> book.addEnchantment(EnchantRegistryHolder.getEntry(Identifier.of(Impillagers.MOD_ID, "fuse")), 1)), 1, 20, 0.02f)
-        );*/
+        registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 4,
+                new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> EnchantedBookItem.addEnchantment(book, new EnchantmentLevelEntry(ModEnchantments.DISTRIBUTION, RandomGenerator.getDefault().nextInt(3) + 1))), 1, 20, 0.02f)
+                //new TradeData(ModItems.GOLD_COIN, 64, () -> Util.make(new ItemStack(Items.ENCHANTED_BOOK), book -> book.addEnchantment(EnchantRegistryHolder.getEntry(Identifier.of(Impillagers.MOD_ID, "fuse")), 1)), 1, 20, 0.02f)
+        );
         // Explosives Expert - Level 5: End Crystal
         registerTrades(ModProfessions.EXPLOSIVES_EXPERT, 5,
                 new TradeData(ModItems.GOLD_COIN, 36, Items.END_CRYSTAL, 1, 4, 30, 0.02f)

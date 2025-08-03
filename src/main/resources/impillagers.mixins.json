@@ -12,7 +12,7 @@
     "FrogEntityMixin",
     "ImpillagerLightningMixin",
     "MobEntityAccessor",
-    "PersistentProjectileEntityAccessor",
+    "PersistentProjectileEntityMixin",
     "PlantBlockMixin",
     "PointOfInterestTaskMixin",
     "SaplingBlockMixin",

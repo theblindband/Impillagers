@@ -1,11 +1,12 @@
 package com.impillagers.mod.mixin;
 
 import net.minecraft.entity.projectile.ArrowEntity;
+import net.minecraft.potion.Potion;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.gen.Invoker;
-//TODO: FIX
+import org.spongepowered.asm.mixin.gen.Accessor;
+
 @Mixin(ArrowEntity.class)
 public interface ArrowEntityAccessor {
-   /* @Invoker("getPotionContents")
-    PotionContentsComponent GetPotionContents();*/
+    @Accessor("potion")
+    Potion getPotion();
 }

@@ -2,10 +2,10 @@ package com.impillagers.mod;
 
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.block.entity.ModBlockEntities;
-import com.impillagers.mod.command.ModCommands;
 import com.impillagers.mod.damage.ModDamageTypes;
 import com.impillagers.mod.data.ModDataPacks;
 import com.impillagers.mod.effect.ModEffects;
+import com.impillagers.mod.enchantment.ModEnchantments;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.dung_golem.DungGolemEntity;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
@@ -17,9 +17,7 @@ import com.impillagers.mod.item.sherd.ModSherds;
 import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.sounds.ModSoundEvents;
-import com.impillagers.mod.util.EnchantRegistryHolder;
 import com.impillagers.mod.util.HudOverlayOpacityPayload;
-import com.impillagers.mod.command.ModCommandListener;
 import com.impillagers.mod.villager.ModTrades;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.ModInitializer;
@@ -30,7 +28,6 @@ import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.item.HoeItem;
 import net.minecraft.potion.Potions;
 import net.minecraft.recipe.BrewingRecipeRegistry;
-import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -54,11 +51,10 @@ public class Impillagers implements ModInitializer {
 		ModTrades.registerModTrades();
 		ModEvents.registerModEvents();
 		ModProfessions.registerModProfessions();
-		ModCommandListener.registerListeners();
-		ModCommands.registerCommands();
 		ModDamageTypes.registerDamageTypes();
 		ModDataPacks.registerDataPacks();
 		ModSherds.registerSherds();
+		ModEnchantments.registerEnchantments();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
@@ -100,7 +96,6 @@ public class Impillagers implements ModInitializer {
 		});
 
 		ServerLifecycleEvents.SERVER_STARTING.register(server -> registerAttributes());
-		ServerLifecycleEvents.SERVER_STARTED.register(EnchantRegistryHolder::init);
 	}
 
 	private void registerAttributes() {
