@@ -10,11 +10,13 @@ public class ModEnchantments {
     public static final DistributionEnchantment DISTRIBUTION = new DistributionEnchantment();
     public static final FuseEnchantment FUSE = new FuseEnchantment();
     public static final FrogsLegsEnchantment FROGS_LEGS = new FrogsLegsEnchantment();
+    public static final LeadFallingEnchantment LEAD_FALLING = new LeadFallingEnchantment();
 
     public static void registerEnchantments() {
         register("distribution", DISTRIBUTION);
         register("fuse", FUSE);
         register("frogs_legs", FROGS_LEGS);
+        register("lead_falling", LEAD_FALLING);
     }
 
     private static void register(String path, Enchantment enchantment) {
