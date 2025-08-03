@@ -10,12 +10,16 @@
             "predicate": {
               "equipment": {
                 "feet": {
-                  "items": "minecraft:leather_boots"
+                  "items": [
+                    "minecraft:leather_boots"
+                  ]
                 }
               },
               "stepping_on": {
                 "block": {
-                  "blocks": "impillagers:sinking_mud"
+                  "blocks": [
+                    "impillagers:sinking_mud"
+                  ]
                 }
               }
             }
@@ -30,8 +34,7 @@
       "translate": "advancements.impillagers.walk_on_sinking_mud_with_leather_boots.description"
     },
     "icon": {
-      "count": 1,
-      "id": "minecraft:leather_boots"
+      "item": "minecraft:leather_boots"
     },
     "title": {
       "translate": "advancements.impillagers.walk_on_sinking_mud_with_leather_boots.title"

@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:frog_mask"
+            "items": [
+              "impillagers:frog_mask"
+            ]
           }
         ]
       },
@@ -18,8 +20,7 @@
     },
     "hidden": true,
     "icon": {
-      "count": 1,
-      "id": "minecraft:brush"
+      "item": "minecraft:brush"
     },
     "title": {
       "translate": "advancements.impillagers.find_frog_mask.title"

@@ -13,7 +13,7 @@
           }
         ],
         "item": {
-          "items": "#impillagers:frog_poisonous_food"
+          "tag": "impillagers:frog_poisonous_food"
         }
       },
       "trigger": "minecraft:player_interacted_with_entity"
@@ -25,8 +25,7 @@
     },
     "hidden": true,
     "icon": {
-      "count": 1,
-      "id": "minecraft:poisonous_potato"
+      "item": "minecraft:poisonous_potato"
     },
     "title": {
       "translate": "advancements.impillagers.poisoned_frog.title"

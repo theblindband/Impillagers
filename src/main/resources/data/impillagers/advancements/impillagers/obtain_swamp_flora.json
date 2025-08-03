@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:firefly_bush"
+            "items": [
+              "impillagers:firefly_bush"
+            ]
           }
         ]
       },
@@ -15,7 +17,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:belladonna"
+            "items": [
+              "impillagers:belladonna"
+            ]
           }
         ]
       },
@@ -25,7 +29,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:swamp_reed"
+            "items": [
+              "impillagers:swamp_reed"
+            ]
           }
         ]
       },
@@ -35,7 +41,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:purple_heart_sapling"
+            "items": [
+              "impillagers:purple_heart_sapling"
+            ]
           }
         ]
       },
@@ -45,7 +53,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:lily_pad"
+            "items": [
+              "minecraft:lily_pad"
+            ]
           }
         ]
       },
@@ -55,7 +65,9 @@
       "conditions": {
         "items": [
           {
-            "items": "minecraft:blue_orchid"
+            "items": [
+              "minecraft:blue_orchid"
+            ]
           }
         ]
       },
@@ -68,8 +80,7 @@
     },
     "frame": "challenge",
     "icon": {
-      "count": 1,
-      "id": "minecraft:lily_pad"
+      "item": "minecraft:lily_pad"
     },
     "title": {
       "translate": "advancements.impillagers.obtain_swamp_flora.title"

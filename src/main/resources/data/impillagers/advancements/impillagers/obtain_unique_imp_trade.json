@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:creeper_oil"
+            "items": [
+              "impillagers:creeper_oil"
+            ]
           }
         ]
       },
@@ -15,7 +17,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:painted_armor_trim_smithing_template"
+            "items": [
+              "impillagers:painted_armor_trim_smithing_template"
+            ]
           }
         ]
       },
@@ -25,7 +29,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:spider_pieye"
+            "items": [
+              "impillagers:spider_pieye"
+            ]
           }
         ]
       },
@@ -35,7 +41,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:totem_of_undyeing"
+            "items": [
+              "impillagers:totem_of_undyeing"
+            ]
           }
         ]
       },
@@ -48,8 +56,7 @@
     },
     "frame": "goal",
     "icon": {
-      "count": 1,
-      "id": "impillagers:totem_of_undyeing"
+      "item": "impillagers:totem_of_undyeing"
     },
     "title": {
       "translate": "advancements.impillagers.obtain_unique_imp_trade.title"

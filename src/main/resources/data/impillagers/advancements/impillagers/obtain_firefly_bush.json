@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:firefly_bush"
+            "items": [
+              "impillagers:firefly_bush"
+            ]
           }
         ]
       },
@@ -17,8 +19,7 @@
       "translate": "advancements.impillagers.obtain_firefly_bush.description"
     },
     "icon": {
-      "count": 1,
-      "id": "impillagers:firefly_bush"
+      "item": "impillagers:firefly_bush"
     },
     "title": {
       "translate": "advancements.impillagers.obtain_firefly_bush.title"

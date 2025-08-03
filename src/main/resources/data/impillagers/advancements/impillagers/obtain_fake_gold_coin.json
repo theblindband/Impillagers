@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:fake_gold_coin"
+            "items": [
+              "impillagers:fake_gold_coin"
+            ]
           }
         ]
       },
@@ -18,8 +20,7 @@
     },
     "hidden": true,
     "icon": {
-      "count": 1,
-      "id": "impillagers:fake_gold_coin"
+      "item": "impillagers:fake_gold_coin"
     },
     "title": {
       "translate": "advancements.impillagers.obtain_fake_gold_coin.title"

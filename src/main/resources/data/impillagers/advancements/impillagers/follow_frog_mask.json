@@ -9,7 +9,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "structures": "impillagers:impillager_village"
+                "structure": "impillagers:impillager_village"
               }
             }
           }
@@ -24,8 +24,7 @@
     },
     "frame": "goal",
     "icon": {
-      "count": 1,
-      "id": "impillagers:chiseled_dung_bricks"
+      "item": "impillagers:chiseled_dung_bricks"
     },
     "title": {
       "translate": "advancements.impillagers.follow_frog_mask.title"

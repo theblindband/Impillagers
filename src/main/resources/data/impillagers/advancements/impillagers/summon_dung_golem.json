@@ -21,8 +21,7 @@
       "translate": "advancements.impillagers.summon_dung_golem.description"
     },
     "icon": {
-      "count": 1,
-      "id": "impillagers:dung_block"
+      "item": "impillagers:dung_block"
     },
     "title": {
       "translate": "advancements.impillagers.summon_dung_golem.title"

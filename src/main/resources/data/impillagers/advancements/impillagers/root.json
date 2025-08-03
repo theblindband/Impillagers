@@ -8,7 +8,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "minecraft:swamp"
+                "biome": "minecraft:swamp"
               }
             }
           }
@@ -24,7 +24,7 @@
             "entity": "this",
             "predicate": {
               "location": {
-                "biomes": "minecraft:mangrove_swamp"
+                "biome": "minecraft:mangrove_swamp"
               }
             }
           }
@@ -36,7 +36,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:firefly_bush"
+            "items": [
+              "impillagers:firefly_bush"
+            ]
           }
         ]
       },
@@ -49,9 +51,10 @@
       "description": {
         "translate": "advancements.impillagers.root.description"
       },
+      "frame": "task",
+      "hidden": false,
       "icon": {
-        "count": 1,
-        "id": "impillagers:frog_mask"
+        "item": "impillagers:frog_mask"
       },
       "show_toast": false,
       "title": {

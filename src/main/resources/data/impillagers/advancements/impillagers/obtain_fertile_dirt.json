@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:fertile_dirt"
+            "items": [
+              "impillagers:fertile_dirt"
+            ]
           }
         ]
       },
@@ -17,8 +19,7 @@
       "translate": "advancements.impillagers.obtain_fertile_dirt.description"
     },
     "icon": {
-      "count": 1,
-      "id": "impillagers:fertile_dirt"
+      "item": "impillagers:fertile_dirt"
     },
     "title": {
       "translate": "advancements.impillagers.obtain_fertile_dirt.title"

@@ -5,7 +5,9 @@
       "conditions": {
         "items": [
           {
-            "items": "impillagers:gold_coin"
+            "items": [
+              "impillagers:gold_coin"
+            ]
           }
         ]
       },
@@ -17,8 +19,7 @@
       "translate": "advancements.impillagers.obtain_gold_coin.description"
     },
     "icon": {
-      "count": 1,
-      "id": "impillagers:gold_coin"
+      "item": "impillagers:gold_coin"
     },
     "title": {
       "translate": "advancements.impillagers.obtain_gold_coin.title"
