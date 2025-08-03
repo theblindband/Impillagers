@@ -2,10 +2,10 @@
     "pack": {
         "id": "impillagers",
         "supported_formats": [
-            48,
-            61
+            15,
+            32
         ],
-        "pack_format": 48,
+        "pack_format": 15,
         "description": [
             {
                 "text": "Cliff Under A Tree Compatibility Pack",

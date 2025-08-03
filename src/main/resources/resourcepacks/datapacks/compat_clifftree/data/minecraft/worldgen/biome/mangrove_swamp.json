@@ -8,7 +8,7 @@
   },
   "downfall": 0.9,
   "effects": {
-    "fog_color": 12638463,
+    "fog_color": 9223864,
     "foliage_color": 9285927,
     "grass_color_modifier": "swamp",
     "mood_sound": {
@@ -23,15 +23,15 @@
       "replace_current_music": false,
       "sound": "minecraft:music.overworld.swamp"
     },
-    "sky_color": 7907327,
+    "sky_color": 7383996,
     "water_color": 3832426,
-    "water_fog_color": 5077600
+    "water_fog_color": 728607
   },
   "features": [
     [],
     [
       "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "clifftree:mud_water"
     ],
     [
       "minecraft:amethyst_geode"
@@ -55,6 +55,7 @@
       "minecraft:ore_andesite_lower",
       "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lush",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
       "minecraft:ore_iron_middle",
@@ -64,6 +65,7 @@
       "minecraft:ore_redstone",
       "minecraft:ore_redstone_lower",
       "minecraft:ore_diamond",
+      "minecraft:ore_diamond_medium",
       "minecraft:ore_diamond_large",
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
@@ -84,13 +86,20 @@
     [
       "minecraft:glow_lichen",
       "impillagers:patch_firefly_bush",
-      "minecraft:trees_mangrove",
+      "minecraft:trees_mangrove_worldgen",
+      "clifftree:flower_mangrove_swamp",
       "minecraft:patch_grass_normal",
       "minecraft:patch_dead_bush",
       "minecraft:patch_waterlily",
+      "clifftree:sea_pickle_mangrove",
       "minecraft:seagrass_swamp"
     ],
     [
+      "clifftree:extra_gold_remove",
+      "clifftree:extra_emerald_remove",
+      "minecraft:disk_grass",
+      "clifftree:patch_disk_grass",
+      "clifftree:patch_disk_grass_tall",
       "minecraft:freeze_top_layer"
     ]
   ],
