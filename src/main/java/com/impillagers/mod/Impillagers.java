@@ -10,6 +10,7 @@ import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.dung_golem.DungGolemEntity;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
+import com.impillagers.mod.entity.painting.ModPaintings;
 import com.impillagers.mod.event.ModEvents;
 import com.impillagers.mod.item.ModItemGroups;
 import com.impillagers.mod.item.ModItems;
@@ -55,6 +56,7 @@ public class Impillagers implements ModInitializer {
 		ModDataPacks.registerDataPacks();
 		ModSherds.registerSherds();
 		ModEnchantments.registerEnchantments();
+		ModPaintings.registerPaintings();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
