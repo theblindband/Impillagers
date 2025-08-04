@@ -42,7 +42,7 @@ public class WasteBasketBlockEntity extends BlockEntity {
 
         if (found.size() >= 3 && world.random.nextInt(50) == 0) {
             int current = state.get(WasteBasketBlock.DUNG_LEVEL);
-            if (current < 5) {
+            if (current < 4) {
                 int next = current + 1;
 
                 BlockState updated = state.with(WasteBasketBlock.DUNG_LEVEL, next);
