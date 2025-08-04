@@ -1,6 +1,5 @@
 package com.impillagers.mod.block.entity;
 
-import com.impillagers.mod.Impillagers;
 import com.impillagers.mod.block.custom.WasteBasketBlock;
 import com.impillagers.mod.util.ModTags;
 import net.minecraft.block.Block;
