@@ -68,9 +68,9 @@ public abstract class LivingEntityMixin {
         int level = this.getLeadFallingLevel();
         if (level > 0) {
             float multiplier = switch (level) {
-                case 1 -> 1.25f;
-                case 2 -> 1.5f;
-                case 3 -> 2.0f;
+                case 1 -> 1.5f;
+                case 2 -> 2.0f;
+                case 3 -> 2.5f;
                 case 4 -> 3.0f;
                 default -> 1.0f;
             };
