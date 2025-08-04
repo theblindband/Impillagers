@@ -63,20 +63,6 @@
     ]
   },
 
-  "block.safe.open": {
-    "sounds": [
-      {
-      "name":"impillagers:block/safe/safe_open"
-      }
-    ]
-  },
-  "block.safe.close": {
-    "sounds": [
-      {
-        "name":"impillagers:block/safe/safe_close"
-      }
-    ]
-  },
   "block.safe.lock": {
     "sounds": [
       {
