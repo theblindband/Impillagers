@@ -92,6 +92,6 @@ public class ModProfessions {
     }
 
     public static void registerModProfessions() {
-        Impillagers.LOGGER.info("Registering mod professions for " + Impillagers.MOD_ID);
+        //Impillagers.LOGGER.info("Registering mod professions for " + Impillagers.MOD_ID);
     }
 }
