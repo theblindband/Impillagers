@@ -16,7 +16,7 @@ public class ModCommandListener {
 
     public static void registerHandler(String key, IEffectHandler handler) {
         handlerRegistry.put(key, handler);
-        Impillagers.LOGGER.info("Registered effect handler for key: {}", key);
+        Impillagers.LOGGER.debug("Registered effect handler for key: {}", key);
     }
 
     public static void dispatchEffect(String key, ServerCommandSource source) {
