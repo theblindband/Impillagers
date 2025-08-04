@@ -12,7 +12,6 @@ import net.minecraft.util.Identifier;
 
 public class ModBlockEntities {
 
-    public static final BlockEntityType<WasteBasketBlockEntity> WASTE_BASKET_BLOCK_ENTITY = registerBlockEntity("waste_basket_block_entity", WasteBasketBlockEntity::new, ModBlocks.WASTE_BASKET);
     public static final BlockEntityType<SafeBlockEntity> SAFE_BLOCK_ENTITY = registerBlockEntity("safe_block_entity", SafeBlockEntity::new, ModBlocks.SAFE);
 
     // For suspicious dirt, you need to create a brushable block entity
