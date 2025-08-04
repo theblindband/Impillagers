@@ -8,8 +8,8 @@
       {
         "amount": {
           "type": "minecraft:linear",
-          "base": 0.04,
-          "per_level_above_first": 0.04
+          "base": 0.08,
+          "per_level_above_first": 0.08
         },
         "attribute": "minecraft:generic.gravity",
         "id": "impillagers:enchantment.lead_falling",
@@ -32,7 +32,7 @@
     "base": 75,
     "per_level_above_first": 25
   },
-  "max_level": 3,
+  "max_level": 4,
   "min_cost": {
     "base": 25,
     "per_level_above_first": 25

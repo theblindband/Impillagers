@@ -11,6 +11,7 @@
     "FarmlandBlockMixin",
     "FrogEntityMixin",
     "ImpillagerLightningMixin",
+    "LivingEntityMixin",
     "MobEntityAccessor",
     "PersistentProjectileEntityAccessor",
     "PlantBlockMixin",
