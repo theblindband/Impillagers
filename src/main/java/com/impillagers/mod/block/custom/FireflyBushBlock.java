@@ -39,6 +39,7 @@ public class FireflyBushBlock extends PlantBlock {
         builder.add(LIT, COOLDOWN);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
@@ -64,6 +65,7 @@ public class FireflyBushBlock extends PlantBlock {
         world.scheduleBlockTick(pos, this, 120);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
         if (!world.isClient()) {
@@ -76,6 +78,7 @@ public class FireflyBushBlock extends PlantBlock {
         super.onBlockAdded(state, world, pos, oldState, notify);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void scheduledTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (state.get(COOLDOWN) > 0) {
@@ -122,6 +125,7 @@ public class FireflyBushBlock extends PlantBlock {
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random random) {
         if (state.get(COOLDOWN) == 0) {
@@ -135,6 +139,7 @@ public class FireflyBushBlock extends PlantBlock {
         }
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
         if (!world.isClient()) {

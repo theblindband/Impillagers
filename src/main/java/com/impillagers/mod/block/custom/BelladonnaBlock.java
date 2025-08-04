@@ -22,6 +22,7 @@ public class BelladonnaBlock extends FlowerBlock {
         return floor.isOpaqueFullCube(world, pos);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
