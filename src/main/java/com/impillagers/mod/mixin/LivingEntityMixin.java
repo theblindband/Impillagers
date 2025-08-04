@@ -1,11 +1,13 @@
 package com.impillagers.mod.mixin;
 
 import com.impillagers.mod.enchantment.ModEnchantments;
+import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.enchantment.EnchantmentHelper;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
@@ -59,5 +61,30 @@ public abstract class LivingEntityMixin {
             };
         }
         return gravity;
+    }
+
+    @ModifyReturnValue(method = "computeFallDamage", at = @At("RETURN"))
+    private int modifyFallDamage(int originalDamage) {
+        int level = this.getLeadFallingLevel();
+        if (level > 0) {
+            float multiplier = switch (level) {
+                case 1 -> 1.25f;
+                case 2 -> 1.5f;
+                case 3 -> 2.0f;
+                case 4 -> 3.0f;
+                default -> 1.0f;
+            };
+            int modifiedDamage = Math.round(originalDamage * multiplier);
+
+            LivingEntity entity = (LivingEntity) (Object) this;
+            World world = entity.getWorld();
+            if (!world.isClient && modifiedDamage > 0) {
+                float power = Math.min(10.0f, modifiedDamage / 4.0f);
+                world.createExplosion(entity, entity.getX(),entity.getY(),entity.getZ(),power,World.ExplosionSourceType.MOB);
+            }
+
+            return modifiedDamage;
+        }
+        return originalDamage;
     }
 }
