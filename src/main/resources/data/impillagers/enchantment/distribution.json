@@ -3,60 +3,7 @@
   "description": {
     "translate": "enchantment.impillagers.distribution"
   },
-  "effects": {
-    "minecraft:hit_block": [
-      {
-        "effect": {
-          "type": "minecraft:all_of",
-          "effects": [
-            {
-              "type": "minecraft:run_function",
-              "function": "impillagers:distribution_effect"
-            }
-          ]
-        },
-        "requirements": {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "this",
-              "predicate": {
-                "type": "minecraft:arrow"
-              }
-            }
-          ]
-        }
-      }
-    ],
-    "minecraft:post_attack": [
-      {
-        "affected": "victim",
-        "effect": {
-          "type": "minecraft:all_of",
-          "effects": [
-            {
-              "type": "minecraft:run_function",
-              "function": "impillagers:distribution_effect"
-            }
-          ]
-        },
-        "enchanted": "attacker",
-        "requirements": {
-          "condition": "minecraft:all_of",
-          "terms": [
-            {
-              "condition": "minecraft:entity_properties",
-              "entity": "direct_attacker",
-              "predicate": {
-                "type": "minecraft:arrow"
-              }
-            }
-          ]
-        }
-      }
-    ]
-  },
+  "effects": {},
   "exclusive_set": "#minecraft:exclusive_set/bow",
   "max_cost": {
     "base": 75,
@@ -70,6 +17,6 @@
   "slots": [
     "mainhand"
   ],
-  "supported_items": "#minecraft:enchantable/bow",
+  "supported_items": "#impillagers:distribution_enchantable",
   "weight": 2
 }

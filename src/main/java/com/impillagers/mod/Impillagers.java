@@ -2,7 +2,6 @@ package com.impillagers.mod;
 
 import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.block.entity.ModBlockEntities;
-import com.impillagers.mod.command.ModCommands;
 import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.damage.ModDamageTypes;
 import com.impillagers.mod.data.ModDataPacks;
@@ -20,7 +19,6 @@ import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.util.EnchantRegistryHolder;
 import com.impillagers.mod.util.HudOverlayOpacityPayload;
-import com.impillagers.mod.command.ModCommandListener;
 import com.impillagers.mod.villager.ModTrades;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.ModInitializer;
@@ -54,8 +52,6 @@ public class Impillagers implements ModInitializer {
 		ModTrades.registerModTrades();
 		ModEvents.registerModEvents();
 		ModProfessions.registerModProfessions();
-		ModCommandListener.registerListeners();
-		ModCommands.registerCommands();
 		ModDamageTypes.registerDamageTypes();
 		ModDataPacks.registerDataPacks();
 		ModSherds.registerSherds();

@@ -13,7 +13,7 @@
     "ImpillagerLightningMixin",
     "LivingEntityMixin",
     "MobEntityAccessor",
-    "PersistentProjectileEntityAccessor",
+    "PersistentProjectileEntityMixin",
     "PlantBlockMixin",
     "PointOfInterestTaskMixin",
     "SaplingBlockMixin",
