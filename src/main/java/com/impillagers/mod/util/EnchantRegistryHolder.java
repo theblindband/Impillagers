@@ -16,9 +16,8 @@ public class EnchantRegistryHolder {
     }
 
     public static RegistryEntry<Enchantment> getEntry(Identifier id) {
-        var key      = RegistryKey.of(RegistryKeys.ENCHANTMENT, id);
+        var key = RegistryKey.of(RegistryKeys.ENCHANTMENT, id);
         var registry = registryManager.get(RegistryKeys.ENCHANTMENT);
-        return registry.getEntry(key)
-                .orElseThrow(() -> new IllegalStateException("Missing enchant: " + id));
+        return registry.getEntry(key).orElseThrow(() -> new IllegalStateException("Missing enchant: " + id));
     }
 }
