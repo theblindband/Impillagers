@@ -111,7 +111,7 @@ public class ImpillagerEntity extends VillagerEntity {
 
     @Override
     public boolean canHaveStatusEffect(StatusEffectInstance effect) {
-        return !effect.equals(StatusEffects.POISON) && super.canHaveStatusEffect(effect);
+        return effect.getEffectType() != StatusEffects.POISON && super.canHaveStatusEffect(effect);
     }
 
     //-------------------------------------Tick-------------------------------------
