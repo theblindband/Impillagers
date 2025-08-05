@@ -51,10 +51,9 @@ public class BelladonnaBlock extends FlowerBlock {
     @Override
     protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
-            if (entity instanceof LivingEntity livingEntity && !livingEntity.isInvulnerableTo(world.getDamageSources().wither()) && !livingEntity.hasStatusEffect(StatusEffects.POISON)) {
+            if (entity instanceof LivingEntity livingEntity && !livingEntity.hasStatusEffect(StatusEffects.POISON)) {
                 livingEntity.addStatusEffect(new StatusEffectInstance(StatusEffects.POISON, 40, 1));
             }
         }
     }
 }
-
