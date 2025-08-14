@@ -33,6 +33,8 @@ public class ModLootTableProvider extends FabricBlockLootTableProvider {
         addDrop(ModBlocks.STRIPPED_PURPLE_HEART_LOG);
         addDrop(ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
 
+        addDrop(ModBlocks.PURPLE_HEART_LEAVES);
+
         addDrop(ModBlocks.PURPLE_HEART_PLANKS);
 
         addDrop(ModBlocks.PURPLE_HEART_STAIRS);
