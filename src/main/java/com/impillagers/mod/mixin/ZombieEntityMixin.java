@@ -10,15 +10,12 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.mob.HostileEntity;
 import net.minecraft.entity.mob.ZombieEntity;
-import net.minecraft.entity.mob.ZombieVillagerEntity;
-import net.minecraft.entity.passive.VillagerEntity;
 import net.minecraft.nbt.NbtOps;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldEvents;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(ZombieEntity.class)
 public abstract class ZombieEntityMixin extends HostileEntity {
