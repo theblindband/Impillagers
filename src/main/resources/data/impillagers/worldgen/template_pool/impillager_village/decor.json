@@ -40,12 +40,6 @@
         "projection": "rigid"
       },
       "weight": 5
-    },
-    {
-      "element": {
-        "element_type": "minecraft:empty_pool_element"
-      },
-      "weight": 16
     }
   ],
   "fallback": "minecraft:empty"

@@ -9,7 +9,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 6
+      "weight": 24
     },
     {
       "element": {
@@ -20,7 +20,7 @@
         },
         "projection": "rigid"
       },
-      "weight": 5
+      "weight": 24
     },
     {
       "element": {
@@ -31,7 +31,29 @@
         },
         "projection": "rigid"
       },
-      "weight": 3
+      "weight": 10
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/houses/banker_building",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 10
+    },
+    {
+      "element": {
+        "element_type": "minecraft:legacy_single_pool_element",
+        "location": "impillagers:impillager_village/houses/explosives_expert_building",
+        "processors": {
+          "processors": []
+        },
+        "projection": "rigid"
+      },
+      "weight": 10
     },
     {
       "element": {
@@ -43,34 +65,6 @@
         "projection": "rigid"
       },
       "weight": 1
-    },
-    {
-      "element": {
-        "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/houses/banker_building",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 3
-    },
-    {
-      "element": {
-        "element_type": "minecraft:legacy_single_pool_element",
-        "location": "impillagers:impillager_village/houses/explosives_expert_building",
-        "processors": {
-          "processors": []
-        },
-        "projection": "rigid"
-      },
-      "weight": 3
-    },
-    {
-      "element": {
-        "element_type": "minecraft:empty_pool_element"
-      },
-      "weight": 4
     }
   ],
   "fallback": "impillagers:impillager_village/terminators"
