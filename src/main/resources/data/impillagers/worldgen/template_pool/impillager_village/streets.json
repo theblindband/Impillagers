@@ -31,7 +31,7 @@
         },
         "projection": "terrain_matching"
       },
-      "weight": 16
+      "weight": 8
     },
     {
       "element": {
