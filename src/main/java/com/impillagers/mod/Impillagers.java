@@ -90,14 +90,11 @@ public class Impillagers implements ModInitializer {
 		//Packet Payloads
 		PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);
 
-		ServerLifecycleEvents.SERVER_STARTING.register(server -> registerAttributes());
-		ServerLifecycleEvents.SERVER_STARTED.register(EnchantRegistryHolder::init);
-	}
-
-	private void registerAttributes() {
-		//Register Mob Attributes on server start
+		// Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.ZOMBIE_IMPILLAGER, ZombieImpillagerEntity.createZombieImpillagerAttributes());
 		FabricDefaultAttributeRegistry.register(ModEntities.DUNG_GOLEM, DungGolemEntity.createDungGolemAttributes());
+
+		ServerLifecycleEvents.SERVER_STARTED.register(EnchantRegistryHolder::init);
 	}
 }
