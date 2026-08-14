@@ -7,21 +7,21 @@ import java.util.*;
 
 public class ImpillagerTextures {
     public static final Map<String, Integer> TEXTURE_WEIGHTS = Map.of(
-            "grey_impillager", 30,
-            "black_impillager", 30,
-            "brown_impillager", 30,
-            "blue_impillager", 20,
-            "green_impillager", 20,
-            "red_impillager", 1
+            "grey", 30,
+            "black", 30,
+            "brown", 30,
+            "blue", 20,
+            "green", 20,
+            "red", 1
     );
 
     public static final Map<String, Identifier> TEXTURE_MAP = Map.of(
-            "grey_impillager", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/grey_impillager.png"),
-            "black_impillager", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/black_impillager.png"),
-            "brown_impillager", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/brown_impillager.png"),
-            "blue_impillager", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/blue_impillager.png"),
-            "green_impillager", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/green_impillager.png"),
-            "red_impillager", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/red_impillager.png")
+            "grey", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/grey.png"),
+            "black", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/black.png"),
+            "brown", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/brown.png"),
+            "blue", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/blue.png"),
+            "green", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/green.png"),
+            "red", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/red.png")
     );
 
     public static String selectRandomTextureKey() {
