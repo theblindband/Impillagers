@@ -88,7 +88,7 @@ public class ZombieImpillagerEntity extends ZombieVillagerEntity implements Zomb
 
     public Identifier getCustomTexture() {
         String textureKey = this.dataTracker.get(TEXTURE_KEY);
-        return ImpillagerTextures.getTextureByKey(textureKey).orElse(Identifier.tryParse("fallback_texture"));
+        return ImpillagerTextures.getZombieTextureByKey(textureKey).orElse(Identifier.tryParse("fallback_texture"));
     }
 
     public void setTextureKey(String textureKey) {

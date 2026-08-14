@@ -15,13 +15,22 @@ public class ImpillagerTextures {
             "red", 1
     );
 
-    public static final Map<String, Identifier> TEXTURE_MAP = Map.of(
+    public static final Map<String, Identifier> IMPILLAGER_TEXTURE_MAP = Map.of(
             "grey", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/grey.png"),
             "black", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/black.png"),
             "brown", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/brown.png"),
             "blue", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/blue.png"),
             "green", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/green.png"),
             "red", Identifier.of(Impillagers.MOD_ID, "textures/entity/impillager/skin_tones/red.png")
+    );
+
+    public static final Map<String, Identifier> ZOMBIE_IMPILLAGER_TEXTURE_MAP = Map.of(
+            "grey", Identifier.of(Impillagers.MOD_ID, "textures/entity/zombie_impillager/skin_tones/grey.png"),
+            "black", Identifier.of(Impillagers.MOD_ID, "textures/entity/zombie_impillager/skin_tones/black.png"),
+            "brown", Identifier.of(Impillagers.MOD_ID, "textures/entity/zombie_impillager/skin_tones/brown.png"),
+            "blue", Identifier.of(Impillagers.MOD_ID, "textures/entity/zombie_impillager/skin_tones/blue.png"),
+            "green", Identifier.of(Impillagers.MOD_ID, "textures/entity/zombie_impillager/skin_tones/green.png"),
+            "red", Identifier.of(Impillagers.MOD_ID, "textures/entity/zombie_impillager/skin_tones/red.png")
     );
 
     public static String selectRandomTextureKey() {
@@ -38,6 +47,10 @@ public class ImpillagerTextures {
     }
 
     public static Optional<Identifier> getTextureByKey(String key) {
-        return Optional.ofNullable(TEXTURE_MAP.get(key));
+        return Optional.ofNullable(IMPILLAGER_TEXTURE_MAP.get(key));
+    }
+
+    public static Optional<Identifier> getZombieTextureByKey(String key) {
+        return Optional.ofNullable(ZOMBIE_IMPILLAGER_TEXTURE_MAP.get(key));
     }
 }
