@@ -3,7 +3,6 @@
   "package": "com.impillagers.mod.mixin",
   "compatibilityLevel": "JAVA_21",
   "mixins": [
-    "ArrowEntityAccessor",
     "BlockEntityTypeMixin",
     "CarvedPumpkinBlockMixin",
     "CropBlockMixin",
@@ -12,17 +11,19 @@
     "FrogEntityMixin",
     "ImpillagerLightningMixin",
     "LivingEntityMixin",
-    "MobEntityAccessor",
     "PersistentProjectileEntityMixin",
     "PlantBlockMixin",
     "PointOfInterestTaskMixin",
     "SaplingBlockMixin",
-    "SignTypeAccessor",
     "SmellyEffectMixin",
     "SugarCaneBlockMixin",
     "VillagerEntityMixin",
     "ZombieEntityMixin",
-    "ZombieVillagerEntityMixin"
+    "ZombieVillagerEntityMixin",
+    "accessor.ArrowEntityAccessor",
+    "accessor.MobEntityAccessor",
+    "accessor.BlockSetTypeAccessor",
+    "accessor.WoodTypeAccessor"
   ],
   "injectors": {
     "defaultRequire": 1

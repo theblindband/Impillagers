@@ -1,4 +1,4 @@
-package com.impillagers.mod.mixin;
+package com.impillagers.mod.mixin.accessor;
 
 import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.ai.goal.GoalSelector;

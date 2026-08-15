@@ -1,4 +1,4 @@
-package com.impillagers.mod.mixin;
+package com.impillagers.mod.mixin.accessor;
 
 import net.minecraft.component.type.PotionContentsComponent;
 import net.minecraft.entity.projectile.ArrowEntity;

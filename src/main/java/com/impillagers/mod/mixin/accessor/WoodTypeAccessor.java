@@ -1,4 +1,4 @@
-package com.impillagers.mod.mixin;
+package com.impillagers.mod.mixin.accessor;
 
 import net.minecraft.block.BlockSetType;
 import net.minecraft.block.WoodType;
@@ -6,9 +6,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.gen.Invoker;
 
 @Mixin(WoodType.class)
-public interface SignTypeAccessor {
+public interface WoodTypeAccessor {
     @Invoker("<init>")
-    static WoodType newSignType(String name, BlockSetType setType) {
+    static WoodType newWoodType(String name, BlockSetType setType) {
         throw new AssertionError();
     }
 
