@@ -4,7 +4,6 @@ import com.impillagers.mod.block.ModBlocks;
 import com.impillagers.mod.util.ModTags;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.block.Blocks;
 import net.minecraft.registry.RegistryWrapper;
 import net.minecraft.registry.tag.BlockTags;
 
@@ -17,6 +16,7 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+
         getOrCreateTagBuilder(BlockTags.LOGS_THAT_BURN)
                 .addTag(ModTags.Blocks.PURPLE_HEART_LOGS);
 
@@ -28,10 +28,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         getOrCreateTagBuilder(BlockTags.PLANKS)
                 .add(ModBlocks.PURPLE_HEART_PLANKS);
-
-
-
-        //Stairs
 
         getOrCreateTagBuilder(BlockTags.WOODEN_STAIRS)
                 .add(ModBlocks.PURPLE_HEART_STAIRS);
@@ -49,9 +45,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOSSY_DUNG_BRICKS_STAIRS)
                 .add(ModBlocks.DUNG_BRICKS_STAIRS);
 
-
-        //Slabs
-
         getOrCreateTagBuilder(BlockTags.SLABS)
                 .add(ModBlocks.PACKED_MUD_SLAB)
                 .add(ModBlocks.PACKED_DUNG_SLAB)
@@ -59,15 +52,12 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
                 .add(ModBlocks.MOSSY_DUNG_BRICKS_SLAB)
                 .add(ModBlocks.DUNG_BRICKS_SLAB);
 
-        //Walls
         getOrCreateTagBuilder(BlockTags.WALLS)
                 .add(ModBlocks.PACKED_MUD_WALL)
                 .add(ModBlocks.PACKED_DUNG_WALL)
                 .add(ModBlocks.MOSSY_MUD_BRICKS_WALL)
                 .add(ModBlocks.MOSSY_DUNG_BRICKS_WALL)
                 .add(ModBlocks.DUNG_BRICKS_WALL);
-
-
 
         getOrCreateTagBuilder(BlockTags.WOODEN_DOORS)
                 .add(ModBlocks.PURPLE_HEART_DOOR);

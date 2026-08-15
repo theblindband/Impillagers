@@ -10,7 +10,6 @@ import net.minecraft.util.Identifier;
 
 public class ModEffects {
 
-
     public static final RegistryEntry<StatusEffect> SMELLY = registerStatusEffect("smelly",
             new SmellyEffect(StatusEffectCategory.NEUTRAL, 0x36ebab));
     public static final RegistryEntry<StatusEffect> CALL_OF_THE_IMPS = registerStatusEffect("call_of_the_imps",
@@ -21,6 +20,5 @@ public class ModEffects {
     }
 
     public static void registerModEffects(){
-
     }
 }

@@ -114,15 +114,7 @@ public class FireflyBushBlock extends PlantBlock {
                 mutable.set(i + MathHelper.nextInt(random, -10, 10), j + random.nextInt(10), k + MathHelper.nextInt(random, -10, 10));
                 BlockState blockState = world.getBlockState(mutable);
                 if (!blockState.isFullCube(world, mutable)) {
-                    world.addParticle(
-                            ModParticleTypes.FIREFLY,
-                            mutable.getX() + random.nextDouble(),
-                            mutable.getY() + random.nextDouble(),
-                            mutable.getZ() + random.nextDouble(),
-                            0.0,
-                            0.0,
-                            0.0
-                    );
+                    world.addParticle(ModParticleTypes.FIREFLY, mutable.getX() + random.nextDouble(), mutable.getY() + random.nextDouble(), mutable.getZ() + random.nextDouble(), 0.0, 0.0, 0.0);
                 }
             }
         }
@@ -151,23 +143,13 @@ public class FireflyBushBlock extends PlantBlock {
                     heldItem.decrement(1);
                     ItemStack newItemStack = new ItemStack(ModItems.FIREFLY_BOTTLE, 1);
                     player.giveItemStack(newItemStack);
-                    world.playSound(null,
-                            pos.getX(), pos.getY(), pos.getZ(),
-                            SoundEvents.BLOCK_BEEHIVE_ENTER,
-                            SoundCategory.NEUTRAL,
-                            0.75F,
-                            0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
+                    world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.BLOCK_BEEHIVE_ENTER, SoundCategory.NEUTRAL, 0.75F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
                     BlockState newState = state.with(LIT, false).with(COOLDOWN, 10);
                     world.setBlockState(pos, newState, Block.NOTIFY_ALL);
                     scheduleCooldownTick(world, pos);
                     return ItemActionResult.CONSUME;
                 } else {
-                    world.playSound(null,
-                            pos.getX(), pos.getY(), pos.getZ(),
-                            SoundEvents.ENTITY_BEE_POLLINATE,
-                            SoundCategory.NEUTRAL,
-                            0.75F,
-                            0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
+                    world.playSound(null, pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_BEE_POLLINATE, SoundCategory.NEUTRAL, 0.75F, 0.4F / (world.getRandom().nextFloat() * 0.4F + 0.8F));
                     return ItemActionResult.SUCCESS;
                 }
             }

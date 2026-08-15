@@ -17,6 +17,7 @@ public class ModModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
+
         blockStateModelGenerator.registerLog(ModBlocks.PURPLE_HEART_LOG).log(ModBlocks.PURPLE_HEART_LOG).wood(ModBlocks.PURPLE_HEART_WOOD);
         blockStateModelGenerator.registerLog(ModBlocks.STRIPPED_PURPLE_HEART_LOG).log(ModBlocks.STRIPPED_PURPLE_HEART_LOG).wood(ModBlocks.STRIPPED_PURPLE_HEART_WOOD);
 
@@ -41,13 +42,10 @@ public class ModModelProvider extends FabricModelProvider {
         blockStateModelGenerator.registerFlowerPotPlant(ModBlocks.BELLADONNA, ModBlocks.POTTED_BELLADONNA, BlockStateModelGenerator.TintType.TINTED);
         blockStateModelGenerator.registerDoubleBlock(ModBlocks.SWAMP_REED, BlockStateModelGenerator.TintType.TINTED);
 
-
         blockStateModelGenerator.registerBrushableBlock(ModBlocks.SUSPICIOUS_DIRT);
 
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.FERTILE_DIRT);
 
-
-        //Dung Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.DUNG_BLOCK);
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_DUNG_BRICKS);
         blockStateModelGenerator.registerLog(ModBlocks.DUNG_BRICKS_PILLAR).log(ModBlocks.DUNG_BRICKS_PILLAR);
@@ -67,7 +65,6 @@ public class ModModelProvider extends FabricModelProvider {
         mossy_dung_bricks_pool.slab(ModBlocks.MOSSY_DUNG_BRICKS_SLAB);
         mossy_dung_bricks_pool.wall(ModBlocks.MOSSY_DUNG_BRICKS_WALL);
 
-        //Mud Blocks
         blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.CRACKED_MUD_BRICKS);
         blockStateModelGenerator.registerLog(ModBlocks.MUD_BRICKS_PILLAR).log(ModBlocks.MUD_BRICKS_PILLAR);
 

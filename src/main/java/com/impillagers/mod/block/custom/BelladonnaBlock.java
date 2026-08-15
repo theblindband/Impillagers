@@ -16,10 +16,7 @@ import java.util.List;
 
 public class BelladonnaBlock extends FlowerBlock {
     public static final MapCodec<BelladonnaBlock> CODEC = RecordCodecBuilder.mapCodec(
-            instance -> instance.group(
-                    STEW_EFFECT_CODEC.forGetter(FlowerBlock::getStewEffects),
-                    createSettingsCodec()
-            ).apply(instance, BelladonnaBlock::create)
+            instance -> instance.group(STEW_EFFECT_CODEC.forGetter(FlowerBlock::getStewEffects), createSettingsCodec()).apply(instance, BelladonnaBlock::create)
     );
 
     @Override
@@ -36,10 +33,7 @@ public class BelladonnaBlock extends FlowerBlock {
     }
 
     private static SuspiciousStewEffectsComponent createStewEffectList() {
-        List<SuspiciousStewEffectsComponent.StewEffect> effectsList = List.of(
-                new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.POISON, 360),
-                new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.NAUSEA, 360)
-        );
+        List<SuspiciousStewEffectsComponent.StewEffect> effectsList = List.of(new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.POISON, 360), new SuspiciousStewEffectsComponent.StewEffect(StatusEffects.NAUSEA, 360));
         return new SuspiciousStewEffectsComponent(effectsList);
     }
 

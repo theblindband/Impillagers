@@ -28,9 +28,7 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
 
     public ReedBlock(Settings settings) {
         super(settings);
-        this.setDefaultState(
-                this.stateManager.getDefaultState().with(HALF, DoubleBlockHalf.LOWER).with(WATERLOGGED, Boolean.FALSE)
-        );
+        this.setDefaultState(this.stateManager.getDefaultState().with(HALF, DoubleBlockHalf.LOWER).with(WATERLOGGED, Boolean.FALSE));
     }
 
     @Override
@@ -44,26 +42,21 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
 
     @Override
     protected boolean canPlantOnTop(BlockState floor, BlockView world, BlockPos pos) {
-        return floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.SMALL_DRIPLEAF_PLACEABLE)
-                || world.getFluidState(pos.up()).isEqualAndStill(Fluids.WATER) && super.canPlantOnTop(floor, world, pos);
+        return floor.isIn(BlockTags.DIRT) || floor.isIn(BlockTags.SMALL_DRIPLEAF_PLACEABLE) || world.getFluidState(pos.up()).isEqualAndStill(Fluids.WATER) && super.canPlantOnTop(floor, world, pos);
     }
 
     @Nullable
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockState blockState = super.getPlacementState(ctx);
-        return blockState != null
-                ? withWaterloggedState(ctx.getWorld(), ctx.getBlockPos(), blockState)
-                : null;
+        return blockState != null ? withWaterloggedState(ctx.getWorld(), ctx.getBlockPos(), blockState) : null;
     }
 
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, LivingEntity placer, ItemStack itemStack) {
         if (!world.isClient()) {
             BlockPos blockPos = pos.up();
-            BlockState blockState = TallPlantBlock.withWaterloggedState(
-                    world, blockPos, this.getDefaultState().with(HALF, DoubleBlockHalf.UPPER)
-            );
+            BlockState blockState = TallPlantBlock.withWaterloggedState(world, blockPos, this.getDefaultState().with(HALF, DoubleBlockHalf.UPPER));
             world.setBlockState(blockPos, blockState, Block.NOTIFY_ALL);
         }
     }
@@ -85,13 +78,10 @@ public class ReedBlock extends TallPlantBlock implements Fertilizable, Waterlogg
     }
 
     @Override
-    protected BlockState getStateForNeighborUpdate(
-            BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos
-    ) {
+    protected BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState neighborState, WorldAccess world, BlockPos pos, BlockPos neighborPos) {
         if (state.get(WATERLOGGED)) {
             world.scheduleFluidTick(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
         }
-
         return super.getStateForNeighborUpdate(state, direction, neighborState, world, pos, neighborPos);
     }
 

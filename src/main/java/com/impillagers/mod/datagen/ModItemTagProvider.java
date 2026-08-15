@@ -18,6 +18,7 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
 
     @Override
     protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+
         getOrCreateTagBuilder(ItemTags.DECORATED_POT_SHERDS)
                 .add(ModItems.IMP_POTTERY_SHERD)
                 .add(ModItems.COVER_POTTERY_SHERD);
@@ -164,6 +165,5 @@ public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
                 .add(Blocks.PURPLE_CONCRETE_POWDER.asItem())
                 .add(Blocks.MAGENTA_CONCRETE_POWDER.asItem())
                 .add(Blocks.PINK_CONCRETE_POWDER.asItem());
-
     }
 }

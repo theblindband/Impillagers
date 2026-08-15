@@ -84,7 +84,6 @@ public class WasteBasketBlock extends Block implements InventoryProvider {
         if (level <= 0) {
             return ItemStack.EMPTY;
         }
-
         int nextLevel = level - 1;
 
         world.setBlockState(pos, state.with(DUNG_LEVEL, nextLevel), Block.NOTIFY_ALL);

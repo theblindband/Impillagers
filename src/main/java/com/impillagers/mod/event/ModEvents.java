@@ -1,7 +1,7 @@
 package com.impillagers.mod.event;
 
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
-import com.impillagers.mod.mixin.MobEntityAccessor;
+import com.impillagers.mod.mixin.accessor.MobEntityAccessor;
 import com.impillagers.mod.predicate.SmellyPredicate;
 import com.impillagers.mod.util.ModTags;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerEntityEvents;

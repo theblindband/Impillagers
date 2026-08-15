@@ -7,7 +7,6 @@ import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
@@ -47,61 +46,29 @@ public class SafeBlock extends BlockWithEntity implements BlockEntityProvider{
         if (!player.isSneaking()) {
             if (!locked || be.isOwner(playerId)) {
                 player.openHandledScreen(be);
-                world.playSound(null,
-                        pos,
-                        SoundEvents.BLOCK_IRON_DOOR_OPEN,
-                        SoundCategory.BLOCKS,
-                        1.0F,
-                        1.0F);
+                world.playSound(null, pos, SoundEvents.BLOCK_IRON_DOOR_OPEN, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 return ActionResult.SUCCESS;
             } else {
-                player.sendMessage(
-                        Text.translatable("message.impillagers.safe.locked"),
-                        true
-                );
+                player.sendMessage(Text.translatable("message.impillagers.safe.locked"), true);
                 return ActionResult.FAIL;
             }
         }
 
         if (locked) {
             if (be.isOwner(playerId)) {
-                world.setBlockState(pos,
-                        state.with(SafeBlock.LOCKED, false),
-                        Block.NOTIFY_ALL);
+                world.setBlockState(pos, state.with(SafeBlock.LOCKED, false), Block.NOTIFY_ALL);
                 be.clearOwner();
-                world.playSound(null,
-                        pos,
-                        ModSoundEvents.SAFE_UNLOCK,
-                        SoundCategory.BLOCKS,
-                        1.0F,
-                        1.0F);
-
-                player.sendMessage(
-                        Text.translatable("message.impillagers.safe.unlocked"),
-                        true
-                );
+                world.playSound(null, pos, ModSoundEvents.SAFE_UNLOCK, SoundCategory.BLOCKS, 1.0F, 1.0F);
+                player.sendMessage(Text.translatable("message.impillagers.safe.unlocked"), true);
             } else {
-                player.sendMessage(
-                        Text.translatable("message.impillagers.safe.not_owner"),
-                        true
-                );
+                player.sendMessage(Text.translatable("message.impillagers.safe.not_owner"), true);
             }
         } else {
-            world.setBlockState(pos,
-                    state.with(SafeBlock.LOCKED, true),
-                    Block.NOTIFY_ALL);
+            world.setBlockState(pos, state.with(SafeBlock.LOCKED, true), Block.NOTIFY_ALL);
             be.setOwner(playerId);
-            world.playSound(null,
-                    pos,
-                    ModSoundEvents.SAFE_LOCK,
-                    SoundCategory.BLOCKS,
-                    1.0F,
-                    1.0F);
+            world.playSound(null, pos, ModSoundEvents.SAFE_LOCK, SoundCategory.BLOCKS, 1.0F, 1.0F);
 
-            player.sendMessage(
-                    Text.translatable("message.impillagers.safe.locked_success"),
-                    true
-            );
+            player.sendMessage(Text.translatable("message.impillagers.safe.locked_success"), true);
         }
 
         return ActionResult.SUCCESS;
@@ -129,13 +96,11 @@ public class SafeBlock extends BlockWithEntity implements BlockEntityProvider{
         return createCodec(SafeBlock::new);
     }
 
-    //Hit Box
     @Override
     protected VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
         return SHAPE;
     }
 
-    //Facing Block State
     @Override
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return this.getDefaultState().with(FACING, ctx.getHorizontalPlayerFacing().getOpposite());

@@ -13,8 +13,6 @@ public class ModDataPacks {
     public static void registerDataPacks() {
         Impillagers.LOGGER.info("Registering Data Packs for Impillagers");
 
-        // The datapack folder is at: resources/resourcepacks/datapacks/
-        // requiredModId is optional, set to null for no conditional registering
         registerBuiltinDatapack("compat_terralith", true, "terralith");
         registerBuiltinDatapack("compat_clifftree", true, "mr_clifftree");
         registerBuiltinDatapack("compat_wwoo", true, "wwoo");
@@ -35,25 +33,19 @@ public class ModDataPacks {
         if (requiredModId != null) {
             if (FabricLoader.getInstance().isModLoaded(requiredModId)) {
                 if (autoEnable) {
-                    Impillagers.LOGGER.info("{} DETECTED - Registering datapack '{}' and auto-enabling it",
-                            requiredModId.toUpperCase(), datapackName);
+                    Impillagers.LOGGER.info("{} DETECTED - Registering datapack '{}' and auto-enabling it", requiredModId.toUpperCase(), datapackName);
                 } else {
-                    Impillagers.LOGGER.info("{} DETECTED - Registering datapack '{}' But not auto-enabling it",
-                            requiredModId.toUpperCase(), datapackName);
+                    Impillagers.LOGGER.info("{} DETECTED - Registering datapack '{}' But not auto-enabling it", requiredModId.toUpperCase(), datapackName);
                 }
             } else {
-                Impillagers.LOGGER.info("Registering datapack '{}' But not auto-enabling it",
-                        datapackName);
+                Impillagers.LOGGER.info("Registering datapack '{}' But not auto-enabling it", datapackName);
                 shouldAutoEnable = false;
             }
         } else {
-            Impillagers.LOGGER.info("Registering datapack '{}' with auto-enable set to {}",
-                    datapackName, autoEnable);
+            Impillagers.LOGGER.info("Registering datapack '{}' with auto-enable set to {}", datapackName, autoEnable);
         }
 
-        ResourcePackActivationType activationType = shouldAutoEnable
-                ? ResourcePackActivationType.DEFAULT_ENABLED
-                : ResourcePackActivationType.NORMAL;
+        ResourcePackActivationType activationType = shouldAutoEnable ? ResourcePackActivationType.DEFAULT_ENABLED : ResourcePackActivationType.NORMAL;
 
         Identifier datapackId = Identifier.of(Impillagers.MOD_ID, fullPath);
         ResourceManagerHelper.registerBuiltinResourcePack(datapackId, modContainer, activationType);

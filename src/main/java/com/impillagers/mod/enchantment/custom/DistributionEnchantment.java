@@ -1,7 +1,7 @@
 package com.impillagers.mod.enchantment.custom;
 
 import com.impillagers.mod.Impillagers;
-import com.impillagers.mod.mixin.ArrowEntityAccessor;
+import com.impillagers.mod.mixin.accessor.ArrowEntityAccessor;
 import com.impillagers.mod.util.EnchantRegistryHolder;
 import net.minecraft.block.Blocks;
 import net.minecraft.component.type.PotionContentsComponent;
@@ -37,7 +37,6 @@ public class DistributionEnchantment {
         float radius = getRadius(distributionLevel);
         Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
 
-        // Apply damage to entities in area
         for (LivingEntity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
             if (entity != owner) {
                 float damage = calculateDamage(weapon);
@@ -45,7 +44,6 @@ public class DistributionEnchantment {
             }
         }
 
-        // Handle potion effects
         if (projectile instanceof ArrowEntity) {
             List<StatusEffectInstance> effects = getPotionEffects((ArrowEntity) projectile);
             if (!effects.isEmpty()) {
@@ -54,10 +52,8 @@ public class DistributionEnchantment {
             }
         }
 
-        // Handle combo effects
         checkCombos(weapon, radius, impactLocation, world, area);
 
-        // Remove arrow after effect
         if (projectile instanceof ArrowEntity) {
             projectile.kill();
         }
@@ -72,7 +68,6 @@ public class DistributionEnchantment {
         float radius = getRadius(level);
         Box area = calculateEffectArea(impactLocation.x, impactLocation.y, impactLocation.z, radius);
 
-        // Apply damage to entities in area
         for (LivingEntity entity : world.getEntitiesByClass(LivingEntity.class, area, e -> true)) {
             if (entity != attacker && entity != target) {
                 float damage = calculateDamage(weapon);
@@ -80,7 +75,6 @@ public class DistributionEnchantment {
             }
         }
 
-        // Handle combo effects
         checkCombos(weapon, radius, impactLocation, world, area);
     }
 
@@ -95,11 +89,9 @@ public class DistributionEnchantment {
     private static List<StatusEffectInstance> getPotionEffects(ArrowEntity arrow) {
         List<StatusEffectInstance> effects = new ArrayList<>();
 
-        // Get potion contents component from arrow
         PotionContentsComponent potionContents = ((ArrowEntityAccessor) arrow).GetPotionContents();
 
         if (potionContents != null) {
-            // Get effects from the potion
             potionContents.getEffects().forEach(effects::add);
         }
 
