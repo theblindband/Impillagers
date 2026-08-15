@@ -19,20 +19,13 @@ import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.math.random.Random;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.*;
 
 public class SinkingMudBlock extends Block implements Waterloggable{
     public static final MapCodec<SinkingMudBlock> CODEC = createCodec(SinkingMudBlock::new);
-    private static final float field_31216 = 0.083333336F;
-    private static final float HORIZONTAL_MOVEMENT_MULTIPLIER = 0.9F;
-    private static final float VERTICAL_MOVEMENT_MULTIPLIER = 1.5F;
-    private static final float field_31219 = 2.5F;
     private static final VoxelShape FALLING_SHAPE = VoxelShapes.cuboid(0.0, 0.0, 0.0, 1.0, 0.9F, 1.0);
-    private static final double field_36189 = 4.0;
-    private static final double SMALL_FALL_SOUND_MAX_DISTANCE = 7.0;
 
     public static final BooleanProperty WATERLOGGED = Properties.WATERLOGGED;
 
@@ -50,10 +43,6 @@ public class SinkingMudBlock extends Block implements Waterloggable{
     protected void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
         if (!(entity instanceof LivingEntity) || entity.getBlockStateAtPos().isOf(this)) {
             entity.slowMovement(state, new Vec3d(0.9F, 1.5, 0.9F));
-            if (world.isClient) {
-                Random random = world.getRandom();
-                boolean bl = entity.lastRenderX != entity.getX() || entity.lastRenderZ != entity.getZ();
-            }
         }
 
         if (!world.isClient) {
