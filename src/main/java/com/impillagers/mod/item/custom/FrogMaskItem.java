@@ -4,9 +4,7 @@ import com.google.common.collect.ImmutableMap;
 import com.impillagers.mod.component.ModDataComponentTypes;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.item.ModArmorMaterials;
-import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.util.ModTags;
-import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
@@ -14,10 +12,8 @@ import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -40,8 +36,6 @@ public class FrogMaskItem extends ArmorItem {
             if(entity instanceof PlayerEntity player) {
                 if(hasHelmetOn(player)) {
                     evaluateArmorEffects(player);
-                } else {
-                        ServerPlayNetworking.send((ServerPlayerEntity) player, new HudOverlayOpacityPayload(0F));
                 }
             }
         }
@@ -55,12 +49,12 @@ public class FrogMaskItem extends ArmorItem {
             List<StatusEffectInstance> mapStatusEffects = entry.getValue();
 
             if(hasCorrectArmorOn(mapArmorMaterial, player)) {
-                addStatusEffectForMaterial(player, mapArmorMaterial, mapStatusEffects);
+                addStatusEffectForMaterial(player, mapStatusEffects);
             }
         }
     }
 
-    private void addStatusEffectForMaterial(PlayerEntity player, RegistryEntry<ArmorMaterial> mapArmorMaterial, List<StatusEffectInstance> mapStatusEffect) {
+    private void addStatusEffectForMaterial(PlayerEntity player, List<StatusEffectInstance> mapStatusEffect) {
         boolean hasPlayerEffect = mapStatusEffect.stream().allMatch(statusEffectInstance -> player.hasStatusEffect(statusEffectInstance.getEffectType()));
 
         if(!hasPlayerEffect) {
@@ -81,14 +75,9 @@ public class FrogMaskItem extends ArmorItem {
         for (ItemStack armorStack : player.getInventory().armor) {
             if (armorStack.getItem() instanceof FrogMaskItem) {
                 ArmorItem helmet = ((ArmorItem) player.getInventory().getArmorStack(3).getItem());
-                if (helmet.getMaterial() == material)
-                {
+                if (helmet.getMaterial() == material) {
                     updateVillageCoordinates(armorStack, player);
-                    float threshold = 45.0f;
-                    double angle = isLookingAtVillage(armorStack, player, threshold);
-                    if ( angle >= 0) {
-                        return true;
-                    }
+                    return true;
                 }
             }
         }
@@ -103,35 +92,6 @@ public class FrogMaskItem extends ArmorItem {
             if (!villageLocation.equals(stack.get(ModDataComponentTypes.COORDINATES))) {
                 stack.set(ModDataComponentTypes.COORDINATES, villageLocation);
             }
-        }
-    }
-
-    private double isLookingAtVillage(ItemStack stack, PlayerEntity player, float threshold) {
-        BlockPos village = stack.get((ModDataComponentTypes.COORDINATES));
-        if (village != null) {
-            Vec3d viewDirection = new Vec3d(player.getRotationVec(1.0F).x, 0, player.getRotationVec(1.0F).z).normalize();
-            Vec3d villageDirection = new Vec3d(village.getX() - player.getX(), 0, village.getZ() - player.getZ()).normalize();
-            double dotProduct = viewDirection.dotProduct(villageDirection);
-            double angle = Math.acos(dotProduct);
-            angle = Math.toDegrees(angle);
-            float opacity = calculateOpacity(angle, threshold);
-
-            if (!player.getEntityWorld().isClient()) {
-                    ServerPlayNetworking.send((ServerPlayerEntity) player, new HudOverlayOpacityPayload(opacity));
-                }
-            if (angle < threshold) {
-                return angle;
-            }
-        }
-        return -1;
-    }
-
-    public float calculateOpacity(double angle, double threshold) {
-        if (angle >= threshold) {
-            return 0f;
-        } else {
-            double ratio = angle / threshold;
-            return (float)(1 - Math.pow(ratio, 2));
         }
     }
 

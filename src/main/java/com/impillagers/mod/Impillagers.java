@@ -18,12 +18,10 @@ import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.sounds.ModSoundEvents;
 import com.impillagers.mod.util.EnchantRegistryHolder;
-import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import com.impillagers.mod.villager.ModTrades;
 import com.impillagers.mod.villager.professions.ModProfessions;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
-import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.registry.*;
 import net.minecraft.item.HoeItem;
@@ -86,9 +84,6 @@ public class Impillagers implements ModInitializer {
 
 		//Potion Recipes
 		FabricBrewingRecipeRegistryBuilder.BUILD.register(builder -> builder.registerPotionRecipe(Potions.AWKWARD, ModBlocks.BELLADONNA.asItem(), Potions.STRONG_POISON));
-
-		//Packet Payloads
-		PayloadTypeRegistry.playS2C().register(HudOverlayOpacityPayload.ID, HudOverlayOpacityPayload.CODEC);
 
 		// Mob Attributes
 		FabricDefaultAttributeRegistry.register(ModEntities.IMPILLAGER, ImpillagerEntity.createVillagerAttributes());

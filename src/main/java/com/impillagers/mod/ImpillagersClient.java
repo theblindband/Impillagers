@@ -1,9 +1,7 @@
 package com.impillagers.mod;
 
 import com.impillagers.mod.block.ModBlocks;
-import com.impillagers.mod.effect.ModEffectClient;
 import com.impillagers.mod.entity.ModEntities;
-import com.impillagers.mod.entity.client.*;
 import com.impillagers.mod.entity.client.boat.ModBoatRenderer;
 import com.impillagers.mod.entity.client.dung_golem.DungGolemModel;
 import com.impillagers.mod.entity.client.dung_golem.DungGolemRenderer;
@@ -18,12 +16,9 @@ import com.impillagers.mod.particle.ModParticleTypes;
 import com.impillagers.mod.particle.custom.FireflyParticle;
 import com.impillagers.mod.screen.ModScreenHandlers;
 import com.impillagers.mod.screen.custom.SafeScreen;
-import com.impillagers.mod.util.HudOverlayOpacityPayload;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
-import net.fabricmc.fabric.api.client.event.lifecycle.v1.ClientTickEvents;
 import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents;
-import net.fabricmc.fabric.api.client.networking.v1.ClientPlayNetworking;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityModelLayerRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
@@ -35,8 +30,6 @@ import net.minecraft.client.render.entity.FlyingItemEntityRenderer;
 public class ImpillagersClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-
-        ModHud.initializeModHud();
 
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_HEART_DOOR, RenderLayer.getCutout());
         BlockRenderLayerMap.INSTANCE.putBlock(ModBlocks.PURPLE_HEART_TRAPDOOR, RenderLayer.getCutout());
@@ -62,10 +55,6 @@ public class ImpillagersClient implements ClientModInitializer {
         EntityRendererRegistry.register(ModEntities.CHEST_BOAT, m -> new ModBoatRenderer<>(m, true));
 
         ParticleFactoryRegistry.getInstance().register(ModParticleTypes.FIREFLY,((spriteProvider) -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> new FireflyParticle(world, x, y, z, spriteProvider)));
-
-        ClientPlayNetworking.registerGlobalReceiver(HudOverlayOpacityPayload.ID, (payload, context) -> context.client().execute(() -> ModHud.renderCallOfTheImpsOverlay (payload.opacity())));
-
-        ClientTickEvents.END_CLIENT_TICK.register(client -> {ModEffectClient.updateSoundEffects();});
 
         ClientPlayConnectionEvents.INIT.register((handler, client) -> {
             //Register Attributes on client when joining a server
