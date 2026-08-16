@@ -1,0 +1,194 @@
+{
+  "itemgroup.impillagers": "Impillagers",
+
+  "block.impillagers.purple_heart_log": "Tronco de Pau-Roxo",
+  "block.impillagers.purple_heart_wood": "Madeira de Pau-Roxo",
+  "block.impillagers.stripped_purple_heart_log": "Tronco de Pau-Roxo Descascado",
+  "block.impillagers.stripped_purple_heart_wood": "Madeira de Pau-Roxo Descacada",
+  "block.impillagers.purple_heart_planks": "Tábuas de Pau-Roxo",
+  "block.impillagers.purple_heart_stairs": "Escadas de Pau-Roxo",
+  "block.impillagers.purple_heart_slab": "Laje de Pau-Roxo",
+  "block.impillagers.purple_heart_fence": "Cerca de Pau-Roxo",
+  "block.impillagers.purple_heart_fence_gate": "Portão de Pau-Roxo",
+  "block.impillagers.purple_heart_door": "Porta de Pau-Roxo",
+  "block.impillagers.purple_heart_trapdoor": "Alçapão de Pau-Roxo",
+  "block.impillagers.purple_heart_pressure_plate": "Placa de Pressão de Pau-Roxo",
+  "block.impillagers.purple_heart_button": "Botão de Pau-Roxo",
+  "block.impillagers.purple_heart_leaves": "Folhas de Pau-Roxo",
+  "block.impillagers.purple_heart_sapling": "Muda de Pau-Roxo",
+  "block.impillagers.purple_heart_sign": "Placa de Pau-Roxo",
+  "block.impillagers.purple_heart_hanging_sign": "Placa Suspensa de Pau-Roxo",
+
+  "item.impillagers.purple_heart_boat": "Bote de Pau-Roxo",
+  "item.impillagers.purple_heart_chest_boat": "Bote de Pau-Roxo com Baú",
+
+  "block.impillagers.belladonna": "Beladona",
+  "block.impillagers.swamp_reed": "Juncos do Pântano",
+
+  "block.impillagers.firefly_bush": "Arbusto-Vaga-Lume",
+  "block.impillagers.firefly_bottle": "Vaga-Lume Engarrafado",
+
+  "block.impillagers.sinking_mud": "Lama Movediça",
+  "block.impillagers.suspicious_dirt": "Terra Suspeita",
+
+  "block.impillagers.packed_mud_stairs": "Escadas de Barro Seco",
+  "block.impillagers.packed_mud_slab": "Laje de Barro Seco",
+  "block.impillagers.packed_mud_wall": "Muro de Barro Seco",
+
+  "block.impillagers.mossy_mud_bricks": "Tijolos de Barro Musgosos",
+  "block.impillagers.mossy_mud_bricks_stairs": "Escadas de Tijolos de Barro Musgosos",
+  "block.impillagers.mossy_mud_bricks_slab": "Laje de Tijolos de Barro Musgosos",
+  "block.impillagers.mossy_mud_bricks_wall": "Muro de Tijolos de Barro Musgosos",
+
+  "block.impillagers.cracked_mud_bricks": "Tijolos de Barro Rachados",
+  "block.impillagers.chiseled_mud_bricks": "Tijolos de Barro Talhados",
+  "block.impillagers.mud_bricks_pillar": "Pilar de Tijolos de Barro",
+
+  "block.impillagers.dung_block": "Bloco de Esterco",
+  "block.impillagers.packed_dung": "Bloco de Esterco Seco",
+  "block.impillagers.packed_dung_stairs": "Escadas de Esterco Seco",
+  "block.impillagers.packed_dung_slab": "Laje de Esterco Seco",
+  "block.impillagers.packed_dung_wall": "Muro de Esterco Seco",
+
+  "block.impillagers.dung_bricks": "Tijolos de Esterco",
+  "block.impillagers.dung_bricks_stairs": "Escadas de Tijolos de Esterco",
+  "block.impillagers.dung_bricks_slab": "Laje de Tijolos de Esterco",
+  "block.impillagers.dung_bricks_wall": "Muro de Tijolos de Esterco",
+
+  "block.impillagers.mossy_dung_bricks": "Tijolos de Esterco Musgosos",
+  "block.impillagers.mossy_dung_bricks_stairs": "Escadas de Tijolos de Esterco Musgosos",
+  "block.impillagers.mossy_dung_bricks_slab": "Laje de Tijolos de Esterco Musgosos",
+  "block.impillagers.mossy_dung_bricks_wall": "Muro de Tijolos de Esterco Musgosos",
+
+  "block.impillagers.cracked_dung_bricks": "Tijolos de Esterco Rachados",
+  "block.impillagers.chiseled_dung_bricks": "Tijolos de Esterco Talhados",
+  "block.impillagers.dung_bricks_pillar": "Pilar de Tijolos de Esterco",
+
+  "block.impillagers.fertile_dirt": "Terra Fértil",
+  "block.impillagers.fertile_farmland": "Terra Fértil Arada",
+
+  "block.impillagers.safe": "Cofre",
+  "block.impillagers.waste_basket": "Cesto de Resíduos",
+
+  "item.impillagers.imp_pottery_sherd": "Óstraco de Imp",
+  "item.impillagers.cover_pottery_sherd": "Óstraco de Sombra Fresca",
+  "item.impillagers.frog_mask": "Máscara de Sapo",
+  "item.impillagers.dung_ball": "Pedaço de Esterco",
+  "item.impillagers.impillager_spawn_egg": "Ovo Gerador de Impillager",
+  "item.impillagers.zombie_impillager_spawn_egg": "Ovo Gerador de Impillager Zumbi",
+  "item.impillagers.dung_golem_spawn_egg": "Ovo Gerador de Golem de Esterco",
+  "item.impillagers.gold_coin": "Moeda de Ouro",
+  "item.impillagers.fake_gold_coin": "Moeda de Ouro",
+  "item.impillagers.painted_armor_trim_smithing_template": "Molde de Ferraria",
+  "item.impillagers.spider_pieye": "Torta de Olho de Aranha",
+  "item.impillagers.totem_of_undyeing": "Totem da Descoloração",
+  "item.impillagers.creeper_oil": "Óleo de Creeper",
+
+  "painting.impillagers.offer.title": "Offer",
+  "painting.impillagers.offer.author": "smiileyf4ce",
+
+  "trim_pattern.impillagers.painted": "Enfeite de Pintado",
+
+  "entity.impillagers.impillager.none": "Impillager",
+  "entity.impillagers.zombie_impillager": "Impillager Zumbi",
+  "entity.impillagers.impillager.nitwit": "Impillager Palerma",
+  "entity.impillagers.dung_golem": "Golem de Esterco",
+
+  "entity.impillagers.impillager.dung_collector": "Coletor de Esterco",
+  "entity.impillagers.impillager.banker": "Banqueiro",
+  "entity.impillagers.impillager.musician": "Músico",
+  "entity.impillagers.impillager.guard": "Guarda",
+  "entity.impillagers.impillager.explosives_expert": "Especialista em Explosivos",
+  "entity.impillagers.impillager.druid": "Druída",
+  "entity.impillagers.impillager.alchemist": "Alquimista",
+  "entity.impillagers.impillager.occultist": "Ocultista",
+  "entity.impillagers.impillager.clan_leader": "Líder de Clã",
+
+  "entity.impillagers.impillager.impillagers.dung_collector": "Coletor de Esterco",
+  "entity.impillagers.impillager.impillagers.banker": "Banqueiro",
+  "entity.impillagers.impillager.impillagers.musician": "Músico",
+  "entity.impillagers.impillager.impillagers.guard": "Guarda",
+  "entity.impillagers.impillager.impillagers.explosives_expert": "Especialista em Explosivos",
+  "entity.impillagers.impillager.impillagers.druid": "Druída",
+  "entity.impillagers.impillager.impillagers.alchemist": "Alquimista",
+  "entity.impillagers.impillager.impillagers.occultist": "Ocultista",
+  "entity.impillagers.impillager.impillagers.clan_leader": "Líder de Clã",
+
+  "effect.impillagers.smelly": "Fedor",
+  "effect.impillagers.call_of_the_imps": "Chamado dos Imps",
+
+  "enchantment.impillagers.fuse": "Fusível",
+  "enchantment.impillagers.distribution": "Distribuição",
+  "tag.item.impillagers.distribution_enchantable": "Encantáveis de Distribuição",
+  "enchantment.impillagers.lead_falling": "Queda de Chumbo",
+  "enchantment.impillagers.frogs_legs": "Pernas de Sapo",
+
+  "tag.item.impillagers.stained_glass_pane": "Vidraças Tingidas",
+  "tag.item.impillagers.stained_glass": "Vidros Tingidos",
+  "tag.item.impillagers.concrete_powder": "Cimentos",
+  "tag.item.impillagers.dyed_terracotta": "Terracotas Tingidas",
+  "tag.item.impillagers.dyed_candle": "Velas Tingidas",
+  "tag.item.impillagers.purple_heart_logs": "Troncos de Pau-Roxo",
+  "tag.item.impillagers.frog_poisonous_food": "Alimentos venenosos para Sapos",
+
+  "advancements.impillagers.root.title": "Impillagers",
+  "advancements.impillagers.root.description": "O pântano desperta",
+
+  "advancements.impillagers.find_swamp_ruin.title": "História barrenta",
+  "advancements.impillagers.find_swamp_ruin.description": "Encontre uma Ruína do Pântano",
+
+  "advancements.impillagers.find_frog_mask.title": "Máscara de maravilhas",
+  "advancements.impillagers.find_frog_mask.description": "Encontre uma Máscara de Sapo em uma Ruína do Pântano",
+
+  "advancements.impillagers.find_swamp_sherds.title": "Vasos do pântano",
+  "advancements.impillagers.find_swamp_sherds.description": "Encontre os novos Óstracos no pântano",
+
+  "advancements.impillagers.follow_frog_mask.title": "Estou ouvindo risos?",
+  "advancements.impillagers.follow_frog_mask.description": "Siga a Máscara de Sapo",
+
+  "advancements.impillagers.obtain_firefly_bush.title": "Um vislumbre do futuro",
+  "advancements.impillagers.obtain_firefly_bush.description": "Obtenha um Arbusto-Vaga-Lume",
+
+  "advancements.impillagers.obtain_firefly_bottle.title": "Jurava que eram churruminos!",
+  "advancements.impillagers.obtain_firefly_bottle.description": "Engarrafe alguns Vaga-Lumes",
+
+  "advancements.impillagers.walk_on_sinking_mud_with_leather_boots.title": "Pulando em poças de lama",
+  "advancements.impillagers.walk_on_sinking_mud_with_leather_boots.description": "Use Botas de Couro para andar na Lama Movediça",
+
+  "advancements.impillagers.find_swamp_hut.title": "Algumas coisas nunca mudam",
+  "advancements.impillagers.find_swamp_hut.description": "Encontra uma Cabana do Pântano",
+
+  "advancements.impillagers.obtain_gold_coin.title": "Dinheiro!",
+  "advancements.impillagers.obtain_gold_coin.description": "Troque algo por uma Moeda de Ouro de um Imp",
+
+  "advancements.impillagers.obtain_fake_gold_coin.title": "Isso não me cheira bem",
+  "advancements.impillagers.obtain_fake_gold_coin.description": "Seja enganado, seu trouxa!",
+
+  "advancements.impillagers.obtain_swamp_flora.title": "Jardim pantanoso",
+  "advancements.impillagers.obtain_swamp_flora.description": "Obtenha todas as plantas exclusivas do pântano",
+
+  "advancements.impillagers.obtain_unique_imp_trade.title": "Lampião, cordas, bombas!",
+  "advancements.impillagers.obtain_unique_imp_trade.description": "Troque algo por uma das mercadorias únicas dos Impillagers",
+
+  "advancements.impillagers.summon_dung_golem.title": "Parabéns, viu seu cocô",
+  "advancements.impillagers.summon_dung_golem.description": "Construa um Golem de Esterco",
+
+  "advancements.impillagers.obtain_fertile_dirt.title": "Agora você tá pensando como um Imp",
+  "advancements.impillagers.obtain_fertile_dirt.description": "Crie um pouco de Terra Fértil",
+
+  "advancements.impillagers.obtain_dung.title": "Um grande pedaço de...",
+  "advancements.impillagers.obtain_dung.description": "Obtenha um pouco de Esterco",
+
+  "advancements.impillagers.poisoned_frog.title": "Eles te avisaram",
+  "advancements.impillagers.poisoned_frog.description": "Alimente um Sapo com alguns Vaga-Lumes e sofra as consequências",
+
+  "death.attack.strongstuff": "%s tomou uma das fortes",
+  "death.attack.strongstuff.player": "%s tomou uma das fortes para escapar de %s",
+
+  "container.impillagers.safe": "Cofre",
+
+  "message.impillagers.safe.not_owner": "Impossível desbloquear: Cofre trancado por outro jogador",
+  "message.impillagers.safe.locked": "Trancado",
+  "message.impillagers.safe.locked_success": "O Cofre foi trancado",
+  "message.impillagers.safe.unlocked": "O Cofre foi destrancado"
+}
