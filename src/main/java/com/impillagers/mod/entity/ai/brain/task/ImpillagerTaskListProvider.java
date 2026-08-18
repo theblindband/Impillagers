@@ -191,6 +191,11 @@ public class ImpillagerTaskListProvider {
             EntityType.ZOMBIFIED_PIGLIN,
             EntityType.PIGLIN,
             EntityType.PIGLIN_BRUTE,
+            EntityType.HUSK,
+            EntityType.VINDICATOR,
+            EntityType.DROWNED,
+            EntityType.EVOKER,
+            EntityType.RAVAGER,
             ModEntities.ZOMBIE_IMPILLAGER
     );
 }
