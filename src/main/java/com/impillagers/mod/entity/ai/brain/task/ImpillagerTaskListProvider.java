@@ -6,7 +6,6 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
 import com.impillagers.mod.entity.ModEntities;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
-import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -41,15 +40,7 @@ public class ImpillagerTaskListProvider {
                 Pair.of(0, StartRaidTask.create()),
                 Pair.of(0, ForgetCompletedPointOfInterestTask.create(profession.heldWorkstation(), MemoryModuleType.JOB_SITE)),
                 Pair.of(0, ForgetCompletedPointOfInterestTask.create(profession.acquirableWorkstation(), MemoryModuleType.POTENTIAL_JOB_SITE)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.VILLAGER, 20, MemoryModuleType.ATTACK_TARGET, VillagerEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PILLAGER, 20, MemoryModuleType.ATTACK_TARGET,  PillagerEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE, 20, MemoryModuleType.ATTACK_TARGET,  ZombieEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIE_VILLAGER, 20, MemoryModuleType.ATTACK_TARGET,  ZombieEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.WITCH, 20, MemoryModuleType.ATTACK_TARGET,  WitchEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.ZOMBIFIED_PIGLIN, 20, MemoryModuleType.ATTACK_TARGET,  ZombifiedPiglinEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN, 20, MemoryModuleType.ATTACK_TARGET, PiglinEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(EntityType.PIGLIN_BRUTE, 20, MemoryModuleType.ATTACK_TARGET, PiglinBruteEntity.class)),
-                Pair.of(1, FindNewEnemyTask.create(ModEntities.ZOMBIE_IMPILLAGER, 20, MemoryModuleType.ATTACK_TARGET, ZombieImpillagerEntity.class)),
+                Pair.of(1, FindNewEnemyTask.create(ENEMY_TYPES, 20, MemoryModuleType.ATTACK_TARGET)),
                 Pair.of(1, ImpillagerAttackTask.create(5, 40, 2F)),
                 Pair.of(1, ImpillagerAttackMovementTask.create(0.75F, 6, 10, 1.5F)),
                 Pair.of(1, new SpawnGolemTask()),
@@ -171,9 +162,16 @@ public class ImpillagerTaskListProvider {
 
     private static void avoidEnemy(ImpillagerEntity impillager, LivingEntity target) {
         Brain<VillagerEntity> brain = impillager.getBrain();
-        LivingEntity livingEntity = LookTargetUtil.getCloserEntity(impillager, brain.getOptionalRegisteredMemory(MemoryModuleType.AVOID_TARGET), target);
-        livingEntity = LookTargetUtil.getCloserEntity(impillager, brain.getOptionalRegisteredMemory(MemoryModuleType.ATTACK_TARGET), livingEntity);
-        avoid(impillager, livingEntity);
+        LivingEntity closest = target;
+        Optional<LivingEntity> avoidTarget = brain.getOptionalRegisteredMemory(MemoryModuleType.AVOID_TARGET);
+        if (avoidTarget.isPresent()) {
+            closest = LookTargetUtil.getCloserEntity(impillager, avoidTarget.get(), closest);
+        }
+        Optional<LivingEntity> attackTarget = brain.getOptionalRegisteredMemory(MemoryModuleType.ATTACK_TARGET);
+        if (attackTarget.isPresent()) {
+            closest = LookTargetUtil.getCloserEntity(impillager, attackTarget.get(), closest);
+        }
+        avoid(impillager, closest);
     }
 
     private static void avoid(ImpillagerEntity impillager, LivingEntity target) {
@@ -181,4 +179,18 @@ public class ImpillagerTaskListProvider {
         impillager.getBrain().forget(MemoryModuleType.WALK_TARGET);
         impillager.getBrain().remember(MemoryModuleType.AVOID_TARGET, target, AVOID_MEMORY_DURATION.get(impillager.getWorld().random));
     }
+
+    //-------------------------------------Enemy List--------------------------------------
+
+    private static final ImmutableSet<EntityType<?>> ENEMY_TYPES = ImmutableSet.of(
+            EntityType.VILLAGER,
+            EntityType.PILLAGER,
+            EntityType.ZOMBIE,
+            EntityType.ZOMBIE_VILLAGER,
+            EntityType.WITCH,
+            EntityType.ZOMBIFIED_PIGLIN,
+            EntityType.PIGLIN,
+            EntityType.PIGLIN_BRUTE,
+            ModEntities.ZOMBIE_IMPILLAGER
+    );
 }
