@@ -5,6 +5,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.ai.brain.ImpillagerSchedules;
 import com.impillagers.mod.entity.ai.brain.task.ImpillagerTaskListProvider;
 import com.impillagers.mod.entity.mob.Impillager;
 import com.impillagers.mod.item.ModItems;
@@ -217,7 +218,7 @@ public class ImpillagerEntity extends VillagerEntity {
             brain.setSchedule(Schedule.VILLAGER_BABY);
             brain.setTaskList(Activity.PLAY, VillagerTaskListProvider.createPlayTasks(0.5F));
         } else {
-            brain.setSchedule(Schedule.VILLAGER_DEFAULT);
+            brain.setSchedule(ImpillagerSchedules.forProfession(villagerProfession));
             brain.setTaskList(
                     Activity.WORK,
                     VillagerTaskListProvider.createWorkTasks(villagerProfession, 0.5F),
@@ -242,7 +243,6 @@ public class ImpillagerEntity extends VillagerEntity {
         brain.doExclusively(Activity.IDLE);
         brain.refreshActivities(this.getWorld().getTimeOfDay(), this.getWorld().getTime());
     }
-
 
 
     //-------------------------------------Sounds-------------------------------------
@@ -271,6 +271,7 @@ public class ImpillagerEntity extends VillagerEntity {
     public static SoundEvent getRangedAttackSound() {
         return ModSoundEvents.IMPILLAGER_ATTACK_RANGED;
     }
+
     protected SoundEvent getMeleeAttackSound() {
         return ModSoundEvents.IMPILLAGER_ATTACK_MELEE;
     }
@@ -284,6 +285,7 @@ public class ImpillagerEntity extends VillagerEntity {
     protected SoundEvent getTradingSound(boolean sold) {
         return sold ? ModSoundEvents.IMPILLAGER_YES : ModSoundEvents.IMPILLAGER_NO;
     }
+
     @Override
     public void playCelebrateSound() {
         this.playSound(ModSoundEvents.IMPILLAGER_CELEBRATE);
@@ -395,7 +397,7 @@ public class ImpillagerEntity extends VillagerEntity {
             return false;
         } else {
             if (bl && source.getAttacker() instanceof LivingEntity) {
-                ImpillagerTaskListProvider.onAttacked(this, (LivingEntity)source.getAttacker());
+                ImpillagerTaskListProvider.onAttacked(this, (LivingEntity) source.getAttacker());
             }
             return bl;
         }
@@ -408,7 +410,7 @@ public class ImpillagerEntity extends VillagerEntity {
         } else {
             this.getWorld().sendEntityStatus(this, EntityStatuses.PLAY_ATTACK_SOUND);
             this.playSound(getMeleeAttackSound());
-            return Impillager.tryAttack(this, (LivingEntity)target);
+            return Impillager.tryAttack(this, (LivingEntity) target);
         }
     }
 

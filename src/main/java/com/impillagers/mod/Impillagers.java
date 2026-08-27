@@ -7,6 +7,7 @@ import com.impillagers.mod.damage.ModDamageTypes;
 import com.impillagers.mod.data.ModDataPacks;
 import com.impillagers.mod.effect.ModEffects;
 import com.impillagers.mod.entity.ModEntities;
+import com.impillagers.mod.entity.ai.brain.ImpillagerSchedules;
 import com.impillagers.mod.entity.custom.dung_golem.DungGolemEntity;
 import com.impillagers.mod.entity.custom.impillager.ImpillagerEntity;
 import com.impillagers.mod.entity.custom.zombieimpillager.ZombieImpillagerEntity;
@@ -53,6 +54,7 @@ public class Impillagers implements ModInitializer {
 		ModDamageTypes.registerDamageTypes();
 		ModDataPacks.registerDataPacks();
 		ModSherds.registerSherds();
+		ImpillagerSchedules.registerImpillagerSchedules();
 
 		//Compostable Blocks
 		CompostingChanceRegistry.INSTANCE.add(ModBlocks.PURPLE_HEART_SAPLING, 0.3f);
